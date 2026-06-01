@@ -1,0 +1,161 @@
+{
+  "exam_id": "plumber-demo",
+  "title": "Free Demo — 10 Sample Plumber Questions",
+  "description": "Try 10 questions from across all 306A exam topics. No signup required.",
+  "trade": "306A",
+  "trade_name": "Construction & Maintenance Plumber",
+  "time_limit_minutes": 30,
+  "pass_percentage": 70,
+  "questions": [
+    {
+      "id": 1,
+      "section": "Drainage, Waste & Vent",
+      "difficulty": "easy",
+      "question": "What is the minimum slope (grade) for a 3-inch or smaller horizontal drain pipe?",
+      "options": [
+        "A) 1/8 inch per foot",
+        "B) 1/4 inch per foot",
+        "C) 1/2 inch per foot",
+        "D) 1/16 inch per foot"
+      ],
+      "correct": 1,
+      "explanation": "Horizontal drain pipes 3 inches and smaller require a minimum slope of 1/4 inch per foot (1:48) to ensure proper flow and self-cleaning velocity.",
+      "rule_reference": "OBC Part 7 / NPC"
+    },
+    {
+      "id": 2,
+      "section": "Water Supply & Distribution",
+      "difficulty": "medium",
+      "question": "Which type of backflow preventer provides the highest level of protection and is required for severe hazard cross-connections?",
+      "options": [
+        "A) Atmospheric Vacuum Breaker (AVB)",
+        "B) Pressure Vacuum Breaker (PVB)",
+        "C) Double Check Valve Assembly (DCVA)",
+        "D) Reduced Pressure Backflow Preventer (RPBP)"
+      ],
+      "correct": 3,
+      "explanation": "The Reduced Pressure Backflow Preventer (RPBP / RP) provides the highest level of protection. It has two independently operating check valves with a pressure differential relief valve between them, and is required for severe (health) hazard cross-connections.",
+      "rule_reference": "CSA B64 Series"
+    },
+    {
+      "id": 3,
+      "section": "Drainage, Waste & Vent",
+      "difficulty": "medium",
+      "question": "What is the primary purpose of a plumbing trap?",
+      "options": [
+        "A) To regulate water pressure in the system",
+        "B) To prevent sewer gases from entering the building",
+        "C) To filter debris from wastewater",
+        "D) To increase drainage flow velocity"
+      ],
+      "correct": 1,
+      "explanation": "A plumbing trap maintains a water seal (minimum 50mm / 2 inches) that prevents sewer gases, odours, and vermin from entering the building through the drainage openings.",
+      "rule_reference": "OBC Part 7"
+    },
+    {
+      "id": 4,
+      "section": "Fixtures & Appliances",
+      "difficulty": "easy",
+      "question": "What safety device is required on every storage-type water heater?",
+      "options": [
+        "A) Pressure gauge",
+        "B) Temperature and Pressure (T&P) relief valve",
+        "C) Backflow preventer",
+        "D) Expansion tank"
+      ],
+      "correct": 1,
+      "explanation": "Every storage-type water heater must have a Temperature and Pressure (T&P) relief valve to prevent dangerous pressure buildup. The discharge pipe must terminate no more than 150mm (6 inches) above the floor and must not be threaded at the end.",
+      "rule_reference": "OBC Part 7 / CSA"
+    },
+    {
+      "id": 5,
+      "section": "Venting",
+      "difficulty": "hard",
+      "question": "A vent terminal through a roof must extend a minimum of how far above the roof surface?",
+      "options": [
+        "A) 75 mm (3 inches)",
+        "B) 150 mm (6 inches)",
+        "C) 300 mm (12 inches)",
+        "D) 600 mm (24 inches)"
+      ],
+      "correct": 1,
+      "explanation": "A vent terminal must extend at least 150 mm (6 inches) above the roof surface. However, in areas subject to snow, the vent must extend higher — typically 600 mm (24 inches) above the anticipated snow level.",
+      "rule_reference": "OBC Part 7 / NPC"
+    },
+    {
+      "id": 6,
+      "section": "Common Occupational Skills",
+      "difficulty": "medium",
+      "question": "When pressure testing a new DWV system with air, what is the minimum test pressure and hold time?",
+      "options": [
+        "A) 5 psi for 10 minutes",
+        "B) 35 kPa (5 psi) for 15 minutes",
+        "C) 100 kPa (15 psi) for 30 minutes",
+        "D) 345 kPa (50 psi) for 15 minutes"
+      ],
+      "correct": 1,
+      "explanation": "A DWV air test requires a minimum of 35 kPa (approximately 5 psi) held for at least 15 minutes with no drop in pressure. Water testing is an alternative at the full height of the stack.",
+      "rule_reference": "OBC Part 7"
+    },
+    {
+      "id": 7,
+      "section": "Gas Piping",
+      "difficulty": "medium",
+      "question": "What method is used to size natural gas piping in a building?",
+      "options": [
+        "A) Water supply fixture unit method",
+        "B) Longest run method using total BTU/h demand",
+        "C) Pipe diameter equals drain size method",
+        "D) Velocity method based on water equivalents"
+      ],
+      "correct": 1,
+      "explanation": "Gas piping is sized using the longest run method: determine the total BTU/h (input) demand of all appliances, measure the longest pipe run from the meter to the farthest appliance, then use the sizing tables in CSA B149.1 to select the correct pipe diameter.",
+      "rule_reference": "CSA B149.1"
+    },
+    {
+      "id": 8,
+      "section": "Hydronic Heating",
+      "difficulty": "medium",
+      "question": "Where should the circulating pump typically be installed in a closed hydronic heating system?",
+      "options": [
+        "A) On the return line, farthest from the boiler",
+        "B) On the supply line, immediately after the boiler",
+        "C) On the return line, near the boiler (pumping away from expansion tank)",
+        "D) On the supply line, after the expansion tank connection"
+      ],
+      "correct": 2,
+      "explanation": "The circulator pump is typically installed on the return line near the boiler, pumping away from the point of no pressure change (expansion tank connection). This ensures the pump adds pressure to the system rather than creating negative pressure that could cause air ingestion.",
+      "rule_reference": "CSA B214 / Hydronic design principles"
+    },
+    {
+      "id": 9,
+      "section": "Private Water Supply & Waste Disposal",
+      "difficulty": "hard",
+      "question": "What is the minimum horizontal separation distance between a drilled well and a septic tank in Ontario?",
+      "options": [
+        "A) 5 metres (16 feet)",
+        "B) 15 metres (50 feet)",
+        "C) 30 metres (100 feet)",
+        "D) 50 metres (164 feet)"
+      ],
+      "correct": 1,
+      "explanation": "In Ontario, the minimum horizontal separation between a drilled well and a septic tank is 15 metres (approximately 50 feet). Greater distances are required from the leaching bed / tile field — typically 30 metres.",
+      "rule_reference": "Ontario Building Code Part 8"
+    },
+    {
+      "id": 10,
+      "section": "Drainage, Waste & Vent",
+      "difficulty": "hard",
+      "question": "A water closet (toilet) is rated at how many fixture units for drainage sizing?",
+      "options": [
+        "A) 2 fixture units",
+        "B) 3 fixture units",
+        "C) 4 fixture units",
+        "D) 6 fixture units"
+      ],
+      "correct": 2,
+      "explanation": "A water closet (toilet) is rated at 4 fixture units (FU) for drainage sizing purposes. This value is used when calculating the total fixture unit load on drain pipes and determining required pipe sizes.",
+      "rule_reference": "OBC Part 7 / NPC Table"
+    }
+  ]
+}
