@@ -455,10 +455,18 @@ function submitExam() {
     `;
 
     if (isDemo) {
-        setTimeout(() => {
-            document.getElementById('demo-score').textContent = percent + '%';
-            showScreen('screen-paywall');
-        }, 3000);
+        // Show score on paywall but let user review results first
+        document.getElementById('demo-score').textContent = percent + '%';
+        // Add a "See Full Exams" button to results instead of auto-redirect
+        const resultsActions = document.querySelector('#screen-results .result-actions');
+        if (resultsActions && !document.getElementById('btn-see-pricing')) {
+            const pricingBtn = document.createElement('button');
+            pricingBtn.id = 'btn-see-pricing';
+            pricingBtn.textContent = '💰 See Full Exam Pricing';
+            pricingBtn.onclick = () => showScreen('screen-paywall');
+            pricingBtn.style.cssText = 'background:linear-gradient(135deg,#FFD54F,#FFC107);color:#1d3557;font-weight:700;';
+            resultsActions.appendChild(pricingBtn);
+        }
     }
 }
 
