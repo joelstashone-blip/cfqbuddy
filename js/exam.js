@@ -10,8 +10,44 @@ let examStarted = false;
 
 let isDemo = false;
 
-// Valid access codes (in production, validate server-side or use Gumroad license keys)
-const VALID_CODES = ['309A-PREP-2024', '309A-FREE-DEMO', 'TEST-CODE-1234'];
+// Access code tiers
+const CODE_TIERS = {
+    single: [
+        'CFQ-S1-7MFXU','CFQ-S1-B86WS','CFQ-S1-CCXL0','CFQ-S1-G1O84','CFQ-S1-GBFA3',
+        'CFQ-S1-GVL15','CFQ-S1-GZPBR','CFQ-S1-H5822','CFQ-S1-J4NZV','CFQ-S1-JBZX4',
+        'CFQ-S1-JI0NB','CFQ-S1-JKRAD','CFQ-S1-KO9ZZ','CFQ-S1-MHDLK','CFQ-S1-TVI2J',
+        'CFQ-S1-UCV87','CFQ-S1-VOV2W','CFQ-S1-W9EM4','CFQ-S1-XXR4C','CFQ-S1-Y6E0M'
+    ],
+    pack3: [
+        'CFQ-P3-00I26','CFQ-P3-1JNFA','CFQ-P3-40C64','CFQ-P3-59MZS','CFQ-P3-8WRXC',
+        'CFQ-P3-BXYRB','CFQ-P3-BZ8H7','CFQ-P3-CQ0ZL','CFQ-P3-H74ME','CFQ-P3-HM5VW',
+        'CFQ-P3-KHW6L','CFQ-P3-KLPMP','CFQ-P3-M9V8M','CFQ-P3-MPKNS','CFQ-P3-MU5OM',
+        'CFQ-P3-NLZ1H','CFQ-P3-NVWW6','CFQ-P3-O84Q0','CFQ-P3-PGKKO','CFQ-P3-ZLU6C'
+    ],
+    bundle: [
+        'CFQ-BX-0JA4D','CFQ-BX-1ZA2A','CFQ-BX-2JH1A','CFQ-BX-4JTBV','CFQ-BX-728CG',
+        'CFQ-BX-8PKH3','CFQ-BX-C0HUM','CFQ-BX-C3DTS','CFQ-BX-DCERP','CFQ-BX-EP24F',
+        'CFQ-BX-F2RYP','CFQ-BX-L6HS4','CFQ-BX-M9UW6','CFQ-BX-O9VT9','CFQ-BX-PWGDV',
+        'CFQ-BX-QVOBA','CFQ-BX-RBXNR','CFQ-BX-VBHPU','CFQ-BX-Y17EX','CFQ-BX-YZVW9'
+    ]
+};
+
+// Determine tier from code
+function getCodeTier(code) {
+    if (CODE_TIERS.bundle.includes(code)) return 'bundle';
+    if (CODE_TIERS.pack3.includes(code)) return 'pack3';
+    if (CODE_TIERS.single.includes(code)) return 'single';
+    return null;
+}
+
+// Which exams each tier unlocks
+const TIER_ACCESS = {
+    single: ['exam1'],
+    pack3: ['exam1', 'exam2', 'exam3'],
+    bundle: ['exam1', 'exam2', 'exam3']
+};
+
+let activeTier = null;
 
 // Demo mode — free 10 questions, then paywall
 async function startDemo() {
@@ -28,11 +64,53 @@ async function startDemo() {
 
 function validateCode() {
     const code = document.getElementById('access-code').value.trim().toUpperCase();
-    if (VALID_CODES.includes(code) || code.length >= 8) {
-        isDemo = false;
-        loadExam();
-    } else {
-        alert('Invalid access code. Please check your email from Gumroad for your code.');
+    const tier = getCodeTier(code);
+
+    // Also check localStorage for previously validated code
+    if (!tier) {
+        alert('Invalid access code. Please check your purchase email from Gumroad for your code.');
+        return;
+    }
+
+    // Save code and tier to localStorage so they don't have to re-enter
+    localStorage.setItem('cfq_access_code', code);
+    localStorage.setItem('cfq_tier', tier);
+    activeTier = tier;
+
+    // Update exam selector based on tier access
+    updateExamSelector(tier);
+
+    isDemo = false;
+    loadExam();
+}
+
+// Show/hide exam options based on tier
+function updateExamSelector(tier) {
+    const select = document.getElementById('exam-select');
+    const allowedExams = TIER_ACCESS[tier];
+    for (const opt of select.options) {
+        if (allowedExams.includes(opt.value)) {
+            opt.disabled = false;
+            opt.textContent = opt.textContent.replace(' 🔒', '');
+        } else {
+            opt.disabled = true;
+            if (!opt.textContent.includes('🔒')) {
+                opt.textContent += ' 🔒';
+            }
+        }
+    }
+    // Select first available exam
+    select.value = allowedExams[0];
+}
+
+// Check for saved code on page load
+function checkSavedCode() {
+    const savedCode = localStorage.getItem('cfq_access_code');
+    const savedTier = localStorage.getItem('cfq_tier');
+    if (savedCode && savedTier && getCodeTier(savedCode)) {
+        activeTier = savedTier;
+        updateExamSelector(savedTier);
+        document.getElementById('access-code').value = savedCode;
     }
 }
 

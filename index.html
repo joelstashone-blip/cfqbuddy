@@ -833,6 +833,12 @@
     </div>
 
     <script src="js/exam.js"></script>
+    <script>
+        // Check for saved access code on load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof checkSavedCode === 'function') checkSavedCode();
+        });
+    </script>
 
     <!-- PWA Registration & Install Logic -->
     <script>
