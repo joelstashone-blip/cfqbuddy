@@ -1,0 +1,159 @@
+{
+  "exam_id": "demo",
+  "title": "Free Demo \u2014 10 Sample Questions",
+  "description": "Try 10 questions from across all exam topics. No signup required.",
+  "time_limit_minutes": 30,
+  "pass_percentage": 70,
+  "questions": [
+    {
+      "id": 1,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "Fire extinguisher class required near electrical equipment?",
+      "options": [
+        "A) Class A",
+        "B) Class C",
+        "C) Class B",
+        "D) Class D"
+      ],
+      "correct": 1,
+      "explanation": "Class C is for energized electrical fires.",
+      "rule_reference": "Fire Code"
+    },
+    {
+      "id": 2,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Maximum overcurrent protection for #14 AWG copper branch circuit?",
+      "options": [
+        "A) 10A",
+        "B) 15A",
+        "C) 20A",
+        "D) 30A"
+      ],
+      "correct": 1,
+      "explanation": "15A maximum for #14 AWG.",
+      "rule_reference": "CEC Rule 14-104"
+    },
+    {
+      "id": 3,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Voltage drop on 120V, #12 AWG Cu, 30 m run, 16A load?",
+      "options": [
+        "A) 3.2V (2.7%)",
+        "B) 5.2V (4.3%)",
+        "C) 6.4V (5.3%)",
+        "D) 8.1V (6.8%)"
+      ],
+      "correct": 2,
+      "explanation": "Using CEC method: Vd = 2 x 30 x 16 x R/km = ~6.4V (5.3%).",
+      "rule_reference": "CEC Rule 8-102, Table D3"
+    },
+    {
+      "id": 4,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "3-phase motor hums but won't start. Voltage on only 2 of 3 phases. Cause?",
+      "options": [
+        "A) Single-phasing (blown fuse/tripped breaker on one phase)",
+        "B) Motor bearings seized",
+        "C) Windings shorted",
+        "D) VFD frequency too low"
+      ],
+      "correct": 0,
+      "explanation": "Single-phasing - one fuse blown or breaker tripped.",
+      "rule_reference": "Motor troubleshooting"
+    },
+    {
+      "id": 5,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "Swapping two phases of a 3-phase motor causes:",
+      "options": [
+        "A) Motor won't start",
+        "B) Draws more current same direction",
+        "C) Runs faster",
+        "D) Runs in reverse"
+      ],
+      "correct": 3,
+      "explanation": "Reversing two phases reverses rotation.",
+      "rule_reference": "Motor theory"
+    },
+    {
+      "id": 6,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "2-stage fire alarm: Stage 1 activates ___, Stage 2 activates ___:",
+      "options": [
+        "A) General alarm, then alert",
+        "B) Sprinklers, then detectors",
+        "C) Alert signal, then general evacuation alarm",
+        "D) Strobes only, then audible alarms"
+      ],
+      "correct": 2,
+      "explanation": "Stage 1 = alert (investigate), Stage 2 = evacuate.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 7,
+      "section": "CEC Code Rules",
+      "difficulty": "easy",
+      "question": "Current CEC edition referenced by Ontario (2024)?",
+      "options": [
+        "A) 24th Edition",
+        "B) 25th Edition",
+        "C) 26th Edition (2024)",
+        "D) 23rd Edition"
+      ],
+      "correct": 2,
+      "explanation": "26th Edition, CSA C22.1:24.",
+      "rule_reference": "OESC 2024"
+    },
+    {
+      "id": 8,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "easy",
+      "question": "CEC section covering solar PV systems?",
+      "options": [
+        "A) Section 30",
+        "B) Section 50",
+        "C) Section 86",
+        "D) Section 64"
+      ],
+      "correct": 3,
+      "explanation": "Section 64 covers Renewable Energy.",
+      "rule_reference": "CEC Section 64"
+    },
+    {
+      "id": 9,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "Cat6 UTP maximum channel length?",
+      "options": [
+        "A) 90 m permanent link, 100 m channel",
+        "B) 55 m",
+        "C) 150 m",
+        "D) 300 m"
+      ],
+      "correct": 0,
+      "explanation": "90 m permanent + 10 m patches = 100 m channel.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 10,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A dwelling unit has 180 m2. What is the basic lighting load?",
+      "options": [
+        "A) 5,400 W",
+        "B) 4,500 W",
+        "C) 3,600 W",
+        "D) 6,300 W"
+      ],
+      "correct": 0,
+      "explanation": "180 m2 x 30 W/m2 (CEC Table 14) = 5,400W basic lighting load.",
+      "rule_reference": "CEC Rule 8-200, Table 14"
+    }
+  ]
+}

@@ -8,12 +8,28 @@ let timerInterval = null;
 let timeRemaining = 0;
 let examStarted = false;
 
+let isDemo = false;
+
 // Valid access codes (in production, validate server-side or use Gumroad license keys)
 const VALID_CODES = ['309A-PREP-2024', '309A-FREE-DEMO', 'TEST-CODE-1234'];
+
+// Demo mode — free 10 questions, then paywall
+async function startDemo() {
+    isDemo = true;
+    try {
+        const res = await fetch('data/demo.json');
+        examData = await res.json();
+        startExam();
+    } catch (e) {
+        alert('Failed to load demo. Please try again.');
+        console.error(e);
+    }
+}
 
 function validateCode() {
     const code = document.getElementById('access-code').value.trim().toUpperCase();
     if (VALID_CODES.includes(code) || code.length >= 8) {
+        isDemo = false;
         loadExam();
     } else {
         alert('Invalid access code. Please check your email from Gumroad for your code.');
@@ -246,6 +262,14 @@ function submitExam() {
         <div class="stat-card"><div class="stat-value">${total}</div><div class="stat-label">Total Questions</div></div>
         <div class="stat-card"><div class="stat-value">${examData.pass_percentage}%</div><div class="stat-label">Pass Mark</div></div>
     `;
+
+    // If demo, show paywall after a brief results view
+    if (isDemo) {
+        setTimeout(() => {
+            document.getElementById('demo-score').textContent = percent + '%';
+            showScreen('screen-paywall');
+        }, 3000);
+    }
 }
 
 // Review
