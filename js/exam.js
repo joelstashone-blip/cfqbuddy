@@ -10,35 +10,12 @@ let examStarted = false;
 
 let isDemo = false;
 
-// Access code tiers
-const CODE_TIERS = {
-    single: [
-        'CFQ-S1-7MFXU','CFQ-S1-B86WS','CFQ-S1-CCXL0','CFQ-S1-G1O84','CFQ-S1-GBFA3',
-        'CFQ-S1-GVL15','CFQ-S1-GZPBR','CFQ-S1-H5822','CFQ-S1-J4NZV','CFQ-S1-JBZX4',
-        'CFQ-S1-JI0NB','CFQ-S1-JKRAD','CFQ-S1-KO9ZZ','CFQ-S1-MHDLK','CFQ-S1-TVI2J',
-        'CFQ-S1-UCV87','CFQ-S1-VOV2W','CFQ-S1-W9EM4','CFQ-S1-XXR4C','CFQ-S1-Y6E0M'
-    ],
-    pack3: [
-        'CFQ-P3-00I26','CFQ-P3-1JNFA','CFQ-P3-40C64','CFQ-P3-59MZS','CFQ-P3-8WRXC',
-        'CFQ-P3-BXYRB','CFQ-P3-BZ8H7','CFQ-P3-CQ0ZL','CFQ-P3-H74ME','CFQ-P3-HM5VW',
-        'CFQ-P3-KHW6L','CFQ-P3-KLPMP','CFQ-P3-M9V8M','CFQ-P3-MPKNS','CFQ-P3-MU5OM',
-        'CFQ-P3-NLZ1H','CFQ-P3-NVWW6','CFQ-P3-O84Q0','CFQ-P3-PGKKO','CFQ-P3-ZLU6C'
-    ],
-    bundle: [
-        'CFQ-BX-0JA4D','CFQ-BX-1ZA2A','CFQ-BX-2JH1A','CFQ-BX-4JTBV','CFQ-BX-728CG',
-        'CFQ-BX-8PKH3','CFQ-BX-C0HUM','CFQ-BX-C3DTS','CFQ-BX-DCERP','CFQ-BX-EP24F',
-        'CFQ-BX-F2RYP','CFQ-BX-L6HS4','CFQ-BX-M9UW6','CFQ-BX-O9VT9','CFQ-BX-PWGDV',
-        'CFQ-BX-QVOBA','CFQ-BX-RBXNR','CFQ-BX-VBHPU','CFQ-BX-Y17EX','CFQ-BX-YZVW9'
-    ]
+// Gumroad product permalinks → tier mapping
+const PRODUCT_TIERS = {
+    'rxcya': 'single',      // Single Practice Exam
+    'urslua': 'pack3',      // 3-Exam Pack
+    'cntarz': 'bundle'      // Complete Bundle
 };
-
-// Determine tier from code
-function getCodeTier(code) {
-    if (CODE_TIERS.bundle.includes(code)) return 'bundle';
-    if (CODE_TIERS.pack3.includes(code)) return 'pack3';
-    if (CODE_TIERS.single.includes(code)) return 'single';
-    return null;
-}
 
 // Which exams each tier unlocks
 const TIER_ACCESS = {
@@ -62,41 +39,110 @@ async function startDemo() {
     }
 }
 
-function validateCode() {
-    const code = document.getElementById('access-code').value.trim().toUpperCase();
-    const email = document.getElementById('purchase-email').value.trim().toLowerCase();
-    const tier = getCodeTier(code);
+// Validate license key via Gumroad License Verify API
+async function validateCode() {
+    const licenseKey = document.getElementById('access-code').value.trim();
+    const btn = document.getElementById('btn-start');
+    const statusEl = document.getElementById('license-status');
 
-    // Validate code
-    if (!tier) {
-        alert('Invalid access code. Please check your purchase email from Gumroad for your code.');
+    if (!licenseKey) {
+        showLicenseStatus('Please enter your license key from your Gumroad receipt.', 'error');
         return;
     }
 
-    // Validate email
-    if (!email || !email.includes('@')) {
-        alert('Please enter the email you used to purchase on Gumroad.');
+    // Show loading state
+    btn.disabled = true;
+    btn.textContent = '🔄 Verifying...';
+    showLicenseStatus('Verifying your license key with Gumroad...', 'info');
+
+    // Try each product permalink until we find a match
+    let verified = false;
+    let tier = null;
+    let productName = '';
+
+    for (const [permalink, productTier] of Object.entries(PRODUCT_TIERS)) {
+        try {
+            const response = await fetch('https://api.gumroad.com/v2/licenses/verify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `product_id=${permalink}&license_key=${encodeURIComponent(licenseKey)}`
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                verified = true;
+                tier = productTier;
+                productName = data.purchase?.product_name || permalink;
+
+                // Check if license is disabled
+                if (data.purchase?.license_disabled) {
+                    showLicenseStatus('This license key has been disabled. Please contact support.', 'error');
+                    btn.disabled = false;
+                    btn.textContent = 'Unlock & Start Exam';
+                    return;
+                }
+
+                // Check if refunded
+                if (data.purchase?.refunded) {
+                    showLicenseStatus('This purchase has been refunded. The license is no longer valid.', 'error');
+                    btn.disabled = false;
+                    btn.textContent = 'Unlock & Start Exam';
+                    return;
+                }
+
+                break;
+            }
+        } catch (e) {
+            console.error(`License check failed for ${permalink}:`, e);
+        }
+    }
+
+    if (!verified) {
+        showLicenseStatus('Invalid license key. Please check your Gumroad purchase receipt for the correct key.', 'error');
+        btn.disabled = false;
+        btn.textContent = 'Unlock & Start Exam';
         return;
     }
 
-    // Save code, email, and tier to localStorage
-    localStorage.setItem('cfq_access_code', code);
-    localStorage.setItem('cfq_email', email);
+    // Success! Save license and tier
+    localStorage.setItem('cfq_license_key', licenseKey);
     localStorage.setItem('cfq_tier', tier);
     activeTier = tier;
 
-    // Log activation to Google Sheets (anti-sharing tracking)
-    logActivation(code, email, tier);
+    // Log activation to Google Sheets
+    logActivation(licenseKey, tier, productName);
 
-    // Update exam selector based on tier access
+    // Update exam selector based on tier
     updateExamSelector(tier);
 
+    showLicenseStatus(`✅ License verified! You have access to: ${getTierLabel(tier)}`, 'success');
+
+    btn.disabled = false;
+    btn.textContent = 'Start Exam';
     isDemo = false;
     loadExam();
 }
 
-// Log code activation to Google Sheets for anti-sharing tracking
-function logActivation(code, email, tier) {
+function getTierLabel(tier) {
+    switch(tier) {
+        case 'single': return 'Practice Exam 1';
+        case 'pack3': return 'All 3 Practice Exams (450 questions)';
+        case 'bundle': return 'All 3 Practice Exams + Study Guide';
+        default: return tier;
+    }
+}
+
+function showLicenseStatus(msg, type) {
+    const el = document.getElementById('license-status');
+    if (!el) return;
+    el.textContent = msg;
+    el.className = 'license-status ' + type;
+    el.style.display = 'block';
+}
+
+// Log activation to Google Sheets for tracking
+function logActivation(licenseKey, tier, productName) {
     try {
         const endpoint = 'https://script.google.com/macros/s/AKfycby-X1cKflCfgxuBLJTiASDqCqN58Xj3Djni2vyUgcZP4irIiIG02NJpuLzkPK0h831P/exec';
         fetch(endpoint, {
@@ -105,15 +151,14 @@ function logActivation(code, email, tier) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 type: 'activation',
-                code: code,
-                email: email,
+                licenseKey: licenseKey.substring(0, 8) + '...',  // Partial key for privacy
                 tier: tier,
+                product: productName,
                 timestamp: new Date().toISOString(),
                 userAgent: navigator.userAgent.substring(0, 100)
             })
         });
     } catch (e) {
-        // Silent fail — don't block the user
         console.error('Activation log failed:', e);
     }
 }
@@ -133,20 +178,56 @@ function updateExamSelector(tier) {
             }
         }
     }
-    // Select first available exam
     select.value = allowedExams[0];
 }
 
-// Check for saved code on page load
+// Check for saved license on page load
 function checkSavedCode() {
-    const savedCode = localStorage.getItem('cfq_access_code');
+    const savedKey = localStorage.getItem('cfq_license_key');
     const savedTier = localStorage.getItem('cfq_tier');
-    const savedEmail = localStorage.getItem('cfq_email');
-    if (savedCode && savedTier && savedEmail && getCodeTier(savedCode)) {
+    if (savedKey && savedTier) {
+        // Re-verify the saved license in the background
         activeTier = savedTier;
         updateExamSelector(savedTier);
-        document.getElementById('access-code').value = savedCode;
-        document.getElementById('purchase-email').value = savedEmail;
+        document.getElementById('access-code').value = savedKey;
+        showLicenseStatus(`✅ Welcome back! ${getTierLabel(savedTier)} unlocked.`, 'success');
+
+        // Background re-verify (don't block UI)
+        reVerifyLicense(savedKey, savedTier);
+    }
+}
+
+// Silently re-verify a saved license to check it's still valid
+async function reVerifyLicense(licenseKey, savedTier) {
+    // Find the product permalink for this tier
+    const permalink = Object.entries(PRODUCT_TIERS).find(([_, t]) => t === savedTier)?.[0];
+    if (!permalink) return;
+
+    try {
+        const response = await fetch('https://api.gumroad.com/v2/licenses/verify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `product_id=${permalink}&license_key=${encodeURIComponent(licenseKey)}&increment_uses_count=false`
+        });
+        const data = await response.json();
+
+        if (!data.success || data.purchase?.license_disabled || data.purchase?.refunded) {
+            // License no longer valid — clear it
+            localStorage.removeItem('cfq_license_key');
+            localStorage.removeItem('cfq_tier');
+            activeTier = null;
+            showLicenseStatus('Your license is no longer valid. Please enter a valid license key.', 'error');
+            document.getElementById('access-code').value = '';
+            // Reset exam selector
+            const select = document.getElementById('exam-select');
+            for (const opt of select.options) {
+                opt.disabled = false;
+                opt.textContent = opt.textContent.replace(' 🔒', '');
+            }
+        }
+    } catch (e) {
+        // Network error — don't lock out the user, allow offline use
+        console.warn('Background license re-verification failed (offline?):', e);
     }
 }
 
@@ -164,12 +245,11 @@ async function loadExam() {
 
 function startExam() {
     examStarted = true;
-    timeRemaining = examData.time_limit_minutes * 60; // 4 hours in seconds
+    timeRemaining = examData.time_limit_minutes * 60;
     answers = {};
     flagged = new Set();
     currentQuestion = 0;
 
-    // Shuffle questions
     examData.questions = shuffleArray([...examData.questions]);
 
     showScreen('screen-exam');
@@ -207,8 +287,8 @@ function updateTimerDisplay() {
     timer.textContent = `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 
     timer.classList.remove('warning', 'danger');
-    if (timeRemaining <= 600) timer.classList.add('danger');      // Last 10 min
-    else if (timeRemaining <= 1800) timer.classList.add('warning'); // Last 30 min
+    if (timeRemaining <= 600) timer.classList.add('danger');
+    else if (timeRemaining <= 1800) timer.classList.add('warning');
 }
 
 // Navigation
@@ -323,7 +403,6 @@ function submitExam() {
     clearInterval(timerInterval);
     examStarted = false;
 
-    // Calculate results
     let correct = 0;
     let incorrect = 0;
     let unanswered = 0;
@@ -351,10 +430,8 @@ function submitExam() {
     const timeUsedMin = Math.floor(timeUsed / 60);
     const timeUsedSec = timeUsed % 60;
 
-    // Store for review
     window.examResults = results;
 
-    // Show results
     showScreen('screen-results');
 
     const badge = document.getElementById('result-badge');
@@ -377,7 +454,6 @@ function submitExam() {
         <div class="stat-card"><div class="stat-value">${examData.pass_percentage}%</div><div class="stat-label">Pass Mark</div></div>
     `;
 
-    // If demo, show paywall after a brief results view
     if (isDemo) {
         setTimeout(() => {
             document.getElementById('demo-score').textContent = percent + '%';
@@ -466,7 +542,6 @@ function openFeedback() {
     document.getElementById('feedback-form-view').style.display = 'block';
     document.getElementById('feedback-thanks-view').style.display = 'none';
     document.getElementById('feedback-fab').classList.add('hide');
-    // Reset form
     feedbackRating = 0;
     document.querySelectorAll('.star-btn').forEach(s => s.classList.remove('active'));
     document.getElementById('fb-category').value = '';
@@ -504,17 +579,12 @@ function submitFeedback() {
         userAgent: navigator.userAgent.substring(0, 100)
     };
 
-    // Store locally
     saveFeedbackLocal(feedback);
-
-    // Send to Google Sheets (via Apps Script web app)
     sendFeedbackRemote(feedback);
 
-    // Show thanks
     document.getElementById('feedback-form-view').style.display = 'none';
     document.getElementById('feedback-thanks-view').style.display = 'block';
 
-    // Track that user gave feedback this session
     sessionStorage.setItem('cfq-feedback-given', 'true');
 }
 
@@ -529,14 +599,12 @@ function saveFeedbackLocal(fb) {
 }
 
 function sendFeedbackRemote(fb) {
-    // Google Apps Script endpoint
     const ENDPOINT = window.CFQ_FEEDBACK_ENDPOINT || localStorage.getItem('cfq-feedback-endpoint') || 'https://script.google.com/macros/s/AKfycby-X1cKflCfgxuBLJTiASDqCqN58Xj3Djni2vyUgcZP4irIiIG02NJpuLzkPK0h831P/exec';
     if (!ENDPOINT) {
         console.log('[Feedback] No remote endpoint configured. Saved locally only.');
         return;
     }
     
-    // Use GET with URL params (Apps Script doGet) — works with no-cors
     const params = new URLSearchParams({
         rating: fb.rating,
         category: fb.category,
@@ -547,12 +615,10 @@ function sendFeedbackRemote(fb) {
         ua: fb.userAgent
     });
 
-    // Fire-and-forget — don't block the UI
     fetch(ENDPOINT + '?' + params.toString(), { mode: 'no-cors' })
         .then(() => console.log('[Feedback] Sent to Google Sheets'))
         .catch(e => {
             console.warn('[Feedback] Remote send failed, saved locally:', e);
-            // Mark as unsent for retry later
             try {
                 const unsent = JSON.parse(localStorage.getItem('cfq-feedback-unsent') || '[]');
                 unsent.push(fb);
@@ -594,4 +660,3 @@ function exportFeedback() {
     a.href = url; a.download = 'cfq-feedback.csv'; a.click();
     URL.revokeObjectURL(url);
 }
-
