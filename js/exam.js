@@ -64,24 +64,58 @@ async function startDemo() {
 
 function validateCode() {
     const code = document.getElementById('access-code').value.trim().toUpperCase();
+    const email = document.getElementById('purchase-email').value.trim().toLowerCase();
     const tier = getCodeTier(code);
 
-    // Also check localStorage for previously validated code
+    // Validate code
     if (!tier) {
         alert('Invalid access code. Please check your purchase email from Gumroad for your code.');
         return;
     }
 
-    // Save code and tier to localStorage so they don't have to re-enter
+    // Validate email
+    if (!email || !email.includes('@')) {
+        alert('Please enter the email you used to purchase on Gumroad.');
+        return;
+    }
+
+    // Save code, email, and tier to localStorage
     localStorage.setItem('cfq_access_code', code);
+    localStorage.setItem('cfq_email', email);
     localStorage.setItem('cfq_tier', tier);
     activeTier = tier;
+
+    // Log activation to Google Sheets (anti-sharing tracking)
+    logActivation(code, email, tier);
 
     // Update exam selector based on tier access
     updateExamSelector(tier);
 
     isDemo = false;
     loadExam();
+}
+
+// Log code activation to Google Sheets for anti-sharing tracking
+function logActivation(code, email, tier) {
+    try {
+        const endpoint = 'https://script.google.com/macros/s/AKfycby-X1cKflCfgxuBLJTiASDqCqN58Xj3Djni2vyUgcZP4irIiIG02NJpuLzkPK0h831P/exec';
+        fetch(endpoint, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                type: 'activation',
+                code: code,
+                email: email,
+                tier: tier,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent.substring(0, 100)
+            })
+        });
+    } catch (e) {
+        // Silent fail — don't block the user
+        console.error('Activation log failed:', e);
+    }
 }
 
 // Show/hide exam options based on tier
@@ -107,10 +141,12 @@ function updateExamSelector(tier) {
 function checkSavedCode() {
     const savedCode = localStorage.getItem('cfq_access_code');
     const savedTier = localStorage.getItem('cfq_tier');
-    if (savedCode && savedTier && getCodeTier(savedCode)) {
+    const savedEmail = localStorage.getItem('cfq_email');
+    if (savedCode && savedTier && savedEmail && getCodeTier(savedCode)) {
         activeTier = savedTier;
         updateExamSelector(savedTier);
         document.getElementById('access-code').value = savedCode;
+        document.getElementById('purchase-email').value = savedEmail;
     }
 }
 
