@@ -862,6 +862,28 @@
             console.error(e);
         }
     }
+
+    // Override product tiers for plumber products
+    // These are the Gumroad product permalinks for 306A Plumber
+    Object.keys(PRODUCT_TIERS).forEach(k => delete PRODUCT_TIERS[k]);
+    PRODUCT_TIERS['plumber1'] = 'single';
+    PRODUCT_TIERS['plumber3'] = 'pack3';
+    PRODUCT_TIERS['plumber-bundle'] = 'bundle';
+
+    // Override tier access for plumber exams
+    TIER_ACCESS.single = ['plumber-exam1'];
+    TIER_ACCESS.pack3 = ['plumber-exam1', 'plumber-exam2', 'plumber-exam3'];
+    TIER_ACCESS.bundle = ['plumber-exam1', 'plumber-exam2', 'plumber-exam3'];
+
+    // Override tier labels for plumber
+    function getTierLabel(tier) {
+        switch(tier) {
+            case 'single': return 'Plumber Practice Exam 1';
+            case 'pack3': return 'All 3 Plumber Practice Exams';
+            case 'bundle': return 'All 3 Plumber Practice Exams + Study Guide';
+            default: return tier;
+        }
+    }
     </script>
 
     <script>
