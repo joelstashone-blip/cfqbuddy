@@ -107,7 +107,7 @@
         "D) 10 m"
       ],
       "correct": 1,
-      "explanation": "3 m for 750V-36 kV.",
+      "explanation": "For voltages between 750V and 36 kV, the minimum approach distance for cranes and hoisting equipment near overhead power lines is 3 metres, as specified in CEC Rule 12-300 and OHSA regulations.",
       "rule_reference": "OHSA Reg. 213/91"
     },
     {

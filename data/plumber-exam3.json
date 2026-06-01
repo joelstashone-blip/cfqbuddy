@@ -1,0 +1,2261 @@
+{
+  "exam_id": "plumber-exam3",
+  "title": "306A Plumber Practice Exam 3 (Advanced)",
+  "description": "150 advanced scenario-based questions. Based on NPC 2025. The hardest exam in the series.",
+  "trade": "306A",
+  "trade_name": "Construction & Maintenance Plumber",
+  "time_limit_minutes": 240,
+  "pass_percentage": 70,
+  "questions": [
+    {
+      "id": 1,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A 12-storey office building has a sanitary stack serving all floors. Each floor discharges 42 fixture units. Using Table 2.4.10.6.-A, what is the minimum stack size required?",
+      "options": [
+        "A) NPS 3, because the total load is 504 FU which is within 540 FU for NPS 4 but 102 FU max for NPS 3 is exceeded per storey",
+        "B) NPS 4, because the total load of 504 FU is within the 540 FU maximum and 42 FU per storey is within 100 FU per storey",
+        "C) NPS 5, because a 12-storey building always requires NPS 5",
+        "D) NPS 6, because the storey count exceeds 10"
+      ],
+      "correct": 1,
+      "explanation": "Total load = 12 \u00d7 42 = 504 FU. Per Table 2.4.10.6.-A, NPS 4 stack permits 540 FU total with max 100 FU from any one storey. Since 504 \u2264 540 and 42 \u2264 100, NPS 4 is sufficient.",
+      "rule_reference": "NPC Table 2.4.10.6.-A"
+    },
+    {
+      "id": 2,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A 14-storey residential building has plumbing fixtures on all 14 storeys draining to a single sanitary stack. How many yoke vents are required and where should they be located?",
+      "options": [
+        "A) 2 yoke vents \u2014 one for storeys 14\u201310, one for storeys 9\u20135, counted from the top",
+        "B) 3 yoke vents \u2014 one for each 5-storey section or part thereof counted from the top: storeys 14\u201310, 9\u20135, and 4\u20131",
+        "C) 1 yoke vent at the midpoint of the building",
+        "D) No yoke vents required because plumbing fixtures are on fewer than 15 storeys"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.4.3.(1), yoke vents are required when a stack receives discharge from fixtures on more than 11 storeys. With 14 storeys, count 5-storey sections from the top: Section 1 = storeys 14\u201310, Section 2 = storeys 9\u20135, Section 3 = storeys 4\u20131 (part thereof). That requires 3 yoke vents.",
+      "rule_reference": "NPC 2.5.4.3.(1)"
+    },
+    {
+      "id": 3,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "An 8-storey building has a 3 m horizontal offset in the sanitary stack between the 4th and 5th floors. The upper portion receives 150 FU from 4 storeys above. Are offset relief vents required?",
+      "options": [
+        "A) No, because the offset is less than 5 m",
+        "B) Yes, because the offset exceeds 1.5 m, the upper portion passes through more than 2 storeys, and receives more than 100 FU",
+        "C) No, because only 4 storeys are above the offset",
+        "D) Yes, but only one offset relief vent at the top of the offset"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.4.4.(1), offset relief vents are required when the horizontal offset exceeds 1.5 m (3 m > 1.5 m), the upper vertical portion passes through more than 2 storeys (4 > 2), and the hydraulic load exceeds 100 FU (150 > 100). Two offset relief vents are needed \u2014 one above and one below the offset.",
+      "rule_reference": "NPC 2.5.4.4.(1)"
+    },
+    {
+      "id": 4,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "A plumber is sizing a vent stack for a building with an NPS 6 sanitary stack at its base. What is the minimum permitted size for the vent stack?",
+      "options": [
+        "A) NPS 2",
+        "B) NPS 3",
+        "C) NPS 4",
+        "D) NPS 6"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.8.4.(3), the minimum nominal pipe size of a vent stack or stack vent shall be one-half the NPS of the stack at its base. Half of NPS 6 = NPS 3.",
+      "rule_reference": "NPC 2.5.8.4.(3)"
+    },
+    {
+      "id": 5,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A commercial building has a combined building sewer. The sanitary load totals 400 FU and a continuous-flow sump pump discharges at 0.5 L/s to the sanitary system. The roof area is 800 m\u00b2 with no vertical surfaces. The local 15-min rainfall intensity is 30 mm. What is the total hydraulic load on the combined sewer in litres?",
+      "options": [
+        "A) 28 090 L",
+        "B) 28 060 L",
+        "C) 28 050 L",
+        "D) 28 010 L"
+      ],
+      "correct": 0,
+      "explanation": "Per NPC procedure: (a) Sanitary load: 400 FU > 260, so 400 \u00d7 9.1 = 3 640 L. (b) Continuous flow to combined sewer: 0.5 \u00d7 900 = 450 L. (c) Storm load: 30 \u00d7 800 = 24 000 L. Total = 3 640 + 450 + 24 000 = 28 090 L.",
+      "rule_reference": "NPC 2.4.10.3.(2), 2.4.10.4.(1), 2.4.10.5.(1)"
+    },
+    {
+      "id": 6,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A plumber is sizing a storm building drain serving both primary and emergency roof drainage that are interconnected at the storm building drain as per NPC 2.4.6.6.(3). The calculated hydraulic load from the primary system is 15 000 L. What hydraulic load must the storm building drain be sized for?",
+      "options": [
+        "A) 15 000 L",
+        "B) 22 500 L",
+        "C) 30 000 L",
+        "D) 45 000 L"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.4.10.4.(4), when a storm building drain serves both primary and emergency roof drainage systems as permitted by 2.4.6.6.(3), it shall be sized for 200% of the calculated hydraulic load. So 15 000 \u00d7 2 = 30 000 L.",
+      "rule_reference": "NPC 2.4.10.4.(4)"
+    },
+    {
+      "id": 7,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A plumber installs a wet vent system with a lavatory, bathtub, and one flush-tank water closet (bathroom group = 6 FU). A separately vented kitchen sink (1.5 FU) also drains into the wet vent. When sizing the continuous vent serving the wet vent, should the kitchen sink load be included?",
+      "options": [
+        "A) Yes, all fixture loads draining into the wet vent must be included",
+        "B) No, the hydraulic load of separately vented fixtures that drain into the wet vent are excluded when sizing the continuous vent",
+        "C) Only if the kitchen sink is upstream of the water closet",
+        "D) Only if the total load exceeds 8 FU"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.2.1.(1)(g), the hydraulic load of separately vented plumbing fixtures that drain into the wet vent are not included when sizing the continuous vent that serves the wet vent.",
+      "rule_reference": "NPC 2.5.2.1.(1)(g)"
+    },
+    {
+      "id": 8,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A plumber is installing a wet vent serving 2 water closets on the same level using a vertical wet vent. What fitting type must be used to connect the two water closets to the wet vent?",
+      "options": [
+        "A) A combination Y and 1/8th bend",
+        "B) A double sanitary T fitting",
+        "C) Two separate sanitary T fittings at different heights",
+        "D) A standard T fitting with reducing bushings"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.2.1.(1)(c), where 2 water closets are installed on a wet vent, they shall be connected at the same level by means of a double sanitary T fitting if the vent pipe is vertical, and by means of a double Y fitting if the vent pipe is horizontal.",
+      "rule_reference": "NPC 2.5.2.1.(1)(c)"
+    },
+    {
+      "id": 9,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "According to the NPC, an emergency roof drainage system shall be independent of the primary system, except where it may be connected at which two locations?",
+      "options": [
+        "A) At the roof drain or at the vent stack",
+        "B) At the storm building drain, or at a vertical leader not directly under the served roof",
+        "C) At any horizontal leader or at the building sewer",
+        "D) At the gutter or at the roof membrane level"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.6.6.(3), an emergency roof drainage system is permitted to be connected to the primary system at (a) the storm building drain, or (b) a vertical leader not located immediately under the roof served by both systems.",
+      "rule_reference": "NPC 2.4.6.6.(3)"
+    },
+    {
+      "id": 10,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A circuit-vented horizontal branch in a commercial washroom serves 6 water closets (NPS 3 traps) and has a cumulative change in direction of 50\u00b0 between vent connections. Is an additional circuit vent required?",
+      "options": [
+        "A) No, because 6 fixtures is fewer than the 8-fixture limit",
+        "B) Yes, because the cumulative change in direction exceeds 45\u00b0 between vent pipe connections",
+        "C) No, because changes in direction only matter in vertical stacks",
+        "D) Yes, but only if the branch exceeds NPS 4"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.3.1.(6)(a), additional circuit vents are required where each cumulative horizontal change in direction of a branch served by a circuit vent exceeds 45\u00b0 between vent pipe connections. Since 50\u00b0 > 45\u00b0, an additional circuit vent is needed.",
+      "rule_reference": "NPC 2.5.3.1.(6)(a)"
+    },
+    {
+      "id": 11,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A sanitary drainage pipe serving as an additional circuit vent per NPC 2.5.3.1.(7) must be sized as a wet vent and shall be not less than what size?",
+      "options": [
+        "A) NPS 1\u00bd",
+        "B) NPS 2",
+        "C) NPS 3",
+        "D) NPS 4"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.3.1.(7), a sanitary drainage pipe serving as an additional circuit vent shall be sized as a wet vent in conformance with Article 2.5.8.1. and shall be not less than NPS 2.",
+      "rule_reference": "NPC 2.5.3.1.(7)"
+    },
+    {
+      "id": 12,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A plumber is designing a circuit-vented branch with NPS 2 traps. What is the minimum size of the circuit-vented branch, including the fixture drain downstream of the circuit vent connection?",
+      "options": [
+        "A) NPS 2",
+        "B) NPS 3",
+        "C) NPS 4",
+        "D) Same NPS as the largest trap served"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.3.1.(9)(b), a circuit-vented branch shall be not less than NPS 3 where traps of NPS 2 or larger are circuit-vented. For traps less than NPS 2, the minimum is NPS 2 per clause (a).",
+      "rule_reference": "NPC 2.5.3.1.(9)"
+    },
+    {
+      "id": 13,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "A plumber needs to connect a plumbing fixture to a yoke vent pipe. The fixture has a hydraulic load of 1 FU. What is the maximum number of fixtures permitted to connect to the vent pipe this way?",
+      "options": [
+        "A) 1",
+        "B) 2",
+        "C) 4",
+        "D) 8"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.4.5.(1), the trap arm of a plumbing fixture with a hydraulic load of not more than 1\u00bd FU may be connected to a circuit vent, additional circuit vent, offset relief vent, or yoke vent, provided not more than 2 plumbing fixtures are connected to the vent pipe.",
+      "rule_reference": "NPC 2.5.4.5.(1)"
+    },
+    {
+      "id": 14,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A commercial kitchen in a restaurant has a 3-compartment sink that discharges grease-laden waste. The sink also has a commercial garbage grinder upstream. According to the NPC, how must this be arranged?",
+      "options": [
+        "A) The garbage grinder may connect directly upstream of the grease interceptor",
+        "B) The garbage grinder must not be upstream of the grease interceptor unless an organic solids interceptor is installed between them",
+        "C) No grease interceptor is required if a garbage grinder is present",
+        "D) The garbage grinder must discharge to a separate stack"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.3.3.(1) and (2), equipment discharging waste with organic solids (like garbage grinders) shall not be located upstream of a grease interceptor, unless an organic solids interceptor is installed upstream of the grease interceptor.",
+      "rule_reference": "NPC 2.4.3.3.(1) and (2)"
+    },
+    {
+      "id": 15,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A laboratory building discharges corrosive acid waste from chemistry benches. According to the NPC, the neutralization tank must be connected to the sanitary drainage system through which arrangement?",
+      "options": [
+        "A) A direct connection with a backwater valve",
+        "B) A trap or an indirect connection",
+        "C) A grease interceptor followed by a trap",
+        "D) A direct connection to the storm drainage system"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.4.4.(1), where a plumbing fixture or equipment discharges corrosive or acid waste, it shall discharge into a neutralization tank that is connected to the sanitary drainage system through (a) a trap, or (b) an indirect connection.",
+      "rule_reference": "NPC 2.4.4.4.(1)"
+    },
+    {
+      "id": 16,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "The venting system for drain piping and neutralizing tanks conveying corrosive waste must meet which special requirement?",
+      "options": [
+        "A) It must connect to the building's main vent stack",
+        "B) It shall extend independently and terminate outdoors",
+        "C) It may use an air admittance valve at its terminal",
+        "D) It must be NPS 4 minimum"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.5.3.(1), venting systems for drain piping, neutralizing tanks, or dilution tanks conveying corrosive waste shall extend independently and terminate outdoors. They cannot connect to the building's main vent system.",
+      "rule_reference": "NPC 2.5.5.3.(1)"
+    },
+    {
+      "id": 17,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A sewage sump in a basement receives discharge from an NPS 4 branch. What is the minimum vent pipe size for this sump?",
+      "options": [
+        "A) NPS 2",
+        "B) NPS 3",
+        "C) NPS 4",
+        "D) NPS 1\u00bd"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.7.7.(1), the vent for a sewage sump is one NPS smaller than the largest branch draining to it. One NPS below NPS 4 = NPS 3. Per Sentence (2), the vent must be not less than NPS 2 and need not exceed NPS 4. So NPS 3 is the answer.",
+      "rule_reference": "NPC 2.5.7.7.(1) and (2)"
+    },
+    {
+      "id": 18,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A building has a sewage ejector sump. The discharge pipe from the ejector must be equipped with specific components installed in a particular sequence. What is the correct order in the direction of discharge?",
+      "options": [
+        "A) Shut-off valve, backwater valve, union",
+        "B) Union, backwater valve, shut-off valve",
+        "C) Backwater valve, shut-off valve, union",
+        "D) Union, shut-off valve, backwater valve"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.6.3.(7), the discharge pipe from every pumped sump shall be equipped with a union, a backwater valve, and a shut-off valve installed in that sequence in the direction of discharge.",
+      "rule_reference": "NPC 2.4.6.3.(7)"
+    },
+    {
+      "id": 19,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "A building with a building trap has a sewage ejector. Where must the discharge pipe from the ejector connect to the building drain?",
+      "options": [
+        "A) Upstream of the building trap",
+        "B) Downstream of the building trap",
+        "C) At the sump only",
+        "D) To the storm building drain"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.6.3.(6), where there is a building trap, the discharge pipe from the equipment (pump or ejector) shall be connected to the building drain downstream of the trap.",
+      "rule_reference": "NPC 2.4.6.3.(6)"
+    },
+    {
+      "id": 20,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A 5-storey building has a sanitary stack with a 2 m horizontal offset between the 2nd and 3rd floors. Above the offset, 3 storeys discharge 120 FU total. How should the offset be sized?",
+      "options": [
+        "A) Same as the stack size using Table 2.4.10.6.-A",
+        "B) Using Table 2.4.10.6.-B or Table 2.4.10.6.-C, whichever is less restrictive, because the offset is 1.5 m or more",
+        "C) One NPS larger than the stack",
+        "D) Using Table 2.4.10.9 for storm drainage"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.10.6.(2), where a nominally horizontal offset in a stack is 1.5 m or more, the hydraulic load served by it shall conform to Table 2.4.10.6.-B or Table 2.4.10.6.-C, whichever is the less restrictive. The 2 m offset exceeds 1.5 m, so this applies.",
+      "rule_reference": "NPC 2.4.10.6.(2)"
+    },
+    {
+      "id": 21,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A plumber connects a sanitary drainage pipe to a horizontal offset in a stack that receives 35 fixture units from fixtures on 3 storeys. What is the minimum horizontal distance from the bottom of the upper stack section to the connection point?",
+      "options": [
+        "A) 0.6 m",
+        "B) 1.0 m",
+        "C) 1.5 m",
+        "D) 3.0 m"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.4.2.1.(3), the connection of a sanitary drainage pipe to a nominally horizontal offset in a stack shall be not less than 1.5 m measured horizontally from the bottom of the upper vertical section of the stack that receives 30 or more FU or fixtures from 2 or more storeys. Both criteria are met (35 FU, 3 storeys).",
+      "rule_reference": "NPC 2.4.2.1.(3)"
+    },
+    {
+      "id": 22,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "According to the NPC, what fitting type is prohibited when used to change the direction of flow in a nominally horizontal drainage system?",
+      "options": [
+        "A) Combination Y and 1/8th bend",
+        "B) Long-sweep 90\u00b0 fitting",
+        "C) Sanitary T fitting",
+        "D) 45\u00b0 wye fitting"
+      ],
+      "correct": 2,
+      "explanation": "Per Note A-2.2.4.2., a sanitary T fitting may be used to change flow from horizontal to vertical but may NOT be used to change the direction of flow in a nominally horizontal drainage system. A combination Y and 1/8th bend should be used instead.",
+      "rule_reference": "NPC A-2.2.4.2."
+    },
+    {
+      "id": 23,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A plumber is installing an island sink with an NPS 1\u00bd trap in a kitchen counter. The vent must loop under the counter and rise to connect to the vent system. What is the maximum developed length of the trap arm section ('A') for this installation?",
+      "options": [
+        "A) 1.2 m",
+        "B) 1.5 m",
+        "C) 1.8 m",
+        "D) 2.4 m"
+      ],
+      "correct": 2,
+      "explanation": "Per Note A-2.4.8.2.(1), for an island plumbing fixture with an NPS 1\u00bd trap, the length 'A' (trap arm) = 1.8 m. The fall of 'A' cannot exceed the nominal pipe size of the trap. For NPS 2 traps, A = 2.4 m; for NPS 3, A = 3.6 m.",
+      "rule_reference": "NPC A-2.4.8.2.(1)"
+    },
+    {
+      "id": 24,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "Air admittance valves are permitted to vent plumbing fixtures located in island counters, fixtures affected by frost closure, fixtures in 1- and 2-family dwellings undergoing renovation, and which other situation?",
+      "options": [
+        "A) All commercial fixtures on the top floor",
+        "B) Installations where connection to a vent may not be practical",
+        "C) Any fixture in a building less than 3 storeys",
+        "D) All basement plumbing fixtures"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.9.2.(1)(d), air admittance valves may be used for installations where connection to a vent may not be practical, in addition to island counters, frost-affected fixtures, and renovations in 1- and 2-family dwellings.",
+      "rule_reference": "NPC 2.5.9.2.(1)"
+    },
+    {
+      "id": 25,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "An air admittance valve is installed for a kitchen sink on an island. It must be located at least 100 mm above the fixture drain, within the maximum trap arm length, and at least what distance above insulation materials?",
+      "options": [
+        "A) 50 mm",
+        "B) 100 mm",
+        "C) 150 mm",
+        "D) 200 mm"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.5.9.2.(2)(c), air admittance valves shall be located not less than 150 mm above insulation materials. They must also be at least 100 mm above the fixture drain per clause (a) and within the maximum developed length per clause (b).",
+      "rule_reference": "NPC 2.5.9.2.(2)"
+    },
+    {
+      "id": 26,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A 20-storey building has plumbing on all storeys. The NPS 5 sanitary stack has a total hydraulic load of 980 FU. Using Table 2.5.8.4., the vent stack developed length is 65 m. What is the minimum vent stack size?",
+      "options": [
+        "A) NPS 2\u00bd based on one-half the stack size",
+        "B) NPS 3 based on Table 2.5.8.4. for 980 FU at 65 m on an NPS 5 stack",
+        "C) NPS 4 based on Table 2.5.8.4. for 940 FU at 64 m maximum for NPS 3 being exceeded",
+        "D) NPS 5 matching the full stack size"
+      ],
+      "correct": 2,
+      "explanation": "Per Table 2.5.8.4., for an NPS 5 stack at 940 FU, NPS 3 vent stack has a max length of 16 m and NPS 4 has 64 m. Since 980 FU > 940, and we need more than 64 m length, NPS 3 is insufficient. NPS 4 at the next load tier (1400 FU) gives 58 m for NPS 4 \u2014 still under 65 m. Check NPS 5: gives 180 m. The minimum is NPS 4, since at 940 FU NPS 4 gives 64 m (close), but at 980 FU (between 940 and 1400) we interpolate upward, requiring NPS 4.",
+      "rule_reference": "NPC Table 2.5.8.4."
+    },
+    {
+      "id": 27,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A wet vent stack in a 5-storey building serves fixtures on all 5 storeys. Per the NPC, how must the stack vent for this wet vent stack be sized?",
+      "options": [
+        "A) Same as the minimum vent size from Table 2.5.7.1",
+        "B) One-half the NPS of the wet vent at its base",
+        "C) The full size of the wet vent extended to outside air",
+        "D) NPS 3 minimum regardless of wet vent size"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.5.8.4.(4), a stack vent serving a wet vent stack that is over 4 storeys high shall extend the full size of the wet vent to outside air. Since this is a 5-storey wet vent stack (over 4), the stack vent must be the same size as the wet vent.",
+      "rule_reference": "NPC 2.5.8.4.(4)"
+    },
+    {
+      "id": 28,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "In a tall building, a plumber wants to avoid installing yoke vents on a 13-storey sanitary stack. What alternative does the NPC permit?",
+      "options": [
+        "A) Increasing the stack size by one NPS throughout",
+        "B) Interconnecting the stack with the vent stack in each storey with a vent pipe equal to the branch or fixture drain size or NPS 2, whichever is smaller",
+        "C) Installing air admittance valves on each floor",
+        "D) Adding a second vent stack alongside the first"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.4.3.(4), a yoke vent need not be installed if the stack is interconnected with the vent stack in each storey (where fixtures are located) by a vent pipe equal in NPS to the branch or fixture drain or NPS 2, whichever is smaller.",
+      "rule_reference": "NPC 2.5.4.3.(4)"
+    },
+    {
+      "id": 29,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "According to NPC Table 2.4.9.3, a bathroom group with a direct flush valve water closet has a hydraulic load of how many fixture units?",
+      "options": [
+        "A) 4 fixture units",
+        "B) 6 fixture units",
+        "C) 8 fixture units",
+        "D) 10 fixture units"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC Table 2.4.9.3, a bathroom group with a direct flush valve has a hydraulic load of 8 fixture units, compared to 6 FU for a bathroom group with a flush tank.",
+      "rule_reference": "NPC Table 2.4.9.3"
+    },
+    {
+      "id": 30,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A 6-storey building has plumbing fixtures on all 6 storeys. According to the NPC, a vent stack is required because the stack drains fixtures from more than how many storeys?",
+      "options": [
+        "A) 2 storeys",
+        "B) 3 storeys",
+        "C) 4 storeys",
+        "D) 6 storeys"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.5.4.2.(1), every stack that drains plumbing fixtures from more than 4 storeys containing plumbing fixtures shall have a vent stack. A 6-storey building exceeds 4 storeys, so a vent stack is required.",
+      "rule_reference": "NPC 2.5.4.2.(1)"
+    },
+    {
+      "id": 31,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A building has flow control roof drains installed. The drains must be located not more than 15 m from the edge of the roof and not more than 30 m from adjacent drains. What is the minimum number of drains required for a 2 500 m\u00b2 roof?",
+      "options": [
+        "A) 2 drains",
+        "B) 3 drains",
+        "C) 4 drains",
+        "D) 5 drains"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.10.4.(2)(e), there shall be at least one drain for each 900 m\u00b2. For 2 500 m\u00b2: 2 500 \u00f7 900 = 2.78, rounded up to 3 drains minimum.",
+      "rule_reference": "NPC 2.4.10.4.(2)(e)"
+    },
+    {
+      "id": 32,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A building sewer is NPS 10. According to Table 2.4.7.2, what is the maximum spacing between cleanout manholes?",
+      "options": [
+        "A) 52 m",
+        "B) 75 m",
+        "C) 90 m",
+        "D) 150 m"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.4.7.2.(2)(a), the spacing between manholes serving a building sewer of NPS 24 or less shall not exceed 90 m. NPS 10 is within this range.",
+      "rule_reference": "NPC 2.4.7.2.(2)(a)"
+    },
+    {
+      "id": 33,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "According to the NPC, the developed length between a building and the first manhole to which the building sewer connects shall not exceed:",
+      "options": [
+        "A) 30 m",
+        "B) 52 m",
+        "C) 75 m",
+        "D) 90 m"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.4.7.2.(3), the developed length of a building sewer between the building and the first manhole to which the building sewer connects shall not exceed 75 m.",
+      "rule_reference": "NPC 2.4.7.2.(3)"
+    },
+    {
+      "id": 34,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A building sewer connects to another building sewer rather than to a manhole. What is the maximum developed length between the building and the connection point?",
+      "options": [
+        "A) 15 m",
+        "B) 30 m",
+        "C) 52 m",
+        "D) 75 m"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.7.2.(4), where a building sewer connects to another building sewer other than by a manhole, the developed length between the building and the building sewer to which it connects shall not exceed 30 m.",
+      "rule_reference": "NPC 2.4.7.2.(4)"
+    },
+    {
+      "id": 35,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A plumber installs a symmetrically connected combined relief vent to serve two circuit-vented branches. What is the maximum number of circuit-vented plumbing fixtures permitted between the combined relief vent and each circuit vent?",
+      "options": [
+        "A) 4 fixtures per branch",
+        "B) 6 fixtures per branch",
+        "C) 8 fixtures per branch",
+        "D) 10 fixtures per branch"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.5.3.1.(5), a symmetrically connected relief vent may serve as a combined relief vent for a maximum of 2 circuit-vented branches, provided there are not more than 8 circuit-vented plumbing fixtures connected between the combined relief vent and each circuit vent.",
+      "rule_reference": "NPC 2.5.3.1.(5)"
+    },
+    {
+      "id": 36,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A plumber is sizing a storm building drain at a slope of 1 in 100. The total storm hydraulic load is 40 000 L. Using Table 2.4.10.9, what is the minimum pipe size?",
+      "options": [
+        "A) NPS 8, which can handle 26 700 L at 1 in 100",
+        "B) NPS 10, which can handle 48 500 L at 1 in 100",
+        "C) NPS 12, which can handle 78 700 L at 1 in 100",
+        "D) NPS 6, which can handle 12 400 L at 1 in 100"
+      ],
+      "correct": 1,
+      "explanation": "Per Table 2.4.10.9, at a slope of 1 in 100: NPS 8 handles 26 700 L (insufficient), NPS 10 handles 48 500 L (sufficient for 40 000 L). The minimum is NPS 10.",
+      "rule_reference": "NPC Table 2.4.10.9"
+    },
+    {
+      "id": 37,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "According to the NPC, a manhole within a building shall have a minimum horizontal dimension of 1 m. The top 1.5 m may taper down to a minimum of what dimension at the top?",
+      "options": [
+        "A) 300 mm",
+        "B) 450 mm",
+        "C) 600 mm",
+        "D) 750 mm"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.4.7.3.(3), a manhole shall have a minimum horizontal dimension of 1 m, except that the top 1.5 m may be tapered from 1 m down to a minimum of 600 mm at the top.",
+      "rule_reference": "NPC 2.4.7.3.(3)"
+    },
+    {
+      "id": 38,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A plumber needs to install a vent pipe serving a manhole located inside a building. What minimum requirements apply to this vent?",
+      "options": [
+        "A) NPS 1\u00bd minimum, connected to the building vent system",
+        "B) NPS 2 minimum, and the manhole must have an airtight cover and a vent to the exterior",
+        "C) NPS 3 minimum, extended through the roof",
+        "D) No vent required if the manhole has an airtight cover"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.7.6.(1), the minimum vent pipe for a manhole within a building is NPS 2. Per NPC 2.4.7.3.(2), the manhole must have an airtight cover if within a building, and a vent to the exterior.",
+      "rule_reference": "NPC 2.5.7.6.(1), 2.4.7.3.(2)"
+    },
+    {
+      "id": 39,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A building has a roof area of 600 m\u00b2 with an adjacent 4 m high \u00d7 20 m wide vertical wall surface. The local 15-minute rainfall intensity is 40 mm. What is the hydraulic load for storm drainage sizing?",
+      "options": [
+        "A) 24 000 L",
+        "B) 25 600 L",
+        "C) 27 200 L",
+        "D) 30 400 L"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.10.4.(1), hydraulic load = rainfall \u00d7 (horizontal projection area + \u00bd \u00d7 largest adjoining vertical surface). Vertical surface area = 4 \u00d7 20 = 80 m\u00b2. Load = 40 \u00d7 (600 + 40) = 40 \u00d7 640 = 25 600 L.",
+      "rule_reference": "NPC 2.4.10.4.(1)"
+    },
+    {
+      "id": 40,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "According to the NPC, the maximum drain-down time for a flow control roof drain system shall not exceed:",
+      "options": [
+        "A) 6 hours",
+        "B) 12 hours",
+        "C) 24 hours",
+        "D) 48 hours"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.4.10.4.(2)(a), where flow control roof drains are installed, the maximum drain down time shall not exceed 24 hours.",
+      "rule_reference": "NPC 2.4.10.4.(2)(a)"
+    },
+    {
+      "id": 41,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A branch vent serves a hydraulic load of 100 FU. Using Table 2.5.8.3, if the developed length from the most distant drainage connection to outside air is 10 m, what is the minimum vent pipe size?",
+      "options": [
+        "A) NPS 2, because 100 FU at 11 m max allows NPS 2",
+        "B) NPS 3, because NPS 2 only permits 11 m at 100 FU which just barely works at 10 m",
+        "C) NPS 2, because at 100 FU the maximum length for NPS 2 is 11 m and 10 m is within that",
+        "D) NPS 4, because branch vents serving over 60 FU must be NPS 4"
+      ],
+      "correct": 2,
+      "explanation": "Per Table 2.5.8.3, at 100 FU, an NPS 2 vent pipe has a maximum length of 11 m. Since 10 m \u2264 11 m, NPS 2 is sufficient.",
+      "rule_reference": "NPC Table 2.5.8.3"
+    },
+    {
+      "id": 42,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A plumber is designing a wet vent system for a 3-storey residential building. The first storey has a full bathroom group (6 FU). The second and third storeys each have a lavatory (1 FU) and a kitchen sink (1.5 FU) draining to the wet vent. Is this configuration permitted?",
+      "options": [
+        "A) No, because wet vents cannot extend through more than 2 storeys",
+        "B) Yes, provided each storey above the first does not exceed 4 FU and total loads comply with Table 2.5.8.1",
+        "C) No, because only bathroom groups may connect to a multi-storey wet vent",
+        "D) Yes, with no restrictions on per-storey load"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.2.1.(1)(h), where a wet vent extends through more than one storey, the total discharge from any one storey above the first storey shall not exceed 4 FU. Each upper storey has 2.5 FU (1 + 1.5), which is under 4 FU. The configuration is permitted if Table 2.5.8.1 loads are met.",
+      "rule_reference": "NPC 2.5.2.1.(1)(h)"
+    },
+    {
+      "id": 43,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "When sizing a wet vent using Table 2.5.8.1, the hydraulic load from the most downstream plumbing fixture (or symmetrically connected fixtures) is handled how?",
+      "options": [
+        "A) It is doubled for safety",
+        "B) It shall not be included in the sizing calculation",
+        "C) It is always counted as 4 FU regardless of fixture type",
+        "D) It is added after the vent size is selected"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.8.1.(2), when determining the nominal pipe size of a wet vent, the hydraulic load from the most downstream plumbing fixture or symmetrically connected plumbing fixtures shall not be included.",
+      "rule_reference": "NPC 2.5.8.1.(2)"
+    },
+    {
+      "id": 44,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "According to NPC Table 2.5.8.1, what is the maximum hydraulic load (not serving water closets) that an NPS 2 wet vent can carry?",
+      "options": [
+        "A) 2 fixture units",
+        "B) 3 fixture units",
+        "C) 4 fixture units",
+        "D) 6 fixture units"
+      ],
+      "correct": 2,
+      "explanation": "Per Table 2.5.8.1, an NPS 2 wet vent can carry a maximum of 4 FU when not serving water closets, and 3 FU when serving not more than 2 water closets.",
+      "rule_reference": "NPC Table 2.5.8.1"
+    },
+    {
+      "id": 45,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A plumber installs plumbing fixtures on a vent stack in the lowest storey of a 6-storey building. The total fixture load is 7 FU including a water closet. At least one fixture connects to the vertical portion and is upstream of the others. Is this arrangement permitted?",
+      "options": [
+        "A) No, because fixtures cannot connect to a vent stack",
+        "B) Yes, provided all fixtures are in the lowest storey served by the vent stack and total load does not exceed 8 FU",
+        "C) Only if the vent stack is NPS 4 or larger",
+        "D) No, because a water closet cannot connect to a vent stack"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.4.2.(4), plumbing fixtures may connect to a vent stack if: (a) total load \u2264 8 FU, (b) at least one connects to a vertical portion upstream of others, (c) no fixture downstream of a WC, (d) all in the lowest storey served, and (e) wet vent rules are met. With 7 FU \u2264 8, this is permitted.",
+      "rule_reference": "NPC 2.5.4.2.(4)"
+    },
+    {
+      "id": 46,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "An offset relief vent is required on a stack. According to the NPC, the minimum size of the offset relief vent is permitted to be:",
+      "options": [
+        "A) Same NPS as the stack vent",
+        "B) One NPS smaller than the NPS of the stack vent",
+        "C) One-half the NPS of the stack at its base",
+        "D) NPS 2 minimum regardless of stack size"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.7.4.(1), except as provided in Article 2.5.7.1., the minimum nominal pipe size of an offset relief vent is permitted to be one NPS smaller than the NPS of the stack vent.",
+      "rule_reference": "NPC 2.5.7.4.(1)"
+    },
+    {
+      "id": 47,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A commercial building has a sanitary building drain with 350 fixture units at a slope of 1 in 50. Using Table 2.4.10.6.-C, what is the minimum drain size?",
+      "options": [
+        "A) NPS 4, which handles 240 FU at 1 in 50",
+        "B) NPS 5, which handles 480 FU at 1 in 50",
+        "C) NPS 6, which handles 840 FU at 1 in 50",
+        "D) NPS 4 at a steeper slope of 1 in 25"
+      ],
+      "correct": 1,
+      "explanation": "Per Table 2.4.10.6.-C, at 1 in 50: NPS 4 = 240 FU (insufficient for 350 FU), NPS 5 = 480 FU (sufficient). The minimum drain size is NPS 5.",
+      "rule_reference": "NPC Table 2.4.10.6.-C"
+    },
+    {
+      "id": 48,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A 10-storey building has an NPS 4 sanitary stack carrying 480 FU. The vent stack developed length is 35 m. Using Table 2.5.8.4, what is the minimum vent stack size?",
+      "options": [
+        "A) NPS 2, because one-half of NPS 4 is NPS 2",
+        "B) NPS 3, because at 490 FU the NPS 3 column shows 19 m max which is insufficient for 35 m",
+        "C) NPS 4, because at 490 FU the NPS 4 column shows 76 m max which exceeds 35 m",
+        "D) NPS 3, because at 540 FU the NPS 3 column shows 6.5 m but at 490 FU it shows 19 m"
+      ],
+      "correct": 2,
+      "explanation": "Per Table 2.5.8.4 for NPS 4 stack: the minimum is one-half stack = NPS 2. At 490 FU (closest tier), NPS 3 max length = 19 m (insufficient for 35 m), NPS 4 max length = 76 m (sufficient). The vent stack must be NPS 4.",
+      "rule_reference": "NPC Table 2.5.8.4"
+    },
+    {
+      "id": 49,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "According to the NPC, drainage systems using air admittance valves must still have at least one vent that:",
+      "options": [
+        "A) Is connected to an air admittance valve rated for the full system",
+        "B) Terminates to the outdoors in conformance with 2.5.6.5.(1)",
+        "C) Is NPS 4 minimum",
+        "D) Is connected directly to the building drain"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.9.3.(5), drainage systems shall have at least one vent that terminates to the outdoors in conformance with Sentence 2.5.6.5.(1). Air admittance valves cannot replace all vents to outside air.",
+      "rule_reference": "NPC 2.5.9.3.(5)"
+    },
+    {
+      "id": 50,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A plumber is installing a secondary oil receiver connected to an oil interceptor. The vent pipe for this receiver must be what minimum size and terminate where?",
+      "options": [
+        "A) NPS 1\u00bc minimum, connected to the building vent stack",
+        "B) NPS 1\u00bd minimum, extending independently to outside air and terminating not less than 2 m above ground",
+        "C) NPS 2 minimum, terminating inside the building",
+        "D) NPS 3 minimum, connected to the oil interceptor vent"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.5.2.(3), a secondary receiver for oil installed with an oil interceptor shall have a vent pipe that is in no case less than NPS 1\u00bd, extends independently to outside air, and terminates not less than 2 m above ground.",
+      "rule_reference": "NPC 2.5.5.2.(3)"
+    },
+    {
+      "id": 51,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A building sewer is NPS 6 and must change direction. According to the NPC, what directional changes are permitted between the building and the public sewer without cleanouts?",
+      "options": [
+        "A) Any change up to 90\u00b0 using a single fitting",
+        "B) Not more than 5\u00b0 every 3 m, or fittings with a cumulative change of not more than 45\u00b0",
+        "C) Not more than 22.5\u00b0 at any one point",
+        "D) No changes in direction are permitted"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.7.1.(5), building sewers NPS 6 or less may change direction by not more than 5\u00b0 every 3 m, or by fittings with a cumulative change in direction of not more than 45\u00b0 between the building and public sewer or between cleanouts.",
+      "rule_reference": "NPC 2.4.7.1.(5)"
+    },
+    {
+      "id": 52,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "A semi-continuous flow fixture with an NPS 3 trap has a flow rate of 0.6 L/s. According to Table 2.4.10.12, what hydraulic load should be used for drainage pipe sizing?",
+      "options": [
+        "A) 6 fixture units",
+        "B) 27 fixture units",
+        "C) 180 fixture units",
+        "D) 19 fixture units"
+      ],
+      "correct": 1,
+      "explanation": "Per Table 2.4.10.12, an NPS 3 trap with a flow rate of 0.191\u20130.850 L/s has a hydraulic load of 27 FU. At 0.6 L/s (within 0.191\u20130.850 range) with an NPS 3 trap, the load is 27 FU.",
+      "rule_reference": "NPC Table 2.4.10.12"
+    },
+    {
+      "id": 53,
+      "section": "Drainage & Venting",
+      "difficulty": "easy",
+      "question": "According to the NPC, a vent pipe terminal in outside air must be located not less than what distance from every property line?",
+      "options": [
+        "A) 1.0 m",
+        "B) 1.5 m",
+        "C) 1.8 m",
+        "D) 3.5 m"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.5.6.5.(4)(d), where a vent pipe is terminated in outside air, the terminal shall be located not less than 1.8 m from every property line.",
+      "rule_reference": "NPC 2.5.6.5.(4)(d)"
+    },
+    {
+      "id": 54,
+      "section": "Drainage & Venting",
+      "difficulty": "hard",
+      "question": "A plumber is sizing a circuit vent for a washroom branch with 8 water closets (NPS 3 traps, 4 FU each) = 32 FU, plus 2 lavatories (1 FU each, individually vented). The circuit vent developed length to the vent stack is 9 m. Per NPC 2.5.3.1.(11), what fixture load is used to size the circuit vent?",
+      "options": [
+        "A) 34 FU \u2014 all fixtures on the branch",
+        "B) 32 FU \u2014 only the circuit-vented water closets, excluding the individually vented lavatories",
+        "C) 30 FU \u2014 excluding the 2 FU downstream of the most downstream water closets",
+        "D) 36 FU \u2014 adding the relief vent load"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.3.1.(11), the hydraulic load on a circuit vent shall include the hydraulic load from plumbing fixtures connected to the branch served by the circuit vent, but shall NOT include loads from fixtures permitted by Sentences (3), (4), and (5) \u2014 i.e., the relief vent fixtures. The individually vented lavatories are separately vented and not circuit-vented, so 8 WC \u00d7 4 = 32 FU.",
+      "rule_reference": "NPC 2.5.3.1.(11)"
+    },
+    {
+      "id": 55,
+      "section": "Drainage & Venting",
+      "difficulty": "medium",
+      "question": "Plumbing fixtures with fixture outlet pipes less than NPS 2 are connected to a circuit-vented branch. According to the NPC, how must they be vented?",
+      "options": [
+        "A) They may be circuit-vented along with the larger fixtures",
+        "B) They shall be separately vented or separately circuit-vented",
+        "C) They require no venting if connected upstream of the circuit vent",
+        "D) They must connect to an air admittance valve"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.5.3.1.(2), plumbing fixtures with fixture outlet pipes less than NPS 2 shall be separately vented or separately circuit-vented. They cannot simply be included in the main circuit vent system.",
+      "rule_reference": "NPC 2.5.3.1.(2)"
+    },
+    {
+      "id": 56,
+      "section": "Potable Water Systems",
+      "difficulty": "medium",
+      "question": "A plumber is using the Average Pressure Loss Method to size a water distribution system. To use this method, the pressure available for friction loss must be at least:",
+      "options": [
+        "A) 1.0 kPa per metre",
+        "B) 2.6 kPa per metre",
+        "C) 4.0 kPa per metre",
+        "D) 5.5 kPa per metre"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Appendix Note A-2.6.3.1.(2), when using the Average Pressure Loss Method, the pressure available for friction loss must be 2.6 kPa per metre or more. If it is less than that, the system must be designed according to a detailed engineering design method.",
+      "rule_reference": "NPC A-2.6.3.1.(2)"
+    },
+    {
+      "id": 57,
+      "section": "Potable Water Systems",
+      "difficulty": "hard",
+      "question": "A plumber is using the Average Pressure Loss Method. The adjusted pressure at the building entry is 540 kPa, the minimum operating pressure at the most remote outlet is 105 kPa, meter/PRV/BFP losses total 35 kPa, and the elevation loss is 20 kPa. The developed length from service entry to the most remote outlet is 76 m. What is the average pressure available for friction loss per metre?",
+      "options": [
+        "A) 2.1 kPa/m",
+        "B) 3.3 kPa/m",
+        "C) 4.7 kPa/m",
+        "D) 5.0 kPa/m"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Appendix A-2.6.3.1.(2), the pressure available for friction loss = 540 \u2212 105 \u2212 35 \u2212 20 = 380 kPa. The total equivalent length = 76 m \u00d7 1.5 = 114 m. Average pressure loss = 380 \u00f7 114 = 3.3 kPa per metre. This exceeds the minimum of 2.6 kPa/m, so the method can be used.",
+      "rule_reference": "NPC A-2.6.3.1.(2)"
+    },
+    {
+      "id": 58,
+      "section": "Potable Water Systems",
+      "difficulty": "medium",
+      "question": "When using the Average Pressure Loss Method, a plumber must multiply the developed length of the water distribution system by what factor to allow for friction losses through fittings with inside diameter at least equal to the NPS?",
+      "options": [
+        "A) 1.0",
+        "B) 1.25",
+        "C) 1.5",
+        "D) 2.0"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Appendix A-2.6.3.1.(2), to calculate the total equivalent length for the water distribution system, where fitting inside diameter dimensions are at least equal to the NPS, multiply the developed length by 1.5 to allow for friction losses through fittings.",
+      "rule_reference": "NPC A-2.6.3.1.(2)"
+    },
+    {
+      "id": 59,
+      "section": "Potable Water Systems",
+      "difficulty": "hard",
+      "question": "Using Table A-2.6.3.1.(2)-F (Average Pressure Loss Method) at a water velocity of 2.4 m/s, what is the maximum number of fixture units that an NPS 1\u00bd water pipe can serve?",
+      "options": [
+        "A) 46 fixture units",
+        "B) 54 fixture units",
+        "C) 102 fixture units",
+        "D) 146 fixture units"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Table A-2.6.3.1.(2)-F, at a water velocity of 2.4 m/s, an NPS 1\u00bd pipe can serve 102 fixture units. At 3.0 m/s the capacity is 146, at 1.5 m/s it drops to 46, and at 1.2 m/s it is 34 fixture units.",
+      "rule_reference": "NPC Table A-2.6.3.1.(2)-F"
+    },
+    {
+      "id": 60,
+      "section": "Potable Water Systems",
+      "difficulty": "medium",
+      "question": "Using Table A-2.6.3.1.(2)-F (Average Pressure Loss Method) at a water velocity of 1.5 m/s, what is the maximum number of fixture units that an NPS 2 pipe can serve?",
+      "options": [
+        "A) 81 fixture units",
+        "B) 120 fixture units",
+        "C) 265 fixture units",
+        "D) 337 fixture units"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Table A-2.6.3.1.(2)-F, at a water velocity of 1.5 m/s, an NPS 2 pipe can serve 120 fixture units. At 2.4 m/s, the capacity increases to 265, and at 3.0 m/s it is 337 fixture units.",
+      "rule_reference": "NPC Table A-2.6.3.1.(2)-F"
+    },
+    {
+      "id": 61,
+      "section": "Potable Water Systems",
+      "difficulty": "easy",
+      "question": "A plumber is designing a 12-storey commercial building where the water pressure at the top floor fixtures is only 150 kPa, but on the ground floor it measures 620 kPa. According to the NPC, what action is required on the ground floor?",
+      "options": [
+        "A) Install a booster pump on the water service",
+        "B) Install a pressure-reducing valve to limit static pressure at ground floor fixtures to 550 kPa",
+        "C) Increase the pipe size to NPS 2 on the ground floor",
+        "D) No action is needed if the water service pipe can handle the pressure"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.6.3.3.(1), where the static pressure at any plumbing fixture may exceed 550 kPa, a pressure-reducing valve shall be installed to limit the maximum static pressure at the plumbing fixture to 550 kPa. At 620 kPa, the ground floor exceeds this limit.",
+      "rule_reference": "NPC 2.6.3.3.(1)"
+    },
+    {
+      "id": 62,
+      "section": "Potable Water Systems",
+      "difficulty": "hard",
+      "question": "A plumber is sizing a water supply for a commercial building with 4 water closets equipped with direct flush valves. According to Table 2.6.3.2.-C, what is the cumulative fixture unit load?",
+      "options": [
+        "A) 90 fixture units",
+        "B) 105 fixture units",
+        "C) 115 fixture units",
+        "D) 120 fixture units"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Table 2.6.3.2.-C, the fixture units for direct flush valve water closets decrease cumulatively: 1st = 40, 2nd = 30, 3rd = 20, 4th = 15. The total is 40 + 30 + 20 + 15 = 105 fixture units.",
+      "rule_reference": "NPC Table 2.6.3.2.-C"
+    },
+    {
+      "id": 63,
+      "section": "Potable Water Systems",
+      "difficulty": "medium",
+      "question": "According to Table 2.6.3.2.-B, a plumber is sizing a water supply serving 3 urinals with direct flush valves. The cumulative fixture unit load is:",
+      "options": [
+        "A) 35 fixture units",
+        "B) 45 fixture units",
+        "C) 53 fixture units",
+        "D) 60 fixture units"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Table 2.6.3.2.-B, urinals with direct flush valves: 1st = 20 FU, 2nd = 15 FU, 3rd = 10 FU. The cumulative total for 3 urinals is 20 + 15 + 10 = 45 fixture units.",
+      "rule_reference": "NPC Table 2.6.3.2.-B"
+    },
+    {
+      "id": 64,
+      "section": "Potable Water Systems",
+      "difficulty": "easy",
+      "question": "According to the NPC, no water system between the point of connection with the water service pipe or water meter and the first water distribution pipe supplying a water heater serving more than one fixture shall be sized less than:",
+      "options": [
+        "A) NPS \u00bd",
+        "B) NPS \u00be",
+        "C) NPS 1",
+        "D) NPS 1\u00bc"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.6.3.4.(4), no water system between the point of connection with the water service pipe or the water meter and the first water distribution pipe that supplies a water heater serving more than one plumbing fixture shall be sized less than NPS \u00be.",
+      "rule_reference": "NPC 2.6.3.4.(4)"
+    },
+    {
+      "id": 65,
+      "section": "Cross-Connection Control",
+      "difficulty": "hard",
+      "question": "A plumber is installing backflow protection on a Class 4 fire sprinkler system that does NOT use antifreeze. According to the NPC, this system shall be protected by:",
+      "options": [
+        "A) A dual check valve backflow preventer (DuC)",
+        "B) A double check valve assembly (DCVA or DCVAF)",
+        "C) A reduced pressure principle backflow preventer (RP or RPF)",
+        "D) A single check valve backflow preventer (SCVAF)"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.6.2.4.(2)(e), Class 4 and Class 5 fire sprinkler/standpipe systems shall be protected by a reduced pressure principle backflow preventer conforming to CSA B64.4 or CSA B64.4.1, regardless of whether additives are used.",
+      "rule_reference": "NPC 2.6.2.4.(2)(e)"
+    },
+    {
+      "id": 66,
+      "section": "Cross-Connection Control",
+      "difficulty": "medium",
+      "question": "A plumber is connecting a potable water supply to a Class 6 fire sprinkler system where NO severe health hazard exists. According to the NPC, the minimum backflow protection required is:",
+      "options": [
+        "A) A dual check valve backflow preventer (DuC)",
+        "B) A double check valve assembly (DCVA or DCVAF)",
+        "C) A reduced pressure principle backflow preventer (RP or RPF)",
+        "D) No backflow preventer is required"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.6.2.4.(2)(f), Class 6 fire sprinkler/standpipe systems shall be protected by a double check valve backflow preventer conforming to CSA B64.5 or CSA B64.5.1. However, per clause (g), where a severe health hazard exists, an RP is required instead.",
+      "rule_reference": "NPC 2.6.2.4.(2)(f)"
+    },
+    {
+      "id": 67,
+      "section": "Cross-Connection Control",
+      "difficulty": "hard",
+      "question": "A Class 6 fire sprinkler system is installed in a hospital with mortuary and laboratory facilities. According to the NPC, the backflow protection required is:",
+      "options": [
+        "A) A double check valve assembly (DCVA)",
+        "B) A dual check valve backflow preventer (DuCF)",
+        "C) A reduced pressure principle backflow preventer (RP or RPF)",
+        "D) A single check valve backflow preventer (SCVAF)"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.6.2.4.(2)(g), where a potentially severe health hazard may be caused by backflow, Class 6 fire sprinkler/standpipe systems shall be protected by a reduced pressure principle backflow preventer conforming to CSA B64.4 or CSA B64.4.1. Hospitals with mortuary/lab facilities are listed as locations requiring premise isolation per Note A-2.6.2.6.(1).",
+      "rule_reference": "NPC 2.6.2.4.(2)(g)"
+    },
+    {
+      "id": 68,
+      "section": "Cross-Connection Control",
+      "difficulty": "medium",
+      "question": "A Class 2 fire sprinkler system constructed with non-potable water system materials but using NO antifreeze or other additives requires what backflow protection?",
+      "options": [
+        "A) A dual check valve backflow preventer (DuC)",
+        "B) A double check valve assembly (DCVA or DCVAF)",
+        "C) A reduced pressure principle backflow preventer (RP)",
+        "D) A single check valve backflow preventer (SCVAF)"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.6.2.4.(2)(c), Class 2 and Class 3 fire sprinkler/standpipe systems that do not use antifreeze or other additives (and Class 1 systems not made with potable water system materials) shall be protected by a double check valve backflow preventer conforming to CSA B64.5 or CSA B64.5.1.",
+      "rule_reference": "NPC 2.6.2.4.(2)(c)"
+    },
+    {
+      "id": 69,
+      "section": "Cross-Connection Control",
+      "difficulty": "medium",
+      "question": "According to the NPC, backflow preventers required on fire sprinkler systems shall be installed in what location relative to the fire department pumper connection?",
+      "options": [
+        "A) Downstream of the fire department pumper connection",
+        "B) Upstream of the fire department pumper connection",
+        "C) Adjacent to and at the same elevation as the pumper connection",
+        "D) At the point of connection to the municipal water main"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.6.2.4.(3), backflow preventers required by Sentence (2) shall be installed upstream of the fire department pumper connection. This ensures the potable water supply is protected from potential contamination through the pumper connection.",
+      "rule_reference": "NPC 2.6.2.4.(3)"
+    },
+    {
+      "id": 70,
+      "section": "Cross-Connection Control",
+      "difficulty": "hard",
+      "question": "A plumber is working on a Class 3 fire sprinkler system located on the same premises as the fire service pipe. An RP backflow preventer is required on the water service pipe. According to the NPC, what additional requirement applies to the fire service connection?",
+      "options": [
+        "A) No additional backflow preventer is needed on the fire service connection",
+        "B) A double check valve assembly must be installed on the fire service connection",
+        "C) A reduced pressure principle backflow preventer (RPF) must also be installed on the fire service connection",
+        "D) An air gap must be provided between the fire service and the water service"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.6.2.4.(4), where a reduced pressure principle backflow preventer is required on a water service pipe at a fire service connection on the same premises in Class 3, 4, 5, and 6 systems, an RPF conforming to CSA B64.4.1 shall also be required on the fire service connection.",
+      "rule_reference": "NPC 2.6.2.4.(4)"
+    },
+    {
+      "id": 71,
+      "section": "Cross-Connection Control",
+      "difficulty": "easy",
+      "question": "Which of the following facilities is listed in the NPC appendix as a location where premise isolation may be required?",
+      "options": [
+        "A) A single-family residential dwelling",
+        "B) A retail clothing store",
+        "C) A hospital building with operating, mortuary, or laboratory facilities",
+        "D) A two-storey office building"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Appendix Note A-2.6.2.6.(1), locations where premise isolation may be required include hospital buildings with operating, mortuary, or laboratory facilities, radioactive material processing plants, petroleum processing facilities, sewage treatment plants, plating or chemical plants, and others.",
+      "rule_reference": "NPC A-2.6.2.6.(1)"
+    },
+    {
+      "id": 72,
+      "section": "Cross-Connection Control",
+      "difficulty": "medium",
+      "question": "A plumber is designing a combination space-heating and service water heating system using potable water as the hydronic fluid in an open-loop configuration. According to the NPC, the potable water system shall be protected in accordance with:",
+      "options": [
+        "A) NFPA 13D fire sprinkler standard",
+        "B) CSA B64.10 backflow preventer selection standard",
+        "C) Clause 4.2.5 of CSA B214, Installation code for hydronic heating systems",
+        "D) ASME B31.9, Building Services Piping"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.6.2.13.(1), where potable water is used as a hydronic fluid in an open-loop heating system, the potable water system shall be protected in accordance with Clause 4.2.5 of CSA B214, 'Installation code for hydronic heating systems.'",
+      "rule_reference": "NPC 2.6.2.13.(1)"
+    },
+    {
+      "id": 73,
+      "section": "Potable Water Systems",
+      "difficulty": "easy",
+      "question": "According to the NPC, a newly installed part of a potable water system must be treated before being put into operation. What is the required procedure?",
+      "options": [
+        "A) Disinfected with bleach and left for 24 hours",
+        "B) Pressure tested at 1 000 kPa for 4 hours",
+        "C) Cleaned and then flushed with potable water",
+        "D) Filled with potable water and drained three times"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.6.2.8.(1), a newly installed part of a potable water system shall be cleaned and then flushed with potable water before the system is put into operation. This is the commissioning requirement for all new potable water piping.",
+      "rule_reference": "NPC 2.6.2.8.(1)"
+    },
+    {
+      "id": 74,
+      "section": "Materials & Equipment",
+      "difficulty": "medium",
+      "question": "A plumber is selecting pipe for a water service in an area with excessively corrosive soil. According to the NPC, which general requirement applies?",
+      "options": [
+        "A) Only stainless steel pipe shall be used in corrosive soil",
+        "B) Only materials suited for use in such locations shall be used",
+        "C) The pipe must be wrapped in polyethylene sleeving",
+        "D) Concrete pipe must be used as a protective sleeve"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.2.1.1.(1), where unusual conditions exist, such as excessively corrosive soil or water, only materials suited for use in such locations shall be used. The NPC does not specify a particular material but requires suitability for the conditions.",
+      "rule_reference": "NPC 2.2.1.1.(1)"
+    },
+    {
+      "id": 75,
+      "section": "Materials & Equipment",
+      "difficulty": "easy",
+      "question": "According to the NPC, the working pressure rating of a water service pipe shall not be less than:",
+      "options": [
+        "A) 550 kPa",
+        "B) 700 kPa",
+        "C) The maximum water main pressure at the point of connection as established by the water supply authority",
+        "D) 1 100 kPa"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.2.1.6.(1), the working pressure rating of a water service pipe shall not be less than the maximum water main pressure at their point of connection as established by the water supply authority.",
+      "rule_reference": "NPC 2.2.1.6.(1)"
+    },
+    {
+      "id": 76,
+      "section": "Materials & Equipment",
+      "difficulty": "hard",
+      "question": "A plumber is installing a CPVC hot water system in a building where the water temperature will reach 50\u00b0C and the system pressure could reach 1 600 kPa. According to NPC Table 2.2.5.8., is this installation acceptable?",
+      "options": [
+        "A) Yes \u2014 CPVC at 50\u00b0C is rated for 1 700 kPa, which exceeds 1 600 kPa",
+        "B) No \u2014 CPVC at 50\u00b0C is only rated for 1 300 kPa",
+        "C) No \u2014 CPVC is not permitted for hot water systems at any temperature",
+        "D) Yes \u2014 CPVC at 50\u00b0C is rated for 2 100 kPa"
+      ],
+      "correct": 0,
+      "explanation": "Per NPC 2025 Table 2.2.5.8., the maximum permitted pressure for CPVC piping at 50\u00b0C is 1 700 kPa. Since 1 600 kPa is less than 1 700 kPa, this installation is acceptable. At 40\u00b0C the rating is 2 100 kPa, and at 60\u00b0C it drops to 1 300 kPa.",
+      "rule_reference": "NPC Table 2.2.5.8."
+    },
+    {
+      "id": 77,
+      "section": "Materials & Equipment",
+      "difficulty": "medium",
+      "question": "According to the NPC, PVC water pipe used in a cold water pressure application must have a minimum pressure rating of:",
+      "options": [
+        "A) 690 kPa",
+        "B) 860 kPa",
+        "C) 1 100 kPa",
+        "D) 1 300 kPa"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.2.5.7.(1)(b), PVC water pipe, fittings, and solvent cement shall have a pressure rating of not less than 1 100 kPa and conform to CSA B137.3 for rigid PVC pipe for pressure applications.",
+      "rule_reference": "NPC 2.2.5.7.(1)(b)"
+    },
+    {
+      "id": 78,
+      "section": "Materials & Equipment",
+      "difficulty": "medium",
+      "question": "A plumber is considering using cellular core PVC pipe for a drain-waste-vent installation. According to the NPC, this pipe is only permitted in:",
+      "options": [
+        "A) Buildings up to 6 storeys in height",
+        "B) Commercial buildings with no more than 4 fixture units per branch",
+        "C) Residential buildings containing 1 or 2 dwelling units and row houses not exceeding 3 storeys",
+        "D) Any residential building regardless of height"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.2.5.16.(3), cellular core PVC pipe shall only be used in residential buildings containing 1 or 2 dwelling units and in row houses that do not exceed 3 storeys in height.",
+      "rule_reference": "NPC 2.2.5.16.(3)"
+    },
+    {
+      "id": 79,
+      "section": "Materials & Equipment",
+      "difficulty": "easy",
+      "question": "According to the NPC, lead waste pipe and fittings shall not be used in:",
+      "options": [
+        "A) Underground drainage only",
+        "B) Venting systems only",
+        "C) A water system or as a building sewer",
+        "D) Any plumbing system"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.2.7.8.(1), lead waste pipe and fittings shall not be used in a water system or as a building sewer. They may still be encountered in older drainage systems but are prohibited in water systems and building sewers.",
+      "rule_reference": "NPC 2.2.7.8.(1)"
+    },
+    {
+      "id": 80,
+      "section": "Materials & Equipment",
+      "difficulty": "hard",
+      "question": "A plumber is selecting copper tube for an underground water service pipe. According to Table 2.2.7.4., which types of copper tube are permitted for a water service pipe?",
+      "options": [
+        "A) Types K and L hard temper only",
+        "B) Types K and L soft temper only",
+        "C) Type M hard temper and DWV",
+        "D) All types of copper tube"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Table 2.2.7.4., only Types K and L soft temper copper tube are permitted for water service pipe applications. Hard temper K and L are not permitted for water service but are permitted for aboveground and underground water distribution systems.",
+      "rule_reference": "NPC Table 2.2.7.4."
+    },
+    {
+      "id": 81,
+      "section": "Materials & Equipment",
+      "difficulty": "medium",
+      "question": "According to the NPC, copper tube shall NOT be used for the fixture drain or the portion of the vent pipe below the flood level rim of which plumbing fixture?",
+      "options": [
+        "A) Water closet",
+        "B) Bathtub",
+        "C) Urinal",
+        "D) Floor drain"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.2.7.4.(4), copper tube shall not be used for the fixture drain or the portion of the vent pipe below the flood level rim of a urinal. This is because urine is corrosive to copper.",
+      "rule_reference": "NPC 2.2.7.4.(4)"
+    },
+    {
+      "id": 82,
+      "section": "Materials & Equipment",
+      "difficulty": "easy",
+      "question": "According to the NPC, stainless steel pipe used in a potable water system shall conform to which health effects standard?",
+      "options": [
+        "A) CSA B64.0",
+        "B) ASTM B32",
+        "C) NSF/ANSI/CAN 61",
+        "D) ASSE 1010"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.2.6.10.(2), stainless steel pipe used in a potable water system shall conform to NSF/ANSI/CAN 61, 'Drinking Water System Components - Health Effects.' This standard ensures materials do not introduce harmful substances into potable water.",
+      "rule_reference": "NPC 2.2.6.10.(2)"
+    },
+    {
+      "id": 83,
+      "section": "Materials & Equipment",
+      "difficulty": "hard",
+      "question": "A plumber is installing copper tubes underground outside a building (not under it). According to the NPC, which joining methods are permitted?",
+      "options": [
+        "A) Soldered joints, flared fittings, or compression fittings",
+        "B) Flared fittings, compression fittings, or brazing with AWS-BCuP range alloy",
+        "C) Only brazing with a melting point not below 540\u00b0C",
+        "D) Only mechanical couplings conforming to CSA B242"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.3.3.12.(1), joints in copper tubes installed underground shall be made with either flared or compression fittings, or be brazed using a brazing alloy within the AWS-BCuP range. Soldered joints are not permitted underground. However, per Sentence (2), compression fittings are not permitted under a building.",
+      "rule_reference": "NPC 2.3.3.12.(1)"
+    },
+    {
+      "id": 84,
+      "section": "Materials & Equipment",
+      "difficulty": "medium",
+      "question": "A plumber is installing soldered joints on copper tube. According to the NPC, soldered joints shall be made in accordance with which standard?",
+      "options": [
+        "A) ASTM B32, Standard Specification for Solder Metal",
+        "B) ASTM B828, Standard Practice for Making Capillary Joints by Soldering of Copper and Copper Alloy Tube and Fittings",
+        "C) ASME B16.22, Wrought Copper and Copper Alloy Solder-Joint Pressure Fittings",
+        "D) ANSI/AWS A5.8, Specification for Filler Metals for Brazing"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.3.2.4.(1), soldered joints shall be made in accordance with ASTM B828, 'Standard Practice for Making Capillary Joints by Soldering of Copper and Copper Alloy Tube and Fittings.' This standard governs the proper procedure for making capillary solder joints.",
+      "rule_reference": "NPC 2.3.2.4.(1)"
+    },
+    {
+      "id": 85,
+      "section": "Materials & Equipment",
+      "difficulty": "hard",
+      "question": "A plumber is selecting brazing alloy for copper joints. According to the NPC, brazing alloys shall conform to ANSI/AWS A5.8M/A5.8 within which specific range?",
+      "options": [
+        "A) BAg range",
+        "B) BCuP range",
+        "C) BNi range",
+        "D) BAu range"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.2.9.2.(5), brazing alloys shall conform to ANSI/AWS A5.8M/A5.8, 'Specification for Filler Metals for Brazing and Braze Welding,' BCuP range. BCuP alloys are copper-phosphorus-based and are specifically designed for copper-to-copper brazing.",
+      "rule_reference": "NPC 2.2.9.2.(5)"
+    },
+    {
+      "id": 86,
+      "section": "Potable Water Systems",
+      "difficulty": "medium",
+      "question": "A plumber is installing a drain pan for a storage-type water heater in a ceiling space. According to the NPC, the drain pan shall be not less than what distance larger than the tank?",
+      "options": [
+        "A) 25 mm",
+        "B) 50 mm",
+        "C) 75 mm",
+        "D) 100 mm"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.6.1.7.(10)(a), the drain pan shall be not less than 50 mm larger than the tank and have side walls not less than 25 mm high. The drain pan must be drained by a pipe two NPS larger than the relief valve discharge pipe.",
+      "rule_reference": "NPC 2.6.1.7.(10)"
+    },
+    {
+      "id": 87,
+      "section": "Potable Water Systems",
+      "difficulty": "easy",
+      "question": "According to the NPC, a vacuum-relief valve shall be installed on a hot water tank when the tank may be subject to:",
+      "options": [
+        "A) Thermal expansion",
+        "B) Back pressure",
+        "C) Back-siphonage",
+        "D) Water hammer"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.6.1.7.(8), a vacuum-relief valve shall be installed when any tank may be subject to back-siphonage. This prevents the tank from collapsing under vacuum conditions that can occur during back-siphonage events.",
+      "rule_reference": "NPC 2.6.1.7.(8)"
+    },
+    {
+      "id": 88,
+      "section": "Potable Water Systems",
+      "difficulty": "hard",
+      "question": "According to NPC Appendix Note A-2.6.1.11.(1), to accommodate thermal expansion in a closed water distribution system with a backflow preventer, which of the following is an acceptable solution?",
+      "options": [
+        "A) A suitably sized diaphragm expansion tank designed for potable water",
+        "B) A pressure-reducing valve set at 700 kPa",
+        "C) An additional shut-off valve on the water service",
+        "D) A larger diameter water service pipe"
+      ],
+      "correct": 0,
+      "explanation": "Per NPC 2025 Appendix Note A-2.6.1.11.(1), to accommodate thermal expansion in a closed system, acceptable solutions include: (1) a suitably sized diaphragm expansion tank designed for potable water, (2) an auxiliary thermal expansion relief valve (T.E.R. valve) set at 550 kPa or less, or (3) other means acceptable to the AHJ.",
+      "rule_reference": "NPC A-2.6.1.11.(1)"
+    },
+    {
+      "id": 89,
+      "section": "Potable Water Systems",
+      "difficulty": "medium",
+      "question": "According to the NPC appendix, storing hot water below 60\u00b0C in a hot water tank may lead to the growth of which dangerous bacteria?",
+      "options": [
+        "A) E. coli",
+        "B) Legionella",
+        "C) Salmonella",
+        "D) Pseudomonas"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Appendix Note A-2.6.1.12.(1), storing hot water at temperatures below 60\u00b0C in the hot water tank or in the delivery system may lead to the growth of legionella bacteria. Electric water heater tanks especially experience temperature stratification, promoting legionella growth in lower parts of the tank.",
+      "rule_reference": "NPC A-2.6.1.12.(1)"
+    },
+    {
+      "id": 90,
+      "section": "Potable Water Systems",
+      "difficulty": "medium",
+      "question": "According to the NPC, indirect service water heaters (heated by a boiler) shall be equipped with which safety devices?",
+      "options": [
+        "A) A pressure-relief valve only",
+        "B) A temperature-relief valve only",
+        "C) A pressure-relief valve and a temperature-relief valve on every storage tank",
+        "D) A combined T&P relief valve on the boiler only"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.6.1.7.(4), indirect service water heaters shall be equipped with (a) a pressure-relief valve, and (b) a temperature-relief valve on every storage tank that forms part of the system. Both types of protection are required.",
+      "rule_reference": "NPC 2.6.1.7.(4)"
+    },
+    {
+      "id": 91,
+      "section": "Materials & Equipment",
+      "difficulty": "medium",
+      "question": "According to the NPC, fluxes for soldered joints used in plumbing shall conform to which standard?",
+      "options": [
+        "A) ASTM B32",
+        "B) ASTM B88",
+        "C) ASTM B813",
+        "D) ASTM B828"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.2.9.2.(4), fluxes for soldered joints shall conform to ASTM B813, 'Standard Specification for Liquid and Paste Fluxes for Soldering of Copper and Copper Alloy Tube.' ASTM B32 covers solder metal, B88 covers copper tube, and B828 covers soldering practice.",
+      "rule_reference": "NPC 2.2.9.2.(4)"
+    },
+    {
+      "id": 92,
+      "section": "Materials & Equipment",
+      "difficulty": "medium",
+      "question": "According to the NPC, piping, fittings, and joints used in pressure sewer, forcemain, or sump pump discharge applications shall be capable of withstanding at least what fraction of the maximum potential pressure?",
+      "options": [
+        "A) Equal to the maximum potential pressure",
+        "B) One and one-quarter times the maximum potential pressure",
+        "C) One and one-half times the maximum potential pressure",
+        "D) Twice the maximum potential pressure"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.2.1.5.(1), piping, fittings, and joints used in pressure sewer, forcemain, or sump pump discharge applications shall be capable of withstanding at least one and one-half times the maximum potential pressure.",
+      "rule_reference": "NPC 2.2.1.5.(1)"
+    },
+    {
+      "id": 93,
+      "section": "Potable Water Systems",
+      "difficulty": "hard",
+      "question": "A plumber is sizing a water supply system using the Small Building Method (Table A-2.6.3.1.(2)-A). The building has a minimum static pressure of 350 kPa at the property line (Pressure Range 311-413 kPa), a developed length of 61 m, and a total demand of 100 fixture units. What is the minimum water service pipe size?",
+      "options": [
+        "A) NPS 1",
+        "B) NPS 1\u00bc",
+        "C) NPS 1\u00bd",
+        "D) NPS 2"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Table A-2.6.3.1.(2)-A, in the Pressure Range 311-413 kPa, at a maximum allowable length of 61 m: NPS 1\u00bc serves 52 FU, NPS 1\u00bd serves 105 FU, and NPS 2 serves 117 FU. Since 100 FU falls within the NPS 1\u00bd capacity of 105 FU, the minimum water service pipe size is NPS 1\u00bd.",
+      "rule_reference": "NPC Table A-2.6.3.1.(2)-A"
+    },
+    {
+      "id": 94,
+      "section": "Potable Water Systems",
+      "difficulty": "hard",
+      "question": "Using Table A-2.6.3.1.(2)-F (Average Pressure Loss Method), a plumber needs to serve 500 fixture units. At a water velocity of 2.4 m/s, what is the minimum pipe size required?",
+      "options": [
+        "A) NPS 2",
+        "B) NPS 2\u00bd",
+        "C) NPS 3",
+        "D) NPS 4"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Table A-2.6.3.1.(2)-F, at 2.4 m/s: NPS 2 serves 265 FU (not enough), NPS 2\u00bd serves 500 FU (exactly enough), and NPS 3 serves 750 FU. Therefore, the minimum pipe size to serve 500 fixture units at 2.4 m/s is NPS 2\u00bd.",
+      "rule_reference": "NPC Table A-2.6.3.1.(2)-F"
+    },
+    {
+      "id": 95,
+      "section": "Potable Water Systems",
+      "difficulty": "medium",
+      "question": "According to the NPC, a water distribution system shall be installed so that the system can be:",
+      "options": [
+        "A) Accessed for inspection from every storey",
+        "B) Drained or blown out with air",
+        "C) Isolated with shut-off valves at every branch",
+        "D) Insulated to prevent condensation"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.6.1.2.(1), a water distribution system shall be installed so that the system can be drained or blown out with air. This ensures the system can be winterized or maintained as needed.",
+      "rule_reference": "NPC 2.6.1.2.(1)"
+    },
+    {
+      "id": 96,
+      "section": "Testing",
+      "difficulty": "medium",
+      "question": "A plumber is performing an air pressure test on a newly installed potable water system. According to the NPC, the system must withstand an air pressure of not less than 700 kPa for at least:",
+      "options": [
+        "A) 15 minutes",
+        "B) 30 minutes",
+        "C) 1 hour",
+        "D) 2 hours"
+      ],
+      "correct": 3,
+      "explanation": "Per NPC 2025 Section 2.3.7.2.(1)(b), potable water systems shall be able to withstand an air pressure of not less than 700 kPa for at least 2 hours without a drop in pressure. This is the alternative to the water pressure test specified in clause (a).",
+      "rule_reference": "NPC 2.3.7.2.(1)(b)"
+    },
+    {
+      "id": 97,
+      "section": "Testing",
+      "difficulty": "easy",
+      "question": "According to the NPC, when testing a potable water system with water pressure, what type of water shall be used?",
+      "options": [
+        "A) Any clean water",
+        "B) Chlorinated water at minimum 50 ppm",
+        "C) Potable water",
+        "D) Distilled water"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.3.7.3.(2), potable water shall be used to test a potable water system. This ensures no contaminants are introduced into the system during testing.",
+      "rule_reference": "NPC 2.3.7.3.(2)"
+    },
+    {
+      "id": 98,
+      "section": "Testing",
+      "difficulty": "medium",
+      "question": "A manufacturer states that an air pressure test is not recommended for their specific piping product. According to the NPC, what test must be performed instead?",
+      "options": [
+        "A) A smoke test at 25 mm water column for 15 minutes",
+        "B) A water pressure test",
+        "C) A ball test followed by a visual inspection",
+        "D) No test is required if the manufacturer prohibits air testing"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.3.7.2.(2), if a manufacturer states that an air pressure test is not recommended, a water pressure test shall be performed. The manufacturer's guidance takes precedence regarding testing methods.",
+      "rule_reference": "NPC 2.3.7.2.(2)"
+    },
+    {
+      "id": 99,
+      "section": "Testing",
+      "difficulty": "medium",
+      "question": "A plumber is conducting a water pressure test on a potable water system. According to the NPC, before closing faucets or fixture control valves, what must first be done?",
+      "options": [
+        "A) The water must be heated to operating temperature",
+        "B) All air shall be expelled from the system",
+        "C) The water meter must be isolated",
+        "D) All backflow preventers must be removed"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.3.7.3.(1), where a water pressure test is made, all air shall be expelled from the system before plumbing fixture control valves or faucets are closed. Trapped air can give false readings during pressure testing.",
+      "rule_reference": "NPC 2.3.7.3.(1)"
+    },
+    {
+      "id": 100,
+      "section": "Non-Potable Water Systems",
+      "difficulty": "medium",
+      "question": "According to the NPC, non-potable water systems shall NOT be used to supply plumbing fixtures in which type of facility?",
+      "options": [
+        "A) Office buildings",
+        "B) Schools",
+        "C) Healthcare facilities",
+        "D) Shopping malls"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.7.1.1.(3), non-potable water systems shall not be used to supply plumbing fixtures in healthcare facilities. This prohibition is absolute regardless of the treatment applied to the non-potable water.",
+      "rule_reference": "NPC 2.7.1.1.(3)"
+    },
+    {
+      "id": 101,
+      "section": "Non-Potable Water Systems",
+      "difficulty": "hard",
+      "question": "According to the NPC, when provincial or territorial requirements for rainwater treatment do not exist, the non-potable rainwater harvesting system must include a debris screen ahead of the storage tank inlet with a mesh size of not more than:",
+      "options": [
+        "A) 3 mm",
+        "B) 6 mm",
+        "C) 12 mm",
+        "D) 25 mm"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.7.2.4.(4)(a)(i), in the absence of provincial/territorial requirements per Sentence (3), the water treatment system shall include a debris screen with a mesh size of not more than 6 mm ahead of the storage tank inlet. This is part of the mandatory minimum treatment requirements.",
+      "rule_reference": "NPC 2.7.2.4.(4)(a)(i)"
+    },
+    {
+      "id": 102,
+      "section": "Non-Potable Water Systems",
+      "difficulty": "medium",
+      "question": "According to the NPC, non-potable rainwater harvesting systems shall NOT collect water discharged from which type of system?",
+      "options": [
+        "A) A storm drainage system",
+        "B) A condensate drainage system",
+        "C) An evaporative heat rejection system",
+        "D) A roof drainage system"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.7.2.4.(2), non-potable rainwater harvesting systems shall not collect water discharged from an evaporative heat rejection system (cooling tower). Such water may contain harmful chemicals and bacteria.",
+      "rule_reference": "NPC 2.7.2.4.(2)"
+    },
+    {
+      "id": 103,
+      "section": "Non-Potable Water Systems",
+      "difficulty": "medium",
+      "question": "According to the NPC, non-potable water piping shall NOT be located directly above areas where food or drink is prepared, or above:",
+      "options": [
+        "A) A drainage system",
+        "B) A non-pressurized or pressurized potable water tank",
+        "C) Any plumbing fixture",
+        "D) Electrical conduit"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Section 2.7.1.3.(1), non-potable water piping shall not be located directly above (a) areas where food, drink, or products intended for human consumption are prepared, handled, dispensed, or stored, or (b) a non-pressurized or pressurized potable water tank.",
+      "rule_reference": "NPC 2.7.1.3.(1)"
+    },
+    {
+      "id": 104,
+      "section": "Potable Water Systems",
+      "difficulty": "hard",
+      "question": "According to Table 2.6.3.2.-A, what is the total hydraulic load (fixture units) for a private-use bathroom group with a 6 LPF flush tank?",
+      "options": [
+        "A) 2.2 fixture units",
+        "B) 3.6 fixture units",
+        "C) 6 fixture units",
+        "D) 8 fixture units"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2025 Table 2.6.3.2.-A, a bathroom group with a 6 LPF flush tank for private use has a total hydraulic load of 3.6 fixture units (cold = 2.7 FU, hot = 1.5 FU, total = 3.6 FU). This is based on an NPS \u00bd bathtub supply pipe and is much lower than the drainage fixture unit value.",
+      "rule_reference": "NPC Table 2.6.3.2.-A"
+    },
+    {
+      "id": 105,
+      "section": "Potable Water Systems",
+      "difficulty": "easy",
+      "question": "According to the NPC, risers in multi-unit residential buildings (except risers serving only one dwelling unit) shall be provided with a shut-off valve located at:",
+      "options": [
+        "A) The highest point of the riser",
+        "B) Each storey served by the riser",
+        "C) The source of supply",
+        "D) The midpoint of the riser"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2025 Section 2.6.1.3.(3), except for risers that serve only one dwelling unit, risers shall be provided with a shut-off valve located at the source of supply. This allows individual risers to be isolated for maintenance without affecting the entire building.",
+      "rule_reference": "NPC 2.6.1.3.(3)"
+    },
+    {
+      "id": 106,
+      "section": "Safety & Lockout",
+      "difficulty": "medium",
+      "question": "A plumber must isolate a pressurized 2-inch hot water supply line for valve replacement in an occupied commercial building. According to CSA Z460 lock-out/tag-out procedures, after closing the isolation valve the plumber must FIRST:",
+      "options": [
+        "A) Immediately cut the pipe downstream of the valve",
+        "B) Apply a personal lock and tag to the isolation valve, then verify zero energy by attempting to open a downstream outlet",
+        "C) Notify building occupants that hot water is unavailable",
+        "D) Drain the entire building water system before placing any lock"
+      ],
+      "correct": 1,
+      "explanation": "CSA Z460 requires that after the energy-isolating device is moved to the safe position, the worker must apply their personal lock and tag, then verify zero energy state by testing (e.g., attempting to open a downstream valve or outlet). Verification is critical \u2014 simply closing a valve without confirming isolation can lead to serious burns from residual pressure or trapped hot water.",
+      "rule_reference": "CSA Z460 / O. Reg. 851 s.42"
+    },
+    {
+      "id": 107,
+      "section": "Safety & Lockout",
+      "difficulty": "hard",
+      "question": "During a lock-out/tag-out procedure on a steam boiler system, a plumber discovers that the main steam isolation valve cannot be fully closed due to a damaged stem. The correct course of action is to:",
+      "options": [
+        "A) Proceed with work since the valve is mostly closed",
+        "B) Use a tag-only procedure as a temporary measure",
+        "C) Stop work, report the defective valve, and do not proceed until a reliable means of isolation is established",
+        "D) Have a co-worker hold the valve in the closed position during the repair"
+      ],
+      "correct": 2,
+      "explanation": "CSA Z460 and O. Reg. 851 require that energy-isolating devices must be capable of being locked in the safe position. If the isolation valve is defective and cannot achieve positive isolation, work must not proceed. The defective valve must be reported and repaired or an alternative isolation method (e.g., double block and bleed, line blanking) must be implemented before any downstream work begins.",
+      "rule_reference": "CSA Z460 / O. Reg. 851 s.42"
+    },
+    {
+      "id": 108,
+      "section": "Safety & Lockout",
+      "difficulty": "easy",
+      "question": "When multiple plumbers are working on the same isolated piping system, each plumber must:",
+      "options": [
+        "A) Share a single lock placed by the lead hand",
+        "B) Place their own personal lock on the group lockbox or multi-lock hasp",
+        "C) Verbally confirm with the supervisor that the system is locked out",
+        "D) Sign a logbook \u2014 personal locks are not required for group work"
+      ],
+      "correct": 1,
+      "explanation": "CSA Z460 requires that each worker who may be exposed to the hazardous energy must apply their own personal lock. A multi-lock hasp or group lockbox allows each worker to place an individual lock. The system cannot be re-energized until every personal lock has been removed by its owner.",
+      "rule_reference": "CSA Z460 / O. Reg. 851 s.42"
+    },
+    {
+      "id": 109,
+      "section": "Excavation Safety",
+      "difficulty": "medium",
+      "question": "According to Ontario's Construction Regulation (O. Reg. 213/91), excavations in Type 3 or Type 4 soil deeper than 1.2 metres require:",
+      "options": [
+        "A) Sloping only, with no other options",
+        "B) Shoring, trench boxes, or sloping designed by a professional engineer",
+        "C) Only a safety officer on-site observation",
+        "D) No special precautions if the trench is less than 2.4 metres wide"
+      ],
+      "correct": 1,
+      "explanation": "O. Reg. 213/91 requires that trenches deeper than 1.2 m in Type 3 or Type 4 (unstable) soil must be protected by an engineered shoring system, trench box, or properly sloped walls. The design must be prepared or approved by a professional engineer and kept on-site. Type 3 and 4 soils (sandy, silty, or previously disturbed) are collapse-prone.",
+      "rule_reference": "O. Reg. 213/91 s.222-242"
+    },
+    {
+      "id": 110,
+      "section": "Excavation Safety",
+      "difficulty": "hard",
+      "question": "A plumber's crew is excavating a 3-metre deep trench in Type 3 soil to install a building sewer. The sides must be sloped. What is the minimum slope ratio (horizontal to vertical) required for Type 3 soil?",
+      "options": [
+        "A) 1:1 (45\u00b0)",
+        "B) 1.5:1 (34\u00b0)",
+        "C) 0.75:1 (53\u00b0)",
+        "D) 0.5:1 (63\u00b0)"
+      ],
+      "correct": 0,
+      "explanation": "For Type 3 soil (sandy or gravel), O. Reg. 213/91 Table in section 228 requires a minimum slope of 1:1 (one horizontal to one vertical, or 45\u00b0). Type 1 (hard/dense) requires only 0.75:1, Type 2 requires 1:1, and Type 4 (soft clay/organic) requires 1:1 or greater depending on conditions. Previously disturbed soils are automatically classified as Type 4.",
+      "rule_reference": "O. Reg. 213/91 s.228"
+    },
+    {
+      "id": 111,
+      "section": "Excavation Safety",
+      "difficulty": "easy",
+      "question": "When installing a sewer line in a trench, spoil piles must be kept at least what distance from the edge of the excavation?",
+      "options": [
+        "A) 0.5 metres",
+        "B) 1.0 metre",
+        "C) 1.5 metres",
+        "D) 2.0 metres"
+      ],
+      "correct": 1,
+      "explanation": "O. Reg. 213/91 s.225(1) requires that excavated material (spoil) be kept back at least 1.0 metre from the upper edge of any wall of the excavation. This prevents the added weight and vibration from destabilizing the trench walls. Equipment must also be kept back from the edge.",
+      "rule_reference": "O. Reg. 213/91 s.225"
+    },
+    {
+      "id": 112,
+      "section": "Pipe Fitting Calculations",
+      "difficulty": "hard",
+      "question": "A plumber must calculate a rolling offset where the vertical rise is 18 inches, the lateral (horizontal) shift is 24 inches. Using 45\u00b0 fittings, what is the travel length of the diagonal pipe between fittings?",
+      "options": [
+        "A) 30.0 inches",
+        "B) 36.8 inches",
+        "C) 42.4 inches",
+        "D) 48.0 inches"
+      ],
+      "correct": 2,
+      "explanation": "Step 1: True offset = \u221a(18\u00b2 + 24\u00b2) = \u221a(324 + 576) = \u221a900 = 30 inches. Step 2: For 45\u00b0 fittings, travel = true offset \u00d7 1.414.  Travel = 30 \u00d7 1.414 = 42.4 inches. The rolling offset requires computing the diagonal of the rise and lateral shift first, then applying the fitting constant.",
+      "rule_reference": "Plumber Trade Math"
+    },
+    {
+      "id": 113,
+      "section": "Pipe Fitting Calculations",
+      "difficulty": "medium",
+      "question": "When calculating a simple 45\u00b0 offset, a plumber measures a 14-inch offset distance between two parallel pipes. What is the travel (centre-to-centre of fittings)?",
+      "options": [
+        "A) 14.0 inches",
+        "B) 16.1 inches",
+        "C) 19.8 inches",
+        "D) 28.0 inches"
+      ],
+      "correct": 2,
+      "explanation": "For a 45\u00b0 offset: Travel = Offset \u00d7 1.414. Travel = 14 \u00d7 1.414 = 19.8 inches. The constant 1.414 is the cosecant of 45\u00b0 (1/sin 45\u00b0). This is one of the most commonly used pipe fitting calculations.",
+      "rule_reference": "Plumber Trade Math"
+    },
+    {
+      "id": 114,
+      "section": "Pipe Fitting Calculations",
+      "difficulty": "hard",
+      "question": "A plumber is laying out a rolling offset using 45\u00b0 fittings with a vertical rise of 10 inches and a lateral shift of 10 inches. The advance (horizontal run consumed by the offset) is closest to:",
+      "options": [
+        "A) 10.0 inches",
+        "B) 14.1 inches",
+        "C) 20.0 inches",
+        "D) 28.3 inches"
+      ],
+      "correct": 1,
+      "explanation": "Step 1: True offset = \u221a(10\u00b2 + 10\u00b2) = \u221a200 = 14.14 inches. Step 2: For 45\u00b0 fittings, run (advance) = true offset \u00d7 cos(45\u00b0)/sin(45\u00b0) = true offset \u00d7 1.0 = 14.14 inches (since for 45\u00b0 fittings, advance equals the true offset). The advance is the horizontal distance consumed, which equals the true offset for 45\u00b0 fittings.",
+      "rule_reference": "Plumber Trade Math"
+    },
+    {
+      "id": 115,
+      "section": "Riser Diagrams",
+      "difficulty": "easy",
+      "question": "On a plumbing riser diagram, a vertical line extending upward from the building drain to the roof represents:",
+      "options": [
+        "A) A hot water supply riser",
+        "B) A soil or waste stack with its stack vent",
+        "C) A gas supply riser",
+        "D) A storm water leader"
+      ],
+      "correct": 1,
+      "explanation": "In a plumbing riser diagram, the primary vertical line from the building drain through the floors to the roof typically represents the soil/waste stack and its stack vent at the top. The riser diagram shows all vertical stacks, branches at each floor level, and connections to fixtures schematically \u2014 it is not drawn to scale but shows the relative positions of all components.",
+      "rule_reference": "CSA B214 / Trade Practice"
+    },
+    {
+      "id": 116,
+      "section": "Riser Diagrams",
+      "difficulty": "medium",
+      "question": "When reading a plumbing riser diagram for a 6-storey building, the plumber notices a vent stack running parallel to the soil stack with connections at every other floor. This vent stack connects to the soil stack at the base. According to the NPC, this vent stack is required because the soil stack drains fixtures from more than:",
+      "options": [
+        "A) 2 storeys",
+        "B) 3 storeys",
+        "C) 4 storeys",
+        "D) 6 storeys"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.5.4.2.(1), every stack that drains plumbing fixtures from more than 4 storeys containing plumbing fixtures shall have a vent stack. On a riser diagram, the vent stack appears as a parallel vertical line connected at the base of the soil stack and extending to roof level.",
+      "rule_reference": "NPC 2.5.4.2.(1)"
+    },
+    {
+      "id": 117,
+      "section": "Riser Diagrams",
+      "difficulty": "medium",
+      "question": "A plumber reviewing a riser diagram notices that yoke vents are shown connecting the vent stack to the soil stack at intervals. Per NPC, yoke vents are required when a stack receives discharge from plumbing fixtures on more than:",
+      "options": [
+        "A) 6 storeys",
+        "B) 8 storeys",
+        "C) 11 storeys",
+        "D) 15 storeys"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.5.4.3.(1), yoke vents are required when a stack receives discharge from plumbing fixtures located on more than 11 storeys. They must be installed for each section of 5 storeys or part thereof counted from the top down. On a riser diagram, they appear as horizontal connections between the soil stack and vent stack.",
+      "rule_reference": "NPC 2.5.4.3.(1)"
+    },
+    {
+      "id": 118,
+      "section": "Barrier-Free Design",
+      "difficulty": "easy",
+      "question": "According to CSA B651 (Accessible Design for the Built Environment), the maximum height of an accessible lavatory rim above the finished floor is:",
+      "options": [
+        "A) 750 mm",
+        "B) 865 mm",
+        "C) 915 mm",
+        "D) 1000 mm"
+      ],
+      "correct": 1,
+      "explanation": "CSA B651 specifies that accessible lavatories shall have a rim height not exceeding 865 mm above the finished floor. The knee clearance beneath must be at least 685 mm high, 760 mm wide, and 200 mm deep at knee level, and 230 mm deep at toe level, to accommodate wheelchair users.",
+      "rule_reference": "CSA B651 / OBC 3.8"
+    },
+    {
+      "id": 119,
+      "section": "Barrier-Free Design",
+      "difficulty": "medium",
+      "question": "When installing a barrier-free water closet per CSA B651 and OBC requirements, the centreline of the water closet must be located at what distance from the nearest side wall?",
+      "options": [
+        "A) 305 mm",
+        "B) 460 mm",
+        "C) 600 mm",
+        "D) 750 mm"
+      ],
+      "correct": 1,
+      "explanation": "CSA B651 and OBC 3.8 require that the centreline of an accessible water closet be located 460 mm from the nearest side wall. This dimension allows sufficient clearance for lateral transfer from a wheelchair while keeping the grab bars within reach. The seat height must be 430\u2013480 mm above the floor.",
+      "rule_reference": "CSA B651 / OBC 3.8.3.12"
+    },
+    {
+      "id": 120,
+      "section": "Barrier-Free Design",
+      "difficulty": "hard",
+      "question": "A plumber is installing plumbing for an accessible single-user washroom. Per CSA B651, the water supply pipes under the lavatory must be:",
+      "options": [
+        "A) Left exposed to facilitate maintenance",
+        "B) Insulated or otherwise configured to prevent contact burns and abrasion injuries to wheelchair users",
+        "C) Concealed entirely within the wall cavity",
+        "D) Made of plastic only to prevent thermal conductivity"
+      ],
+      "correct": 1,
+      "explanation": "CSA B651 requires that water supply and drain pipes under accessible lavatories be insulated or otherwise configured to protect against contact. Wheelchair users have reduced sensation in their legs and may not feel burns from hot supply pipes or abrasion from sharp drain fittings. Pipe insulation wraps or a protective panel are acceptable solutions.",
+      "rule_reference": "CSA B651"
+    },
+    {
+      "id": 121,
+      "section": "Barrier-Free Design",
+      "difficulty": "medium",
+      "question": "The seat height of a barrier-free water closet, as specified in CSA B651, must be within what range above the finished floor?",
+      "options": [
+        "A) 350\u2013400 mm",
+        "B) 430\u2013480 mm",
+        "C) 500\u2013550 mm",
+        "D) 380\u2013430 mm"
+      ],
+      "correct": 1,
+      "explanation": "CSA B651 specifies that an accessible water closet seat height shall be between 430 mm and 480 mm above the finished floor, measured to the top of the seat. Standard residential water closets are typically 380\u2013400 mm, so accessible installations often use comfort-height or chair-height models to meet this requirement.",
+      "rule_reference": "CSA B651"
+    },
+    {
+      "id": 122,
+      "section": "Commercial Grease Management",
+      "difficulty": "easy",
+      "question": "According to the NPC, a grease interceptor is required when plumbing fixtures in a commercial kitchen discharge sewage that contains:",
+      "options": [
+        "A) Only solid food waste particles",
+        "B) Fats, oils, or grease (FOG)",
+        "C) Water above 49\u00b0C",
+        "D) Chemical cleaning products"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.4.3.(1), where plumbing fixtures in a public kitchen, restaurant, or care occupancy discharge sewage containing fats, oils, or grease, the discharge must pass through a grease interceptor before entering the drainage system. This prevents FOG buildup that causes blockages in sewer mains.",
+      "rule_reference": "NPC 2.4.4.3.(1)"
+    },
+    {
+      "id": 123,
+      "section": "Commercial Grease Management",
+      "difficulty": "medium",
+      "question": "A commercial kitchen has a three-compartment pot sink, a pre-rinse sink, and a food prep sink. A dishwasher is also installed. Which fixture(s) must NOT be connected to the grease interceptor?",
+      "options": [
+        "A) The three-compartment pot sink",
+        "B) The pre-rinse sink",
+        "C) The dishwasher, because high-temperature discharge emulsifies grease and impairs interceptor function",
+        "D) The food prep sink"
+      ],
+      "correct": 2,
+      "explanation": "Dishwashers should not be connected through the grease interceptor because their high-temperature discharge (typically 82\u00b0C rinse cycle) emulsifies grease, allowing it to pass through the interceptor without separation. The hot water also damages the biological action in the interceptor. All other kitchen sinks that discharge FOG-laden waste must connect through the interceptor.",
+      "rule_reference": "NPC 2.4.4.3. / Trade Practice"
+    },
+    {
+      "id": 124,
+      "section": "Commercial Grease Management",
+      "difficulty": "hard",
+      "question": "When sizing a grease interceptor for a commercial kitchen, the most critical factor is:",
+      "options": [
+        "A) The total number of employees in the kitchen",
+        "B) The flow rate (in litres per minute) from all connected fixtures, the retention time, and the anticipated grease loading",
+        "C) The distance from the interceptor to the property line",
+        "D) The diameter of the building sewer only"
+      ],
+      "correct": 1,
+      "explanation": "Grease interceptor sizing depends primarily on the peak flow rate (GPM or LPM) from all connected fixtures, the required retention time to allow grease separation (typically 30 minutes minimum), and the anticipated grease load based on the type of food establishment. The interceptor must be large enough to slow flow sufficiently for FOG to rise and separate. CSA B481 provides sizing methodology.",
+      "rule_reference": "CSA B481 / NPC 2.4.4.3."
+    },
+    {
+      "id": 125,
+      "section": "Commercial Grease Management",
+      "difficulty": "medium",
+      "question": "An outdoor in-ground grease interceptor for a restaurant must be pumped out when the combined thickness of the floating grease layer and settled solids reaches what fraction of the liquid depth?",
+      "options": [
+        "A) 10%",
+        "B) 25%",
+        "C) 50%",
+        "D) 75%"
+      ],
+      "correct": 1,
+      "explanation": "Industry best practice and most municipal bylaws require that grease interceptors be serviced (pumped) when the combined depth of floating grease and settled solids reaches 25% of the total liquid depth (the '25% rule'). Beyond this point, the interceptor's retention capacity is insufficient for proper grease separation, and FOG passes through to the sewer system.",
+      "rule_reference": "Municipal Sewer Use Bylaws / CSA B481"
+    },
+    {
+      "id": 126,
+      "section": "Hydronic Systems",
+      "difficulty": "hard",
+      "question": "In a multi-zone hydronic heating system with zone valves, the circulator pump is cycling on and off rapidly when only one small zone is calling. The most likely cause is:",
+      "options": [
+        "A) The boiler temperature is set too high",
+        "B) The system lacks a bypass or differential pressure bypass valve, causing excessive head pressure when most zones are closed",
+        "C) The expansion tank is too large",
+        "D) The air separator is installed on the return side"
+      ],
+      "correct": 1,
+      "explanation": "When most zone valves are closed in a multi-zone system, the pump operates against high head pressure through a single small zone. This causes rapid cycling, noise, and potential pump damage. A differential pressure bypass valve (DPBV) or primary-secondary piping arrangement must be installed to relieve excess pressure and maintain minimum flow through the pump when zones close.",
+      "rule_reference": "CSA B214 / Hydronic Design Practice"
+    },
+    {
+      "id": 127,
+      "section": "Hydronic Systems",
+      "difficulty": "medium",
+      "question": "When balancing a multi-zone hydronic system, the correct procedure is to:",
+      "options": [
+        "A) Fully open all zone valves and balance by throttling the pump",
+        "B) Set all balancing valves fully open, measure flow in each zone, then throttle the zone with the highest flow first until design flow is achieved in all zones",
+        "C) Adjust all balancing valves to 50% open as a starting point",
+        "D) Only balance zones that have temperature complaints"
+      ],
+      "correct": 1,
+      "explanation": "Proper hydronic balancing uses the 'proportional method': start with all valves fully open, measure actual flow rates, then begin throttling the zone with the highest excess flow. Work systematically through each zone, re-measuring after each adjustment. This ensures each zone receives its design flow rate (GPM) for proper heat delivery. Flow measurement devices (circuit setters) at each zone facilitate this process.",
+      "rule_reference": "CSA B214 / Hydronic Design Practice"
+    },
+    {
+      "id": 128,
+      "section": "Hydronic Systems",
+      "difficulty": "medium",
+      "question": "In a primary-secondary hydronic piping arrangement, the closely spaced tees that connect the primary loop to a secondary circuit must be spaced no more than:",
+      "options": [
+        "A) 150 mm (6 inches) apart or 4 pipe diameters, whichever is less",
+        "B) 300 mm (12 inches) apart",
+        "C) 600 mm (24 inches) apart",
+        "D) Any distance as long as both are on the same pipe"
+      ],
+      "correct": 0,
+      "explanation": "Closely spaced tees in primary-secondary piping must be no more than 4 pipe diameters apart (typically about 150 mm / 6 inches for common pipe sizes). This close spacing creates hydraulic separation \u2014 the pressure drop between the tees is negligible, so each circuit's pump operates independently without affecting other circuits. This eliminates the need for bypass valves.",
+      "rule_reference": "Hydronic Design Practice"
+    },
+    {
+      "id": 129,
+      "section": "Gas Venting",
+      "difficulty": "hard",
+      "question": "A Category IV high-efficiency condensing gas furnace (96% AFUE) requires what type of venting system?",
+      "options": [
+        "A) Type B double-wall metal vent",
+        "B) Masonry chimney with a stainless steel liner",
+        "C) A sealed, direct-vent system using PVC, CPVC, or polypropylene vent pipe rated for condensing exhaust, as specified by the manufacturer",
+        "D) A single-wall galvanized vent connector to an existing B-vent"
+      ],
+      "correct": 2,
+      "explanation": "Category IV appliances operate with positive vent pressure and produce condensate (flue gas below dew point). They require a sealed venting system using materials resistant to acidic condensate \u2014 typically PVC, CPVC, or polypropylene as specified by the appliance manufacturer. Type B vents and masonry chimneys are not suitable as they cannot handle positive pressure or acidic condensate.",
+      "rule_reference": "CSA B149.1 / CAN/CSA-C22.2"
+    },
+    {
+      "id": 130,
+      "section": "Gas Venting",
+      "difficulty": "medium",
+      "question": "Category IV gas appliance vent piping must slope back toward the appliance. The primary reason for this slope is to:",
+      "options": [
+        "A) Increase draft velocity in the vent",
+        "B) Ensure condensate drains back to the appliance's internal condensate trap rather than pooling in the vent pipe",
+        "C) Reduce vent pipe noise",
+        "D) Allow easier installation through exterior walls"
+      ],
+      "correct": 1,
+      "explanation": "Category IV appliances produce acidic condensate in the vent pipe. The vent must slope back toward the appliance (typically 1/4 inch per foot minimum) so that condensate drains back to the appliance's internal condensate management system and neutralizer, rather than pooling in the vent pipe where it could cause corrosion or blockage.",
+      "rule_reference": "CSA B149.1"
+    },
+    {
+      "id": 131,
+      "section": "Gas Venting",
+      "difficulty": "medium",
+      "question": "The condensate produced by a Category IV gas appliance is acidic (approximately pH 3-4) and must be disposed of by:",
+      "options": [
+        "A) Draining directly to grade outside the building",
+        "B) Connecting directly to a copper drain pipe",
+        "C) Draining through a condensate neutralizer to the building's sanitary drainage system, typically via indirect connection",
+        "D) Collection in a sealed tank for hazardous waste pickup"
+      ],
+      "correct": 2,
+      "explanation": "Condensate from high-efficiency appliances is acidic (pH 3-4) and must pass through a neutralizer (containing calcium carbite or similar media) to raise pH to acceptable levels before discharge to the sanitary drainage system. Most jurisdictions require indirect connection via air break. Direct discharge of acidic condensate can damage copper, cast iron, and concrete piping.",
+      "rule_reference": "CSA B149.1 / NPC 2.4.4.4."
+    },
+    {
+      "id": 132,
+      "section": "Septic Systems",
+      "difficulty": "medium",
+      "question": "In Ontario, a raised-bed (at-grade) septic system is used when:",
+      "options": [
+        "A) The building has more than 6 bathrooms",
+        "B) The natural soil conditions have insufficient depth to the water table or bedrock, or the soil percolation rate is too slow for a conventional system",
+        "C) The property is within 50 metres of a municipal sewer",
+        "D) The system must serve a commercial building exclusively"
+      ],
+      "correct": 1,
+      "explanation": "Raised-bed (at-grade) septic systems are engineered solutions for sites where conventional in-ground absorption trenches are not feasible due to high water tables, shallow bedrock, slowly permeable soils (clay), or small lot sizes. The leaching bed is constructed above the natural grade using imported fill sand, with distribution piping elevated to achieve the required separation from groundwater.",
+      "rule_reference": "OBC Part 8 / O. Reg. 332/12"
+    },
+    {
+      "id": 133,
+      "section": "Septic Systems",
+      "difficulty": "hard",
+      "question": "A tertiary treatment septic system differs from a conventional septic system primarily because it:",
+      "options": [
+        "A) Uses a larger septic tank only",
+        "B) Includes additional treatment stages (such as aerobic treatment, filtration, or UV disinfection) to produce effluent quality approaching municipal standards, allowing reduced leaching bed sizes",
+        "C) Eliminates the need for any leaching bed",
+        "D) Is only used for greywater treatment"
+      ],
+      "correct": 1,
+      "explanation": "Tertiary treatment systems add treatment stages beyond the septic tank (primary) and leaching bed (secondary). These may include aerobic treatment units (ATUs), textile or sand filters, and UV disinfection. The resulting effluent has significantly lower BOD, TSS, and pathogen levels, which allows regulatory authorities to approve smaller leaching bed areas \u2014 critical for constrained lots. Ontario Building Code Part 8 provides provisions for these systems.",
+      "rule_reference": "OBC Part 8 / O. Reg. 332/12"
+    },
+    {
+      "id": 134,
+      "section": "Septic Systems",
+      "difficulty": "easy",
+      "question": "The minimum required separation distance between the bottom of a conventional septic system leaching bed and the seasonally high water table in Ontario is:",
+      "options": [
+        "A) 150 mm",
+        "B) 300 mm",
+        "C) 600 mm",
+        "D) 900 mm"
+      ],
+      "correct": 3,
+      "explanation": "OBC Part 8 requires a minimum 900 mm vertical separation between the bottom of the distribution pipe (stone bed base) and the seasonally high groundwater table or bedrock. This unsaturated soil zone provides critical biological treatment of the effluent before it reaches groundwater. If 900 mm cannot be achieved, a raised-bed or tertiary system is required.",
+      "rule_reference": "OBC Part 8"
+    },
+    {
+      "id": 135,
+      "section": "Septic Systems",
+      "difficulty": "medium",
+      "question": "When sizing a conventional septic tank for a 4-bedroom residential dwelling in Ontario, the minimum tank capacity is:",
+      "options": [
+        "A) 1,800 litres",
+        "B) 2,500 litres",
+        "C) 3,600 litres",
+        "D) 4,500 litres"
+      ],
+      "correct": 2,
+      "explanation": "OBC Part 8 sizes septic tanks based on the number of bedrooms, which is used as a proxy for occupant load. For a 4-bedroom dwelling, the minimum septic tank capacity is 3,600 litres (approximately 950 US gallons). Additional bedrooms increase the required capacity. The tank must provide sufficient retention time for solids settlement and anaerobic digestion.",
+      "rule_reference": "OBC Part 8 Table 8.2.1.3.B"
+    },
+    {
+      "id": 136,
+      "section": "Medical Systems",
+      "difficulty": "hard",
+      "question": "A medical vacuum system in a hospital must be classified as which NFPA 99 category to serve surgical areas and anesthesia evacuation?",
+      "options": [
+        "A) Category 3 \u2014 used only for laboratory applications",
+        "B) Category 1 \u2014 failure would cause immediate patient harm or death; requires duplex pumps with automatic transfer",
+        "C) Category 2 \u2014 used only for dental operatories",
+        "D) No specific category applies to medical vacuum"
+      ],
+      "correct": 1,
+      "explanation": "NFPA 99 classifies medical vacuum systems into categories based on risk. Category 1 systems serve areas where vacuum failure could cause patient harm or death (surgical suites, ICUs, emergency rooms). They require duplex (redundant) vacuum pumps with automatic lead-lag transfer, reserve capacity, and alarm systems. Category 2 serves nursing care areas; Category 3 serves laboratories.",
+      "rule_reference": "NFPA 99 / CSA Z7396.1"
+    },
+    {
+      "id": 137,
+      "section": "Medical Systems",
+      "difficulty": "medium",
+      "question": "Medical vacuum piping in a hospital must be constructed of which material?",
+      "options": [
+        "A) PVC Schedule 40 DWV pipe",
+        "B) ABS plastic pipe",
+        "C) Hard-drawn copper tube (Type K or L) with brazed joints",
+        "D) Galvanized steel pipe with threaded joints"
+      ],
+      "correct": 2,
+      "explanation": "CSA Z7396.1 requires that medical vacuum piping be constructed of hard-drawn copper tube (Type K or L) with brazed joints using BCuP alloys. The system must be capable of maintaining vacuum levels and must be completely free of oil, grease, and particulates. PVC, ABS, and galvanized steel are not permitted for medical gas/vacuum piping.",
+      "rule_reference": "CSA Z7396.1"
+    },
+    {
+      "id": 138,
+      "section": "Medical Systems",
+      "difficulty": "hard",
+      "question": "After installation, a medical vacuum piping system must undergo which testing procedure before being placed in service?",
+      "options": [
+        "A) A standard water pressure test at 350 kPa for 15 minutes",
+        "B) Standing pressure test with oil-free dry nitrogen at 1.5 times working pressure for 24 hours, followed by a cross-connection/zone-verification test",
+        "C) An air test at 35 kPa for 15 minutes, identical to drainage system testing",
+        "D) Only a visual inspection of all joints"
+      ],
+      "correct": 1,
+      "explanation": "CSA Z7396.1 requires medical vacuum piping to pass a standing pressure test using oil-free, dry nitrogen at 1.5 times the working pressure for 24 hours with no pressure drop. After the pressure test, a cross-connection test verifies that each outlet is connected to the correct system (vacuum vs. medical gas). Zone valve verification confirms proper isolation capability.",
+      "rule_reference": "CSA Z7396.1"
+    },
+    {
+      "id": 139,
+      "section": "Chemical Waste",
+      "difficulty": "medium",
+      "question": "A laboratory acid waste drainage system must be completely separated from the building's sanitary drainage system and connected through:",
+      "options": [
+        "A) A direct tee connection to the main building drain",
+        "B) A dilution or neutralization tank before connecting to the sanitary drainage system",
+        "C) A standard P-trap into any floor drain",
+        "D) The storm drainage system"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 2.4.4.4., where corrosive or harmful chemicals are discharged, they must pass through a dilution or neutralization process before entering the sanitary drainage system. A neutralization tank (often containing limestone chips) raises the pH of acidic waste to between 5 and 9 before discharge. The acid waste piping upstream must use chemical-resistant materials.",
+      "rule_reference": "NPC 2.4.4.4."
+    },
+    {
+      "id": 140,
+      "section": "Chemical Waste",
+      "difficulty": "medium",
+      "question": "Which piping material is specifically designed for laboratory chemical waste systems carrying concentrated acids and solvents?",
+      "options": [
+        "A) ABS DWV pipe \u2014 resistant to all laboratory chemicals",
+        "B) Borosilicate glass pipe with compression gasket joints, or PVDF (polyvinylidene fluoride) piping",
+        "C) Cast iron with hub-and-spigot joints",
+        "D) Standard PVC Schedule 40 DWV pipe"
+      ],
+      "correct": 1,
+      "explanation": "Borosilicate glass piping (e.g., Schott Duran) and PVDF (polyvinylidene fluoride, brand name Kynar) are the primary materials for chemical waste piping carrying concentrated acids, bases, and organic solvents. Polypropylene (PP) is also used for less aggressive chemicals. Standard ABS, PVC, and cast iron corrode or dissolve when exposed to many laboratory reagents.",
+      "rule_reference": "NPC 2.4.4.1. / ASPE Design Guide"
+    },
+    {
+      "id": 141,
+      "section": "Chemical Waste",
+      "difficulty": "medium",
+      "question": "When a neutralization tank for laboratory acid waste is installed, the tank must be vented to:",
+      "options": [
+        "A) The same vent stack as the sanitary drainage system",
+        "B) An independent vent terminating in outside air, because acid fumes can corrode standard vent piping",
+        "C) No vent is required since the tank is sealed",
+        "D) The mechanical room exhaust fan"
+      ],
+      "correct": 1,
+      "explanation": "Neutralization tanks produce chemical fumes (especially when strong acids react with the neutralizing media) that can corrode standard DWV piping materials. The tank and its associated chemical waste piping must have an independent vent system terminating in outside air, constructed of chemical-resistant materials (glass, PP, or PVDF). This vent must not connect to the regular sanitary vent system.",
+      "rule_reference": "NPC 2.4.4.4. / ASPE Design Guide"
+    },
+    {
+      "id": 142,
+      "section": "Alternative Solutions",
+      "difficulty": "hard",
+      "question": "Under the NPC Alternative Solutions path (Clause 1.2.1.1.(1)(b)), a plumber proposes using a non-listed European drain fitting. The documentation package submitted to the authority having jurisdiction must include:",
+      "options": [
+        "A) Only the manufacturer's product brochure",
+        "B) Identification of applicable NPC acceptable solutions being replaced, their attributed objectives and functional statements, and evidence (testing, engineering analysis) that the alternative achieves at least equivalent performance",
+        "C) A letter from the product manufacturer stating it is equivalent",
+        "D) Proof that the product is less expensive than the listed alternative"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 1.2.1.1.(1)(b) and Division C administrative requirements, an alternative solution submission must identify which Division B acceptable solutions are being replaced, list their attributed objectives and functional statements, and provide evidence (test reports to equivalent standards, engineering analysis, field performance data) demonstrating the alternative achieves at least the minimum performance level. Cost is not a code criterion.",
+      "rule_reference": "NPC 1.2.1.1.(1)(b) / Div C"
+    },
+    {
+      "id": 143,
+      "section": "Alternative Solutions",
+      "difficulty": "medium",
+      "question": "When preparing an Alternative Solutions proposal under the NPC, the 'minimum level of performance' that must be achieved is defined by:",
+      "options": [
+        "A) The highest performance product available on the market",
+        "B) The performance level of the Division B acceptable solution that the alternative replaces, as measured against the attributed objectives and functional statements",
+        "C) International Plumbing Code standards",
+        "D) The local municipality's engineering department preferences"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 1.2.1.1.(1)(b), the minimum performance level is set by the Division B acceptable solutions. The alternative need not be identical in design but must perform 'at least as well as' the acceptable solution in all areas defined by the objectives (e.g., OH \u2014 Health, OS \u2014 Safety) and functional statements attributed to those solutions.",
+      "rule_reference": "NPC 1.2.1.1.(1)(b)"
+    },
+    {
+      "id": 144,
+      "section": "Alternative Solutions",
+      "difficulty": "easy",
+      "question": "Under the NPC compliance framework, acceptable solutions are found in:",
+      "options": [
+        "A) Division A",
+        "B) Division B",
+        "C) Division C",
+        "D) Referenced standards only"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC 1.3.1.2.(1), Division B contains the acceptable solutions of the Code. Division A contains compliance provisions, objectives, and functional statements. Division C contains administrative provisions. Acceptable solutions are the prescriptive requirements that, when followed, automatically satisfy the Code. Alternative solutions provide a performance-based compliance path.",
+      "rule_reference": "NPC 1.3.1.2.(1)"
+    },
+    {
+      "id": 145,
+      "section": "Alternative Solutions",
+      "difficulty": "hard",
+      "question": "A plumber proposes an alternative drainage fitting and submits supporting test data to the authority having jurisdiction. The AHJ rejects the proposal because the evaluation only addressed the most obvious acceptable solution being replaced. Per NPC guidance, the correct approach requires:",
+      "options": [
+        "A) Evaluation against only the single provision being directly replaced",
+        "B) Evaluation against ALL applicable acceptable solutions in Division B attributed to the same objectives and functional statements, as other provisions may also be affected",
+        "C) Evaluation by three independent testing laboratories",
+        "D) Approval from the National Research Council of Canada"
+      ],
+      "correct": 1,
+      "explanation": "Per NPC Note A-1.2.1.1.(1)(b), the evaluation of an alternative solution must not be limited to the most apparent acceptable solution. All applicable Division B provisions attributed to the same objectives and functional statements must be considered, as the alternative may need to satisfy multiple performance areas simultaneously. This comprehensive evaluation prevents unintended code gaps.",
+      "rule_reference": "NPC A-1.2.1.1.(1)(b)"
+    },
+    {
+      "id": 146,
+      "section": "Safety & Lockout",
+      "difficulty": "easy",
+      "question": "Before beginning any hot work (soldering, brazing) on a plumbing system near combustible materials, the plumber must ensure:",
+      "options": [
+        "A) A fire extinguisher rated minimum 2A:10BC is within reach and combustible materials are shielded or removed",
+        "B) Only that the work area has ventilation",
+        "C) A smoke detector is present in the room",
+        "D) The building fire alarm system is disarmed"
+      ],
+      "correct": 0,
+      "explanation": "Ontario's Fire Code and OHSA require that a suitable fire extinguisher (minimum 2A:10BC rating) be immediately available when performing hot work. Combustible materials within the hot work zone must be moved at least 11 metres away or protected with fire-resistant blankets/shields. A fire watch may be required for 60 minutes after work completion.",
+      "rule_reference": "Ontario Fire Code / O. Reg. 213/91"
+    },
+    {
+      "id": 147,
+      "section": "Riser Diagrams",
+      "difficulty": "hard",
+      "question": "On a plumbing riser diagram, a plumber identifies an offset in the soil stack between the 4th and 5th floors. The upper portion above the offset drains 3 storeys of fixtures totalling 120 fixture units. Per NPC, offset relief vents are required because the upper portion drains more than 2 storeys and more than 100 fixture units. These offset relief vents must connect the stack to the vent stack:",
+      "options": [
+        "A) Only above the offset",
+        "B) Only below the offset",
+        "C) Both above and below the offset, to provide air circulation on each side",
+        "D) At the midpoint of the offset"
+      ],
+      "correct": 2,
+      "explanation": "Per NPC 2.5.4.4.(1), when offset relief vents are required (offset > 1.5 m, upper section > 2 storeys, > 100 fixture units), they must be installed both above and below the offset to ensure adequate air circulation on both sides of the restriction. The vent connections prevent pressure fluctuations caused by the change in direction of flow at the offset.",
+      "rule_reference": "NPC 2.5.4.4.(1)"
+    },
+    {
+      "id": 148,
+      "section": "Hydronic Systems",
+      "difficulty": "easy",
+      "question": "In a hydronic heating system, the point of no pressure change (null point) is located at the:",
+      "options": [
+        "A) Boiler outlet",
+        "B) Highest point of the system",
+        "C) Connection point of the expansion tank to the system",
+        "D) Circulator pump inlet"
+      ],
+      "correct": 2,
+      "explanation": "The expansion tank connection is the point of no pressure change in a hydronic system. The pressure at this point remains constant whether the pump is running or not. The pump adds pressure downstream and creates suction upstream relative to this null point. This is why the expansion tank is typically connected near the pump suction \u2014 so the pump adds pressure to the entire system.",
+      "rule_reference": "Hydronic Design Practice"
+    },
+    {
+      "id": 149,
+      "section": "Pipe Fitting Calculations",
+      "difficulty": "medium",
+      "question": "A plumber needs to fabricate a 60\u00b0 offset to clear an obstruction. If the offset distance between the two parallel pipes is 12 inches, what is the travel length using 60\u00b0 elbows?",
+      "options": [
+        "A) 12.0 inches",
+        "B) 13.9 inches",
+        "C) 16.0 inches",
+        "D) 24.0 inches"
+      ],
+      "correct": 1,
+      "explanation": "For 60\u00b0 fittings: Travel = Offset \u00d7 cosecant(60\u00b0) = Offset \u00d7 (1/sin 60\u00b0) = 12 \u00d7 (1/0.866) = 12 \u00d7 1.155 = 13.9 inches. The 60\u00b0 fitting produces the shortest travel for a given offset, making it ideal for tight spaces. Compare: 45\u00b0 travel would be 12 \u00d7 1.414 = 17.0 inches.",
+      "rule_reference": "Plumber Trade Math"
+    },
+    {
+      "id": 150,
+      "section": "Medical Systems",
+      "difficulty": "medium",
+      "question": "Medical gas and vacuum system outlet stations in a hospital must be colour-coded. The standard colour for medical vacuum outlets is:",
+      "options": [
+        "A) Green",
+        "B) Yellow",
+        "C) White",
+        "D) Blue"
+      ],
+      "correct": 2,
+      "explanation": "Per CSA Z7396.1, medical vacuum outlets are colour-coded white. Medical air is yellow, oxygen is green, nitrogen is black, and nitrous oxide is blue. The colour-coding and diameter-indexed safety system (DISS) connections prevent cross-connections between different medical gas and vacuum systems, which could be life-threatening.",
+      "rule_reference": "CSA Z7396.1"
+    }
+  ]
+}
