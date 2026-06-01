@@ -1,0 +1,2259 @@
+{
+  "exam_id": "exam1",
+  "title": "309A Practice Exam 1 \u2014 Red Seal Aligned",
+  "description": "150 questions aligned to Red Seal NOA weightings. Moderate difficulty with balanced question types covering all exam domains.",
+  "time_limit_minutes": 240,
+  "pass_percentage": 70,
+  "questions": [
+    {
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "A split-phase induction motor uses a start winding that is disconnected by a centrifugal switch at approximately what speed?",
+      "options": [
+        "A) 25% of synchronous speed",
+        "B) 50% of synchronous speed",
+        "C) 75% of synchronous speed",
+        "D) 100% of synchronous speed"
+      ],
+      "correct": 2,
+      "explanation": "The centrifugal switch opens at approximately 75% of synchronous speed, disconnecting the start winding once the motor has accelerated.",
+      "rule_reference": "Motor theory",
+      "id": 1
+    },
+    {
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "On a single-line (one-line) electrical diagram, a circle with an X through it represents:",
+      "options": [
+        "A) A ceiling-mounted light fixture",
+        "B) A junction box",
+        "C) A receptacle outlet",
+        "D) A motor"
+      ],
+      "correct": 0,
+      "explanation": "A circle with an X is the standard symbol for a ceiling-mounted light fixture on electrical floor plans.",
+      "rule_reference": "CSA Z99, Electrical symbols",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "At what sling angle does the working load limit decrease significantly?",
+      "options": [
+        "A) Less than 90 degrees",
+        "B) Less than 60 degrees",
+        "C) Less than 45 degrees",
+        "D) Less than 15 degrees"
+      ],
+      "correct": 2,
+      "explanation": "Below 45 degrees the load on each leg increases significantly.",
+      "rule_reference": "OHSA Rigging"
+    },
+    {
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A paint spray booth is classified as what hazardous zone per the CEC?",
+      "options": [
+        "A) Zone 0",
+        "B) Zone 1",
+        "C) Zone 2",
+        "D) Non-hazardous"
+      ],
+      "correct": 1,
+      "explanation": "The interior of a spray booth is classified as Zone 1 \u2014 an area where flammable gas/vapour is likely to exist under normal operating conditions.",
+      "rule_reference": "CEC Rule 20-302, Section 20",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "First action when a co-worker is in contact with an energized source?",
+      "options": [
+        "A) Pull them away by clothing",
+        "B) Begin CPR",
+        "C) Call 911 and wait",
+        "D) De-energize or use non-conductive object to separate them"
+      ],
+      "correct": 3,
+      "explanation": "Remove the hazard first.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "id": 6,
+      "section": "Occupational Skills",
+      "difficulty": "hard",
+      "question": "Incident energy of 8.5 cal/cm2 requires what minimum PPE category?",
+      "options": [
+        "A) Category 1",
+        "B) Category 2",
+        "C) Category 3",
+        "D) Category 4"
+      ],
+      "correct": 2,
+      "explanation": "Category 2 (8 cal/cm2) is insufficient; Category 3 required.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "id": 7,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "Fire extinguisher class required near electrical equipment?",
+      "options": [
+        "A) Class A",
+        "B) Class C",
+        "C) Class B",
+        "D) Class D"
+      ],
+      "correct": 1,
+      "explanation": "Class C is for energized electrical fires.",
+      "rule_reference": "Fire Code"
+    },
+    {
+      "id": 8,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "What is the purpose of a Job Safety Analysis (JSA)?",
+      "options": [
+        "A) Calculate material costs",
+        "B) Assign blame after accidents",
+        "C) Identify hazards and safe procedures for each step",
+        "D) Satisfy insurance only"
+      ],
+      "correct": 2,
+      "explanation": "JSA identifies step-by-step hazards and controls.",
+      "rule_reference": "OHSA"
+    },
+    {
+      "id": 9,
+      "section": "Occupational Skills",
+      "difficulty": "hard",
+      "question": "Minimum clearance for a scaffold near 44 kV overhead lines?",
+      "options": [
+        "A) 1 m",
+        "B) 3 m",
+        "C) 10 m",
+        "D) 6 m"
+      ],
+      "correct": 3,
+      "explanation": "6 m for 750V-150 kV.",
+      "rule_reference": "OHSA Reg. 213/91"
+    },
+    {
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "A warehouse requires 300 lux at floor level. Each LED fixture provides 18,000 lumens with a coefficient of utilization of 0.65 and a maintenance factor of 0.80. Approximately how many fixtures are needed for a 500 m2 area?",
+      "options": [
+        "A) 10",
+        "B) 16",
+        "C) 22",
+        "D) 30"
+      ],
+      "correct": 1,
+      "explanation": "Fixtures = (lux x area) / (lumens x CU x MF) = (300 x 500) / (18000 x 0.65 x 0.80) = 150,000 / 9,360 = ~16 fixtures.",
+      "rule_reference": "Illumination design, IES",
+      "id": 10
+    },
+    {
+      "id": 11,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "When is an energized work permit required?",
+      "options": [
+        "A) All electrical work",
+        "B) Only above 600V",
+        "C) Only near water",
+        "D) When de-energizing is infeasible or creates greater hazard"
+      ],
+      "correct": 3,
+      "explanation": "When de-energizing is infeasible or creates greater hazard.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "id": 12,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "The limited approach boundary is:",
+      "options": [
+        "A) Arc flash distance",
+        "B) Shock hazard distance for unqualified persons",
+        "C) Max ladder height",
+        "D) Min trench depth"
+      ],
+      "correct": 1,
+      "explanation": "Shock hazard boundary for unqualified persons.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "An electric baseboard heater rated at 2000W, 240V is installed on a dedicated circuit. The minimum conductor and breaker size is:",
+      "options": [
+        "A) #14 AWG, 15A breaker",
+        "B) #12 AWG, 20A breaker",
+        "C) #10 AWG, 30A breaker",
+        "D) #12 AWG, 15A breaker"
+      ],
+      "correct": 1,
+      "explanation": "2000W / 240V = 8.33A. As continuous load: 8.33 x 1.25 = 10.4A. #12 AWG on 20A breaker handles this with margin.",
+      "rule_reference": "CEC Rule 62-114, 8-104",
+      "id": 13
+    },
+    {
+      "id": 14,
+      "section": "Occupational Skills",
+      "difficulty": "hard",
+      "question": "Which is NOT a LOTO requirement?",
+      "options": [
+        "A) Identify all energy sources",
+        "B) Using same lock for multiple workers",
+        "C) Notify affected workers",
+        "D) Verify zero energy state"
+      ],
+      "correct": 1,
+      "explanation": "Each worker needs their own lock.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "id": 15,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "Who provides Safety Data Sheets?",
+      "options": [
+        "A) Building permit office",
+        "B) Fire department",
+        "C) Manufacturer/supplier via WHMIS",
+        "D) Ministry of Education"
+      ],
+      "correct": 2,
+      "explanation": "Manufacturer/supplier provides SDSs.",
+      "rule_reference": "WHMIS 2015"
+    },
+    {
+      "id": 16,
+      "section": "Occupational Skills",
+      "difficulty": "easy",
+      "question": "GFCIs on construction sites trip at:",
+      "options": [
+        "A) 5 mA",
+        "B) 15 mA",
+        "C) 30 mA",
+        "D) 100 mA"
+      ],
+      "correct": 0,
+      "explanation": "5 mA for personnel protection.",
+      "rule_reference": "CEC Rule 76-012"
+    },
+    {
+      "id": 17,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Maximum 90-degree bends in a conduit run between pull points?",
+      "options": [
+        "A) 2",
+        "B) 3",
+        "C) 4",
+        "D) 5"
+      ],
+      "correct": 2,
+      "explanation": "360 total degrees = four 90-degree bends.",
+      "rule_reference": "CEC Rule 12-942"
+    },
+    {
+      "id": 18,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Minimum burial depth for NMWU 120/240V without mechanical protection?",
+      "options": [
+        "A) 450 mm",
+        "B) 600 mm",
+        "C) 750 mm",
+        "D) 900 mm"
+      ],
+      "correct": 1,
+      "explanation": "600 mm for 0-750V direct buried.",
+      "rule_reference": "CEC Rule 12-012"
+    },
+    {
+      "id": 19,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Standard residential wiring cable in Canada?",
+      "options": [
+        "A) TECK90",
+        "B) AC90",
+        "C) NMD90 (Loomex)",
+        "D) MI cable"
+      ],
+      "correct": 2,
+      "explanation": "NMD90 is standard for residential.",
+      "rule_reference": "CEC Rule 12-500"
+    },
+    {
+      "id": 20,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "100A feeder, RW90 copper, 6 conductors in raceway, 40C ambient. Minimum conductor size?",
+      "options": [
+        "A) #3 AWG",
+        "B) #2 AWG",
+        "C) #1 AWG",
+        "D) 1/0 AWG"
+      ],
+      "correct": 2,
+      "explanation": "Derating factors: 0.80 x 0.88 = 0.704. #1 AWG at 90C = 145A x 0.704 = 102A > 100A.",
+      "rule_reference": "CEC Rule 4-004, Tables 2, 5A, 5C"
+    },
+    {
+      "id": 21,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Minimum copper conductor size for branch circuits?",
+      "options": [
+        "A) #16 AWG",
+        "B) #10 AWG",
+        "C) #12 AWG",
+        "D) #14 AWG"
+      ],
+      "correct": 3,
+      "explanation": "#14 AWG minimum for branch circuits.",
+      "rule_reference": "CEC Rule 12-100"
+    },
+    {
+      "id": 22,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "AC90 armoured cable is NOT permitted in:",
+      "options": [
+        "A) Concealed residential walls",
+        "B) Zone 1 hazardous locations",
+        "C) Dry commercial buildings",
+        "D) Non-residential feeders"
+      ],
+      "correct": 1,
+      "explanation": "Not permitted in Zone 0 or Zone 1 hazardous locations.",
+      "rule_reference": "CEC Rule 18-072"
+    },
+    {
+      "id": 23,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Maximum conduit fill for 3+ conductors?",
+      "options": [
+        "A) 53%",
+        "B) 40%",
+        "C) 31%",
+        "D) 25%"
+      ],
+      "correct": 1,
+      "explanation": "40% fill for 3 or more conductors.",
+      "rule_reference": "CEC Rule 12-910"
+    },
+    {
+      "id": 24,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "How must NMD90 be supported along joists?",
+      "options": [
+        "A) No support needed",
+        "B) Every 3 m",
+        "C) Staples/straps every 1.5 m max",
+        "D) Must be in conduit"
+      ],
+      "correct": 2,
+      "explanation": "Secured every 1.5 m and within 300 mm of boxes.",
+      "rule_reference": "CEC Rule 12-510"
+    },
+    {
+      "id": 25,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Minimum bonding conductor for a 200A service to metal water pipe?",
+      "options": [
+        "A) #6 AWG Cu",
+        "B) #8 AWG Cu",
+        "C) #4 AWG Cu",
+        "D) #2 AWG Cu"
+      ],
+      "correct": 0,
+      "explanation": "#6 AWG copper per Table 16.",
+      "rule_reference": "CEC Rule 10-614"
+    },
+    {
+      "id": 26,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Voltage drop on 120V, #12 AWG Cu, 30 m run, 16A load?",
+      "options": [
+        "A) 3.2V (2.7%)",
+        "B) 5.2V (4.3%)",
+        "C) 6.4V (5.3%)",
+        "D) 8.1V (6.8%)"
+      ],
+      "correct": 2,
+      "explanation": "Using CEC method: Vd = 2 x 30 x 16 x R/km = ~6.4V (5.3%).",
+      "rule_reference": "CEC Rule 8-102, Table D3"
+    },
+    {
+      "id": 27,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "CEC specifies a standard receptacle mounting height?",
+      "options": [
+        "A) 150 mm from floor",
+        "B) 300 mm from floor",
+        "C) 450 mm from floor",
+        "D) The CEC does not specify a standard height"
+      ],
+      "correct": 3,
+      "explanation": "No mandated height; 300 mm is convention only.",
+      "rule_reference": "CEC Rule 26-710"
+    },
+    {
+      "id": 28,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Box fill for a device box depends on:",
+      "options": [
+        "A) Only the conductor count",
+        "B) Only the box dimensions",
+        "C) Box volume and all conductors, clamps, devices, and grounds",
+        "D) The wire colour"
+      ],
+      "correct": 2,
+      "explanation": "Must account for all conductors, clamps, devices, and grounds.",
+      "rule_reference": "CEC Rule 12-3034"
+    },
+    {
+      "id": 29,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Minimum headroom in front of an electrical panel?",
+      "options": [
+        "A) 1.5 m",
+        "B) 1.8 m",
+        "C) 2.0 m",
+        "D) 1.0 m"
+      ],
+      "correct": 2,
+      "explanation": "2.0 m minimum headroom.",
+      "rule_reference": "CEC Rule 2-308"
+    },
+    {
+      "id": 30,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Neutral conductor colour in Canada?",
+      "options": [
+        "A) Green",
+        "B) Red",
+        "C) White or grey",
+        "D) Black"
+      ],
+      "correct": 2,
+      "explanation": "White or grey for identified (neutral) conductor.",
+      "rule_reference": "CEC Rule 4-028"
+    },
+    {
+      "id": 31,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "TECK90 cable through a fire-rated wall requires:",
+      "options": [
+        "A) Nothing - armour provides fire rating",
+        "B) Approved firestop maintaining the fire-resistance rating",
+        "C) Fire-resistant tape 300 mm each side",
+        "D) MI cable only through fire walls"
+      ],
+      "correct": 1,
+      "explanation": "All fire-rated penetrations need approved firestop systems.",
+      "rule_reference": "CEC Rule 2-128"
+    },
+    {
+      "id": 32,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Sub-panel in detached garage - neutral and ground must be:",
+      "options": [
+        "A) Bonded together at the sub-panel",
+        "B) On separate bus bars at both ends",
+        "C) Connected through a GFCI breaker",
+        "D) Kept separate - bonded only at main service panel"
+      ],
+      "correct": 3,
+      "explanation": "Neutral and ground separate in sub-panels.",
+      "rule_reference": "CEC Rule 10-204"
+    },
+    {
+      "id": 33,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Maximum flexible cord length for a kitchen range?",
+      "options": [
+        "A) 1.2 m",
+        "B) 1.5 m",
+        "C) 1.8 m",
+        "D) 2.5 m"
+      ],
+      "correct": 2,
+      "explanation": "1.8 m (6 ft) maximum.",
+      "rule_reference": "CEC Rule 26-744"
+    },
+    {
+      "id": 34,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Underground parking block heater receptacles must be:",
+      "options": [
+        "A) Standard 15A duplex on 15A circuit",
+        "B) T-slot 20A only",
+        "C) GFCI-protected with max 8 per circuit",
+        "D) Single receptacles on individual 20A circuits"
+      ],
+      "correct": 2,
+      "explanation": "GFCI-protected with limited receptacles per circuit.",
+      "rule_reference": "CEC Rule 26-714"
+    },
+    {
+      "id": 35,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Minimum clearance from 120/240V service mast to openable window?",
+      "options": [
+        "A) 0.5 m",
+        "B) 0.9 m",
+        "C) 1.5 m",
+        "D) 1.0 m"
+      ],
+      "correct": 3,
+      "explanation": "1.0 m minimum clearance.",
+      "rule_reference": "CEC Rule 6-112"
+    },
+    {
+      "id": 36,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "NMD90 entering a metal box requires:",
+      "options": [
+        "A) Standard coupling",
+        "B) Electrical tape",
+        "C) An approved cable connector",
+        "D) No connector if knockout fits"
+      ],
+      "correct": 2,
+      "explanation": "Approved cable connector at every metal box entry.",
+      "rule_reference": "CEC Rule 12-518"
+    },
+    {
+      "id": 37,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Maximum wall distance from a receptacle in a residential living room?",
+      "options": [
+        "A) 1.8 m from any point along the wall",
+        "B) 3.6 m between receptacles",
+        "C) 2.5 m from any point",
+        "D) 4.5 m between receptacles"
+      ],
+      "correct": 0,
+      "explanation": "No point along the wall more than 1.8 m from a receptacle.",
+      "rule_reference": "CEC Rule 26-712"
+    },
+    {
+      "id": 38,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Conduit fill: 4x#10 THHN, 2x#6 THHN, 1x#10 bare ground. Minimum EMT size?",
+      "options": [
+        "A) 21 mm (3/4 in)",
+        "B) 27 mm (1 in)",
+        "C) 35 mm (1-1/4 in)",
+        "D) 41 mm (1-1/2 in)"
+      ],
+      "correct": 1,
+      "explanation": "Total area fits 40% fill of 27 mm EMT.",
+      "rule_reference": "CEC Tables 8, 10"
+    },
+    {
+      "id": 39,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Minimum device box depth?",
+      "options": [
+        "A) 12.7 mm",
+        "B) 19 mm",
+        "C) 50 mm",
+        "D) 38 mm"
+      ],
+      "correct": 3,
+      "explanation": "38 mm (1-1/2 in) minimum.",
+      "rule_reference": "CEC Rule 12-3012"
+    },
+    {
+      "id": 40,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "TECK90 cable is primarily used for:",
+      "options": [
+        "A) Residential concealed wiring",
+        "B) Communications only",
+        "C) Holiday lighting",
+        "D) Industrial/commercial requiring mechanical protection"
+      ],
+      "correct": 3,
+      "explanation": "Industrial/commercial applications needing mechanical protection.",
+      "rule_reference": "CEC Rule 12-600"
+    },
+    {
+      "id": 41,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "EMT through a concrete block wall - protect conductors with:",
+      "options": [
+        "A) Bushing or approved fitting",
+        "B) Silicone sealant",
+        "C) Duct tape",
+        "D) Nothing needed"
+      ],
+      "correct": 0,
+      "explanation": "Bushing or fitting protects against conductor abrasion.",
+      "rule_reference": "CEC Rule 12-922"
+    },
+    {
+      "id": 42,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Maximum overcurrent protection for #14 AWG copper branch circuit?",
+      "options": [
+        "A) 10A",
+        "B) 15A",
+        "C) 20A",
+        "D) 30A"
+      ],
+      "correct": 1,
+      "explanation": "15A maximum for #14 AWG.",
+      "rule_reference": "CEC Rule 14-104"
+    },
+    {
+      "id": 43,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Hospital 100A copper feeder - minimum equipment bonding conductor?",
+      "options": [
+        "A) #8 AWG",
+        "B) #4 AWG",
+        "C) #2 AWG",
+        "D) #6 AWG"
+      ],
+      "correct": 3,
+      "explanation": "#6 AWG per Table 16 for 100A.",
+      "rule_reference": "CEC Rule 10-614, 24-104"
+    },
+    {
+      "id": 44,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "PVC conduit support intervals depend on:",
+      "options": [
+        "A) Always 1.0 m",
+        "B) Always 1.5 m",
+        "C) Always 2.0 m",
+        "D) The trade size of the conduit"
+      ],
+      "correct": 3,
+      "explanation": "Support intervals vary by conduit diameter.",
+      "rule_reference": "CEC Table 72"
+    },
+    {
+      "id": 45,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Bonding bushing is required when conduit terminates at:",
+      "options": [
+        "A) All terminations",
+        "B) Only services over 200A",
+        "C) Concentric or eccentric knockouts",
+        "D) Only wet locations"
+      ],
+      "correct": 2,
+      "explanation": "Required at concentric/eccentric knockouts.",
+      "rule_reference": "CEC Rule 10-618"
+    },
+    {
+      "id": 46,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Grounding conductor colour?",
+      "options": [
+        "A) White",
+        "B) Red",
+        "C) Blue",
+        "D) Green or green with yellow stripe"
+      ],
+      "correct": 3,
+      "explanation": "Green or green/yellow for grounding.",
+      "rule_reference": "CEC Rule 4-028"
+    },
+    {
+      "id": 47,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "400A service with parallel conductors - minimum grounding electrode conductor?",
+      "options": [
+        "A) #2 AWG Cu",
+        "B) #1/0 AWG Cu",
+        "C) #2/0 AWG Cu",
+        "D) #3/0 AWG Cu"
+      ],
+      "correct": 2,
+      "explanation": "#2/0 AWG Cu per Table 17 for 400A.",
+      "rule_reference": "CEC Rule 10-114"
+    },
+    {
+      "id": 48,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Minimum clear working space in front of 600V panelboard?",
+      "options": [
+        "A) 600 mm",
+        "B) 900 mm",
+        "C) 1200 mm",
+        "D) 1000 mm"
+      ],
+      "correct": 3,
+      "explanation": "1000 mm (1 m) minimum.",
+      "rule_reference": "CEC Rule 2-308"
+    },
+    {
+      "id": 49,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "In a 120/208V 3-phase wye system, phase-to-phase voltage is:",
+      "options": [
+        "A) 120V",
+        "B) 208V",
+        "C) 240V",
+        "D) 277V"
+      ],
+      "correct": 1,
+      "explanation": "120V x sqrt(3) = 208V.",
+      "rule_reference": "Electrical theory"
+    },
+    {
+      "id": 50,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "EMT is NOT permitted where:",
+      "options": [
+        "A) In dry commercial locations",
+        "B) Above suspended ceilings",
+        "C) For lighting circuits",
+        "D) Subject to severe physical damage"
+      ],
+      "correct": 3,
+      "explanation": "EMT not allowed where subject to severe physical damage.",
+      "rule_reference": "CEC Rule 12-1402"
+    },
+    {
+      "id": 51,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Minimum free conductor length at each outlet box?",
+      "options": [
+        "A) 100 mm",
+        "B) 150 mm",
+        "C) 200 mm",
+        "D) 300 mm"
+      ],
+      "correct": 3,
+      "explanation": "300 mm from where conductor emerges.",
+      "rule_reference": "CEC Rule 12-3032"
+    },
+    {
+      "id": 52,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Kitchen split receptacle minimum conductor size?",
+      "options": [
+        "A) #14 AWG on 15A",
+        "B) #14 AWG on separate 15A",
+        "C) #10 AWG",
+        "D) #12 AWG on shared neutral MWBC"
+      ],
+      "correct": 3,
+      "explanation": "#12 AWG on 20A multi-wire branch circuit.",
+      "rule_reference": "CEC Rule 26-724"
+    },
+    {
+      "id": 53,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A 600V feeder in an aluminum raceway requires what bonding method?",
+      "options": [
+        "A) Standard locknuts only",
+        "B) Double locknuts on each end",
+        "C) Bonding bushings or bonding-type locknuts at each end",
+        "D) No special bonding - aluminum conducts"
+      ],
+      "correct": 2,
+      "explanation": "Bonding bushings ensure reliable bonding at aluminum raceways.",
+      "rule_reference": "CEC Rule 10-610"
+    },
+    {
+      "id": 54,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "What is the standard voltage for a 3-phase service in a Canadian commercial building?",
+      "options": [
+        "A) 120/240V",
+        "B) 347/600V",
+        "C) 277/480V",
+        "D) 240/416V"
+      ],
+      "correct": 1,
+      "explanation": "347/600V is standard Canadian commercial 3-phase.",
+      "rule_reference": "CEC, Canadian standards"
+    },
+    {
+      "id": 55,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A dwelling unit has 180 m2. What is the basic lighting load?",
+      "options": [
+        "A) 5,400 W",
+        "B) 4,500 W",
+        "C) 3,600 W",
+        "D) 6,300 W"
+      ],
+      "correct": 0,
+      "explanation": "180 m2 x 30 W/m2 (CEC Table 14) = 5,400W basic lighting load.",
+      "rule_reference": "CEC Rule 8-200, Table 14"
+    },
+    {
+      "id": 56,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "What is the minimum insulation temperature rating for conductors in a dry location raceway?",
+      "options": [
+        "A) 60 degrees C",
+        "B) 75 degrees C",
+        "C) 90 degrees C",
+        "D) Any rating is acceptable"
+      ],
+      "correct": 0,
+      "explanation": "60 degrees C is the minimum standard rating for dry locations.",
+      "rule_reference": "CEC Rule 4-004"
+    },
+    {
+      "id": 57,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "GFCI trips immediately when reset. Most likely cause?",
+      "options": [
+        "A) Ground fault on load-side wiring",
+        "B) GFCI is upside down",
+        "C) Breaker too large",
+        "D) Neutral and ground properly separated"
+      ],
+      "correct": 0,
+      "explanation": "Ground fault on downstream wiring.",
+      "rule_reference": "Troubleshooting"
+    },
+    {
+      "id": 58,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "3-phase motor hums but won't start. Voltage on only 2 of 3 phases. Cause?",
+      "options": [
+        "A) Single-phasing (blown fuse/tripped breaker on one phase)",
+        "B) Motor bearings seized",
+        "C) Windings shorted",
+        "D) VFD frequency too low"
+      ],
+      "correct": 0,
+      "explanation": "Single-phasing - one fuse blown or breaker tripped.",
+      "rule_reference": "Motor troubleshooting"
+    },
+    {
+      "id": 59,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "Megger test on 600V motor reads 0.5 MOhm. This means:",
+      "options": [
+        "A) Excellent insulation",
+        "B) Acceptable for immediate use",
+        "C) Marginal - investigate moisture or contamination",
+        "D) Megger malfunction"
+      ],
+      "correct": 2,
+      "explanation": "Minimum for 600V motor is ~1.6 MOhm. 0.5 is well below.",
+      "rule_reference": "IEEE 43"
+    },
+    {
+      "id": 60,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "Flickering lights that worsen when appliances cycle on indicate:",
+      "options": [
+        "A) Faulty light switch",
+        "B) Normal for LEDs",
+        "C) Wrong bulb type",
+        "D) Loose/high-resistance connection at service entrance"
+      ],
+      "correct": 3,
+      "explanation": "High-resistance connection causes voltage fluctuations.",
+      "rule_reference": "Troubleshooting"
+    },
+    {
+      "id": 61,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "Thermal image shows one fuse hotter than others in balanced 3-phase disconnect. Indicates:",
+      "options": [
+        "A) Normal operation",
+        "B) Uncalibrated camera",
+        "C) Load is single-phase",
+        "D) High-resistance connection or deteriorating fuse"
+      ],
+      "correct": 3,
+      "explanation": "Uneven heating = high resistance at that connection.",
+      "rule_reference": "IR thermography"
+    },
+    {
+      "id": 62,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "Breaker trips under load but current is below rating. Likely cause?",
+      "options": [
+        "A) Defective circuit breaker",
+        "B) Panel too full",
+        "C) Wrong wire colour",
+        "D) Oversized neutral"
+      ],
+      "correct": 0,
+      "explanation": "Defective breaker with weakened thermal element.",
+      "rule_reference": "Troubleshooting"
+    },
+    {
+      "id": 63,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "MCC motor starter has nuisance tripping with correct overload sizing. Check FIRST:",
+      "options": [
+        "A) Replace motor",
+        "B) Voltage imbalance between phases at starter",
+        "C) Upgrade overload rating",
+        "D) Install bypass"
+      ],
+      "correct": 1,
+      "explanation": "Small voltage imbalance causes large current imbalance.",
+      "rule_reference": "NEMA MG-1"
+    },
+    {
+      "id": 64,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "Receptacle tester shows 'open ground' means:",
+      "options": [
+        "A) Grounding conductor not connected",
+        "B) Circuit overloaded",
+        "C) Neutral missing",
+        "D) Hot and neutral reversed"
+      ],
+      "correct": 0,
+      "explanation": "Grounding conductor not properly connected.",
+      "rule_reference": "Troubleshooting"
+    },
+    {
+      "id": 65,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "Surge protector shows fault after lightning strike; devices damaged. Explanation:",
+      "options": [
+        "A) Grounding was inadequate",
+        "B) Lightning can't damage indoor equipment",
+        "C) Devices were already defective",
+        "D) SPD MOVs were exceeded by surge magnitude"
+      ],
+      "correct": 3,
+      "explanation": "Surge exceeded SPD capacity, allowing damaging voltage through.",
+      "rule_reference": "CEC Rule 14-900"
+    },
+    {
+      "id": 66,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "Continuity test on conduit run shows high resistance. Issue:",
+      "options": [
+        "A) Conduit too long",
+        "B) Conduit is aluminum",
+        "C) Tester batteries are new",
+        "D) Loose or corroded coupling"
+      ],
+      "correct": 3,
+      "explanation": "Loose/corroded coupling breaks bonding path.",
+      "rule_reference": "CEC Rule 10-610"
+    },
+    {
+      "id": 67,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "Tenant feels tingling at kitchen faucet. 4V AC measured to ground. Cause:",
+      "options": [
+        "A) Static electricity",
+        "B) Water utility issue",
+        "C) Normal stray voltage",
+        "D) Failed bonding between water piping and grounding system"
+      ],
+      "correct": 3,
+      "explanation": "Broken equipotential bonding allows current on piping.",
+      "rule_reference": "CEC Rule 10-406"
+    },
+    {
+      "id": 68,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "Best instrument for measuring current without disconnecting wire?",
+      "options": [
+        "A) Analog ohmmeter",
+        "B) Megohmmeter",
+        "C) Clamp-on ammeter",
+        "D) Voltage divider"
+      ],
+      "correct": 2,
+      "explanation": "Clamp meter senses magnetic field around conductor.",
+      "rule_reference": "Test equipment"
+    },
+    {
+      "id": 69,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "Overheating neutral bus with multi-wire branch circuits suggests:",
+      "options": [
+        "A) Shared neutrals carrying harmonic currents exceeding capacity",
+        "B) Panel too old",
+        "C) Door left open",
+        "D) Main breaker undersized"
+      ],
+      "correct": 0,
+      "explanation": "Triplen harmonics add on neutral instead of cancelling.",
+      "rule_reference": "Power quality"
+    },
+    {
+      "id": 70,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "LED buzzing on dimmer. Best fix:",
+      "options": [
+        "A) Replace LED with incandescent",
+        "B) Install dimmer rated for LED loads and verify compatibility",
+        "C) Add a capacitor",
+        "D) Remove dimmer entirely"
+      ],
+      "correct": 1,
+      "explanation": "LED-compatible dimmer resolves buzzing.",
+      "rule_reference": "Lighting troubleshooting"
+    },
+    {
+      "id": 71,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "AFCI trips intermittently, no visible arcing. Possible cause:",
+      "options": [
+        "A) Nail/screw has pierced cable insulation in wall",
+        "B) AFCI definitely defective",
+        "C) AFCIs always trip randomly",
+        "D) Too many receptacles"
+      ],
+      "correct": 0,
+      "explanation": "Concealed cable damage from nail/screw creates intermittent arc.",
+      "rule_reference": "CEC Rule 26-652"
+    },
+    {
+      "id": 72,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "First step troubleshooting a dead receptacle?",
+      "options": [
+        "A) Replace the receptacle",
+        "B) Open wall to inspect wiring",
+        "C) Check if circuit breaker tripped",
+        "D) Call utility"
+      ],
+      "correct": 2,
+      "explanation": "Start at the source - check breaker first.",
+      "rule_reference": "Troubleshooting"
+    },
+    {
+      "id": 73,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "208V motor draws high current on one phase with balanced voltage. Suggests:",
+      "options": [
+        "A) Winding fault (shorted turns)",
+        "B) Power supply defective",
+        "C) Running in reverse",
+        "D) Wrong nameplate"
+      ],
+      "correct": 0,
+      "explanation": "Balanced voltage but unbalanced current = motor winding issue.",
+      "rule_reference": "Motor troubleshooting"
+    },
+    {
+      "id": 74,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "Emergency lights fail during outage but batteries are full. Cause:",
+      "options": [
+        "A) Batteries too old",
+        "B) LED emergency lights don't work in outages",
+        "C) Transfer switch/relay that detects power loss has failed",
+        "D) Test performed incorrectly"
+      ],
+      "correct": 2,
+      "explanation": "Sensing circuit or transfer relay has failed.",
+      "rule_reference": "CEC Rule 46-300"
+    },
+    {
+      "id": 75,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "A warm circuit breaker during normal operation is:",
+      "options": [
+        "A) Normal due to internal resistance",
+        "B) Emergency - shut down",
+        "C) Sign of replacement needed",
+        "D) Too many wires in panel"
+      ],
+      "correct": 0,
+      "explanation": "Moderate warmth is normal from current flow.",
+      "rule_reference": "Maintenance"
+    },
+    {
+      "id": 76,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "3-phase contactor chatters. Coil voltage reads low. Cause:",
+      "options": [
+        "A) Contactor oversized",
+        "B) Button wired wrong",
+        "C) Motor too small",
+        "D) Low control voltage from excessive drop or failing transformer"
+      ],
+      "correct": 3,
+      "explanation": "Low coil voltage prevents full armature engagement.",
+      "rule_reference": "Motor control troubleshooting"
+    },
+    {
+      "id": 77,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "DMM shows 0.5-3V AC between ground wire and metal pipe. Indicates:",
+      "options": [
+        "A) Faulty meter",
+        "B) Normal EMI only",
+        "C) DC voltage on pipe",
+        "D) Stray voltage or neutral-ground fault"
+      ],
+      "correct": 3,
+      "explanation": "Fluctuating AC on piping warrants ground fault investigation.",
+      "rule_reference": "Troubleshooting"
+    },
+    {
+      "id": 78,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "Commissioning: 600V switchgear shows ground fault alarm, no loads, insulation reads 200 MOhm. Cause:",
+      "options": [
+        "A) Contamination on ground fault sensor/CT",
+        "B) Bus bars need replacing",
+        "C) 200 MOhm is too low",
+        "D) Manufactured incorrectly"
+      ],
+      "correct": 0,
+      "explanation": "False alarm from contamination on GF sensor - bus insulation is fine.",
+      "rule_reference": "Commissioning"
+    },
+    {
+      "id": 79,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "Programmable thermostat loses program after power outage. Check:",
+      "options": [
+        "A) Backup battery",
+        "B) Heater wattage",
+        "C) Breaker amperage",
+        "D) Wire gauge"
+      ],
+      "correct": 0,
+      "explanation": "Dead backup battery causes program loss.",
+      "rule_reference": "Maintenance"
+    },
+    {
+      "id": 80,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "VFD 'overcurrent' fault on startup, motor runs fine across-the-line. Check:",
+      "options": [
+        "A) Motor insulation",
+        "B) Incoming supply voltage",
+        "C) VFD parameters - acceleration time and motor data",
+        "D) Replace VFD"
+      ],
+      "correct": 2,
+      "explanation": "VFD acceleration time too short or motor data entered wrong.",
+      "rule_reference": "VFD troubleshooting"
+    },
+    {
+      "id": 81,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "What tool identifies which breaker controls a specific receptacle?",
+      "options": [
+        "A) Megohmmeter",
+        "B) Oscilloscope",
+        "C) Current transformer",
+        "D) Circuit tracer/toner"
+      ],
+      "correct": 3,
+      "explanation": "Circuit tracer sends signal from receptacle to identify breaker.",
+      "rule_reference": "Test equipment"
+    },
+    {
+      "id": 82,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "Bus duct joint temps increase over months at constant load. Indicates:",
+      "options": [
+        "A) Progressive oxidation and increasing contact resistance",
+        "B) Ambient temp increasing",
+        "C) Camera degrading",
+        "D) Normal aging"
+      ],
+      "correct": 0,
+      "explanation": "Progressive resistance increase from oxidation/loosening.",
+      "rule_reference": "NFPA 70B"
+    },
+    {
+      "id": 83,
+      "section": "Motor Controls & Automation",
+      "difficulty": "easy",
+      "question": "What is the purpose of a contactor in a motor circuit?",
+      "options": [
+        "A) Measure motor current",
+        "B) Switch motor on/off remotely via control signal",
+        "C) Regulate speed",
+        "D) Convert AC to DC"
+      ],
+      "correct": 1,
+      "explanation": "Contactor switches motor power using lower-voltage control.",
+      "rule_reference": "Motor control"
+    },
+    {
+      "id": 84,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "DOL starter suitability depends on:",
+      "options": [
+        "A) Motor HP only",
+        "B) Available supply capacity relative to motor locked-rotor current",
+        "C) Wire colour",
+        "D) Motor brand"
+      ],
+      "correct": 1,
+      "explanation": "Supply stiffness vs inrush current matters, not just HP.",
+      "rule_reference": "CEC Rule 28-106"
+    },
+    {
+      "id": 85,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "Wye-delta starter reduces starting current to approximately:",
+      "options": [
+        "A) 50% of DOL",
+        "B) 33% of DOL",
+        "C) 67% of DOL",
+        "D) 80% of DOL"
+      ],
+      "correct": 1,
+      "explanation": "1/3 of DOL current.",
+      "rule_reference": "Motor control theory"
+    },
+    {
+      "id": 86,
+      "section": "Motor Controls & Automation",
+      "difficulty": "easy",
+      "question": "Thermal overload relay protects against:",
+      "options": [
+        "A) Sustained overcurrent damaging windings",
+        "B) Lightning surges",
+        "C) Short circuits",
+        "D) Ground faults"
+      ],
+      "correct": 0,
+      "explanation": "Protects motor from sustained overcurrent/overheating.",
+      "rule_reference": "CEC Rule 28-300"
+    },
+    {
+      "id": 87,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "30 HP, 575V, 3-phase motor (FLC 32A). Maximum dual-element time-delay fuse?",
+      "options": [
+        "A) 50A",
+        "B) 40A",
+        "C) 56A",
+        "D) 60A"
+      ],
+      "correct": 0,
+      "explanation": "175% x 32A = 56A. Round DOWN to standard 50A.",
+      "rule_reference": "CEC Rule 28-200"
+    },
+    {
+      "id": 88,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "Swapping two phases of a 3-phase motor causes:",
+      "options": [
+        "A) Motor won't start",
+        "B) Draws more current same direction",
+        "C) Runs faster",
+        "D) Runs in reverse"
+      ],
+      "correct": 3,
+      "explanation": "Reversing two phases reverses rotation.",
+      "rule_reference": "Motor theory"
+    },
+    {
+      "id": 89,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "PLC input LED on but program doesn't see it. Cause:",
+      "options": [
+        "A) LED wrong",
+        "B) Wrong input address in program",
+        "C) Firmware update needed",
+        "D) Supply voltage too high"
+      ],
+      "correct": 1,
+      "explanation": "Address mismatch between physical terminal and program.",
+      "rule_reference": "PLC troubleshooting"
+    },
+    {
+      "id": 90,
+      "section": "Motor Controls & Automation",
+      "difficulty": "easy",
+      "question": "Short circuit protection in a motor starter is provided by:",
+      "options": [
+        "A) Overload relay",
+        "B) Contactor",
+        "C) Control transformer",
+        "D) Fuses or circuit breaker"
+      ],
+      "correct": 3,
+      "explanation": "Fuses/breaker handle short circuits.",
+      "rule_reference": "CEC Rule 28-200"
+    },
+    {
+      "id": 91,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "VFD motor overheats at 30 Hz reduced load. Why?",
+      "options": [
+        "A) VFD defective",
+        "B) Motor oversized",
+        "C) Shaft fan provides less cooling at low speed - need external blower",
+        "D) VFDs always overheat below 50 Hz"
+      ],
+      "correct": 2,
+      "explanation": "TEFC fan airflow decreases with speed.",
+      "rule_reference": "Motor/VFD application"
+    },
+    {
+      "id": 92,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "Seal-in contact in a 3-wire start/stop circuit is:",
+      "options": [
+        "A) NC auxiliary on contactor",
+        "B) NO auxiliary on contactor in parallel with start button",
+        "C) The stop button",
+        "D) A timer contact"
+      ],
+      "correct": 1,
+      "explanation": "NO auxiliary parallels start button to hold circuit.",
+      "rule_reference": "Motor control circuits"
+    },
+    {
+      "id": 93,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "Purpose of a control power transformer (CPT)?",
+      "options": [
+        "A) Step down 600V to 120V for control circuits",
+        "B) Increase motor speed",
+        "C) Emergency backup power",
+        "D) Filter harmonics"
+      ],
+      "correct": 0,
+      "explanation": "CPT steps down line voltage for control devices.",
+      "rule_reference": "Motor control design"
+    },
+    {
+      "id": 94,
+      "section": "Motor Controls & Automation",
+      "difficulty": "easy",
+      "question": "FLC on a motor nameplate stands for:",
+      "options": [
+        "A) Full Load Current",
+        "B) Fuse Load Capacity",
+        "C) Fixed Line Connection",
+        "D) Frequency Limit Control"
+      ],
+      "correct": 0,
+      "explanation": "Full Load Current at rated conditions.",
+      "rule_reference": "CEC Section 28"
+    },
+    {
+      "id": 95,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "Soft starter stalls centrifugal pump on 15-second ramp. Fix:",
+      "options": [
+        "A) Increase initial torque (kick start) and/or ramp time",
+        "B) Decrease ramp time",
+        "C) Larger soft starter",
+        "D) Bypass soft starter"
+      ],
+      "correct": 0,
+      "explanation": "Pump needs more breakaway torque - increase kick start.",
+      "rule_reference": "Soft starter application"
+    },
+    {
+      "id": 96,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "Forward/reverse interlocks prevent:",
+      "options": [
+        "A) Wrong motor speed",
+        "B) Simultaneous energization causing short circuit",
+        "C) Motor overheating",
+        "D) Low voltage"
+      ],
+      "correct": 1,
+      "explanation": "Electrical and mechanical interlocks prevent both contactors closing.",
+      "rule_reference": "Motor control circuits"
+    },
+    {
+      "id": 97,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "PLC output LED on but solenoid valve doesn't actuate. Check:",
+      "options": [
+        "A) PLC program logic",
+        "B) Input module",
+        "C) Output fuse, field wiring, and valve coil",
+        "D) PLC battery"
+      ],
+      "correct": 2,
+      "explanation": "Program is working; problem is downstream.",
+      "rule_reference": "PLC troubleshooting"
+    },
+    {
+      "id": 98,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "VFD faults on 'output overcurrent' with 60 m cable. Output reactor fixes it because:",
+      "options": [
+        "A) Reduces motor FLC",
+        "B) Limits dV/dt from PWM and cable capacitance reducing reflected wave spikes",
+        "C) Increases cable insulation rating",
+        "D) Converts AC to DC"
+      ],
+      "correct": 1,
+      "explanation": "Long cables + PWM = reflected waves. Reactor limits dV/dt.",
+      "rule_reference": "IEEE 519"
+    },
+    {
+      "id": 99,
+      "section": "Motor Controls & Automation",
+      "difficulty": "easy",
+      "question": "'OL' on a motor schematic represents:",
+      "options": [
+        "A) Overload relay",
+        "B) On-Line power",
+        "C) Open Loop",
+        "D) Output Load"
+      ],
+      "correct": 0,
+      "explanation": "OL = overload relay.",
+      "rule_reference": "Motor control schematics"
+    },
+    {
+      "id": 100,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "Disconnect switch for a single motor must be rated at minimum:",
+      "options": [
+        "A) 100% of FLC",
+        "B) 115% of FLC",
+        "C) 125% of FLC",
+        "D) 150% of FLC"
+      ],
+      "correct": 1,
+      "explanation": "115% of motor FLC minimum.",
+      "rule_reference": "CEC Rule 28-602"
+    },
+    {
+      "id": 101,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "50 HP, 575V motor, Code G. Expected locked-rotor current?",
+      "options": [
+        "A) 250A",
+        "B) 320A",
+        "C) 395A",
+        "D) 480A"
+      ],
+      "correct": 2,
+      "explanation": "Code G = 5.6-6.29 kVA/HP. Calculated LRA approximately 395A.",
+      "rule_reference": "CEC Table 44"
+    },
+    {
+      "id": 102,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "E-stop button should use what contact type?",
+      "options": [
+        "A) Normally open",
+        "B) Normally closed (fail-safe)",
+        "C) Either type",
+        "D) Toggle switch"
+      ],
+      "correct": 1,
+      "explanation": "NC contacts = fail-safe. Wire break also stops machine.",
+      "rule_reference": "CSA Z432"
+    },
+    {
+      "id": 103,
+      "section": "Communication & Data Systems",
+      "difficulty": "easy",
+      "question": "Minimum separation between power and unshielded comm cables?",
+      "options": [
+        "A) 200 mm",
+        "B) 50 mm",
+        "C) No separation",
+        "D) 600 mm"
+      ],
+      "correct": 0,
+      "explanation": "200 mm prevents EMI.",
+      "rule_reference": "CEC Rule 60-304"
+    },
+    {
+      "id": 104,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "Cat6 UTP maximum channel length?",
+      "options": [
+        "A) 90 m permanent link, 100 m channel",
+        "B) 55 m",
+        "C) 150 m",
+        "D) 300 m"
+      ],
+      "correct": 0,
+      "explanation": "90 m permanent + 10 m patches = 100 m channel.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 105,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "Maximum untwisted Cat6 conductor length at termination?",
+      "options": [
+        "A) 13 mm",
+        "B) 25 mm",
+        "C) 50 mm",
+        "D) Any length"
+      ],
+      "correct": 0,
+      "explanation": "13 mm max to maintain performance.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 106,
+      "section": "Communication & Data Systems",
+      "difficulty": "easy",
+      "question": "Single-mode fiber optic cable specification?",
+      "options": [
+        "A) Cat5e UTP",
+        "B) Coax RG-6",
+        "C) 62.5/125 um",
+        "D) 9/125 um"
+      ],
+      "correct": 3,
+      "explanation": "9/125 um is single-mode.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 107,
+      "section": "Communication & Data Systems",
+      "difficulty": "hard",
+      "question": "48 data drops need a telecom room. Minimum floor space per TIA?",
+      "options": [
+        "A) Wall-mounted rack sufficient",
+        "B) 1.5 m x 1.5 m",
+        "C) 3.0 m x 3.4 m",
+        "D) 6.0 m x 6.0 m"
+      ],
+      "correct": 2,
+      "explanation": "~10 m2 minimum per TIA-569.",
+      "rule_reference": "TIA-569"
+    },
+    {
+      "id": 108,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "Standard commercial Cat6 wiring scheme?",
+      "options": [
+        "A) T568A both ends",
+        "B) T568B both ends",
+        "C) T568A one end, T568B other",
+        "D) Doesn't matter"
+      ],
+      "correct": 1,
+      "explanation": "T568B most common in North America.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 109,
+      "section": "Communication & Data Systems",
+      "difficulty": "easy",
+      "question": "Primary advantage of fiber over copper?",
+      "options": [
+        "A) EMI immunity and longer distance",
+        "B) Cheaper installation",
+        "C) Easier field termination",
+        "D) Carries power simultaneously"
+      ],
+      "correct": 0,
+      "explanation": "Fiber is immune to EMI, supports longer runs.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 110,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "PoE++ (Type 3/4) uses how many conductor pairs?",
+      "options": [
+        "A) Only pairs 1-2 and 3-6",
+        "B) Only pairs 4-5 and 7-8",
+        "C) A separate power cable",
+        "D) All four pairs"
+      ],
+      "correct": 3,
+      "explanation": "PoE++ uses all 4 pairs for up to 90W.",
+      "rule_reference": "IEEE 802.3bt"
+    },
+    {
+      "id": 111,
+      "section": "Communication & Data Systems",
+      "difficulty": "hard",
+      "question": "Cat6 fails NEXT at patch panel, passes everything else. Fix:",
+      "options": [
+        "A) Replace entire cable",
+        "B) Lower test standard",
+        "C) Use Cat5e patch cord",
+        "D) Re-terminate with minimal pair untwisting"
+      ],
+      "correct": 3,
+      "explanation": "NEXT at one end = termination issue.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 112,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "Plenum space comm cable must be rated:",
+      "options": [
+        "A) Standard PVC",
+        "B) Any cable in conduit",
+        "C) Outdoor UV-resistant",
+        "D) CMP (Communications Plenum)"
+      ],
+      "correct": 3,
+      "explanation": "CMP rated for fire safety in plenum spaces.",
+      "rule_reference": "CEC Rule 60-100"
+    },
+    {
+      "id": 113,
+      "section": "Communication & Data Systems",
+      "difficulty": "easy",
+      "question": "Minimum Cat6 bend radius during installation?",
+      "options": [
+        "A) No minimum",
+        "B) 10x cable diameter",
+        "C) 25 mm",
+        "D) 4x cable diameter"
+      ],
+      "correct": 3,
+      "explanation": "4 times cable diameter.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 114,
+      "section": "Communication & Data Systems",
+      "difficulty": "hard",
+      "question": "WAP needs 30W PoE at 85 m. Minimum standard and cable?",
+      "options": [
+        "A) PoE 802.3af, Cat5e",
+        "B) PoE+ 802.3at, Cat5e",
+        "C) PoE+ 802.3at, Cat6",
+        "D) PoE++ 802.3bt Type 3, Cat6"
+      ],
+      "correct": 2,
+      "explanation": "30W needs PoE+. At 85 m, Cat6 has lower resistance.",
+      "rule_reference": "IEEE 802.3at"
+    },
+    {
+      "id": 115,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "easy",
+      "question": "Fire alarm installation standard in Canada?",
+      "options": [
+        "A) CEC Section 32 only",
+        "B) CSA C22.1 only",
+        "C) ULC-S524 and CAN/ULC-S537",
+        "D) NFPA 72 only"
+      ],
+      "correct": 2,
+      "explanation": "ULC-S524 governs FA installation.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 116,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "Fire alarm circuit wire colour in Canada?",
+      "options": [
+        "A) White",
+        "B) Black",
+        "C) Orange",
+        "D) Red"
+      ],
+      "correct": 3,
+      "explanation": "Red insulation for fire alarm circuits.",
+      "rule_reference": "CEC Rule 32-100"
+    },
+    {
+      "id": 117,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "2-stage fire alarm: Stage 1 activates ___, Stage 2 activates ___:",
+      "options": [
+        "A) General alarm, then alert",
+        "B) Sprinklers, then detectors",
+        "C) Alert signal, then general evacuation alarm",
+        "D) Strobes only, then audible alarms"
+      ],
+      "correct": 2,
+      "explanation": "Stage 1 = alert (investigate), Stage 2 = evacuate.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 118,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "easy",
+      "question": "Fire alarm system testing frequency?",
+      "options": [
+        "A) Every 5 years",
+        "B) Monthly",
+        "C) Annually with monthly inspections",
+        "D) Only when problems reported"
+      ],
+      "correct": 2,
+      "explanation": "Annual verification plus monthly inspections.",
+      "rule_reference": "ULC-S536"
+    },
+    {
+      "id": 119,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "hard",
+      "question": "NAC circuit max resistance is determined by:",
+      "options": [
+        "A) Total device current draw and minimum operating voltage at last device",
+        "B) Fixed 50 ohm limit",
+        "C) Wire colour",
+        "D) Number of pull stations"
+      ],
+      "correct": 0,
+      "explanation": "Calculated from total load and voltage drop to last device.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 120,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "Required initiating device at stairwell entrances in high-rises?",
+      "options": [
+        "A) Smoke detector",
+        "B) Manual pull station",
+        "C) Heat detector",
+        "D) Beam detector"
+      ],
+      "correct": 1,
+      "explanation": "Pull stations at every stairwell entrance.",
+      "rule_reference": "ULC-S524, OBC"
+    },
+    {
+      "id": 121,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "Fire alarm wiring must be:",
+      "options": [
+        "A) Kept separate from all other wiring and clearly identified",
+        "B) In same raceway as power wiring",
+        "C) Always in rigid metal conduit",
+        "D) Only in cable trays"
+      ],
+      "correct": 0,
+      "explanation": "Separate and identified from other wiring.",
+      "rule_reference": "CEC Rule 32-102"
+    },
+    {
+      "id": 122,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "hard",
+      "question": "Fire alarm annunciator panel location:",
+      "options": [
+        "A) Main entrance accessible to fire services",
+        "B) Mechanical room near fire pump",
+        "C) Building manager's office",
+        "D) On the roof"
+      ],
+      "correct": 0,
+      "explanation": "At main entrance for firefighter access.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 123,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "easy",
+      "question": "Photoelectric smoke detector uses:",
+      "options": [
+        "A) Light source and photoelectric sensor",
+        "B) Ionization chamber",
+        "C) Temperature sensing",
+        "D) Air sampling"
+      ],
+      "correct": 0,
+      "explanation": "Light source scattered by smoke onto sensor.",
+      "rule_reference": "FA fundamentals"
+    },
+    {
+      "id": 124,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "Sprinkler flow switch is classified as:",
+      "options": [
+        "A) Notification appliance",
+        "B) Supervisory device",
+        "C) End-of-line device",
+        "D) Alarm initiating device"
+      ],
+      "correct": 3,
+      "explanation": "Flow switch = water flowing = fire = alarm initiation.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 125,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "hard",
+      "question": "Purpose of end-of-line (EOL) resistor?",
+      "options": [
+        "A) Limit detector current",
+        "B) Power last device",
+        "C) Supervise circuit for open/ground faults via reference current",
+        "D) Suppress noise"
+      ],
+      "correct": 2,
+      "explanation": "EOL provides reference current for fault supervision.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 126,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "easy",
+      "question": "Emergency lighting minimum illumination duration?",
+      "options": [
+        "A) 15 minutes",
+        "B) 30 minutes",
+        "C) 60 minutes",
+        "D) 120 minutes"
+      ],
+      "correct": 1,
+      "explanation": "30 minutes minimum.",
+      "rule_reference": "CEC Rule 46-300"
+    },
+    {
+      "id": 127,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "easy",
+      "question": "CEC section covering solar PV systems?",
+      "options": [
+        "A) Section 30",
+        "B) Section 50",
+        "C) Section 86",
+        "D) Section 64"
+      ],
+      "correct": 3,
+      "explanation": "Section 64 covers Renewable Energy.",
+      "rule_reference": "CEC Section 64"
+    },
+    {
+      "id": 128,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "medium",
+      "question": "PV conductors must be sized at:",
+      "options": [
+        "A) 125% of Isc",
+        "B) 80% of Isc",
+        "C) Inverter output rating only",
+        "D) Load current at main panel"
+      ],
+      "correct": 0,
+      "explanation": "125% of short-circuit current.",
+      "rule_reference": "CEC Rule 64-060"
+    },
+    {
+      "id": 129,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "medium",
+      "question": "Grid-tied inverter must have:",
+      "options": [
+        "A) Battery charging",
+        "B) Anti-islanding protection",
+        "C) Voltage doubling",
+        "D) Diesel backup"
+      ],
+      "correct": 1,
+      "explanation": "Anti-islanding disconnects when grid is lost.",
+      "rule_reference": "CEC Rule 64-110"
+    },
+    {
+      "id": 130,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "hard",
+      "question": "12 PV modules in series, 40V Voc each, temp correction 1.14. Max system voltage?",
+      "options": [
+        "A) 480V",
+        "B) 547V",
+        "C) 456V",
+        "D) 600V"
+      ],
+      "correct": 1,
+      "explanation": "12 x 40 x 1.14 = 547V.",
+      "rule_reference": "CEC Rule 64-060"
+    },
+    {
+      "id": 131,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "easy",
+      "question": "CEC section for EV charging (EVSE)?",
+      "options": [
+        "A) Section 30",
+        "B) Section 64",
+        "C) Section 46",
+        "D) Section 86"
+      ],
+      "correct": 3,
+      "explanation": "Section 86 covers EVSE.",
+      "rule_reference": "CEC Section 86"
+    },
+    {
+      "id": 132,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "medium",
+      "question": "Level 2 EV charger supply:",
+      "options": [
+        "A) 120V, 5-15R receptacle",
+        "B) 208/240V, hardwired or dedicated receptacle",
+        "C) 600V, 3-phase industrial",
+        "D) 12V DC from solar"
+      ],
+      "correct": 1,
+      "explanation": "208V or 240V dedicated circuit.",
+      "rule_reference": "CEC Section 86"
+    },
+    {
+      "id": 133,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "hard",
+      "question": "Battery energy storage system (BESS) requires:",
+      "options": [
+        "A) No special requirements",
+        "B) Disconnect, overcurrent protection, ventilation, and signage",
+        "C) Only a disconnect",
+        "D) Fire alarm connection only"
+      ],
+      "correct": 1,
+      "explanation": "Full protection package per CEC.",
+      "rule_reference": "CEC Section 64"
+    },
+    {
+      "id": 134,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "medium",
+      "question": "PV rapid shutdown must reduce array conductors to ___ within 30 seconds:",
+      "options": [
+        "A) 0V",
+        "B) 30V DC",
+        "C) 80V or less",
+        "D) 600V if inverter off"
+      ],
+      "correct": 2,
+      "explanation": "80V or less for first responder safety.",
+      "rule_reference": "CEC Rule 64-218"
+    },
+    {
+      "id": 135,
+      "section": "Electrical Commissioning",
+      "difficulty": "easy",
+      "question": "Megohmmeter purpose:",
+      "options": [
+        "A) Measure circuit current",
+        "B) Measure insulation resistance",
+        "C) Calibrate breakers",
+        "D) Test GFCIs"
+      ],
+      "correct": 1,
+      "explanation": "Tests insulation resistance in megohms.",
+      "rule_reference": "IEEE 43"
+    },
+    {
+      "id": 136,
+      "section": "Electrical Commissioning",
+      "difficulty": "medium",
+      "question": "New 600V switchgear - minimum insulation resistance reading?",
+      "options": [
+        "A) 0.5 MOhm",
+        "B) 1.0 MOhm",
+        "C) 100 MOhm or higher",
+        "D) Any reading acceptable"
+      ],
+      "correct": 2,
+      "explanation": "100 MOhm+ expected for new equipment.",
+      "rule_reference": "NETA ATS"
+    },
+    {
+      "id": 137,
+      "section": "Electrical Commissioning",
+      "difficulty": "medium",
+      "question": "Ground resistance test reads 12 ohm for building electrode:",
+      "options": [
+        "A) Exceeds typical limit - supplemental electrodes may be needed",
+        "B) Acceptable for all installations",
+        "C) No further action",
+        "D) Only concerns lightning protection"
+      ],
+      "correct": 0,
+      "explanation": "10 ohm is typical max; 12 ohm needs improvement.",
+      "rule_reference": "CEC Rule 10-700"
+    },
+    {
+      "id": 138,
+      "section": "Electrical Commissioning",
+      "difficulty": "easy",
+      "question": "Phase rotation testing ensures:",
+      "options": [
+        "A) Correct A-B-C sequence for proper motor rotation",
+        "B) Correct voltage",
+        "C) Grounding system integrity",
+        "D) Power factor measurement"
+      ],
+      "correct": 0,
+      "explanation": "Confirms phase sequence for motor direction.",
+      "rule_reference": "Commissioning"
+    },
+    {
+      "id": 139,
+      "section": "Electrical Commissioning",
+      "difficulty": "hard",
+      "question": "Transformer turns ratio test shows 0.8% deviation. This is:",
+      "options": [
+        "A) Critical defect - reject",
+        "B) Not tested during commissioning",
+        "C) Normal for all transformers",
+        "D) Within tolerance per IEEE C57.12 depending on ratio"
+      ],
+      "correct": 3,
+      "explanation": "Tolerance depends on transformer ratio per IEEE C57.12.",
+      "rule_reference": "IEEE C57.12"
+    },
+    {
+      "id": 140,
+      "section": "Electrical Commissioning",
+      "difficulty": "medium",
+      "question": "Test that verifies breaker trips at rated current:",
+      "options": [
+        "A) Primary current injection test",
+        "B) Insulation resistance test",
+        "C) Phase rotation test",
+        "D) Continuity test"
+      ],
+      "correct": 0,
+      "explanation": "Primary injection applies actual current to verify trip.",
+      "rule_reference": "NETA ATS"
+    },
+    {
+      "id": 141,
+      "section": "Electrical Commissioning",
+      "difficulty": "hard",
+      "question": "Ground resistance target 5 ohm, first test reads 8 ohm. Best approach:",
+      "options": [
+        "A) Accept 8 ohm",
+        "B) Add rods at 2x rod length spacing and retest",
+        "C) Drive existing rods deeper only",
+        "D) Use water pipe ground only"
+      ],
+      "correct": 1,
+      "explanation": "Supplemental rods at proper spacing maximizes reduction.",
+      "rule_reference": "IEEE 142"
+    },
+    {
+      "id": 142,
+      "section": "Electrical Commissioning",
+      "difficulty": "easy",
+      "question": "Before energizing a new installation in Ontario, you need:",
+      "options": [
+        "A) Nothing - electrician decides",
+        "B) Building permit only",
+        "C) ESA inspection and approval",
+        "D) Utility written permission only"
+      ],
+      "correct": 2,
+      "explanation": "ESA must inspect and approve.",
+      "rule_reference": "OESC"
+    },
+    {
+      "id": 143,
+      "section": "CEC Code Rules",
+      "difficulty": "easy",
+      "question": "CEC stands for:",
+      "options": [
+        "A) Canadian Electrical Code",
+        "B) Canadian Energy Commission",
+        "C) Certified Electrician Council",
+        "D) Central Equipment Catalogue"
+      ],
+      "correct": 0,
+      "explanation": "Canadian Electrical Code, CSA C22.1.",
+      "rule_reference": "CEC Introduction"
+    },
+    {
+      "id": 144,
+      "section": "CEC Code Rules",
+      "difficulty": "medium",
+      "question": "AHJ for electrical installations in Ontario?",
+      "options": [
+        "A) Local building department",
+        "B) Electrical Safety Authority (ESA)",
+        "C) Ministry of Labour",
+        "D) CSA Group"
+      ],
+      "correct": 1,
+      "explanation": "ESA is Ontario's AHJ.",
+      "rule_reference": "OESC"
+    },
+    {
+      "id": 145,
+      "section": "CEC Code Rules",
+      "difficulty": "medium",
+      "question": "All electrical equipment in Canada must be:",
+      "options": [
+        "A) Made in Canada",
+        "B) Less than 10 years old",
+        "C) Approved with certification mark from accredited body",
+        "D) Registered with utility"
+      ],
+      "correct": 2,
+      "explanation": "Must bear CSA, cUL, cETL or equivalent certification mark.",
+      "rule_reference": "CEC Rule 2-024"
+    },
+    {
+      "id": 146,
+      "section": "CEC Code Rules",
+      "difficulty": "easy",
+      "question": "Current CEC edition referenced by Ontario (2024)?",
+      "options": [
+        "A) 24th Edition",
+        "B) 25th Edition",
+        "C) 26th Edition (2024)",
+        "D) 23rd Edition"
+      ],
+      "correct": 2,
+      "explanation": "26th Edition, CSA C22.1:24.",
+      "rule_reference": "OESC 2024"
+    },
+    {
+      "id": 147,
+      "section": "CEC Code Rules",
+      "difficulty": "hard",
+      "question": "In the CEC, 'shall' means:",
+      "options": [
+        "A) Mandatory requirement",
+        "B) Suggestion",
+        "C) Recommendation",
+        "D) Option"
+      ],
+      "correct": 0,
+      "explanation": "'Shall' = mandatory. 'Should' = recommended. 'May' = permitted.",
+      "rule_reference": "CEC Introduction"
+    },
+    {
+      "id": 148,
+      "section": "CEC Code Rules",
+      "difficulty": "medium",
+      "question": "The CEC applies to:",
+      "options": [
+        "A) Residential only",
+        "B) All electrical installations and equipment in buildings and premises",
+        "C) New construction only",
+        "D) Only above 120V"
+      ],
+      "correct": 1,
+      "explanation": "All installations including modifications and additions.",
+      "rule_reference": "CEC Rule 2-000"
+    },
+    {
+      "id": 149,
+      "section": "CEC Code Rules",
+      "difficulty": "hard",
+      "question": "Special ESA inspection is required for:",
+      "options": [
+        "A) Any electrical work",
+        "B) Only when homeowner requests",
+        "C) Industrial only",
+        "D) Temporary wiring, emergency systems, or code deviations"
+      ],
+      "correct": 3,
+      "explanation": "Special inspections for life safety, temporary, hazardous, variances.",
+      "rule_reference": "OESC"
+    },
+    {
+      "id": 150,
+      "section": "CEC Code Rules",
+      "difficulty": "medium",
+      "question": "If CEC doesn't address a specific method, you should:",
+      "options": [
+        "A) Use any method you choose",
+        "B) Consult the AHJ (ESA) for guidance",
+        "C) Refuse the work",
+        "D) Follow NEC instead"
+      ],
+      "correct": 1,
+      "explanation": "Consult AHJ for guidance and approval.",
+      "rule_reference": "CEC Rule 2-034"
+    }
+  ]
+}

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFQ Buddy | 309A Electrician Exam Prep</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="309A Electrician Exam Prep - Certificate of Qualification practice exams for Ontario electricians">
+    <meta name="theme-color" content="#00897B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CFQ Buddy">
+    <meta name="application-name" content="CFQ Buddy">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#00897B">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- PWA Install Banner Styles -->
+    <style>
+        /* Install Banner */
+        .pwa-install-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #00897B, #00695C);
+            color: white;
+            padding: 16px 20px;
+            z-index: 10000;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            animation: slideUp 0.4s ease-out;
+        }
+        .pwa-install-banner.show {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .pwa-install-banner .pwa-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .pwa-install-banner .pwa-text {
+            flex: 1;
+        }
+        .pwa-install-banner .pwa-text h4 {
+            margin: 0 0 2px 0;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .pwa-install-banner .pwa-text p {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .pwa-install-banner .pwa-btn-install {
+            background: #FFD54F;
+            color: #1d3557;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .pwa-install-banner .pwa-btn-install:hover {
+            background: #FFCA28;
+        }
+        .pwa-install-banner .pwa-btn-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 4px 8px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .pwa-install-banner .pwa-btn-close:hover {
+            opacity: 1;
+        }
+        /* iOS install instructions */
+        .pwa-ios-instructions {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #00897B, #00695C);
+            color: white;
+            padding: 20px;
+            z-index: 10000;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: slideUp 0.4s ease-out;
+        }
+        .pwa-ios-instructions.show {
+            display: block;
+        }
+        .pwa-ios-instructions p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+        .pwa-ios-instructions .ios-steps {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+        .pwa-ios-instructions .pwa-btn-close {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        /* Offline indicator */
+        .offline-indicator {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e63946;
+            color: white;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            z-index: 10001;
+        }
+        .offline-indicator.show {
+            display: block;
+        }
+        /* Update available toast */
+        .pwa-update-toast {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1d3557;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 10000;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .pwa-update-toast.show {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Feedback System */
+        .feedback-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #00897B, #00695C);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feedback-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+        }
+        .feedback-fab.hide { display: none; }
+        .feedback-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 10001;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .feedback-overlay.show { display: flex; }
+        .feedback-panel {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            max-width: 440px;
+            width: 100%;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .feedback-panel h3 {
+            margin: 0 0 4px 0;
+            font-size: 20px;
+            color: #1d3557;
+        }
+        .feedback-panel .fb-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin: 0 0 20px 0;
+        }
+        .feedback-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+        .feedback-close:hover { color: #333; }
+        .star-rating {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0 16px;
+        }
+        .star-btn {
+            background: none;
+            border: none;
+            font-size: 36px;
+            cursor: pointer;
+            color: #ddd;
+            transition: color 0.15s, transform 0.15s;
+            padding: 0;
+            line-height: 1;
+        }
+        .star-btn.active { color: #FFD54F; }
+        .star-btn:hover { transform: scale(1.2); }
+        .feedback-label {
+            display: block;
+            font-weight: 600;
+            color: #1d3557;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .feedback-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            background: white;
+            color: #333;
+        }
+        .feedback-textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            resize: vertical;
+            font-family: inherit;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        .feedback-textarea:focus, .feedback-select:focus {
+            border-color: #00897B;
+            outline: none;
+        }
+        .feedback-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #00897B, #00695C);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .feedback-submit:hover { opacity: 0.9; }
+        .feedback-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .feedback-thanks {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .feedback-thanks .thanks-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        .feedback-thanks h3 {
+            color: #00897B;
+            margin-bottom: 8px;
+        }
+        /* Post-exam feedback prompt */
+        .post-exam-prompt {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border: 2px solid #00897B;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .post-exam-prompt h4 {
+            margin: 0 0 8px;
+            color: #00695C;
+            font-size: 16px;
+        }
+        .post-exam-prompt p {
+            margin: 0 0 12px;
+            color: #555;
+            font-size: 14px;
+        }
+        .post-exam-prompt button {
+            background: #00897B;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .post-exam-prompt button:hover { background: #00695C; }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Landing / Code Entry -->
+    <div id="screen-landing" class="screen active">
+        <div class="container">
+            <div class="logo">⚡ CFQ Buddy</div>
+            <h1>Ontario 309A Electrician<br>Practice Exam</h1>
+            <p class="subtitle">150 questions · 4 hours · Based on CEC 2024 (26th Edition)</p>
+            <div class="code-entry">
+                <label for="access-code">Enter your access code:</label>
+                <input type="text" id="access-code" placeholder="XXXX-XXXX-XXXX" maxlength="14" autocomplete="off">
+                <div class="exam-select">
+                    <label for="exam-select">Select Exam:</label>
+                    <select id="exam-select">
+                        <option value="exam1">Practice Exam 1</option>
+                        <option value="exam2">Practice Exam 2</option>
+                        <option value="exam3">Practice Exam 3 (Advanced)</option>
+                    </select>
+                </div>
+                <button id="btn-start" onclick="validateCode()">Start Exam</button>
+                <p class="hint">Purchased on Gumroad? Your code was emailed to you.</p>
+            </div>
+            <div class="features">
+                <div class="feature">🕐 <strong>4-Hour Timer</strong><br>Just like the real C of Q exam</div>
+                <div class="feature">📊 <strong>Instant Scoring</strong><br>See your results immediately</div>
+                <div class="feature">📖 <strong>Full Review</strong><br>Detailed explanations + CEC references</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exam Screen -->
+    <div id="screen-exam" class="screen">
+        <div class="exam-header">
+            <div class="exam-header-left">
+                <span class="logo-small">⚡ CFQ Buddy</span>
+                <span id="question-counter">Question 1 / 150</span>
+            </div>
+            <div class="exam-header-right">
+                <div id="timer" class="timer">4:00:00</div>
+                <button id="btn-submit-exam" class="btn-danger" onclick="confirmSubmit()">Submit Exam</button>
+            </div>
+        </div>
+        <div class="exam-body">
+            <div class="question-nav" id="question-nav"></div>
+            <div class="question-area">
+                <div class="question-badge" id="question-badge"></div>
+                <h2 id="question-text"></h2>
+                <div id="options-container" class="options"></div>
+                <div class="question-controls">
+                    <button id="btn-prev" onclick="prevQuestion()">← Previous</button>
+                    <button id="btn-flag" onclick="flagQuestion()">🚩 Flag</button>
+                    <button id="btn-next" onclick="nextQuestion()">Next →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="screen-results" class="screen">
+        <div class="container results-container">
+            <div class="logo">⚡ CFQ Buddy</div>
+            <div id="result-badge" class="result-badge"></div>
+            <h1 id="result-title"></h1>
+            <div class="score-display">
+                <div class="score-circle" id="score-circle">
+                    <span id="score-percent">0%</span>
+                </div>
+            </div>
+            <div class="stats-grid" id="stats-grid"></div>
+            <div class="result-actions">
+                <button onclick="showReview()">📖 Review All Answers</button>
+                <button onclick="retakeExam()">🔄 Retake Exam</button>
+            </div>
+            <div class="post-exam-prompt" id="post-exam-feedback">
+                <h4>📝 How was this exam?</h4>
+                <p>Your feedback helps us build better practice exams for every electrician.</p>
+                <button onclick="openFeedback()">Leave Quick Feedback</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Screen -->
+    <div id="screen-review" class="screen">
+        <div class="review-header">
+            <span class="logo-small">⚡ CFQ Buddy — Answer Review</span>
+            <div>
+                <select id="review-filter" onchange="filterReview()">
+                    <option value="all">All Questions</option>
+                    <option value="incorrect">Incorrect Only</option>
+                    <option value="correct">Correct Only</option>
+                    <option value="flagged">Flagged</option>
+                </select>
+                <button onclick="backToResults()">← Back to Results</button>
+            </div>
+        </div>
+        <div class="review-body" id="review-body"></div>
+    </div>
+
+    <!-- Feedback Floating Button -->
+    <button class="feedback-fab" id="feedback-fab" onclick="openFeedback()" title="Give Feedback">💬</button>
+
+    <!-- Feedback Modal -->
+    <div class="feedback-overlay" id="feedback-overlay">
+        <div class="feedback-panel" id="feedback-panel">
+            <button class="feedback-close" onclick="closeFeedback()">&times;</button>
+            <div id="feedback-form-view">
+                <h3>💬 Share Your Feedback</h3>
+                <p class="fb-subtitle">Help us make CFQ Buddy better for every electrician</p>
+                
+                <label class="feedback-label">How would you rate your experience?</label>
+                <div class="star-rating" id="star-rating">
+                    <button class="star-btn" data-rating="1" onclick="setRating(1)">★</button>
+                    <button class="star-btn" data-rating="2" onclick="setRating(2)">★</button>
+                    <button class="star-btn" data-rating="3" onclick="setRating(3)">★</button>
+                    <button class="star-btn" data-rating="4" onclick="setRating(4)">★</button>
+                    <button class="star-btn" data-rating="5" onclick="setRating(5)">★</button>
+                </div>
+                
+                <label class="feedback-label" for="fb-category">What's this about?</label>
+                <select class="feedback-select" id="fb-category">
+                    <option value="">Select a category...</option>
+                    <option value="question-quality">Question Quality</option>
+                    <option value="wrong-answer">Wrong Answer / Error</option>
+                    <option value="missing-topic">Missing Topic</option>
+                    <option value="app-bug">App Bug / Issue</option>
+                    <option value="feature-request">Feature Request</option>
+                    <option value="general">General Feedback</option>
+                    <option value="testimonial">Testimonial / Success Story</option>
+                </select>
+                
+                <label class="feedback-label" for="fb-comment">Tell us more (optional)</label>
+                <textarea class="feedback-textarea" id="fb-comment" placeholder="What went well? What could be better? Found a wrong answer? Tell us the question number..."></textarea>
+                
+                <button class="feedback-submit" id="fb-submit" onclick="submitFeedback()">Send Feedback ⚡</button>
+            </div>
+            <div id="feedback-thanks-view" class="feedback-thanks" style="display:none;">
+                <div class="thanks-icon">🎉</div>
+                <h3>Thanks for your feedback!</h3>
+                <p>Every comment helps us improve CFQ Buddy for electricians like you.</p>
+                <button class="feedback-submit" onclick="closeFeedback()" style="margin-top:16px;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offline Indicator -->
+    <div class="offline-indicator" id="offline-indicator">
+        ⚡ You're offline — CFQ Buddy works offline with cached exams
+    </div>
+
+    <!-- PWA Install Banner (Android/Desktop) -->
+    <div class="pwa-install-banner" id="pwa-install-banner">
+        <img src="icons/icon-192x192.png" alt="CFQ Buddy" class="pwa-icon">
+        <div class="pwa-text">
+            <h4>Install CFQ Buddy</h4>
+            <p>Add to home screen for quick access &amp; offline use</p>
+        </div>
+        <button class="pwa-btn-install" id="pwa-btn-install">Install</button>
+        <button class="pwa-btn-close" id="pwa-btn-dismiss" aria-label="Dismiss">&times;</button>
+    </div>
+
+    <!-- iOS Install Instructions -->
+    <div class="pwa-ios-instructions" id="pwa-ios-instructions">
+        <button class="pwa-btn-close" id="pwa-ios-dismiss" aria-label="Dismiss">&times;</button>
+        <p><strong>Install CFQ Buddy</strong></p>
+        <p class="ios-steps">Tap <strong>Share</strong> ↗️ then <strong>"Add to Home Screen"</strong> ➕</p>
+        <p>for quick access &amp; offline exam prep</p>
+    </div>
+
+    <!-- Update Available Toast -->
+    <div class="pwa-update-toast" id="pwa-update-toast">
+        🔄 Update available
+        <button style="background:#00897B;color:white;border:none;padding:6px 14px;border-radius:6px;font-weight:600;cursor:pointer;" id="pwa-btn-update">Refresh</button>
+    </div>
+
+    <script src="js/exam.js"></script>
+
+    <!-- PWA Registration & Install Logic -->
+    <script>
+    (function() {
+        'use strict';
+
+        // ========== Service Worker Registration ==========
+        let swRegistration = null;
+        let newWorker = null;
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    swRegistration = await navigator.serviceWorker.register('/service-worker.js');
+                    console.log('[PWA] Service worker registered:', swRegistration.scope);
+
+                    // Check for updates
+                    swRegistration.addEventListener('updatefound', () => {
+                        newWorker = swRegistration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // New version available
+                                showUpdateToast();
+                            }
+                        });
+                    });
+                } catch (error) {
+                    console.error('[PWA] Service worker registration failed:', error);
+                }
+            });
+
+            // Handle controller change (reload on update)
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                // Only reload if user clicked update
+                if (window._pwaUpdating) {
+                    window.location.reload();
+                }
+            });
+        }
+
+        // ========== Update Toast ==========
+        function showUpdateToast() {
+            const toast = document.getElementById('pwa-update-toast');
+            if (toast) toast.classList.add('show');
+        }
+
+        const updateBtn = document.getElementById('pwa-btn-update');
+        if (updateBtn) {
+            updateBtn.addEventListener('click', () => {
+                window._pwaUpdating = true;
+                if (newWorker) {
+                    newWorker.postMessage({ type: 'SKIP_WAITING' });
+                }
+                document.getElementById('pwa-update-toast').classList.remove('show');
+            });
+        }
+
+        // ========== Install Prompt (Android / Desktop Chrome) ==========
+        let deferredPrompt = null;
+        const installBanner = document.getElementById('pwa-install-banner');
+        const installBtn = document.getElementById('pwa-btn-install');
+        const dismissBtn = document.getElementById('pwa-btn-dismiss');
+
+        // Check if already dismissed recently (24 hours)
+        const lastDismissed = localStorage.getItem('pwa-install-dismissed');
+        const dismissedRecently = lastDismissed && (Date.now() - parseInt(lastDismissed)) < 86400000;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+
+            // Show install banner after a short delay (don't be annoying on first load)
+            if (!dismissedRecently) {
+                setTimeout(() => {
+                    if (installBanner && deferredPrompt) {
+                        installBanner.classList.add('show');
+                    }
+                }, 3000);
+            }
+        });
+
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if (!deferredPrompt) return;
+
+                installBanner.classList.remove('show');
+                deferredPrompt.prompt();
+
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log('[PWA] Install prompt outcome:', outcome);
+                deferredPrompt = null;
+            });
+        }
+
+        if (dismissBtn) {
+            dismissBtn.addEventListener('click', () => {
+                installBanner.classList.remove('show');
+                localStorage.setItem('pwa-install-dismissed', Date.now().toString());
+            });
+        }
+
+        // Detect successful install
+        window.addEventListener('appinstalled', () => {
+            console.log('[PWA] App installed successfully');
+            installBanner?.classList.remove('show');
+            deferredPrompt = null;
+        });
+
+        // ========== iOS Install Instructions ==========
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+                          || window.navigator.standalone === true;
+
+        if (isIOS && !isStandalone && !dismissedRecently) {
+            const iosBanner = document.getElementById('pwa-ios-instructions');
+            setTimeout(() => {
+                if (iosBanner) iosBanner.classList.add('show');
+            }, 4000);
+
+            const iosDismiss = document.getElementById('pwa-ios-dismiss');
+            if (iosDismiss) {
+                iosDismiss.addEventListener('click', () => {
+                    iosBanner.classList.remove('show');
+                    localStorage.setItem('pwa-install-dismissed', Date.now().toString());
+                });
+            }
+        }
+
+        // ========== Offline / Online Detection ==========
+        const offlineIndicator = document.getElementById('offline-indicator');
+
+        function updateOnlineStatus() {
+            if (offlineIndicator) {
+                if (!navigator.onLine) {
+                    offlineIndicator.classList.add('show');
+                } else {
+                    offlineIndicator.classList.remove('show');
+                }
+            }
+        }
+
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        updateOnlineStatus();
+    })();
+    </script>
+</body>
+</html>

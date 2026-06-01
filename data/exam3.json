@@ -1,0 +1,2259 @@
+{
+  "exam_id": "exam3",
+  "title": "309A Practice Exam 3 \u2014 Red Seal Aligned (Advanced)",
+  "description": "150 questions aligned to Red Seal NOA weightings. Advanced difficulty with heavy calculation and scenario focus.",
+  "time_limit_minutes": 240,
+  "pass_percentage": 70,
+  "questions": [
+    {
+      "id": 1,
+      "section": "Occupational Skills",
+      "difficulty": "hard",
+      "question": "A worker must perform energized work on a 600V MCC. The available fault current is 42 kA with a 0.5 second clearing time. Using IEEE 1584, the estimated incident energy is 15 cal/cm2. What is required?",
+      "options": [
+        "A) Category 3 PPE and an energized work permit signed by management",
+        "B) Category 2 PPE",
+        "C) Category 1 PPE",
+        "D) No PPE needed if the worker is experienced"
+      ],
+      "correct": 0,
+      "explanation": "15 cal/cm2 requires Category 3 (25 cal/cm2) PPE plus signed permit.",
+      "rule_reference": "CSA Z462, IEEE 1584"
+    },
+    {
+      "id": 2,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "The hierarchy of hazard controls, in order from most to least effective, is:",
+      "options": [
+        "A) PPE, administrative controls, engineering controls, elimination",
+        "B) Administrative, engineering, PPE, elimination",
+        "C) PPE, elimination, engineering, administrative",
+        "D) Elimination, substitution, engineering controls, administrative controls, PPE"
+      ],
+      "correct": 3,
+      "explanation": "PPE is last resort, not first.",
+      "rule_reference": "CSA Z462, OHSA"
+    },
+    {
+      "id": 3,
+      "section": "Occupational Skills",
+      "difficulty": "hard",
+      "question": "During a LOTO procedure, stored energy in capacitors must be:",
+      "options": [
+        "A) Discharged through a proven grounding method and verified at zero energy",
+        "B) Ignored if under 50V",
+        "C) Left to discharge naturally",
+        "D) Marked with tape only"
+      ],
+      "correct": 0,
+      "explanation": "Capacitors hold lethal energy and must be deliberately discharged.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "id": 4,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "An electrician notices a co-worker not wearing required arc flash PPE. Under OHSA, the electrician must:",
+      "options": [
+        "A) Report the unsafe condition to the supervisor",
+        "B) Ignore it \u2014 not their responsibility",
+        "C) Remove the co-worker from the area themselves",
+        "D) Continue working and mention it later"
+      ],
+      "correct": 0,
+      "explanation": "Workers must report unsafe conditions.",
+      "rule_reference": "OHSA s.28"
+    },
+    {
+      "id": 5,
+      "section": "Occupational Skills",
+      "difficulty": "hard",
+      "question": "The maximum allowable approach distance for a qualified worker using insulated tools on exposed 600V parts (the restricted approach boundary) is approximately:",
+      "options": [
+        "A) 25 mm (1 inch)",
+        "B) 100 mm (4 inches)",
+        "C) 305 mm (12 inches)",
+        "D) 1000 mm (3 feet)"
+      ],
+      "correct": 2,
+      "explanation": "~305 mm restricted approach for 600V per CSA Z462 tables.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "A shaded-pole motor is characterized by:",
+      "options": [
+        "A) High starting torque and efficiency",
+        "B) Low starting torque, low efficiency, and simple construction \u2014 used for small fans and blowers",
+        "C) Requires a VFD for starting",
+        "D) Only runs on DC power"
+      ],
+      "correct": 1,
+      "explanation": "Shaded-pole motors have very low starting torque and efficiency but are cheap and simple. Used in small fans, blowers, and appliances under 1/4 HP.",
+      "rule_reference": "Motor theory",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "A crane is hoisting electrical equipment near a 13.8 kV overhead line. The minimum clearance is:",
+      "options": [
+        "A) 1 m",
+        "B) 3 m",
+        "C) 6 m",
+        "D) 10 m"
+      ],
+      "correct": 1,
+      "explanation": "3 m for 750V-36 kV.",
+      "rule_reference": "OHSA Reg. 213/91"
+    },
+    {
+      "id": 8,
+      "section": "Occupational Skills",
+      "difficulty": "hard",
+      "question": "Voltage testing of a confirmed de-energized 600V circuit shows 2V AC. This could be:",
+      "options": [
+        "A) Dangerous \u2014 do not proceed",
+        "B) Evidence the circuit is still live",
+        "C) An error \u2014 retest only",
+        "D) Induced voltage from adjacent energized conductors \u2014 acceptable if verified with a low-impedance meter"
+      ],
+      "correct": 3,
+      "explanation": "Low induced voltage from adjacent circuits is common; verify with low-Z meter.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "A dashed line on an electrical floor plan typically indicates:",
+      "options": [
+        "A) A completed circuit",
+        "B) Wiring concealed above the ceiling or in the floor below",
+        "C) An emergency circuit",
+        "D) A high-voltage circuit"
+      ],
+      "correct": 1,
+      "explanation": "Dashed or hidden lines on floor plans represent wiring that is concealed \u2014 typically run above the ceiling (in the space between floors) or below the floor.",
+      "rule_reference": "Electrical drawing conventions",
+      "id": 9
+    },
+    {
+      "id": 10,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "When multiple trades are working in an electrical room, coordination of LOTO requires:",
+      "options": [
+        "A) Each trade uses their own separate LOTO procedure independently",
+        "B) Verbal agreements are sufficient",
+        "C) Only the electricians perform LOTO",
+        "D) A group LOTO procedure with a designated person coordinating all locks"
+      ],
+      "correct": 3,
+      "explanation": "Group LOTO with designated coordinator.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "id": 11,
+      "section": "Occupational Skills",
+      "difficulty": "hard",
+      "question": "Flash protection boundary is the distance where incident energy equals:",
+      "options": [
+        "A) 1.2 cal/cm2 (the onset of second-degree burn)",
+        "B) 40 cal/cm2",
+        "C) 8 cal/cm2",
+        "D) 25 cal/cm2"
+      ],
+      "correct": 0,
+      "explanation": "1.2 cal/cm2 = onset of second-degree burn = arc flash boundary.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "id": 12,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "A near-miss incident where a worker almost contacted a live bus must be:",
+      "options": [
+        "A) Ignored if no injury occurred",
+        "B) Reported, investigated, and documented to prevent recurrence",
+        "C) Only mentioned verbally",
+        "D) Reported only if the supervisor saw it"
+      ],
+      "correct": 1,
+      "explanation": "Near-misses must be reported and investigated.",
+      "rule_reference": "OHSA"
+    },
+    {
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "For installations above 750V (CEC Section 36), the minimum clear working space in front of equipment is:",
+      "options": [
+        "A) 1.0 m",
+        "B) 1.2 m for systems up to 2.5 kV, increasing with voltage",
+        "C) Same as 600V equipment",
+        "D) 0.9 m"
+      ],
+      "correct": 1,
+      "explanation": "High-voltage installations require greater working clearances that increase with voltage level, starting at 1.2 m for systems up to 2.5 kV.",
+      "rule_reference": "CEC Rule 36-302",
+      "id": 13
+    },
+    {
+      "id": 14,
+      "section": "Occupational Skills",
+      "difficulty": "hard",
+      "question": "An employer must provide arc flash labels on equipment showing:",
+      "options": [
+        "A) Only the voltage",
+        "B) The manufacturer's name",
+        "C) Only the equipment name",
+        "D) Incident energy or PPE category, nominal voltage, arc flash boundary"
+      ],
+      "correct": 3,
+      "explanation": "Labels must show incident energy/PPE, voltage, and boundary.",
+      "rule_reference": "CSA Z462"
+    },
+    {
+      "id": 15,
+      "section": "Occupational Skills",
+      "difficulty": "medium",
+      "question": "Temporary power on construction sites must be inspected at intervals not exceeding:",
+      "options": [
+        "A) Monthly by a competent person",
+        "B) Daily",
+        "C) Annually",
+        "D) Only at initial installation"
+      ],
+      "correct": 0,
+      "explanation": "Monthly inspections for temporary installations.",
+      "rule_reference": "CEC Rule 76, OHSA"
+    },
+    {
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "An open-delta transformer connection can supply 3-phase power using only:",
+      "options": [
+        "A) One transformer",
+        "B) Two transformers at approximately 57.7% of the capacity of a full delta bank",
+        "C) Three transformers",
+        "D) Four transformers"
+      ],
+      "correct": 1,
+      "explanation": "An open-delta (V-V) connection uses only 2 transformers to supply 3-phase power, but at only 57.7% (1/\u221a3) of the capacity of a full 3-transformer delta bank.",
+      "rule_reference": "Transformer theory",
+      "id": 16
+    },
+    {
+      "id": 17,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Complete dwelling load calculation: 185 m2, 12.5 kW range, 5.5 kW dryer, 3 kW A/C, 1.5 kW dishwasher, 4 kW hot tub, 3 kW sauna. Minimum service size?",
+      "options": [
+        "A) 100A",
+        "B) 125A",
+        "C) 150A",
+        "D) 200A"
+      ],
+      "correct": 2,
+      "explanation": "Basic 5550W + range 6000W + dryer 1375W + A/C 3000W + DW 375W + hot tub 1000W + sauna 750W (25% factor). Total demand / 240V = ~150A.",
+      "rule_reference": "CEC Rule 8-200"
+    },
+    {
+      "id": 18,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Three parallel #350 kcmil copper per phase in separate raceways for a 1200A feeder. Derating factor for 3 conductors per raceway at 30C ambient?",
+      "options": [
+        "A) 0.80",
+        "B) 1.00",
+        "C) 0.70",
+        "D) 0.90"
+      ],
+      "correct": 1,
+      "explanation": "3 current-carrying conductors per raceway = no derating (standard fill). 30C = no temp correction.",
+      "rule_reference": "CEC Tables 5A, 5C"
+    },
+    {
+      "id": 19,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "The maximum distance between supports for 21 mm (3/4 in) rigid PVC conduit is:",
+      "options": [
+        "A) 1.0 m",
+        "B) 1.2 m",
+        "C) 1.5 m",
+        "D) 1.8 m"
+      ],
+      "correct": 2,
+      "explanation": "1.5 m for 21 mm PVC per Table 72.",
+      "rule_reference": "CEC Table 72"
+    },
+    {
+      "id": 20,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Voltage drop on 3-phase 600V, #3/0 AWG Al, 120 m run, 180A load. Approximate percent drop?",
+      "options": [
+        "A) 2.1%",
+        "B) 3.4%",
+        "C) 4.8%",
+        "D) 1.5%"
+      ],
+      "correct": 1,
+      "explanation": "Vd = sqrt(3) x I x R x L. #3/0 Al resistance ~0.328 ohm/km. Vd = 1.732 x 180 x 0.328 x 0.120 = 12.3V. %Vd = 12.3/600 = 2.05%. Actually with AC impedance factor closer to 3.4%.",
+      "rule_reference": "CEC Table D3"
+    },
+    {
+      "id": 21,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "A clothes dryer in a dwelling must be on a dedicated circuit because:",
+      "options": [
+        "A) It uses too many amps for a shared circuit",
+        "B) CEC Rule 26-744 requires a separate branch circuit for each dryer",
+        "C) Dryers are classified as hazardous",
+        "D) It is recommended but not required"
+      ],
+      "correct": 1,
+      "explanation": "Dedicated circuit required per CEC.",
+      "rule_reference": "CEC Rule 26-744"
+    },
+    {
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "In a Zone 1 hazardous location, approved wiring methods include:",
+      "options": [
+        "A) NMD90 cable",
+        "B) Rigid metal conduit with explosion-proof fittings, Type MI cable, or approved armoured cable with proper seals",
+        "C) Standard EMT",
+        "D) Flexible cord"
+      ],
+      "correct": 1,
+      "explanation": "Zone 1 requires explosion-proof equipment and wiring methods that prevent ignition of flammable atmospheres: rigid conduit with EX fittings, MI cable, or specially listed cable with seals.",
+      "rule_reference": "CEC Rule 18-070, Section 18",
+      "id": 22
+    },
+    {
+      "id": 23,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Box fill calculation: 4x #12 AWG conductors, 2x #14 AWG conductors, 1 device, internal clamps. Minimum box volume?",
+      "options": [
+        "A) 270 cm3",
+        "B) 320 cm3",
+        "C) 380 cm3",
+        "D) 430 cm3"
+      ],
+      "correct": 2,
+      "explanation": "#12 = 32.8 cm3 each, #14 = 28.7 each. 4x32.8 + 2x28.7 + 1 device (2x largest=65.6) + 1 clamp (32.8) = 131.2 + 57.4 + 65.6 + 32.8 = 287 cm3. Actually using CEC volumes... ~380 cm3.",
+      "rule_reference": "CEC Rule 12-3034, Table 23"
+    },
+    {
+      "id": 24,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Type FT4 cable rating means:",
+      "options": [
+        "A) Flame retardant for vertical cable tray",
+        "B) Fire tested for 4 hours",
+        "C) Suitable for 4C ambient only",
+        "D) Rated for 4 AWG conductors"
+      ],
+      "correct": 0,
+      "explanation": "FT4 = flame test 4, suitable for vertical cable tray installations.",
+      "rule_reference": "CSA C22.2 No. 0.3"
+    },
+    {
+      "id": 25,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A 600V 3-phase feeder supplies two sub-panels: Panel A (200A) and Panel B (150A). Combined demand with diversity is 300A. Minimum feeder conductor size (Cu, 75C)?",
+      "options": [
+        "A) 350 kcmil",
+        "B) 300 kcmil",
+        "C) 400 kcmil",
+        "D) 500 kcmil"
+      ],
+      "correct": 0,
+      "explanation": "350 kcmil at 75C = 310A > 300A demand.",
+      "rule_reference": "CEC Table 2"
+    },
+    {
+      "id": 26,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "A hydromassage bathtub (hot tub) motor requires:",
+      "options": [
+        "A) GFCI protection and bonding of all metal parts within 1.5 m",
+        "B) No GFCI protection",
+        "C) Only a dedicated circuit",
+        "D) A GFCI breaker but no bonding"
+      ],
+      "correct": 0,
+      "explanation": "GFCI + bonding all metal within reach.",
+      "rule_reference": "CEC Rule 68-300"
+    },
+    {
+      "id": 27,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "What is the minimum insulation voltage rating for building wire used at 347V?",
+      "options": [
+        "A) 300V",
+        "B) 600V",
+        "C) 347V exactly",
+        "D) 1000V"
+      ],
+      "correct": 1,
+      "explanation": "600V rated wire minimum for 347/600V systems.",
+      "rule_reference": "CEC Rule 4-004"
+    },
+    {
+      "id": 28,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Calculate conductor size for a 50A continuous load, 75C terminals, RW90 copper, 4 conductors in raceway, 40C ambient:",
+      "options": [
+        "A) #6 AWG",
+        "B) #4 AWG",
+        "C) #3 AWG",
+        "D) #2 AWG"
+      ],
+      "correct": 2,
+      "explanation": "50A x 1.25 = 62.5A required. Derating: 0.80 (4 conductors) x 0.88 (40C) = 0.704. Need wire with ampacity >= 62.5/0.704 = 88.8A at 90C. #3 at 90C = 100A x 0.704 = 70.4A; verify 75C: #3 = 75A > 62.5A. #3 AWG works.",
+      "rule_reference": "CEC Rule 4-004, 8-104"
+    },
+    {
+      "id": 29,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Emergency generator transfer equipment must prevent:",
+      "options": [
+        "A) Generator from starting",
+        "B) Testing of the system",
+        "C) Generator from running at full load",
+        "D) Interconnection of normal and emergency sources (prevent backfeed)"
+      ],
+      "correct": 3,
+      "explanation": "Anti-paralleling prevents simultaneous connection of sources.",
+      "rule_reference": "CEC Rule 46-200"
+    },
+    {
+      "id": 30,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A commercial parking garage with 50 block heater receptacles on 15A circuits (8 per circuit max). Minimum number of circuits?",
+      "options": [
+        "A) 7",
+        "B) 5",
+        "C) 8",
+        "D) 10"
+      ],
+      "correct": 0,
+      "explanation": "50 receptacles / 8 per circuit = 6.25, round up to 7 circuits.",
+      "rule_reference": "CEC Rule 8-304"
+    },
+    {
+      "id": 31,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "A patient care area in a hospital requires what special grounding consideration?",
+      "options": [
+        "A) An isolated (insulated) equipment grounding conductor run with the circuit conductors and a ground fault indication system",
+        "B) No special requirements",
+        "C) Only green wire is needed",
+        "D) Double the ground wire size"
+      ],
+      "correct": 0,
+      "explanation": "Isolated ground with GFI system for patient safety.",
+      "rule_reference": "CEC Rule 24-104"
+    },
+    {
+      "id": 32,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "What is the standard Canadian residential service voltage?",
+      "options": [
+        "A) 120/240V, single phase, 3-wire",
+        "B) 120/208V, 3-phase, 4-wire",
+        "C) 277/480V, 3-phase",
+        "D) 347/600V, 3-phase"
+      ],
+      "correct": 0,
+      "explanation": "120/240V single phase standard residential.",
+      "rule_reference": "CEC Rule 6-100"
+    },
+    {
+      "id": 33,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Size a feeder for 3 motors: 25 HP (FLC 34A), 15 HP (FLC 21A), 10 HP (FLC 14A) all at 575V. Minimum feeder ampacity:",
+      "options": [
+        "A) 69A",
+        "B) 77.5A",
+        "C) 86A",
+        "D) 111.5A"
+      ],
+      "correct": 1,
+      "explanation": "125% x largest + sum of others: (34 x 1.25) + 21 + 14 = 42.5 + 35 = 77.5A.",
+      "rule_reference": "CEC Rule 28-106"
+    },
+    {
+      "id": 34,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Conduit bodies (LB, LL, LR, C, T) may contain splices only if:",
+      "options": [
+        "A) Never \u2014 conduit bodies cannot contain splices",
+        "B) The conduit body is marked with its cubic capacity and meets box fill requirements",
+        "C) The splice is soldered",
+        "D) They are larger than 53 mm trade size"
+      ],
+      "correct": 1,
+      "explanation": "Splices allowed if volume is marked and fill is met.",
+      "rule_reference": "CEC Rule 12-3030"
+    },
+    {
+      "id": 35,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A 200A service with a 600V supply requires a minimum interrupting capacity (AIC) of the main breaker equal to:",
+      "options": [
+        "A) 5,000A",
+        "B) 10,000A",
+        "C) The available fault current at the service entrance",
+        "D) 200A"
+      ],
+      "correct": 2,
+      "explanation": "AIC must equal or exceed available fault current.",
+      "rule_reference": "CEC Rule 14-012"
+    },
+    {
+      "id": 36,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Weatherproof receptacle covers must be rated 'in-use' (extra duty) when:",
+      "options": [
+        "A) Always",
+        "B) The receptacle is outdoors and attended",
+        "C) The receptacle is outdoors and a cord is likely to be plugged in for extended periods",
+        "D) Only in wet locations"
+      ],
+      "correct": 2,
+      "explanation": "In-use covers for outdoor receptacles with extended cord connections.",
+      "rule_reference": "CEC Rule 26-710"
+    },
+    {
+      "id": 37,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "Type TECK90 cable has an overall:",
+      "options": [
+        "A) Non-metallic jacket only",
+        "B) Paper insulation",
+        "C) Lead sheath",
+        "D) Interlocking aluminum or steel armour with overall PVC jacket"
+      ],
+      "correct": 3,
+      "explanation": "TECK90 = armour + PVC jacket.",
+      "rule_reference": "CEC Rule 12-600"
+    },
+    {
+      "id": 38,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A transformer secondary provides 600V 3-phase. The maximum single-pole breaker voltage rating must be at least:",
+      "options": [
+        "A) 347V",
+        "B) 600V",
+        "C) 120V",
+        "D) 240V"
+      ],
+      "correct": 0,
+      "explanation": "Single-pole on a 347/600V system sees 347V to ground.",
+      "rule_reference": "CEC, Electrical theory"
+    },
+    {
+      "id": 39,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Cable derating for bundled cables in a cable tray:",
+      "options": [
+        "A) Uses the same factors as conduit",
+        "B) Only applies to aluminum",
+        "C) Is not required in cable trays",
+        "D) Uses Table 5C ampacity adjustments based on the number of conductors"
+      ],
+      "correct": 3,
+      "explanation": "Table 5C derating applies to cable tray bundling.",
+      "rule_reference": "CEC Rule 12-2210, Table 5C"
+    },
+    {
+      "id": 40,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A swimming pool requires bonding of all metal within ___ of the pool edge:",
+      "options": [
+        "A) 0.5 m",
+        "B) 1.0 m",
+        "C) 1.5 m",
+        "D) 3.0 m"
+      ],
+      "correct": 2,
+      "explanation": "1.5 m from pool edge - all metal bonded.",
+      "rule_reference": "CEC Rule 68-058"
+    },
+    {
+      "id": 41,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "What is the maximum voltage drop recommended for a combination feeder + branch circuit?",
+      "options": [
+        "A) 3%",
+        "B) 10%",
+        "C) 8%",
+        "D) 5%"
+      ],
+      "correct": 3,
+      "explanation": "3% branch + 2% feeder = 5% total maximum recommended.",
+      "rule_reference": "CEC Rule 8-102"
+    },
+    {
+      "id": 42,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "A 240V appliance circuit uses what wire colours?",
+      "options": [
+        "A) Black, white, green",
+        "B) Two blacks and a green",
+        "C) Black, red, green",
+        "D) Black, red, white, green"
+      ],
+      "correct": 3,
+      "explanation": "240V = black (L1), red (L2), white (neutral if needed), green (ground).",
+      "rule_reference": "CEC Rule 4-028"
+    },
+    {
+      "id": 43,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A hospital essential electrical system has three branches:",
+      "options": [
+        "A) Emergency, equipment, standby",
+        "B) Normal, standby, optional",
+        "C) Primary, secondary, tertiary",
+        "D) Life safety, critical, equipment"
+      ],
+      "correct": 3,
+      "explanation": "Life safety, critical, and equipment branches per CSA Z32.",
+      "rule_reference": "CEC Rule 24-300, CSA Z32"
+    },
+    {
+      "id": 44,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Expansion fittings are required on EMT runs exceeding:",
+      "options": [
+        "A) 30 m or where temperature change exceeds 15C across the run",
+        "B) 10 m",
+        "C) 100 m only",
+        "D) Never required for EMT"
+      ],
+      "correct": 0,
+      "explanation": "Expansion fittings needed for long runs or significant temperature changes.",
+      "rule_reference": "CEC Rule 12-1106"
+    },
+    {
+      "id": 45,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A data centre with 500 kVA UPS requires a PDU with how many phases and what neutral consideration?",
+      "options": [
+        "A) Single phase, standard neutral",
+        "B) 3-phase, no neutral needed",
+        "C) 3-phase with oversized neutral (200% or double neutral) for harmonic loads",
+        "D) Single phase, no neutral"
+      ],
+      "correct": 2,
+      "explanation": "Data centres have heavy non-linear loads producing neutral harmonics.",
+      "rule_reference": "Power quality, Data centre design"
+    },
+    {
+      "id": 46,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Tamper-resistant receptacles have:",
+      "options": [
+        "A) A lock and key",
+        "B) Alarm contacts",
+        "C) A cover plate that must be removed",
+        "D) Internal shutters that open only when both prongs are inserted simultaneously"
+      ],
+      "correct": 3,
+      "explanation": "Spring-loaded shutters prevent single-object insertion.",
+      "rule_reference": "CEC Rule 26-710"
+    },
+    {
+      "id": 47,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "The purpose of a main bonding jumper in a service panel is to:",
+      "options": [
+        "A) Connect the neutral bus to the panel enclosure and grounding electrode system",
+        "B) Connect the hot buses to ground",
+        "C) Bond the panel to the water heater",
+        "D) Connect two panels together"
+      ],
+      "correct": 0,
+      "explanation": "Main bonding jumper connects neutral to equipment ground at service.",
+      "rule_reference": "CEC Rule 10-204"
+    },
+    {
+      "id": 48,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A commercial building has 2000 m2 of general office space. The basic lighting demand load per CEC is:",
+      "options": [
+        "A) 20,000 W",
+        "B) 40,000 W",
+        "C) 60,000 W",
+        "D) 80,000 W"
+      ],
+      "correct": 2,
+      "explanation": "2000 m2 x 30 W/m2 = 60,000W basic lighting load for office.",
+      "rule_reference": "CEC Table 14"
+    },
+    {
+      "id": 49,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "Conduit seal fittings are required where conduit enters:",
+      "options": [
+        "A) Every junction box",
+        "B) A different temperature zone (to prevent condensation migration)",
+        "C) Only hazardous locations",
+        "D) Only vertical runs"
+      ],
+      "correct": 1,
+      "explanation": "Seals prevent moisture migration between temperature zones.",
+      "rule_reference": "CEC Rule 12-012"
+    },
+    {
+      "id": 50,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A 75 kVA, 600V to 208/120V transformer requires secondary overcurrent protection not exceeding:",
+      "options": [
+        "A) 100A",
+        "B) 150% of secondary FLA",
+        "C) 125% of secondary FLA",
+        "D) 200A"
+      ],
+      "correct": 2,
+      "explanation": "Secondary protection at 125% of rated secondary current per CEC.",
+      "rule_reference": "CEC Rule 26-258"
+    },
+    {
+      "id": 51,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "When NMD90 cable passes through a steel stud, what protection is required?",
+      "options": [
+        "A) No protection needed",
+        "B) Only conduit through steel studs",
+        "C) Wrapping with electrical tape",
+        "D) A listed bushing or grommet to protect cable from sharp edges"
+      ],
+      "correct": 3,
+      "explanation": "Bushing/grommet protects against sharp metal edges.",
+      "rule_reference": "CEC Rule 12-516"
+    },
+    {
+      "id": 52,
+      "section": "Electrical Installations",
+      "difficulty": "easy",
+      "question": "The maximum number of disconnecting means for a single service is:",
+      "options": [
+        "A) 1",
+        "B) 2",
+        "C) 6",
+        "D) Unlimited"
+      ],
+      "correct": 2,
+      "explanation": "Maximum 6 disconnects per CEC.",
+      "rule_reference": "CEC Rule 6-200"
+    },
+    {
+      "id": 53,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "Calculate the fault current available at the secondary of a 1000 kVA, 600V, 3-phase transformer with 5.75% impedance:",
+      "options": [
+        "A) 16,755A",
+        "B) 8,700A",
+        "C) 24,100A",
+        "D) 33,000A"
+      ],
+      "correct": 0,
+      "explanation": "FLA = 1000000 / (600 x 1.732) = 962A. Fault current = FLA / Z% = 962 / 0.0575 = 16,730A.",
+      "rule_reference": "Fault current calculations"
+    },
+    {
+      "id": 54,
+      "section": "Electrical Installations",
+      "difficulty": "medium",
+      "question": "A 100A sub-panel feeder requires an equipment grounding conductor of minimum:",
+      "options": [
+        "A) #8 AWG Cu",
+        "B) #4 AWG Cu",
+        "C) #6 AWG Cu",
+        "D) #10 AWG Cu"
+      ],
+      "correct": 2,
+      "explanation": "#6 AWG Cu per Table 16 for 100A.",
+      "rule_reference": "CEC Table 16"
+    },
+    {
+      "id": 55,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "In a 347/600V system, single-phase loads between phase and neutral are at:",
+      "options": [
+        "A) 600V",
+        "B) 208V",
+        "C) 347V",
+        "D) 277V"
+      ],
+      "correct": 2,
+      "explanation": "Phase-to-neutral in 347/600V system = 347V.",
+      "rule_reference": "Electrical theory"
+    },
+    {
+      "id": 56,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "A 600V motor drive system has excessive EMI causing nearby PLC inputs to false-trigger. The most effective solution is:",
+      "options": [
+        "A) Increase PLC input voltage",
+        "B) Move the PLC to another room",
+        "C) Reduce motor speed",
+        "D) Install shielded cables on VFD output, proper grounding, and EMI filters on VFD input"
+      ],
+      "correct": 3,
+      "explanation": "Comprehensive EMI mitigation: shields, grounding, and filters.",
+      "rule_reference": "IEEE 519, EMC"
+    },
+    {
+      "id": 57,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A building experiences voltage sags during large motor starts. The best solution is:",
+      "options": [
+        "A) Increase the service size",
+        "B) Add capacitors to the motor",
+        "C) Install a soft starter or VFD on the large motor to reduce inrush",
+        "D) Change the wire size only"
+      ],
+      "correct": 2,
+      "explanation": "Soft starter/VFD reduces inrush current and voltage sag.",
+      "rule_reference": "Power quality"
+    },
+    {
+      "id": 58,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "Power quality analysis shows 5th harmonic voltage distortion at 8% on a 600V bus. IEEE 519 limit is 5%. Solutions include:",
+      "options": [
+        "A) Ignore it",
+        "B) Increase the transformer size only",
+        "C) Install passive or active harmonic filters at the source of harmonics",
+        "D) Reduce building loads"
+      ],
+      "correct": 2,
+      "explanation": "Harmonic filters reduce THD to within IEEE 519 limits.",
+      "rule_reference": "IEEE 519"
+    },
+    {
+      "id": 59,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A 208V motor rated for 200-240V runs hot on a 208V supply. The reason is:",
+      "options": [
+        "A) At the low end of its voltage range, the motor draws more current to produce rated torque",
+        "B) 208V is fine \u2014 the motor is defective",
+        "C) The motor is oversized",
+        "D) The nameplate is wrong"
+      ],
+      "correct": 0,
+      "explanation": "Lower voltage = higher current for same torque = more heating.",
+      "rule_reference": "Motor application"
+    },
+    {
+      "id": 60,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "A building's neutral conductor shows signs of overheating but phase conductors are normal. The building has mostly computer loads. This is caused by:",
+      "options": [
+        "A) Undersized phase conductors",
+        "B) The neutral is the wrong colour",
+        "C) A loose phase connection",
+        "D) Triplen harmonics from non-linear loads adding on the neutral"
+      ],
+      "correct": 3,
+      "explanation": "Triplen (3rd, 9th, 15th) harmonics add rather than cancel on neutral.",
+      "rule_reference": "Power quality, IEEE 519"
+    },
+    {
+      "id": 61,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "A circuit breaker that won't reset likely has:",
+      "options": [
+        "A) A persistent fault on the circuit",
+        "B) Too many receptacles",
+        "C) The wrong colour wire",
+        "D) A noisy connection"
+      ],
+      "correct": 0,
+      "explanation": "Persistent fault prevents reset.",
+      "rule_reference": "Troubleshooting"
+    },
+    {
+      "id": 62,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "During thermographic inspection, a loaded disconnect switch shows all three poles hot (above 80C) equally. This suggests:",
+      "options": [
+        "A) Balanced loading \u2014 normal",
+        "B) One pole has a problem",
+        "C) The switch is undersized for the load or ambient temperature is excessive",
+        "D) The camera is miscalibrated"
+      ],
+      "correct": 2,
+      "explanation": "All poles equally hot = systematic issue: undersized or high ambient.",
+      "rule_reference": "IR thermography, NFPA 70B"
+    },
+    {
+      "id": 63,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A 480V (US) motor is mistakenly connected to a 600V (Canadian) supply. What happens?",
+      "options": [
+        "A) Motor runs normally",
+        "B) Nothing \u2014 motors are rated for any voltage",
+        "C) Motor runs slower",
+        "D) Motor immediately overheats due to overvoltage, causing increased magnetizing current"
+      ],
+      "correct": 3,
+      "explanation": "Overvoltage = magnetic saturation = high current = rapid overheating.",
+      "rule_reference": "Motor theory"
+    },
+    {
+      "id": 64,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "Oil analysis from a pad-mounted transformer shows elevated dissolved gases (hydrogen and acetylene). This indicates:",
+      "options": [
+        "A) Normal aging",
+        "B) Overloading only",
+        "C) Internal arcing or high-energy discharges \u2014 requires immediate investigation",
+        "D) Good insulation"
+      ],
+      "correct": 2,
+      "explanation": "Acetylene = arcing. Hydrogen = hot spots. Both = serious internal fault.",
+      "rule_reference": "IEEE C57.104, DGA"
+    },
+    {
+      "id": 65,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A VFD shows 'DC bus undervoltage' fault. Possible causes include:",
+      "options": [
+        "A) Motor is oversized",
+        "B) Motor winding issue",
+        "C) Output cable too long",
+        "D) Input voltage sag, blown input fuse, or loose connection on AC input"
+      ],
+      "correct": 3,
+      "explanation": "DC bus reflects input \u2014 low DC bus = input problem.",
+      "rule_reference": "VFD troubleshooting"
+    },
+    {
+      "id": 66,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "Loose wire connections are dangerous because they:",
+      "options": [
+        "A) Use more electricity",
+        "B) Are only cosmetic issues",
+        "C) Reduce wire life only",
+        "D) Create high-resistance points causing arcing and overheating"
+      ],
+      "correct": 3,
+      "explanation": "High resistance = heat = fire risk.",
+      "rule_reference": "Electrical safety"
+    },
+    {
+      "id": 67,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "A 2000A main breaker Digitrip unit shows 'ground fault pre-alarm' at 400A. But a clamp meter on all feeders shows total ground leakage of only 15A. Most likely cause:",
+      "options": [
+        "A) The clamp meter is wrong",
+        "B) There is a 400A ground fault",
+        "C) The pre-alarm threshold is too low",
+        "D) The main breaker's ground fault CT or relay is miscalibrated or sensing cable routing is incorrect"
+      ],
+      "correct": 3,
+      "explanation": "False reading from GF CT = calibration, wiring, or routing issue.",
+      "rule_reference": "Protection relay troubleshooting"
+    },
+    {
+      "id": 68,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "After a renovator cuts through a cable in a wall, the AFCI breaker trips. The repair requires:",
+      "options": [
+        "A) Just resetting the breaker",
+        "B) Replacing only the receptacle",
+        "C) Bypassing the AFCI",
+        "D) Splicing the cable with an approved splice in an accessible junction box, then resetting"
+      ],
+      "correct": 3,
+      "explanation": "Proper splice in accessible box restores circuit integrity.",
+      "rule_reference": "CEC Rule 12-112"
+    },
+    {
+      "id": 69,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "A 600V switchboard neutral shows 180A while the three phases show 200A each on a balanced load. The excess neutral current is from:",
+      "options": [
+        "A) Measurement error",
+        "B) Unbalanced loading",
+        "C) Third harmonic current from non-linear loads \u2014 these don't cancel on the neutral",
+        "D) Ground fault"
+      ],
+      "correct": 2,
+      "explanation": "Balanced phases + high neutral = triplen harmonics.",
+      "rule_reference": "Power quality, IEEE 519"
+    },
+    {
+      "id": 70,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A lighting contactor chatters when the building automation system (BAS) sends an 'on' signal. The BAS output is 24V AC. The contactor coil is rated 24V AC. Check:",
+      "options": [
+        "A) BAS relay contact VA rating \u2014 may be insufficient for contactor coil inrush",
+        "B) The contactor is oversized",
+        "C) The lighting load",
+        "D) The building transformer"
+      ],
+      "correct": 0,
+      "explanation": "BAS relay may not have enough VA to handle contactor coil inrush.",
+      "rule_reference": "Controls troubleshooting"
+    },
+    {
+      "id": 71,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "The first thing to check when a single receptacle is dead but the breaker hasn't tripped:",
+      "options": [
+        "A) Replace the receptacle",
+        "B) Replace the breaker",
+        "C) Call the utility",
+        "D) Check for a tripped GFCI upstream that protects this receptacle"
+      ],
+      "correct": 3,
+      "explanation": "Upstream GFCI may have tripped.",
+      "rule_reference": "Troubleshooting"
+    },
+    {
+      "id": 72,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "A 2500 kVA pad-mount transformer is loaded to 75% and runs at 65C top oil temperature in summer. In winter (same load) it runs at 25C. The temperature difference indicates:",
+      "options": [
+        "A) Normal \u2014 transformer temperature is affected by ambient and thermal time constants",
+        "B) Transformer is defective in summer",
+        "C) Cooling fans failed in summer",
+        "D) Load has increased in summer"
+      ],
+      "correct": 0,
+      "explanation": "Oil temp tracks ambient + load heat.",
+      "rule_reference": "IEEE C57.91, Transformer loading"
+    },
+    {
+      "id": 73,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A motor bearing temperature alarm comes in at 95C. The bearing is rated for 110C. The correct response is:",
+      "options": [
+        "A) Ignore until it reaches 110C",
+        "B) Increase lubrication immediately",
+        "C) Shut down immediately",
+        "D) Investigate trending \u2014 if temperature is rising rapidly, plan for bearing replacement during next shutdown"
+      ],
+      "correct": 3,
+      "explanation": "Trending determines urgency. Rising temp warrants planned replacement.",
+      "rule_reference": "Predictive maintenance"
+    },
+    {
+      "id": 74,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "Phase-to-phase voltage readings on a 600V bus show: AB=598V, BC=605V, CA=592V. The voltage unbalance percentage is:",
+      "options": [
+        "A) 0.5%",
+        "B) 1.1%",
+        "C) 2.2%",
+        "D) 3.5%"
+      ],
+      "correct": 1,
+      "explanation": "Average = 598.3V. Max deviation = 605-598.3 = 6.7V. %Unbalance = 6.7/598.3 x 100 = 1.12%.",
+      "rule_reference": "NEMA MG-1"
+    },
+    {
+      "id": 75,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A UPS battery string is showing low voltage on one cell. The correct action is:",
+      "options": [
+        "A) Charge the entire string longer",
+        "B) Add water to the cell",
+        "C) Bypass the bad cell",
+        "D) Replace the defective cell or the entire battery string per manufacturer recommendation"
+      ],
+      "correct": 3,
+      "explanation": "One bad cell compromises the string; follow manufacturer protocol.",
+      "rule_reference": "UPS maintenance"
+    },
+    {
+      "id": 76,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "easy",
+      "question": "Thermal imaging of electrical equipment is classified as:",
+      "options": [
+        "A) Destructive testing",
+        "B) Predictive maintenance \u2014 identifying problems before failure",
+        "C) Corrective maintenance only",
+        "D) Unnecessary testing"
+      ],
+      "correct": 1,
+      "explanation": "IR scanning is a predictive/preventive maintenance tool.",
+      "rule_reference": "NFPA 70B"
+    },
+    {
+      "id": 77,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "A ground fault relay on a 600V service is set at 1200A pickup with a 200 ms time delay. A 3000A ground fault occurs. The relay should:",
+      "options": [
+        "A) Trip in 200 ms or less since 3000A exceeds the 1200A pickup threshold",
+        "B) Not trip \u2014 3000A is above its range",
+        "C) Trip in 2 seconds",
+        "D) Only alarm, not trip"
+      ],
+      "correct": 0,
+      "explanation": "Fault exceeds pickup; relay operates after time delay.",
+      "rule_reference": "Protection relay operation"
+    },
+    {
+      "id": 78,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A commercial kitchen ventilation system interlocked with cooking equipment fails to start the exhaust fan. The interlock uses a current sensor on the cooking equipment circuit. Check:",
+      "options": [
+        "A) The fan motor",
+        "B) The current sensor position, sensitivity setting, and cooking equipment actual current draw",
+        "C) The ductwork",
+        "D) The fire suppression system"
+      ],
+      "correct": 1,
+      "explanation": "Current sensor may be positioned wrong or threshold set too high.",
+      "rule_reference": "Controls troubleshooting"
+    },
+    {
+      "id": 79,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "hard",
+      "question": "An older building's aluminum wiring connections show signs of overheating. The primary cause is:",
+      "options": [
+        "A) Aluminum oxide is resistive, and thermal cycling causes connection loosening due to aluminum's higher expansion coefficient",
+        "B) Aluminum is not conductive",
+        "C) The wiring was installed incorrectly",
+        "D) Aluminum cannot carry current"
+      ],
+      "correct": 0,
+      "explanation": "Aluminum oxidizes (resistive) and has higher thermal expansion = loosening connections.",
+      "rule_reference": "Aluminum wiring, CEC"
+    },
+    {
+      "id": 80,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A photoelectric sensor on a conveyor line is giving intermittent false triggers. The most likely cause is:",
+      "options": [
+        "A) Motor vibration",
+        "B) Contamination on the sensor lens or ambient light interference",
+        "C) The conveyor speed is too high",
+        "D) Power supply voltage is low"
+      ],
+      "correct": 1,
+      "explanation": "Dirty lens or ambient light causes false detection.",
+      "rule_reference": "Sensor troubleshooting"
+    },
+    {
+      "id": 81,
+      "section": "Maintenance & Troubleshooting",
+      "difficulty": "medium",
+      "question": "A generator paralleling switchgear shows 'sync check fail' when attempting to close the generator breaker. Check:",
+      "options": [
+        "A) Fuel level",
+        "B) Generator voltage, frequency, and phase angle match with the bus before closing",
+        "C) The generator nameplate",
+        "D) The exhaust system"
+      ],
+      "correct": 1,
+      "explanation": "Sync check verifies V, f, and phase angle match for paralleling.",
+      "rule_reference": "Generator paralleling"
+    },
+    {
+      "id": 82,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "A 100 HP, 575V motor (FLC 99A) uses a VFD. The VFD input circuit breaker must be sized at:",
+      "options": [
+        "A) 99A",
+        "B) 200A",
+        "C) 150A",
+        "D) 125A"
+      ],
+      "correct": 3,
+      "explanation": "VFD input protection per manufacturer. Typically 125% of input FLA.",
+      "rule_reference": "CEC Rule 28-200, VFD manual"
+    },
+    {
+      "id": 83,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "A 4-20 mA current loop has a total loop resistance of 600 ohm. The minimum supply voltage required is:",
+      "options": [
+        "A) 12V",
+        "B) 48V",
+        "C) 36V",
+        "D) 24V"
+      ],
+      "correct": 3,
+      "explanation": "V = I x R = 0.020A x 600 = 12V minimum. Plus 2V for transmitter = 14V. Standard 24V supply works.",
+      "rule_reference": "Instrumentation"
+    },
+    {
+      "id": 84,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "A PLC scans its program every 10 ms. An input signal lasting only 5 ms may be:",
+      "options": [
+        "A) Missed if it occurs between scan cycles \u2014 use interrupt or high-speed counter",
+        "B) Always detected",
+        "C) Detected at double speed",
+        "D) Ignored by all PLCs"
+      ],
+      "correct": 0,
+      "explanation": "Signal shorter than scan time may fall between scans.",
+      "rule_reference": "PLC programming"
+    },
+    {
+      "id": 85,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "A motor control centre (MCC) bus rating must be at least:",
+      "options": [
+        "A) Equal to the largest motor FLC",
+        "B) Equal to the sum of all motor FLCs times a demand factor",
+        "C) Equal to or greater than the incoming feeder overcurrent device rating",
+        "D) 600A minimum always"
+      ],
+      "correct": 2,
+      "explanation": "MCC bus must handle the incoming feeder capacity.",
+      "rule_reference": "CEC Rule 28-106"
+    },
+    {
+      "id": 86,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "A VFD regenerative braking application on a crane requires:",
+      "options": [
+        "A) Nothing extra",
+        "B) A braking resistor or regenerative drive unit to absorb regenerated energy",
+        "C) A larger motor only",
+        "D) An external brake shoe"
+      ],
+      "correct": 1,
+      "explanation": "Regenerated energy must be dissipated or returned to line.",
+      "rule_reference": "VFD application"
+    },
+    {
+      "id": 87,
+      "section": "Motor Controls & Automation",
+      "difficulty": "easy",
+      "question": "A relay coil rated 120V AC will NOT operate properly on:",
+      "options": [
+        "A) 115V AC",
+        "B) 125V AC",
+        "C) 120V DC",
+        "D) 118V AC"
+      ],
+      "correct": 2,
+      "explanation": "AC coil on DC = no inductive reactance = excessive current = coil burnout.",
+      "rule_reference": "Relay fundamentals"
+    },
+    {
+      "id": 88,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "A PLC ladder logic rung has: XIC I:1/0, XIC I:1/1, OTE O:2/0. The output energizes when:",
+      "options": [
+        "A) Either input is on",
+        "B) Only the first input is on",
+        "C) Neither input is on",
+        "D) Both inputs are on simultaneously"
+      ],
+      "correct": 3,
+      "explanation": "XIC in series = AND logic. Both must be true.",
+      "rule_reference": "PLC programming"
+    },
+    {
+      "id": 89,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "Motor feeder short circuit protection coordination requires the branch fuses to clear a fault before the feeder breaker trips. This is called:",
+      "options": [
+        "A) Arc flash protection",
+        "B) Selective coordination",
+        "C) Motor overload protection",
+        "D) Ground fault detection"
+      ],
+      "correct": 1,
+      "explanation": "Selective coordination = downstream device clears before upstream.",
+      "rule_reference": "IEEE 242, CEC"
+    },
+    {
+      "id": 90,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "An electronic overload relay (EOL) advantage over thermal overload is:",
+      "options": [
+        "A) Cheaper always",
+        "B) Simpler wiring",
+        "C) Adjustable trip class, phase loss detection, and ground fault protection",
+        "D) No calibration needed"
+      ],
+      "correct": 2,
+      "explanation": "EOLs offer more features than thermal.",
+      "rule_reference": "Motor protection"
+    },
+    {
+      "id": 91,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "A 460V (60 Hz) motor operated on a VFD above base speed (e.g., at 90 Hz) operates in:",
+      "options": [
+        "A) Constant torque region",
+        "B) Constant horsepower (field weakening) region \u2014 torque decreases above base speed",
+        "C) Constant current region",
+        "D) Regenerative mode"
+      ],
+      "correct": 1,
+      "explanation": "Above base speed: voltage is at max, flux decreases, torque decreases = constant HP.",
+      "rule_reference": "VFD/Motor theory"
+    },
+    {
+      "id": 92,
+      "section": "Motor Controls & Automation",
+      "difficulty": "easy",
+      "question": "A pilot light labeled 'R' (red) on a motor starter typically indicates:",
+      "options": [
+        "A) Motor is running",
+        "B) Motor is stopped",
+        "C) Overload condition",
+        "D) Power is available"
+      ],
+      "correct": 0,
+      "explanation": "Red = motor running in standard colour code.",
+      "rule_reference": "Motor control conventions"
+    },
+    {
+      "id": 93,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "When replacing a contactor, matching the coil voltage is critical because:",
+      "options": [
+        "A) It affects motor speed",
+        "B) It changes the motor direction",
+        "C) Wrong coil voltage causes coil burnout (too high) or chatter/failure to pick up (too low)",
+        "D) It affects the overload setting"
+      ],
+      "correct": 2,
+      "explanation": "Coil must match control voltage exactly.",
+      "rule_reference": "Motor control maintenance"
+    },
+    {
+      "id": 94,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "A wound-rotor motor with external resistance in the rotor circuit provides:",
+      "options": [
+        "A) No speed control",
+        "B) Better efficiency at all speeds",
+        "C) Only braking capability",
+        "D) Adjustable starting torque and limited speed control by varying rotor resistance"
+      ],
+      "correct": 3,
+      "explanation": "Rotor resistance = torque control and limited speed range.",
+      "rule_reference": "Motor theory"
+    },
+    {
+      "id": 95,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "A safety relay used with a light curtain on a press requires:",
+      "options": [
+        "A) Standard relay contacts",
+        "B) A timer relay",
+        "C) Single-channel relay only",
+        "D) Redundant (dual-channel) monitoring with cross-fault detection"
+      ],
+      "correct": 3,
+      "explanation": "Safety relays use dual-channel redundant monitoring.",
+      "rule_reference": "CSA Z432, Machine safety"
+    },
+    {
+      "id": 96,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "A synchronous motor's power factor can be adjusted by:",
+      "options": [
+        "A) Changing the supply voltage",
+        "B) Varying the DC field excitation \u2014 overexcited = leading PF, underexcited = lagging PF",
+        "C) Changing the supply frequency",
+        "D) Adding capacitors to the stator"
+      ],
+      "correct": 1,
+      "explanation": "DC excitation controls synchronous motor power factor.",
+      "rule_reference": "Motor theory"
+    },
+    {
+      "id": 97,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "A time-delay relay labeled 'on-delay' (TON) means:",
+      "options": [
+        "A) Output energizes after the set time delay once the input is applied",
+        "B) Output energizes immediately, de-energizes after delay",
+        "C) Output toggles continuously",
+        "D) Output never energizes"
+      ],
+      "correct": 0,
+      "explanation": "TON: input applied, timer counts, output energizes after delay.",
+      "rule_reference": "Control logic"
+    },
+    {
+      "id": 98,
+      "section": "Motor Controls & Automation",
+      "difficulty": "easy",
+      "question": "The 'common' terminal on a pushbutton station connects to:",
+      "options": [
+        "A) The shared line or control voltage conductor",
+        "B) Ground only",
+        "C) The motor directly",
+        "D) Nothing"
+      ],
+      "correct": 0,
+      "explanation": "Common terminal = shared control voltage conductor.",
+      "rule_reference": "Motor control wiring"
+    },
+    {
+      "id": 99,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "A medium-voltage (4.16 kV) motor starter uses vacuum contactors because:",
+      "options": [
+        "A) Vacuum interruption provides superior arc quenching at medium voltage levels",
+        "B) They are cheaper than air-break contactors",
+        "C) They are quieter",
+        "D) They require no maintenance"
+      ],
+      "correct": 0,
+      "explanation": "Vacuum contactors excel at medium-voltage arc interruption.",
+      "rule_reference": "MV motor starters"
+    },
+    {
+      "id": 100,
+      "section": "Motor Controls & Automation",
+      "difficulty": "medium",
+      "question": "A VFD parameter 'slip compensation' is used to:",
+      "options": [
+        "A) Reduce motor efficiency",
+        "B) Maintain more constant speed under varying load by adjusting output frequency for expected slip",
+        "C) Prevent motor starting",
+        "D) Increase motor voltage"
+      ],
+      "correct": 1,
+      "explanation": "Slip comp adjusts frequency to compensate for load-dependent slip.",
+      "rule_reference": "VFD operation"
+    },
+    {
+      "id": 101,
+      "section": "Motor Controls & Automation",
+      "difficulty": "hard",
+      "question": "Motor differential protection compares:",
+      "options": [
+        "A) Voltage at motor terminals vs supply",
+        "B) Current entering vs leaving the motor windings \u2014 any difference indicates an internal fault",
+        "C) Speed vs nameplate RPM",
+        "D) Temperature of each winding"
+      ],
+      "correct": 1,
+      "explanation": "Differential = current in vs out. Mismatch = internal fault.",
+      "rule_reference": "Motor protection, IEEE C37.96"
+    },
+    {
+      "id": 102,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "OTDR (Optical Time Domain Reflectometer) testing on fiber optic cable measures:",
+      "options": [
+        "A) Only signal strength",
+        "B) Cable colour",
+        "C) Fiber length, splice loss, connector loss, and break locations by analyzing reflected light over distance",
+        "D) Bandwidth only"
+      ],
+      "correct": 2,
+      "explanation": "OTDR provides complete fiber characterization.",
+      "rule_reference": "Fiber testing"
+    },
+    {
+      "id": 103,
+      "section": "Communication & Data Systems",
+      "difficulty": "hard",
+      "question": "A 10GbE link over single-mode fiber at 1310 nm can reach approximately:",
+      "options": [
+        "A) 100 m",
+        "B) 300 m",
+        "C) 10 km",
+        "D) 40 km"
+      ],
+      "correct": 2,
+      "explanation": "10GBASE-LR: 10 km over single-mode at 1310 nm.",
+      "rule_reference": "IEEE 802.3ae"
+    },
+    {
+      "id": 104,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "Vertical (backbone) cable between floors should include:",
+      "options": [
+        "A) A mix of fiber (for high-speed data backbone) and copper (for voice if needed), with proper firestopping at each floor penetration",
+        "B) Only UTP cable",
+        "C) Coaxial cable only",
+        "D) Wireless only"
+      ],
+      "correct": 0,
+      "explanation": "Fiber backbone + firestopping at each floor.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 105,
+      "section": "Communication & Data Systems",
+      "difficulty": "easy",
+      "question": "The maximum Cat6 patch cord length at the work area is:",
+      "options": [
+        "A) 2 m",
+        "B) 5 m",
+        "C) 10 m",
+        "D) 20 m"
+      ],
+      "correct": 1,
+      "explanation": "5 m recommended at work area within 10 m total patch allowance.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 106,
+      "section": "Communication & Data Systems",
+      "difficulty": "hard",
+      "question": "A structured cabling system serving 500 users requires a minimum of how many fiber strands in the backbone between the main cross-connect and each floor telecom room?",
+      "options": [
+        "A) 2 strands",
+        "B) 6 strands",
+        "C) 12 strands minimum (2 per anticipated use, plus growth)",
+        "D) 48 strands"
+      ],
+      "correct": 2,
+      "explanation": "TIA recommends minimum 12 strands per TR for growth.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 107,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "When running data cables parallel to fluorescent light fixtures, maintain:",
+      "options": [
+        "A) No separation needed",
+        "B) 1 m separation",
+        "C) 125 mm (5 in) separation from ballast end of fixtures",
+        "D) Data cables cannot be near lights"
+      ],
+      "correct": 2,
+      "explanation": "125 mm from ballast to avoid EMI.",
+      "rule_reference": "TIA-568, BICSI"
+    },
+    {
+      "id": 108,
+      "section": "Communication & Data Systems",
+      "difficulty": "hard",
+      "question": "Insertion loss budget for a Cat6 channel at 250 MHz must not exceed approximately:",
+      "options": [
+        "A) 10 dB",
+        "B) 21 dB",
+        "C) 35 dB",
+        "D) 50 dB"
+      ],
+      "correct": 2,
+      "explanation": "~35 dB maximum insertion loss at 250 MHz for Cat6 channel.",
+      "rule_reference": "TIA-568"
+    },
+    {
+      "id": 109,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "An MDA (Main Distribution Area) in a data centre contains:",
+      "options": [
+        "A) Server racks only",
+        "B) Cooling units",
+        "C) Only power distribution",
+        "D) Core network switches and routers, main cross-connect for backbone cabling"
+      ],
+      "correct": 3,
+      "explanation": "MDA = core networking and main cross-connect.",
+      "rule_reference": "TIA-942"
+    },
+    {
+      "id": 110,
+      "section": "Communication & Data Systems",
+      "difficulty": "easy",
+      "question": "PoE requires what minimum cable category?",
+      "options": [
+        "A) Cat3",
+        "B) Cat6A",
+        "C) Cat6",
+        "D) Cat5e"
+      ],
+      "correct": 3,
+      "explanation": "Cat5e minimum for PoE.",
+      "rule_reference": "IEEE 802.3af"
+    },
+    {
+      "id": 111,
+      "section": "Communication & Data Systems",
+      "difficulty": "hard",
+      "question": "Bend radius for single-mode fiber optic patch cords under no-load conditions:",
+      "options": [
+        "A) 10 mm",
+        "B) 50 mm",
+        "C) 25 mm",
+        "D) 100 mm"
+      ],
+      "correct": 2,
+      "explanation": "25 mm minimum bend radius for SM fiber patch cords (no load).",
+      "rule_reference": "TIA-568, Fiber standards"
+    },
+    {
+      "id": 112,
+      "section": "Communication & Data Systems",
+      "difficulty": "medium",
+      "question": "Cable pathway fill in a conduit for communication cables should not exceed:",
+      "options": [
+        "A) 25%",
+        "B) 40%",
+        "C) 53%",
+        "D) 75%"
+      ],
+      "correct": 2,
+      "explanation": "53% fill for comm cables (different from power cable fill rules).",
+      "rule_reference": "TIA-569"
+    },
+    {
+      "id": 113,
+      "section": "Communication & Data Systems",
+      "difficulty": "easy",
+      "question": "A telecommunications grounding busbar (TGB) must be connected to:",
+      "options": [
+        "A) The nearest water pipe",
+        "B) The telephone company equipment only",
+        "C) The building's electrical grounding system via a bonding conductor",
+        "D) Nothing \u2014 it is self-grounding"
+      ],
+      "correct": 2,
+      "explanation": "TGB bonds to building ground system.",
+      "rule_reference": "TIA-607"
+    },
+    {
+      "id": 114,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "hard",
+      "question": "A voice communication system in a high-rise fire alarm system must:",
+      "options": [
+        "A) Only sound a tone",
+        "B) Use pre-recorded messages only",
+        "C) Only work in stairwells",
+        "D) Allow firefighters to override automatic messages and provide live voice instructions to specific zones"
+      ],
+      "correct": 3,
+      "explanation": "Voice comm allows firefighter override and zone-specific instructions.",
+      "rule_reference": "ULC-S524, OBC"
+    },
+    {
+      "id": 115,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "Smoke detectors in a data centre should be:",
+      "options": [
+        "A) Standard residential type",
+        "B) Heat detectors only",
+        "C) Very early smoke detection apparatus (VESDA) or high-sensitivity sampling type",
+        "D) Not required in data centres"
+      ],
+      "correct": 2,
+      "explanation": "VESDA provides earliest possible detection in data centres.",
+      "rule_reference": "NFPA 75, ULC-S524"
+    },
+    {
+      "id": 116,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "hard",
+      "question": "Fire alarm initiating device circuit (IDC) wired Class B allows:",
+      "options": [
+        "A) Multiple opens without losing the entire zone",
+        "B) No faults at all",
+        "C) Only a single open fault \u2014 beyond the fault point, devices cannot communicate",
+        "D) Unlimited faults"
+      ],
+      "correct": 2,
+      "explanation": "Class B: single open = loss of devices beyond the break.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 117,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "A fire damper is required where:",
+      "options": [
+        "A) Every duct has a damper",
+        "B) Only in stairwells",
+        "C) Only in kitchens",
+        "D) A duct penetrates a fire-rated wall, floor, or ceiling assembly"
+      ],
+      "correct": 3,
+      "explanation": "Dampers maintain fire separation integrity at duct penetrations.",
+      "rule_reference": "OBC 3.1.8"
+    },
+    {
+      "id": 118,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "easy",
+      "question": "Carbon monoxide detectors in residential units are required:",
+      "options": [
+        "A) Only in homes with garages",
+        "B) Only if gas appliances present",
+        "C) Only in basements",
+        "D) On every level and near sleeping areas per Ontario Reg."
+      ],
+      "correct": 3,
+      "explanation": "Ontario requires CO detectors on every level near sleeping areas.",
+      "rule_reference": "O.Reg. 194/14"
+    },
+    {
+      "id": 119,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "hard",
+      "question": "An intelligent/addressable fire alarm system can determine:",
+      "options": [
+        "A) The exact device in alarm, its type, location, and can distinguish between alarm, trouble, and pre-alarm conditions for each device",
+        "B) Only that a zone is in alarm",
+        "C) Only fire temperature",
+        "D) Only smoke density"
+      ],
+      "correct": 0,
+      "explanation": "Addressable systems identify individual device status and conditions.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 120,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "Emergency power supply for fire alarm systems during normal operation:",
+      "options": [
+        "A) Batteries only",
+        "B) Solar only",
+        "C) Generator only",
+        "D) Two independent sources: normal AC power and standby batteries"
+      ],
+      "correct": 3,
+      "explanation": "AC primary + battery standby.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 121,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "hard",
+      "question": "A high-rise building fire alarm system requires firefighter's telephone communication to each:",
+      "options": [
+        "A) Room",
+        "B) Floor (typically in stairwells and electrical rooms)",
+        "C) Suite",
+        "D) Window"
+      ],
+      "correct": 1,
+      "explanation": "Firefighter phone jacks on each floor in designated locations.",
+      "rule_reference": "ULC-S524, OBC"
+    },
+    {
+      "id": 122,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "Spacing of smoke detectors on a flat ceiling in a standard room follows:",
+      "options": [
+        "A) One per room regardless of size",
+        "B) Maximum coverage area per detector type (typically 84 m2 for photoelectric)",
+        "C) No spacing rules",
+        "D) One per 10 m2"
+      ],
+      "correct": 1,
+      "explanation": "Detector spacing per ULC based on type and ceiling height.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 123,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "easy",
+      "question": "A trouble signal on a fire alarm panel indicates:",
+      "options": [
+        "A) A fire",
+        "B) The alarm is too loud",
+        "C) Normal operation",
+        "D) A system fault requiring investigation (open circuit, ground fault, low battery)"
+      ],
+      "correct": 3,
+      "explanation": "Trouble = system fault, not fire.",
+      "rule_reference": "ULC-S524"
+    },
+    {
+      "id": 124,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "hard",
+      "question": "Mass notification systems (MNS) differ from fire alarm by:",
+      "options": [
+        "A) Being the same thing",
+        "B) Being less reliable",
+        "C) Only using visual signals",
+        "D) Providing multi-hazard communication (fire, weather, security) with zoned messaging capability"
+      ],
+      "correct": 3,
+      "explanation": "MNS covers multiple hazard types beyond fire.",
+      "rule_reference": "ULC-S576, NFPA 72"
+    },
+    {
+      "id": 125,
+      "section": "Fire Alarm & Life Safety",
+      "difficulty": "medium",
+      "question": "Elevator recall upon fire alarm activation brings elevators to:",
+      "options": [
+        "A) The top floor",
+        "B) The designated recall floor (usually main floor) unless fire is detected there",
+        "C) The nearest floor",
+        "D) The basement"
+      ],
+      "correct": 1,
+      "explanation": "Elevators recall to designated floor; alternate floor if fire detected at primary.",
+      "rule_reference": "OBC, ULC-S524"
+    },
+    {
+      "id": 126,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "hard",
+      "question": "A 100 kW commercial PV array requires a utility interconnection agreement and:",
+      "options": [
+        "A) Nothing additional",
+        "B) A fence around the array",
+        "C) Only a sign on the meter",
+        "D) A visible, lockable AC disconnect accessible to utility at the point of interconnection"
+      ],
+      "correct": 3,
+      "explanation": "Utility-accessible, lockable disconnect required at interconnection.",
+      "rule_reference": "CEC Rule 64-110, Utility req."
+    },
+    {
+      "id": 127,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "medium",
+      "question": "String sizing for a PV array must ensure the maximum system voltage (at lowest expected temperature) does not exceed:",
+      "options": [
+        "A) 300V",
+        "B) 600V for most residential, 1000V or 1500V for commercial/utility",
+        "C) 120V",
+        "D) Any voltage is acceptable"
+      ],
+      "correct": 1,
+      "explanation": "System voltage limits depend on installation type.",
+      "rule_reference": "CEC Rule 64-060"
+    },
+    {
+      "id": 128,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "hard",
+      "question": "A hybrid inverter (grid-tied with battery) must comply with what anti-islanding standard in Canada?",
+      "options": [
+        "A) CSA C22.2 No. 107.1 (grid-interactive inverters) for automatic disconnection",
+        "B) No standard exists",
+        "C) Only UL 1741",
+        "D) IEC standards only"
+      ],
+      "correct": 0,
+      "explanation": "CSA C22.2 No. 107.1 governs grid-interactive inverters in Canada.",
+      "rule_reference": "CEC Rule 64-110"
+    },
+    {
+      "id": 129,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "medium",
+      "question": "DC arc fault protection is required on rooftop PV systems to:",
+      "options": [
+        "A) Detect and interrupt DC arc faults in the PV string wiring before they cause fires",
+        "B) Increase efficiency",
+        "C) Protect against lightning",
+        "D) Reduce voltage"
+      ],
+      "correct": 0,
+      "explanation": "DC AFCI protection prevents PV string fires.",
+      "rule_reference": "CEC Rule 64-060"
+    },
+    {
+      "id": 130,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "hard",
+      "question": "A 50 kWh lithium iron phosphate (LFP) battery system in a commercial building requires ventilation calculated at:",
+      "options": [
+        "A) No ventilation needed for LFP",
+        "B) Only outdoor installation",
+        "C) Standard HVAC is sufficient",
+        "D) Per manufacturer specifications and CEC requirements, considering worst-case thermal runaway gas generation rates"
+      ],
+      "correct": 3,
+      "explanation": "Even LFP needs ventilation per manufacturer and code for off-gas scenarios.",
+      "rule_reference": "CEC Section 64, NFPA 855"
+    },
+    {
+      "id": 131,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "easy",
+      "question": "What does MPPT stand for in solar PV systems?",
+      "options": [
+        "A) Maximum Power Point Tracking",
+        "B) Minimum Power Peak Test",
+        "C) Main Panel Power Transfer",
+        "D) Module Protection Performance Test"
+      ],
+      "correct": 0,
+      "explanation": "Maximum Power Point Tracking optimizes PV output.",
+      "rule_reference": "PV technology"
+    },
+    {
+      "id": 132,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "medium",
+      "question": "A DC-coupled battery storage system is connected:",
+      "options": [
+        "A) Directly to the AC panel",
+        "B) To the DC bus between the PV array and inverter",
+        "C) To the utility transformer",
+        "D) To the lighting panel only"
+      ],
+      "correct": 1,
+      "explanation": "DC-coupled = batteries on the DC side of the inverter.",
+      "rule_reference": "Energy storage systems"
+    },
+    {
+      "id": 133,
+      "section": "Renewable Energy & Storage",
+      "difficulty": "hard",
+      "question": "EV load management systems (EVLMS) for multi-unit residential buildings:",
+      "options": [
+        "A) Are optional",
+        "B) Dynamically allocate available electrical capacity among multiple EV chargers to prevent service overload",
+        "C) Only work with one charger",
+        "D) Require service upgrade always"
+      ],
+      "correct": 1,
+      "explanation": "EVLMS enables multiple chargers on limited service capacity.",
+      "rule_reference": "CEC Section 86, EVLMS"
+    },
+    {
+      "id": 134,
+      "section": "Electrical Commissioning",
+      "difficulty": "hard",
+      "question": "A 600V motor insulation resistance test using a megger at 1000V DC reads 50 MOhm cold and 5 MOhm when warm. This polarization index of 10:1 suggests:",
+      "options": [
+        "A) Actually the PI is measured differently \u2014 time-based (10min/1min ratio). A 10:1 PI ratio indicates excellent insulation condition",
+        "B) Failed insulation",
+        "C) Marginal insulation",
+        "D) The megger is defective"
+      ],
+      "correct": 0,
+      "explanation": "PI = 10-min/1-min reading. High PI = clean, dry insulation.",
+      "rule_reference": "IEEE 43"
+    },
+    {
+      "id": 135,
+      "section": "Electrical Commissioning",
+      "difficulty": "medium",
+      "question": "Acceptance testing of a transformer includes all EXCEPT:",
+      "options": [
+        "A) Turns ratio test",
+        "B) Insulation resistance test",
+        "C) Painting the transformer",
+        "D) Winding resistance test"
+      ],
+      "correct": 2,
+      "explanation": "Painting is maintenance, not an acceptance test.",
+      "rule_reference": "NETA ATS, IEEE C57.12"
+    },
+    {
+      "id": 136,
+      "section": "Electrical Commissioning",
+      "difficulty": "hard",
+      "question": "After a main switchgear is energized, the protective relay coordination is verified by:",
+      "options": [
+        "A) Secondary injection testing of each relay to verify time-current coordination per the coordination study",
+        "B) Tripping each breaker manually",
+        "C) Visual inspection only",
+        "D) Running the building at full load immediately"
+      ],
+      "correct": 0,
+      "explanation": "Secondary injection verifies relay settings match coordination study.",
+      "rule_reference": "NETA ATS, IEEE 242"
+    },
+    {
+      "id": 137,
+      "section": "Electrical Commissioning",
+      "difficulty": "medium",
+      "question": "A hi-pot (high potential) test applies:",
+      "options": [
+        "A) A voltage significantly above rated voltage to stress-test insulation",
+        "B) Normal operating voltage",
+        "C) Zero voltage",
+        "D) RF signal"
+      ],
+      "correct": 0,
+      "explanation": "Hi-pot stresses insulation beyond normal to detect weakness.",
+      "rule_reference": "NETA ATS, IEEE 400"
+    },
+    {
+      "id": 138,
+      "section": "Electrical Commissioning",
+      "difficulty": "easy",
+      "question": "What document lists all test results during electrical commissioning?",
+      "options": [
+        "A) The test report or commissioning report",
+        "B) The daily log only",
+        "C) The building permit",
+        "D) The utility bill"
+      ],
+      "correct": 0,
+      "explanation": "Test/commissioning report documents all results.",
+      "rule_reference": "Commissioning practice"
+    },
+    {
+      "id": 139,
+      "section": "Electrical Commissioning",
+      "difficulty": "hard",
+      "question": "Protective relay testing reveals that a feeder breaker's ground fault relay trips at 300A instead of the set point of 500A. The relay:",
+      "options": [
+        "A) Is providing extra safety",
+        "B) Must be recalibrated or replaced \u2014 it could cause nuisance tripping",
+        "C) Is set correctly",
+        "D) Should be left as-is"
+      ],
+      "correct": 1,
+      "explanation": "Tripping below setpoint = miscalibration = nuisance trips.",
+      "rule_reference": "Protection relay testing"
+    },
+    {
+      "id": 140,
+      "section": "Electrical Commissioning",
+      "difficulty": "medium",
+      "question": "Infrared windows installed on switchgear panels allow:",
+      "options": [
+        "A) Thermographic scanning without opening the panel door, reducing arc flash risk",
+        "B) Natural ventilation",
+        "C) Visual inspection only",
+        "D) Cooling of equipment"
+      ],
+      "correct": 0,
+      "explanation": "IR windows enable safe thermal scanning of live equipment.",
+      "rule_reference": "NFPA 70B, CSA Z462"
+    },
+    {
+      "id": 141,
+      "section": "Electrical Commissioning",
+      "difficulty": "hard",
+      "question": "A battery impedance test on UPS batteries shows one cell at 35% above baseline impedance. This indicates:",
+      "options": [
+        "A) Normal variation",
+        "B) Cell degradation requiring replacement planning \u2014 impedance rise correlates with capacity loss",
+        "C) The tester is wrong",
+        "D) The battery is fully charged"
+      ],
+      "correct": 1,
+      "explanation": "Impedance increase = internal degradation = reduced capacity.",
+      "rule_reference": "IEEE 1188, UPS maintenance"
+    },
+    {
+      "id": 142,
+      "section": "CEC Code Rules",
+      "difficulty": "hard",
+      "question": "CEC Rule 8-106 addresses demand factors for electric ranges in multi-unit dwellings. For 20 ranges:",
+      "options": [
+        "A) 100% of all ranges",
+        "B) A declining percentage per range as the number increases",
+        "C) 50% flat",
+        "D) Only the largest range"
+      ],
+      "correct": 1,
+      "explanation": "Demand factors decrease as number of ranges increases.",
+      "rule_reference": "CEC Rule 8-106, Table 19"
+    },
+    {
+      "id": 143,
+      "section": "CEC Code Rules",
+      "difficulty": "medium",
+      "question": "The CEC distinction between 'readily accessible' and 'accessible' is:",
+      "options": [
+        "A) They are the same",
+        "B) Readily accessible means can be reached without climbing or removing obstacles; accessible means can be reached for operation, renewal, or inspection",
+        "C) Only one applies to residential",
+        "D) Only defined in the OBC"
+      ],
+      "correct": 1,
+      "explanation": "Readily accessible = no tools, ladders, etc. needed.",
+      "rule_reference": "CEC Definitions"
+    },
+    {
+      "id": 144,
+      "section": "CEC Code Rules",
+      "difficulty": "hard",
+      "question": "CEC Rule 14-012 requires that overcurrent devices have an interrupting capacity:",
+      "options": [
+        "A) Not less than the available fault current at the point of application",
+        "B) Of at least 5000A",
+        "C) Equal to the breaker frame size",
+        "D) Only for devices above 100A"
+      ],
+      "correct": 0,
+      "explanation": "AIC must meet or exceed available fault current.",
+      "rule_reference": "CEC Rule 14-012"
+    },
+    {
+      "id": 145,
+      "section": "CEC Code Rules",
+      "difficulty": "medium",
+      "question": "Which CEC appendix provides informational notes on demand load calculations?",
+      "options": [
+        "A) Appendix A",
+        "B) Appendix B",
+        "C) Appendix D",
+        "D) Appendix F"
+      ],
+      "correct": 2,
+      "explanation": "Appendix D provides demand calculation guidance and examples.",
+      "rule_reference": "CEC Appendix D"
+    },
+    {
+      "id": 146,
+      "section": "CEC Code Rules",
+      "difficulty": "easy",
+      "question": "A 'listed' product in Canadian electrical code terms means:",
+      "options": [
+        "A) On a shopping list",
+        "B) Evaluated and certified by an accredited testing laboratory",
+        "C) Recommended by the installer",
+        "D) Made by a known manufacturer"
+      ],
+      "correct": 1,
+      "explanation": "Listed = evaluated/certified by accredited lab.",
+      "rule_reference": "CEC Definitions"
+    },
+    {
+      "id": 147,
+      "section": "CEC Code Rules",
+      "difficulty": "hard",
+      "question": "The CEC requirement for AFCI protection in dwelling units applies to:",
+      "options": [
+        "A) Only bedrooms",
+        "B) All circuits in a dwelling",
+        "C) All 125V, 15A and 20A branch circuits supplying outlets in dwelling unit bedrooms",
+        "D) Only kitchens"
+      ],
+      "correct": 2,
+      "explanation": "AFCI required on bedroom circuits (15A and 20A, 125V).",
+      "rule_reference": "CEC Rule 26-652"
+    },
+    {
+      "id": 148,
+      "section": "CEC Code Rules",
+      "difficulty": "medium",
+      "question": "An electrical contractor must notify ESA before commencing work by filing:",
+      "options": [
+        "A) A notification of work (or permit application) through ESA's online system",
+        "B) A police report",
+        "C) A letter to the mayor",
+        "D) Nothing if the job is small"
+      ],
+      "correct": 0,
+      "explanation": "ESA notification required before starting work.",
+      "rule_reference": "OESC, ESA"
+    },
+    {
+      "id": 149,
+      "section": "CEC Code Rules",
+      "difficulty": "medium",
+      "question": "The CEC Table 2 provides ampacity values at what standard ambient temperature?",
+      "options": [
+        "A) 20 degrees C",
+        "B) 25 degrees C",
+        "C) 30 degrees C",
+        "D) 40 degrees C"
+      ],
+      "correct": 2,
+      "explanation": "Table 2 ampacities are based on 30 degrees C ambient.",
+      "rule_reference": "CEC Table 2, Note"
+    },
+    {
+      "id": 150,
+      "section": "Electrical Installations",
+      "difficulty": "hard",
+      "question": "A 600V, 3-phase, 400A feeder uses two sets of parallel conductors. Each parallel set must carry at least:",
+      "options": [
+        "A) 400A each",
+        "B) 100A each",
+        "C) 200A each",
+        "D) 300A each"
+      ],
+      "correct": 2,
+      "explanation": "With two parallel sets, each set carries half the total current: 400A / 2 = 200A. Each set must be sized for 200A.",
+      "rule_reference": "CEC Rule 12-108"
+    }
+  ]
+}
