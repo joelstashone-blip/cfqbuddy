@@ -159,8 +159,22 @@ async function startLimitedDemo() {
 }
 
 function showTrialExpiredScreen() {
-    document.getElementById('welcome-screen').style.display = 'none';
-    document.getElementById('trial-expired-screen').style.display = 'block';
+    // Hide all screens
+    const screens = ['screen-landing', 'screen-exam', 'screen-results', 'screen-review'];
+    screens.forEach(screenId => {
+        const screen = document.getElementById(screenId);
+        if (screen) {
+            screen.style.display = 'none';
+            screen.classList.remove('active');
+        }
+    });
+    
+    // Show paywall screen
+    const paywallScreen = document.getElementById('screen-paywall');
+    if (paywallScreen) {
+        paywallScreen.style.display = 'block';
+        paywallScreen.classList.add('active');
+    }
 }
 
 // Validate license key via Gumroad License Verify API
@@ -237,8 +251,22 @@ async function validateCode() {
         showLicenseStatus(`✅ License verified! Welcome to ${productName}. Starting your exam...`, 'success');
         
         setTimeout(() => {
-            document.getElementById('welcome-screen').style.display = 'none';
-            document.getElementById('exam-menu-screen').style.display = 'block';
+            // Hide all other screens
+            const screens = ['screen-landing', 'screen-paywall', 'screen-results', 'screen-review'];
+            screens.forEach(screenId => {
+                const screen = document.getElementById(screenId);
+                if (screen) {
+                    screen.style.display = 'none';
+                    screen.classList.remove('active');
+                }
+            });
+            
+            // Show exam screen directly for licensed users
+            const examScreen = document.getElementById('screen-exam');
+            if (examScreen) {
+                examScreen.style.display = 'block';
+                examScreen.classList.add('active');
+            }
         }, 1500);
     } else {
         showLicenseStatus('❌ License key not found. Please check your Gumroad receipt and try again.', 'error');
@@ -283,10 +311,19 @@ async function loadExam(examNum) {
 
 // Start exam
 function startExam() {
-    document.getElementById('welcome-screen').style.display = 'none';
-    document.getElementById('exam-menu-screen').style.display = 'none';
-    document.getElementById('trial-expired-screen').style.display = 'none';
-    document.getElementById('exam-container').style.display = 'block';
+    // Hide all screens first
+    const screens = ['screen-landing', 'screen-paywall', 'screen-results', 'screen-review'];
+    screens.forEach(screenId => {
+        const screen = document.getElementById(screenId);
+        if (screen) screen.style.display = 'none';
+    });
+    
+    // Show exam screen
+    const examScreen = document.getElementById('screen-exam');
+    if (examScreen) {
+        examScreen.style.display = 'block';
+        examScreen.classList.add('active');
+    }
     
     // Initialize exam state
     currentQuestion = 0;
