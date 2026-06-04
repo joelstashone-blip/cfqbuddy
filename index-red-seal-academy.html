@@ -437,17 +437,31 @@
         .trade-dropdown {
             width: 100%;
             padding: 16px;
-            font-size: 1rem;
+            font-size: 16px;
             border: 2px solid var(--color-border);
             border-radius: var(--rounded-md);
             background-color: white;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 12px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding-right: 40px;
             color: var(--color-primary);
             font-family: 'Inter', sans-serif;
-            transition: border-color 0.2s;
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
         
         .trade-dropdown:focus {
             outline: none;
+            border-color: var(--color-tertiary);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+        
+        .trade-dropdown:hover {
             border-color: var(--color-tertiary);
         }
         
@@ -556,6 +570,38 @@
             
             .programs-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            /* Mobile-optimized trade selection */
+            .dropdown-container {
+                flex-direction: column;
+                gap: var(--spacing-lg);
+            }
+            
+            .trade-dropdown {
+                font-size: 16px; /* Prevents zoom on iOS */
+                padding: 18px 45px 18px 16px;
+                min-height: 56px; /* Touch target size */
+            }
+            
+            .button-primary,
+            .button-secondary {
+                padding: 16px 24px;
+                font-size: 16px;
+                min-height: 56px; /* Touch target size */
+            }
+            
+            .program-actions {
+                gap: var(--spacing-md);
+            }
+            
+            .trade-selector-card {
+                padding: var(--spacing-lg);
+                margin-bottom: var(--spacing-lg);
+            }
+            
+            .selector-title {
+                font-size: 1.25rem;
             }
             
             .section-title {

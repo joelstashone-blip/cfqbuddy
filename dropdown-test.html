@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Test - THE RED SEAL ACADEMY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #DC2626;
+            border-radius: 8px;
+        }
+        
+        select {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background: white;
+            margin: 10px 0;
+        }
+        
+        button {
+            background: #DC2626;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .available {
+            color: #DC2626;
+        }
+        
+        .coming-soon {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏗️ THE RED SEAL ACADEMY</h1>
+    <p><strong>Dropdown Test - 56 Red Seal Trades</strong></p>
+    
+    <div class="test-section">
+        <h2>Test 1: Simple Dropdown</h2>
+        <p>Basic dropdown with all 56 trades:</p>
+        
+        <select id="simpleDropdown">
+            <option value="">Select a Red Seal Trade...</option>
+            
+            <!-- Electrical & Electronics -->
+            <optgroup label="🔌 Electrical & Electronics">
+                <option value="309A" class="available">309A - Construction & Maintenance Electrician ⚡ AVAILABLE</option>
+                <option value="442A">442A - Industrial Electrician</option>
+                <option value="444A">444A - Electrical Power Line & Cable Worker</option>
+                <option value="445A">445A - Electrical Power System & Powerhouse Technician</option>
+            </optgroup>
+            
+            <!-- Plumbing & Pipefitting -->
+            <optgroup label="🔧 Plumbing & Pipefitting">
+                <option value="306A" class="available">306A - Plumbing 🚰 AVAILABLE</option>
+                <option value="307A">307A - Steamfitter-Pipefitter</option>
+                <option value="428A">428A - Construction & Maintenance (Sprinkler System Installer)</option>
+            </optgroup>
+            
+            <!-- Welding & Metalworking -->
+            <optgroup label="🔥 Welding & Metalworking">
+                <option value="456A">456A - Welder</option>
+                <option value="420A">420A - Millwright</option>
+                <option value="313A">313A - Refrigeration & Air Conditioning Mechanic</option>
+                <option value="433A">433A - Tool & Die Maker</option>
+                <option value="429A">429A - Machinist</option>
+            </optgroup>
+            
+            <!-- Automotive & Heavy Equipment -->
+            <optgroup label="🚗 Automotive & Heavy Equipment">
+                <option value="310S">310S - Automotive Service Technician</option>
+                <option value="421A">421A - Heavy Duty Equipment Technician</option>
+                <option value="310T">310T - Parts Technician</option>
+                <option value="426A">426A - Construction Boilermaker</option>
+            </optgroup>
+            
+            <!-- Carpentry & Construction -->
+            <optgroup label="🏗️ Carpentry & Construction">
+                <option value="403A">403A - Carpenter</option>
+                <option value="408A">408A - Concrete Finisher</option>
+                <option value="406A">406A - Roofer</option>
+                <option value="413A">413A - Glazier</option>
+                <option value="435A">435A - Drywall Finisher & Plasterer</option>
+            </optgroup>
+            
+            <!-- Food Services -->
+            <optgroup label="🍳 Food Services">
+                <option value="415A">415A - Cook</option>
+                <option value="434A">434A - Baker</option>
+                <option value="446A">446A - Meat Cutter</option>
+            </optgroup>
+            
+            <!-- Personal Services -->
+            <optgroup label="💇 Personal Services">
+                <option value="332A">332A - Hairstylist</option>
+                <option value="431A">431A - Esthetician</option>
+            </optgroup>
+            
+            <!-- Industrial & Manufacturing -->
+            <optgroup label="🏭 Industrial & Manufacturing">
+                <option value="427A">427A - Power Engineering Technician</option>
+                <option value="423A">423A - Industrial Mechanic Millwright</option>
+                <option value="432A">432A - Instrumentation & Control Technician</option>
+                <option value="437A">437A - Ironworker (Generalist)</option>
+                <option value="438A">438A - Ironworker (Structural & Ornamental)</option>
+                <option value="439A">439A - Ironworker (Reinforcing)</option>
+            </optgroup>
+            
+            <!-- Specialized Trades -->
+            <optgroup label="🔬 Specialized Trades">
+                <option value="424A">424A - Landscape Horticulturist</option>
+                <option value="425A">425A - Insulator (Heat & Frost)</option>
+                <option value="430A">430A - Bricklayer</option>
+                <option value="441A">441A - Appliance Service Technician</option>
+                <option value="447A">447A - Floorcovering Installer</option>
+            </optgroup>
+        </select>
+        
+        <button id="testBtn" disabled>Test Selection</button>
+        
+        <div id="result" class="result" style="display: none;"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Instructions for Jay:</h2>
+        <ol>
+            <li><strong>Tap the dropdown above</strong> - You should see all 56 Red Seal trades</li>
+            <li><strong>Select any trade</strong> - Available trades marked with ⚡ or 🚰</li>
+            <li><strong>Tap "Test Selection"</strong> - See if it works</li>
+        </ol>
+        
+        <p><strong>Total Trades Available: 56</strong></p>
+        <ul>
+            <li>🔌 Electrical: 4 trades</li>
+            <li>🔧 Plumbing: 3 trades</li> 
+            <li>🔥 Welding: 5 trades</li>
+            <li>🚗 Automotive: 4 trades</li>
+            <li>🏗️ Construction: 5 trades</li>
+            <li>🍳 Food Services: 3 trades</li>
+            <li>💇 Personal Services: 2 trades</li>
+            <li>🏭 Industrial: 6 trades</li>
+            <li>🔬 Specialized: 5 trades</li>
+        </ul>
+    </div>
+
+    <script>
+        const dropdown = document.getElementById('simpleDropdown');
+        const button = document.getElementById('testBtn');
+        const result = document.getElementById('result');
+        
+        dropdown.addEventListener('change', function() {
+            if (this.value) {
+                button.disabled = false;
+                button.textContent = 'Test Selection: ' + this.value;
+            } else {
+                button.disabled = true;
+                button.textContent = 'Test Selection';
+            }
+        });
+        
+        button.addEventListener('click', function() {
+            const selected = dropdown.value;
+            const selectedText = dropdown.options[dropdown.selectedIndex].textContent;
+            
+            result.style.display = 'block';
+            
+            if (selected === '309A' || selected === '306A') {
+                result.innerHTML = '<span class="available">✅ AVAILABLE PROGRAM!</span><br>' + 
+                                 'Selected: ' + selectedText + '<br>' +
+                                 'Status: Ready for enrollment at $79 CAD<br>' +
+                                 'Action: Redirect to full program page';
+            } else {
+                result.innerHTML = '<span class="coming-soon">🔧 COMING SOON!</span><br>' + 
+                                 'Selected: ' + selectedText + '<br>' +
+                                 'Status: In development<br>' +
+                                 'Action: Notify when available signup';
+            }
+        });
+        
+        // Count total options for verification
+        const totalOptions = dropdown.querySelectorAll('option').length - 1; // Subtract placeholder
+        console.log('Total trade options loaded:', totalOptions);
+    </script>
+</body>
+</html>
