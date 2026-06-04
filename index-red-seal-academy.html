@@ -395,7 +395,141 @@
             margin: 0 auto;
         }
         
-        /* Responsive Design */
+        /* Trade Selection Interface */
+        .section-subtitle {
+            font-size: 1.125rem;
+            text-align: center;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .trade-selection-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .trade-selector-card {
+            background: white;
+            border-radius: var(--rounded-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--elevation-md);
+            border: 1px solid var(--color-border);
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .selector-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-primary);
+        }
+        
+        .dropdown-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .trade-dropdown {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            border: 2px solid var(--color-border);
+            border-radius: var(--rounded-md);
+            background-color: white;
+            color: var(--color-primary);
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s;
+        }
+        
+        .trade-dropdown:focus {
+            outline: none;
+            border-color: var(--color-tertiary);
+        }
+        
+        .trade-dropdown optgroup {
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--color-secondary);
+            padding: 8px 0;
+        }
+        
+        .trade-dropdown option {
+            padding: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .trade-dropdown option[data-status="available"] {
+            color: var(--color-tertiary);
+            font-weight: 500;
+        }
+        
+        .trade-dropdown option[data-status="coming-soon"] {
+            color: var(--color-muted);
+        }
+        
+        /* Program Details Display */
+        .program-details {
+            margin-top: var(--spacing-xl);
+        }
+        
+        .active-program {
+            border: 2px solid var(--color-tertiary);
+            position: relative;
+        }
+        
+        .active-program::before {
+            content: "CURRENTLY AVAILABLE";
+            position: absolute;
+            top: -12px;
+            left: var(--spacing-lg);
+            background: var(--color-tertiary);
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: var(--rounded-sm);
+            letter-spacing: 0.08em;
+        }
+        
+        .program-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .coming-soon-card {
+            background: linear-gradient(135deg, var(--color-neutral) 0%, #F5F5F4 100%);
+            border: 2px dashed var(--color-border);
+            opacity: 0.8;
+        }
+        
+        .coming-soon-badge {
+            background-color: var(--color-muted);
+            color: white;
+        }
+        
+        .coming-soon-title {
+            color: var(--color-muted);
+        }
+        
+        .coming-soon-description {
+            color: var(--color-muted);
+            font-style: italic;
+        }
+        
+        .notify-button {
+            background-color: var(--color-muted);
+            color: white;
+        }
+        
+        .notify-button:hover {
+            background-color: var(--color-secondary);
+        }
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -480,46 +614,107 @@
         <!-- Programs Section -->
         <section class="programs-section" id="programs">
             <h2 class="section-title">Professional Certification Programs</h2>
+            <p class="section-subtitle">Select your Red Seal trade to explore our comprehensive certification training programs</p>
             
-            <div class="programs-grid">
-                <!-- 309A Electrician Program -->
-                <div class="program-card">
-                    <span class="badge-premium">Red Seal Certified</span>
-                    <h3 class="program-title">309A Construction & Maintenance Electrician</h3>
-                    <p class="program-description">
-                        Comprehensive preparation for Ontario's 309A Red Seal certification. 
-                        Professional-grade training with industry expertise and proven success rates.
-                    </p>
-                    <ul class="program-features">
-                        <li>450+ Expert-Curated Practice Questions</li>
-                        <li>3 Full-Length Timed Practice Exams (4 hours each)</li>
-                        <li>CEC 2024 Code References & Cross-References</li>
-                        <li>Instant Scoring with Detailed Explanations</li>
-                        <li>Mobile-Optimized for On-Site Study</li>
-                        <li>Free 10-Question Demo Available</li>
-                    </ul>
-                    <a href="/demo" class="button-secondary">Try Free Demo</a>
-                    <a href="https://309aprep.gumroad.com/l/cfqbuddy-complete" class="button-primary">Start Training - $79 CAD</a>
+            <!-- Trade Selection Interface -->
+            <div class="trade-selection-container">
+                <div class="trade-selector-card">
+                    <span class="badge-premium">56 Red Seal Trades Available</span>
+                    <h3 class="selector-title">Choose Your Red Seal Trade</h3>
+                    
+                    <div class="dropdown-container">
+                        <select id="tradeSelector" class="trade-dropdown">
+                            <option value="">Select a Red Seal Trade...</option>
+                            
+                            <!-- Electrical & Electronics -->
+                            <optgroup label="🔌 Electrical & Electronics">
+                                <option value="309A" data-status="available">309A - Construction & Maintenance Electrician ⚡ AVAILABLE</option>
+                                <option value="442A" data-status="coming-soon">442A - Industrial Electrician</option>
+                                <option value="444A" data-status="coming-soon">444A - Electrical Power Line & Cable Worker</option>
+                                <option value="445A" data-status="coming-soon">445A - Electrical Power System & Powerhouse Technician</option>
+                            </optgroup>
+                            
+                            <!-- Plumbing & Pipefitting -->
+                            <optgroup label="🔧 Plumbing & Pipefitting">
+                                <option value="306A" data-status="available">306A - Plumbing 🚰 AVAILABLE</option>
+                                <option value="307A" data-status="coming-soon">307A - Steamfitter-Pipefitter</option>
+                                <option value="428A" data-status="coming-soon">428A - Construction & Maintenance (Sprinkler System Installer)</option>
+                            </optgroup>
+                            
+                            <!-- Welding & Metalworking -->
+                            <optgroup label="🔥 Welding & Metalworking">
+                                <option value="456A" data-status="coming-soon">456A - Welder</option>
+                                <option value="420A" data-status="coming-soon">420A - Millwright</option>
+                                <option value="313A" data-status="coming-soon">313A - Refrigeration & Air Conditioning Mechanic</option>
+                                <option value="433A" data-status="coming-soon">433A - Tool & Die Maker</option>
+                                <option value="429A" data-status="coming-soon">429A - Machinist</option>
+                            </optgroup>
+                            
+                            <!-- Automotive & Heavy Equipment -->
+                            <optgroup label="🚗 Automotive & Heavy Equipment">
+                                <option value="310S" data-status="coming-soon">310S - Automotive Service Technician</option>
+                                <option value="421A" data-status="coming-soon">421A - Heavy Duty Equipment Technician</option>
+                                <option value="310T" data-status="coming-soon">310T - Parts Technician</option>
+                                <option value="426A" data-status="coming-soon">426A - Construction Boilermaker</option>
+                            </optgroup>
+                            
+                            <!-- Carpentry & Construction -->
+                            <optgroup label="🏗️ Carpentry & Construction">
+                                <option value="403A" data-status="coming-soon">403A - Carpenter</option>
+                                <option value="408A" data-status="coming-soon">408A - Concrete Finisher</option>
+                                <option value="406A" data-status="coming-soon">406A - Roofer</option>
+                                <option value="413A" data-status="coming-soon">413A - Glazier</option>
+                                <option value="435A" data-status="coming-soon">435A - Drywall Finisher & Plasterer</option>
+                            </optgroup>
+                            
+                            <!-- Food Services -->
+                            <optgroup label="🍳 Food Services">
+                                <option value="415A" data-status="coming-soon">415A - Cook</option>
+                                <option value="434A" data-status="coming-soon">434A - Baker</option>
+                                <option value="446A" data-status="coming-soon">446A - Meat Cutter</option>
+                            </optgroup>
+                            
+                            <!-- Hairstyling & Personal Services -->
+                            <optgroup label="💇 Personal Services">
+                                <option value="332A" data-status="coming-soon">332A - Hairstylist</option>
+                                <option value="431A" data-status="coming-soon">431A - Esthetician</option>
+                            </optgroup>
+                            
+                            <!-- Industrial & Manufacturing -->
+                            <optgroup label="🏭 Industrial & Manufacturing">
+                                <option value="427A" data-status="coming-soon">427A - Power Engineering Technician</option>
+                                <option value="423A" data-status="coming-soon">423A - Industrial Mechanic Millwright</option>
+                                <option value="432A" data-status="coming-soon">432A - Instrumentation & Control Technician</option>
+                                <option value="437A" data-status="coming-soon">437A - Ironworker (Generalist)</option>
+                                <option value="438A" data-status="coming-soon">438A - Ironworker (Structural & Ornamental)</option>
+                                <option value="439A" data-status="coming-soon">439A - Ironworker (Reinforcing)</option>
+                            </optgroup>
+                            
+                            <!-- Specialized Trades -->
+                            <optgroup label="🔬 Specialized Trades">
+                                <option value="424A" data-status="coming-soon">424A - Landscape Horticulturist</option>
+                                <option value="425A" data-status="coming-soon">425A - Insulator (Heat & Frost)</option>
+                                <option value="430A" data-status="coming-soon">430A - Bricklayer</option>
+                                <option value="441A" data-status="coming-soon">441A - Appliance Service Technician</option>
+                                <option value="447A" data-status="coming-soon">447A - Floorcovering Installer</option>
+                            </optgroup>
+                        </select>
+                        
+                        <button id="selectTradeBtn" class="button-primary" disabled>
+                            Explore Certification Program
+                        </button>
+                    </div>
                 </div>
                 
-                <!-- 306A Plumber Program -->
-                <div class="program-card">
-                    <span class="badge-premium">Red Seal Certified</span>
-                    <h3 class="program-title">306A Plumbing</h3>
-                    <p class="program-description">
-                        Professional plumbing certification preparation for Ontario's 306A Red Seal exam. 
-                        Expert content developed by certified plumbers for comprehensive success.
-                    </p>
-                    <ul class="program-features">
-                        <li>450+ Professional Practice Questions</li>
-                        <li>3 Full-Length Certification Practice Exams</li>
-                        <li>OBC & National Plumbing Code References</li>
-                        <li>Professional Scoring & Progress Tracking</li>
-                        <li>Industry-Standard Exam Simulation</li>
-                        <li>Free 10-Question Demo Available</li>
-                    </ul>
-                    <a href="/plumber-demo" class="button-secondary">Try Free Demo</a>
-                    <a href="https://306aplumber.gumroad.com/l/plumber-complete" class="button-primary">Start Training - $79 CAD</a>
+                <!-- Program Details Display -->
+                <div id="programDetails" class="program-details" style="display: none;">
+                    <div class="program-card active-program">
+                        <span class="badge-premium" id="programBadge">Red Seal Certified</span>
+                        <h3 class="program-title" id="programTitle"></h3>
+                        <p class="program-description" id="programDescription"></p>
+                        <ul class="program-features" id="programFeatures"></ul>
+                        <div class="program-actions" id="programActions"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -539,5 +734,153 @@
     </footer>
 
     <script src="js/exam.js"></script>
+    <script>
+        // Trade Selection System
+        const tradeData = {
+            '309A': {
+                title: '309A Construction & Maintenance Electrician',
+                description: 'Comprehensive preparation for Ontario\'s 309A Red Seal certification. Professional-grade training with industry expertise and proven success rates.',
+                features: [
+                    '450+ Expert-Curated Practice Questions',
+                    '3 Full-Length Timed Practice Exams (4 hours each)',
+                    'CEC 2024 Code References & Cross-References',
+                    'Instant Scoring with Detailed Explanations',
+                    'Mobile-Optimized for On-Site Study',
+                    'Free 10-Question Demo Available'
+                ],
+                actions: [
+                    { text: 'Try Free Demo', url: '#demo', class: 'button-secondary' },
+                    { text: 'Start Training - $79 CAD', url: 'https://309aprep.gumroad.com/l/cfqbuddy-complete', class: 'button-primary' }
+                ],
+                status: 'available'
+            },
+            '306A': {
+                title: '306A Plumbing',
+                description: 'Professional plumbing certification preparation for Ontario\'s 306A Red Seal exam. Expert content developed by certified plumbers for comprehensive success.',
+                features: [
+                    '450+ Professional Practice Questions',
+                    '3 Full-Length Certification Practice Exams',
+                    'OBC & National Plumbing Code References',
+                    'Professional Scoring & Progress Tracking',
+                    'Industry-Standard Exam Simulation',
+                    'Free 10-Question Demo Available'
+                ],
+                actions: [
+                    { text: 'Try Free Demo', url: '#plumber-demo', class: 'button-secondary' },
+                    { text: 'Start Training - $79 CAD', url: 'https://306aplumber.gumroad.com/l/plumber-complete', class: 'button-primary' }
+                ],
+                status: 'available'
+            }
+        };
+
+        // Generic coming soon template
+        function getComingSoonData(tradeName) {
+            return {
+                title: tradeName,
+                description: 'Professional Red Seal certification preparation coming soon. Our expert development team is creating comprehensive training materials with industry-leading content and proven methodologies.',
+                features: [
+                    'Comprehensive Practice Question Database',
+                    'Full-Length Timed Practice Exams',
+                    'Current Code References & Standards',
+                    'Expert-Level Content Development',
+                    'Mobile-Optimized Learning Platform',
+                    'Professional Scoring & Analytics'
+                ],
+                actions: [
+                    { text: 'Notify When Available', url: '#notify', class: 'notify-button' }
+                ],
+                status: 'coming-soon'
+            };
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const tradeSelector = document.getElementById('tradeSelector');
+            const selectTradeBtn = document.getElementById('selectTradeBtn');
+            const programDetails = document.getElementById('programDetails');
+            const programBadge = document.getElementById('programBadge');
+            const programTitle = document.getElementById('programTitle');
+            const programDescription = document.getElementById('programDescription');
+            const programFeatures = document.getElementById('programFeatures');
+            const programActions = document.getElementById('programActions');
+
+            // Enable/disable button based on selection
+            tradeSelector.addEventListener('change', function() {
+                if (this.value) {
+                    selectTradeBtn.disabled = false;
+                    selectTradeBtn.textContent = 'Explore Certification Program';
+                } else {
+                    selectTradeBtn.disabled = true;
+                    selectTradeBtn.textContent = 'Explore Certification Program';
+                    programDetails.style.display = 'none';
+                }
+            });
+
+            // Handle trade selection
+            selectTradeBtn.addEventListener('click', function() {
+                const selectedTrade = tradeSelector.value;
+                if (!selectedTrade) return;
+
+                const selectedOption = tradeSelector.options[tradeSelector.selectedIndex];
+                const tradeName = selectedOption.textContent.replace(' ⚡ AVAILABLE', '').replace(' 🚰 AVAILABLE', '');
+                
+                // Get trade data (available or coming soon)
+                const data = tradeData[selectedTrade] || getComingSoonData(tradeName);
+                
+                // Update program details
+                const programCard = programDetails.querySelector('.program-card');
+                
+                if (data.status === 'available') {
+                    programCard.className = 'program-card active-program';
+                    programBadge.textContent = 'Red Seal Certified';
+                    programBadge.className = 'badge-premium';
+                } else {
+                    programCard.className = 'program-card coming-soon-card';
+                    programBadge.textContent = 'Coming Soon';
+                    programBadge.className = 'badge-premium coming-soon-badge';
+                }
+
+                programTitle.textContent = data.title;
+                programTitle.className = data.status === 'available' ? 'program-title' : 'program-title coming-soon-title';
+                
+                programDescription.textContent = data.description;
+                programDescription.className = data.status === 'available' ? 'program-description' : 'program-description coming-soon-description';
+
+                // Update features list
+                programFeatures.innerHTML = '';
+                data.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    programFeatures.appendChild(li);
+                });
+
+                // Update action buttons
+                programActions.innerHTML = '';
+                data.actions.forEach(action => {
+                    const button = document.createElement('a');
+                    button.href = action.url;
+                    button.textContent = action.text;
+                    button.className = action.class;
+                    if (action.url.startsWith('http')) {
+                        button.target = '_blank';
+                        button.rel = 'noopener noreferrer';
+                    }
+                    
+                    // Handle notify button
+                    if (action.class === 'notify-button') {
+                        button.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            alert('Thank you for your interest! We\\'ll notify you when the ' + data.title + ' program becomes available. Check back soon as we\\'re expanding rapidly across all Red Seal trades!');
+                        });
+                    }
+                    
+                    programActions.appendChild(button);
+                });
+
+                // Show program details with smooth animation
+                programDetails.style.display = 'block';
+                programDetails.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        });
+    </script>
 </body>
 </html>
