@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="zXohTC1H0hTayVL3PZdbdzhDBYiF30jpDC1HfEs0M5U" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFQ Buddy | 309A Electrician Exam Prep</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Pass your Ontario 309A Construction & Maintenance Electrician exam. 450 practice questions, 4-hour timed exams, CEC 2024 code references, instant scoring. Built by electricians for the Red Seal Certificate of Qualification.">
+    <meta name="keywords" content="309A exam prep, Ontario electrician exam, Red Seal practice test, Certificate of Qualification, CEC 2024, 309A practice exam, electrician exam questions, construction maintenance electrician, OCOT exam, trades exam prep">
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cfqbuddy.ca/">
+    <meta property="og:title" content="CFQ Buddy — Ontario 309A Electrician Exam Prep">
+    <meta property="og:description" content="450 practice questions across 3 full exams. 4-hour timed mode, instant scoring, CEC code references. Free demo available. Pass your Red Seal exam the first time.">
+    <meta property="og:site_name" content="CFQ Buddy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CFQ Buddy — 309A Electrician Exam Prep">
+    <meta name="twitter:description" content="450 practice questions, timed exams, CEC references. Free 10-question demo. Built by electricians for Ontario\'s Red Seal exam.">
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="CFQ Buddy">
+    <link rel="canonical" href="https://cfqbuddy.ca/">
+    
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CFQ Buddy",
+      "description": "Ontario 309A Construction & Maintenance Electrician exam prep with 450 practice questions, timed exams, and CEC 2024 code references.",
+      "url": "https://cfqbuddy.ca",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Single Practice Exam",
+          "price": "15.00",
+          "priceCurrency": "CAD",
+          "url": "https://309aprep.gumroad.com"
+        },
+        {
+          "@type": "Offer",
+          "name": "3-Exam Pack",
+          "price": "35.00",
+          "priceCurrency": "CAD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Complete Bundle",
+          "price": "59.00",
+          "priceCurrency": "CAD"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "1"
+      }
+    }
+    </script>
+    <meta name="theme-color" content="#00897B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CFQ Buddy">
+    <meta name="application-name" content="CFQ Buddy">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#00897B">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- PWA Install Banner Styles -->
+    <style>
+        /* Install Banner */
+        .pwa-install-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #00897B, #00695C);
+            color: white;
+            padding: 16px 20px;
+            z-index: 10000;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            animation: slideUp 0.4s ease-out;
+        }
+        .pwa-install-banner.show {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .pwa-install-banner .pwa-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        .pwa-install-banner .pwa-text {
+            flex: 1;
+        }
+        .pwa-install-banner .pwa-text h4 {
+            margin: 0 0 2px 0;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .pwa-install-banner .pwa-text p {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .pwa-install-banner .pwa-btn-install {
+            background: #FFD54F;
+            color: #1d3557;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .pwa-install-banner .pwa-btn-install:hover {
+            background: #FFCA28;
+        }
+        .pwa-install-banner .pwa-btn-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            padding: 4px 8px;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .pwa-install-banner .pwa-btn-close:hover {
+            opacity: 1;
+        }
+        /* iOS install instructions */
+        .pwa-ios-instructions {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #00897B, #00695C);
+            color: white;
+            padding: 20px;
+            z-index: 10000;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            text-align: center;
+            animation: slideUp 0.4s ease-out;
+        }
+        .pwa-ios-instructions.show {
+            display: block;
+        }
+        .pwa-ios-instructions p {
+            margin: 4px 0;
+            font-size: 14px;
+        }
+        .pwa-ios-instructions .ios-steps {
+            font-size: 16px;
+            margin: 8px 0;
+        }
+        .pwa-ios-instructions .pwa-btn-close {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+        /* Offline indicator */
+        .offline-indicator {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #e63946;
+            color: white;
+            text-align: center;
+            padding: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            z-index: 10001;
+        }
+        .offline-indicator.show {
+            display: block;
+        }
+        /* Update available toast */
+        .pwa-update-toast {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1d3557;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 10000;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .pwa-update-toast.show {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Feedback System */
+        .feedback-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #00897B, #00695C);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            z-index: 9999;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feedback-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+        }
+        .feedback-fab.hide { display: none; }
+        .feedback-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 10001;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .feedback-overlay.show { display: flex; }
+        .feedback-panel {
+            background: white;
+            border-radius: 16px;
+            padding: 28px;
+            max-width: 440px;
+            width: 100%;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .feedback-panel h3 {
+            margin: 0 0 4px 0;
+            font-size: 20px;
+            color: #1d3557;
+        }
+        .feedback-panel .fb-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin: 0 0 20px 0;
+        }
+        .feedback-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #999;
+        }
+        .feedback-close:hover { color: #333; }
+        .star-rating {
+            display: flex;
+            gap: 8px;
+            margin: 12px 0 16px;
+        }
+        .star-btn {
+            background: none;
+            border: none;
+            font-size: 36px;
+            cursor: pointer;
+            color: #ddd;
+            transition: color 0.15s, transform 0.15s;
+            padding: 0;
+            line-height: 1;
+        }
+        .star-btn.active { color: #FFD54F; }
+        .star-btn:hover { transform: scale(1.2); }
+        .feedback-label {
+            display: block;
+            font-weight: 600;
+            color: #1d3557;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .feedback-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            background: white;
+            color: #333;
+        }
+        .feedback-textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            resize: vertical;
+            font-family: inherit;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        .feedback-textarea:focus, .feedback-select:focus {
+            border-color: #00897B;
+            outline: none;
+        }
+        .feedback-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #00897B, #00695C);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .feedback-submit:hover { opacity: 0.9; }
+        .feedback-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .feedback-thanks {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .feedback-thanks .thanks-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        .feedback-thanks h3 {
+            color: #00897B;
+            margin-bottom: 8px;
+        }
+        /* Post-exam feedback prompt */
+        .post-exam-prompt {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border: 2px solid #00897B;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .post-exam-prompt h4 {
+            margin: 0 0 8px;
+            color: #00695C;
+            font-size: 16px;
+        }
+        .post-exam-prompt p {
+            margin: 0 0 12px;
+            color: #555;
+            font-size: 14px;
+        }
+        .post-exam-prompt button {
+            background: #00897B;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .post-exam-prompt button:hover { background: #00695C; }
+
+        /* Landing Page Sections */
+        .hero-cta { text-align: center; margin: 32px 0; }
+        .btn-demo {
+            background: linear-gradient(135deg, #FFD54F, #FFC107);
+            color: #1d3557;
+            border: none;
+            padding: 18px 48px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(255,193,7,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+        .btn-demo:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(255,193,7,0.5); }
+        .hero-hint { color: #888; font-size: 14px; margin-top: 10px; }
+        .landing-section {
+            margin: 48px 0;
+            padding: 32px 0;
+            border-top: 1px solid #eee;
+        }
+        .landing-section h2 {
+            text-align: center;
+            color: #1d3557;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .section-desc {
+            text-align: center;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 24px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .topic-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .topic-tag {
+            background: #e0f2f1;
+            color: #00695C;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .price-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .price-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .price-card.popular {
+            border-color: #00897B;
+            box-shadow: 0 4px 20px rgba(0,137,123,0.2);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00897B;
+            color: white;
+            padding: 4px 16px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .price-tier { color: #888; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .price-name { color: #1d3557; font-size: 20px; font-weight: 700; margin: 4px 0; }
+        .price-amount { font-size: 42px; font-weight: 800; color: #1d3557; margin: 12px 0; }
+        .price-currency { font-size: 16px; font-weight: 500; color: #888; }
+        .price-features { list-style: none; padding: 0; margin: 16px 0; text-align: left; }
+        .price-features li { padding: 6px 0; font-size: 14px; color: #444; }
+        .btn-buy {
+            display: inline-block;
+            background: linear-gradient(135deg, #00897B, #00695C);
+            color: white;
+            text-decoration: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: opacity 0.2s;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .btn-buy:hover { opacity: 0.9; }
+        .price-card.popular .btn-buy {
+            background: linear-gradient(135deg, #FFD54F, #FFC107);
+            color: #1d3557;
+        }
+        /* Already purchased section */
+        #unlock .code-entry { max-width: 400px; margin: 0 auto; }
+        .license-status {
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-top: 8px;
+            text-align: center;
+        }
+        .license-status.info { background: #e3f2fd; color: #1565c0; }
+        .license-status.success { background: #e8f5e9; color: #2e7d32; }
+        .license-status.error { background: #ffebee; color: #c62828; }
+        /* Paywall screen */
+        .paywall-overlay {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .paywall-overlay h2 { color: #1d3557; margin-bottom: 8px; }
+        .paywall-overlay .score-teaser { font-size: 48px; font-weight: 800; color: #00897B; margin: 16px 0; }
+        .paywall-overlay p { color: #666; margin: 8px 0; font-size: 15px; }
+        .paywall-actions { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+        .paywall-actions .btn-buy { max-width: 320px; }
+        .paywall-actions .btn-secondary {
+            background: none;
+            border: 2px solid #e0e0e0;
+            color: #666;
+            padding: 10px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        /* Landing footer */
+        .landing-footer { text-align: center; padding: 32px 0 16px; color: #aaa; font-size: 13px; }
+        .landing-footer a { color: #00897B; }
+        @media (max-width: 640px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            .price-amount { font-size: 36px; }
+            .btn-demo { padding: 16px 36px; font-size: 18px; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Trade Navigation Bar -->
+    <div class="trade-nav" style="background:#1d3557;color:white;padding:10px 20px;display:flex;justify-content:center;gap:24px;font-size:14px;font-weight:600;">
+        <a href="index.html" style="color:white;text-decoration:none;padding:6px 16px;border-radius:6px;background:rgba(255,255,255,0.15);">⚡ 309A Electrician</a>
+        <a href="plumber.html" style="color:#aab;text-decoration:none;padding:6px 16px;border-radius:6px;transition:all 0.2s;">🔧 306A Plumber</a>
+    </div>
+
+    <!-- Landing / Code Entry -->
+    <div id="screen-landing" class="screen active">
+        <div class="container">
+            <div class="logo">⚡ CFQ Buddy</div>
+            <h1>Pass Your Ontario 309A<br>Electrician Exam</h1>
+            <p class="subtitle">450 practice questions · 4-hour timed exams · CEC 2024 references · Instant scoring</p>
+            
+            <!-- Primary CTA: Free Demo -->
+            <div class="hero-cta">
+                <button id="btn-try-demo" class="btn-demo" onclick="startDemo()">🔓 Try 10 Free Questions</button>
+                <p class="hero-hint">No signup. No credit card. Start now.</p>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <div class="feature">🕐 <strong>4-Hour Timer</strong><br>Matches the real Red Seal exam</div>
+                <div class="feature">📊 <strong>Instant Scoring</strong><br>Detailed explanations for every answer</div>
+                <div class="feature">📖 <strong>CEC References</strong><br>Every question tied to actual code sections</div>
+                <div class="feature">📱 <strong>Works Anywhere</strong><br>Phone, tablet, or desktop — offline too</div>
+            </div>
+
+            <!-- What You Get Section -->
+            <div class="landing-section">
+                <h2>Built By Electricians, For Electricians</h2>
+                <p class="section-desc">Every question aligns with the Red Seal National Occupational Analysis. 9 topic areas covering the full 309A scope:</p>
+                <div class="topic-grid">
+                    <span class="topic-tag">Wiring Methods</span>
+                    <span class="topic-tag">Grounding & Bonding</span>
+                    <span class="topic-tag">Overcurrent Protection</span>
+                    <span class="topic-tag">Motors & Controls</span>
+                    <span class="topic-tag">Lighting & Power</span>
+                    <span class="topic-tag">Safety & Regulations</span>
+                    <span class="topic-tag">Blueprint Reading</span>
+                    <span class="topic-tag">Special Installations</span>
+                    <span class="topic-tag">Transformers & HV</span>
+                </div>
+            </div>
+
+            <!-- Pricing Section -->
+            <div class="landing-section" id="pricing">
+                <h2>Choose Your Plan</h2>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <div class="price-tier">Starter</div>
+                        <div class="price-name">Single Exam</div>
+                        <div class="price-amount">$15 <span class="price-currency">CAD</span></div>
+                        <ul class="price-features">
+                            <li>✅ 150 practice questions</li>
+                            <li>✅ 4-hour timed mode</li>
+                            <li>✅ Instant scoring</li>
+                            <li>✅ Full explanations</li>
+                            <li>✅ CEC code references</li>
+                        </ul>
+                        <a href="https://309aprep.gumroad.com/l/rxcya" target="_blank" class="btn-buy">Get Started</a>
+                    </div>
+                    <div class="price-card popular">
+                        <div class="popular-badge">MOST POPULAR</div>
+                        <div class="price-tier">Pro</div>
+                        <div class="price-name">3-Exam Pack</div>
+                        <div class="price-amount">$35 <span class="price-currency">CAD</span></div>
+                        <ul class="price-features">
+                            <li>✅ 450 questions (3 exams)</li>
+                            <li>✅ Progressive difficulty</li>
+                            <li>✅ 4-hour timed mode</li>
+                            <li>✅ Instant scoring</li>
+                            <li>✅ Full explanations</li>
+                            <li>✅ CEC code references</li>
+                        </ul>
+                        <a href="https://309aprep.gumroad.com/l/urslua" target="_blank" class="btn-buy">Get 3-Pack</a>
+                    </div>
+                    <div class="price-card">
+                        <div class="price-tier">Complete</div>
+                        <div class="price-name">Full Bundle</div>
+                        <div class="price-amount">$59 <span class="price-currency">CAD</span></div>
+                        <ul class="price-features">
+                            <li>✅ 450 questions (3 exams)</li>
+                            <li>✅ 150-page study guide PDF</li>
+                            <li>✅ Progressive difficulty</li>
+                            <li>✅ 4-hour timed mode</li>
+                            <li>✅ Instant scoring</li>
+                            <li>✅ Full explanations</li>
+                            <li>✅ CEC code references</li>
+                            <li>🔥 Save 34% vs separately</li>
+                        </ul>
+                        <a href="https://309aprep.gumroad.com/l/cntarz" target="_blank" class="btn-buy">Get Bundle</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Already Purchased / License Key -->
+            <div class="landing-section" id="unlock">
+                <h2>Already Purchased?</h2>
+                <p class="section-desc">Enter your license key from your Gumroad purchase receipt to unlock your exams.</p>
+                <div class="code-entry">
+                    <input type="text" id="access-code" placeholder="XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX" autocomplete="off" style="font-family:monospace;letter-spacing:1px;">
+                    <div id="license-status" class="license-status" style="display:none;"></div>
+                    <div class="exam-select">
+                        <label for="exam-select">Select Exam:</label>
+                        <select id="exam-select">
+                            <option value="exam1">Practice Exam 1</option>
+                            <option value="exam2">Practice Exam 2</option>
+                            <option value="exam3">Practice Exam 3 (Advanced)</option>
+                        </select>
+                    </div>
+                    <button id="btn-start" onclick="validateCode()">Unlock & Start Exam</button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="landing-footer">
+                <p>Built with ⚡ for Ontario's 309A electricians</p>
+                <p class="footer-links"><a href="mailto:chewyai.agent@proton.me" style="display:inline-block;padding:8px 20px;background:#00897B;color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">📩 Contact Support</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exam Screen -->
+    <div id="screen-exam" class="screen">
+        <div class="exam-header">
+            <div class="exam-header-left">
+                <span class="logo-small">⚡ CFQ Buddy</span>
+                <span id="question-counter">Question 1 / 150</span>
+            </div>
+            <div class="exam-header-right">
+                <div id="timer" class="timer">4:00:00</div>
+                <button id="btn-submit-exam" class="btn-danger" onclick="confirmSubmit()">Submit Exam</button>
+            </div>
+        </div>
+        <div class="exam-body">
+            <div class="question-nav" id="question-nav"></div>
+            <div class="question-area">
+                <div class="question-badge" id="question-badge"></div>
+                <h2 id="question-text"></h2>
+                <div id="options-container" class="options"></div>
+                <div class="question-controls">
+                    <button id="btn-prev" onclick="prevQuestion()">← Previous</button>
+                    <button id="btn-flag" onclick="flagQuestion()">🚩 Flag</button>
+                    <button id="btn-next" onclick="nextQuestion()">Next →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="screen-results" class="screen">
+        <div class="container results-container">
+            <div class="logo">⚡ CFQ Buddy</div>
+            <div id="result-badge" class="result-badge"></div>
+            <h1 id="result-title"></h1>
+            <div class="score-display">
+                <div class="score-circle" id="score-circle">
+                    <span id="score-percent">0%</span>
+                </div>
+            </div>
+            <div class="stats-grid" id="stats-grid"></div>
+            <div class="result-actions">
+                <button onclick="showReview()">📖 Review All Answers</button>
+                <button onclick="retakeExam()">🔄 Retake Exam</button>
+            </div>
+            <div class="post-exam-prompt" id="post-exam-feedback">
+                <h4>📝 How was this exam?</h4>
+                <p>Your feedback helps us build better practice exams for every electrician.</p>
+                <button onclick="openFeedback()">Leave Quick Feedback</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Screen -->
+    <div id="screen-review" class="screen">
+        <div class="review-header">
+            <span class="logo-small">⚡ CFQ Buddy — Answer Review</span>
+            <div>
+                <select id="review-filter" onchange="filterReview()">
+                    <option value="all">All Questions</option>
+                    <option value="incorrect">Incorrect Only</option>
+                    <option value="correct">Correct Only</option>
+                    <option value="flagged">Flagged</option>
+                </select>
+                <button onclick="backToResults()">← Back to Results</button>
+            </div>
+        </div>
+        <div class="review-body" id="review-body"></div>
+    </div>
+
+    <!-- Paywall Screen (after demo) -->
+    <div id="screen-paywall" class="screen">
+        <div class="container">
+            <div class="logo">⚡ CFQ Buddy</div>
+            <div class="paywall-overlay">
+                <h2>Nice Work! Here's Your Demo Score:</h2>
+                <div class="score-teaser" id="demo-score">—</div>
+                <p><strong>You just answered 10 questions.</strong> The full exams have 150 each.</p>
+                <p>Ready to practice with the real thing?</p>
+                <div class="paywall-actions">
+                    <a href="https://309aprep.gumroad.com/l/urslua" target="_blank" class="btn-buy">🔥 Get 3-Exam Pack — $35 CAD</a>
+                    <a href="https://309aprep.gumroad.com/l/rxcya" target="_blank" class="btn-buy" style="background:linear-gradient(135deg,#e0e0e0,#ccc);color:#333;">Single Exam — $15 CAD</a>
+                    <a href="https://309aprep.gumroad.com/l/cntarz" target="_blank" class="btn-buy" style="background:linear-gradient(135deg,#FFD54F,#FFC107);color:#1d3557;">🏆 Complete Bundle — $59 CAD</a>
+                    <button class="btn-secondary" onclick="showScreen('screen-landing')">← Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Floating Button -->
+    <button class="feedback-fab" id="feedback-fab" onclick="openFeedback()" title="Give Feedback">💬</button>
+
+    <!-- Feedback Modal -->
+    <div class="feedback-overlay" id="feedback-overlay">
+        <div class="feedback-panel" id="feedback-panel">
+            <button class="feedback-close" onclick="closeFeedback()">&times;</button>
+            <div id="feedback-form-view">
+                <h3>💬 Share Your Feedback</h3>
+                <p class="fb-subtitle">Help us make CFQ Buddy better for every electrician</p>
+                
+                <label class="feedback-label">How would you rate your experience?</label>
+                <div class="star-rating" id="star-rating">
+                    <button class="star-btn" data-rating="1" onclick="setRating(1)">★</button>
+                    <button class="star-btn" data-rating="2" onclick="setRating(2)">★</button>
+                    <button class="star-btn" data-rating="3" onclick="setRating(3)">★</button>
+                    <button class="star-btn" data-rating="4" onclick="setRating(4)">★</button>
+                    <button class="star-btn" data-rating="5" onclick="setRating(5)">★</button>
+                </div>
+                
+                <label class="feedback-label" for="fb-category">What's this about?</label>
+                <select class="feedback-select" id="fb-category">
+                    <option value="">Select a category...</option>
+                    <option value="question-quality">Question Quality</option>
+                    <option value="wrong-answer">Wrong Answer / Error</option>
+                    <option value="missing-topic">Missing Topic</option>
+                    <option value="app-bug">App Bug / Issue</option>
+                    <option value="feature-request">Feature Request</option>
+                    <option value="general">General Feedback</option>
+                    <option value="testimonial">Testimonial / Success Story</option>
+                </select>
+                
+                <label class="feedback-label" for="fb-comment">Tell us more (optional)</label>
+                <textarea class="feedback-textarea" id="fb-comment" placeholder="What went well? What could be better? Found a wrong answer? Tell us the question number..."></textarea>
+                
+                <button class="feedback-submit" id="fb-submit" onclick="submitFeedback()">Send Feedback ⚡</button>
+            </div>
+            <div id="feedback-thanks-view" class="feedback-thanks" style="display:none;">
+                <div class="thanks-icon">🎉</div>
+                <h3>Thanks for your feedback!</h3>
+                <p>Every comment helps us improve CFQ Buddy for electricians like you.</p>
+                <button class="feedback-submit" onclick="closeFeedback()" style="margin-top:16px;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offline Indicator -->
+    <div class="offline-indicator" id="offline-indicator">
+        ⚡ You're offline — CFQ Buddy works offline with cached exams
+    </div>
+
+    <!-- PWA Install Banner (Android/Desktop) -->
+    <div class="pwa-install-banner" id="pwa-install-banner">
+        <img src="icons/icon-192x192.png" alt="CFQ Buddy" class="pwa-icon">
+        <div class="pwa-text">
+            <h4>Install CFQ Buddy</h4>
+            <p>Add to home screen for quick access &amp; offline use</p>
+        </div>
+        <button class="pwa-btn-install" id="pwa-btn-install">Install</button>
+        <button class="pwa-btn-close" id="pwa-btn-dismiss" aria-label="Dismiss">&times;</button>
+    </div>
+
+    <!-- iOS Install Instructions -->
+    <div class="pwa-ios-instructions" id="pwa-ios-instructions">
+        <button class="pwa-btn-close" id="pwa-ios-dismiss" aria-label="Dismiss">&times;</button>
+        <p><strong>Install CFQ Buddy</strong></p>
+        <p class="ios-steps">Tap <strong>Share</strong> ↗️ then <strong>"Add to Home Screen"</strong> ➕</p>
+        <p>for quick access &amp; offline exam prep</p>
+    </div>
+
+    <!-- Update Available Toast -->
+    <div class="pwa-update-toast" id="pwa-update-toast">
+        🔄 Update available
+        <button style="background:#00897B;color:white;border:none;padding:6px 14px;border-radius:6px;font-weight:600;cursor:pointer;" id="pwa-btn-update">Refresh</button>
+    </div>
+
+    <script src="js/exam.js"></script>
+    <script>
+        // Check for saved access code on load
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof checkSavedCode === 'function') checkSavedCode();
+        });
+    </script>
+
+    <!-- PWA Registration & Install Logic -->
+    <script>
+    (function() {
+        'use strict';
+
+        // ========== Service Worker Registration ==========
+        let swRegistration = null;
+        let newWorker = null;
+
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    swRegistration = await navigator.serviceWorker.register('/service-worker.js');
+                    console.log('[PWA] Service worker registered:', swRegistration.scope);
+
+                    // Check for updates
+                    swRegistration.addEventListener('updatefound', () => {
+                        newWorker = swRegistration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                // New version available
+                                showUpdateToast();
+                            }
+                        });
+                    });
+                } catch (error) {
+                    console.error('[PWA] Service worker registration failed:', error);
+                }
+            });
+
+            // Handle controller change (reload on update)
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                // Only reload if user clicked update
+                if (window._pwaUpdating) {
+                    window.location.reload();
+                }
+            });
+        }
+
+        // ========== Update Toast ==========
+        function showUpdateToast() {
+            const toast = document.getElementById('pwa-update-toast');
+            if (toast) toast.classList.add('show');
+        }
+
+        const updateBtn = document.getElementById('pwa-btn-update');
+        if (updateBtn) {
+            updateBtn.addEventListener('click', () => {
+                window._pwaUpdating = true;
+                if (newWorker) {
+                    newWorker.postMessage({ type: 'SKIP_WAITING' });
+                }
+                document.getElementById('pwa-update-toast').classList.remove('show');
+            });
+        }
+
+        // ========== Install Prompt (Android / Desktop Chrome) ==========
+        let deferredPrompt = null;
+        const installBanner = document.getElementById('pwa-install-banner');
+        const installBtn = document.getElementById('pwa-btn-install');
+        const dismissBtn = document.getElementById('pwa-btn-dismiss');
+
+        // Check if already dismissed recently (24 hours)
+        const lastDismissed = localStorage.getItem('pwa-install-dismissed');
+        const dismissedRecently = lastDismissed && (Date.now() - parseInt(lastDismissed)) < 86400000;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+
+            // Show install banner after a short delay (don't be annoying on first load)
+            if (!dismissedRecently) {
+                setTimeout(() => {
+                    if (installBanner && deferredPrompt) {
+                        installBanner.classList.add('show');
+                    }
+                }, 3000);
+            }
+        });
+
+        if (installBtn) {
+            installBtn.addEventListener('click', async () => {
+                if (!deferredPrompt) return;
+
+                installBanner.classList.remove('show');
+                deferredPrompt.prompt();
+
+                const { outcome } = await deferredPrompt.userChoice;
+                console.log('[PWA] Install prompt outcome:', outcome);
+                deferredPrompt = null;
+            });
+        }
+
+        if (dismissBtn) {
+            dismissBtn.addEventListener('click', () => {
+                installBanner.classList.remove('show');
+                localStorage.setItem('pwa-install-dismissed', Date.now().toString());
+            });
+        }
+
+        // Detect successful install
+        window.addEventListener('appinstalled', () => {
+            console.log('[PWA] App installed successfully');
+            installBanner?.classList.remove('show');
+            deferredPrompt = null;
+        });
+
+        // ========== iOS Install Instructions ==========
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+                          || window.navigator.standalone === true;
+
+        if (isIOS && !isStandalone && !dismissedRecently) {
+            const iosBanner = document.getElementById('pwa-ios-instructions');
+            setTimeout(() => {
+                if (iosBanner) iosBanner.classList.add('show');
+            }, 4000);
+
+            const iosDismiss = document.getElementById('pwa-ios-dismiss');
+            if (iosDismiss) {
+                iosDismiss.addEventListener('click', () => {
+                    iosBanner.classList.remove('show');
+                    localStorage.setItem('pwa-install-dismissed', Date.now().toString());
+                });
+            }
+        }
+
+        // ========== Offline / Online Detection ==========
+        const offlineIndicator = document.getElementById('offline-indicator');
+
+        function updateOnlineStatus() {
+            if (offlineIndicator) {
+                if (!navigator.onLine) {
+                    offlineIndicator.classList.add('show');
+                } else {
+                    offlineIndicator.classList.remove('show');
+                }
+            }
+        }
+
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        updateOnlineStatus();
+    })();
+    </script>
+</body>
+</html>
