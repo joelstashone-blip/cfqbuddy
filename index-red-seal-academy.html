@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="zXohTC1H0hTayVL3PZdbdzhDBYiF30jpDC1HfEs0M5U" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE RED SEAL ACADEMY | Canada's Premier Red Seal Training</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Canada's premier Red Seal training institution. 309A Electrician & 306A Plumber certification prep. Professional-grade exam preparation with 450+ practice questions, timed exams, and industry expertise. Standards for the Future.">
+    <meta name="keywords" content="Red Seal training, 309A electrician exam, 306A plumber exam, Canadian trades certification, Red Seal Academy, professional trades training, Certificate of Qualification, trades exam prep, Canada trades education">
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TheRedSealAcademy.com/">
+    <meta property="og:title" content="THE RED SEAL ACADEMY — Canada's Premier Red Seal Training Institution">
+    <meta property="og:description" content="Professional Red Seal certification training for Canadian trades. 309A Electrician & 306A Plumber programs with expert-level exam preparation. Standards for the Future.">
+    <meta property="og:site_name" content="The Red Seal Academy">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="THE RED SEAL ACADEMY — Premier Red Seal Training">
+    <meta name="twitter:description" content="Professional trades certification training. 309A Electrician & 306A Plumber programs. Expert exam preparation for Canadian Red Seal success.">
+    
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="The Red Seal Academy">
+    <link rel="canonical" href="https://TheRedSealAcademy.com/">
+    
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "The Red Seal Academy",
+      "description": "Canada's premier Red Seal training institution providing professional certification preparation for skilled trades including 309A Electrician and 306A Plumber programs.",
+      "url": "https://TheRedSealAcademy.com",
+      "logo": "https://TheRedSealAcademy.com/icons/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CA"
+      },
+      "offers": [
+        {
+          "@type": "Course",
+          "name": "309A Construction & Maintenance Electrician",
+          "provider": {
+            "@type": "Organization",
+            "name": "The Red Seal Academy"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "79.00",
+            "priceCurrency": "CAD"
+          }
+        },
+        {
+          "@type": "Course", 
+          "name": "306A Plumbing",
+          "provider": {
+            "@type": "Organization",
+            "name": "The Red Seal Academy"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "79.00", 
+            "priceCurrency": "CAD"
+          }
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127"
+      }
+    }
+    </script>
+    <meta name="theme-color" content="#1C1917">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Red Seal Academy">
+    <meta name="application-name" content="Red Seal Academy">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#1C1917">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* THE RED SEAL ACADEMY Design System */
+        :root {
+            --color-primary: #1C1917;
+            --color-secondary: #44403C;
+            --color-tertiary: #DC2626;
+            --color-quaternary: #B91C1C;
+            --color-neutral: #FAFAF9;
+            --color-accent: #EAB308;
+            --color-on-primary: #FFFFFF;
+            --color-on-tertiary: #FFFFFF;
+            --color-on-accent: #1C1917;
+            --color-border: #E7E5E4;
+            --color-muted: #78716C;
+            
+            --rounded-sm: 4px;
+            --rounded-md: 8px;
+            --rounded-lg: 16px;
+            --rounded-xl: 24px;
+            --rounded-full: 9999px;
+            
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-xxl: 48px;
+            --spacing-xxxl: 64px;
+            
+            --elevation-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --elevation-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --elevation-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--color-neutral);
+            color: var(--color-primary);
+            line-height: 1.5;
+        }
+        
+        /* Institutional Header */
+        .header-institutional {
+            background-color: var(--color-primary);
+            color: var(--color-on-primary);
+            padding: var(--spacing-lg) 0;
+            border-bottom: 4px solid var(--color-tertiary);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-primary {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        .tagline {
+            color: var(--color-tertiary);
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+            margin-top: var(--spacing-sm);
+        }
+        
+        /* Navigation */
+        .nav-institutional {
+            display: flex;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--color-on-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover {
+            color: var(--color-tertiary);
+        }
+        
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xxxl) var(--spacing-lg);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            margin-bottom: var(--spacing-xxxl);
+            padding: var(--spacing-xxxl) 0;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: var(--color-on-primary);
+            border-radius: var(--rounded-lg);
+            margin-top: -var(--spacing-xxxl);
+            margin-bottom: var(--spacing-xxxl);
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.0;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--color-tertiary);
+            margin-bottom: var(--spacing-xl);
+            letter-spacing: 0.01em;
+        }
+        
+        .hero-description {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto var(--spacing-xl);
+            opacity: 0.9;
+        }
+        
+        /* Program Cards */
+        .programs-section {
+            margin-bottom: var(--spacing-xxxl);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            letter-spacing: -0.02em;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .program-card {
+            background: white;
+            border-radius: var(--rounded-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--elevation-md);
+            border: 1px solid var(--color-border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--elevation-lg);
+        }
+        
+        .program-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary);
+        }
+        
+        .program-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--color-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .program-features {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .program-features li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.875rem;
+            color: var(--color-secondary);
+        }
+        
+        .program-features li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Buttons */
+        .button-primary {
+            background-color: var(--color-tertiary);
+            color: var(--color-on-tertiary);
+            border-radius: var(--rounded-sm);
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .button-primary:hover {
+            background-color: var(--color-quaternary);
+        }
+        
+        .button-secondary {
+            background-color: transparent;
+            color: var(--color-primary);
+            border-radius: var(--rounded-sm);
+            padding: 16px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            border: 2px solid var(--color-border);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+            margin-top: var(--spacing-sm);
+        }
+        
+        .button-secondary:hover {
+            background-color: var(--color-neutral);
+            border-color: var(--color-primary);
+        }
+        
+        /* Badge Premium */
+        .badge-premium {
+            background-color: var(--color-accent);
+            color: var(--color-on-accent);
+            border-radius: var(--rounded-full);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* Institutional Footer */
+        .footer-institutional {
+            background-color: var(--color-primary);
+            color: var(--color-on-primary);
+            padding: var(--spacing-xxxl) 0 var(--spacing-xl);
+            margin-top: var(--spacing-xxxl);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .footer-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .footer-tagline {
+            color: var(--color-tertiary);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .footer-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--spacing-md);
+            }
+            
+            .nav-institutional {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            .logo-primary {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Legacy CFQ Buddy Bridge Styles */
+        .cfq-bridge-notice {
+            background: var(--color-accent);
+            color: var(--color-on-accent);
+            text-align: center;
+            padding: var(--spacing-md);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Institutional Header -->
+    <header class="header-institutional">
+        <div class="header-content">
+            <div>
+                <div class="logo-primary">THE RED SEAL ACADEMY</div>
+                <div class="tagline">Standards for the Future</div>
+            </div>
+            <nav class="nav-institutional">
+                <a href="#programs" class="nav-link">Programs</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Bridge Notice -->
+    <div class="cfq-bridge-notice">
+        🎓 Formerly CFQ Buddy - Now THE RED SEAL ACADEMY | Same Quality Training, Enhanced Professional Experience
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">THE RED SEAL ACADEMY</h1>
+        <p class="hero-subtitle">Standards for the Future</p>
+        <p class="hero-description">
+            Canada's premier Red Seal training institution. Professional certification preparation 
+            for skilled trades with expert-level exam preparation, industry-leading content, 
+            and institutional authority trusted by professionals nationwide.
+        </p>
+        <a href="#programs" class="button-primary" style="width: auto; margin: 0 auto; display: inline-block;">
+            Explore Our Programs
+        </a>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Programs Section -->
+        <section class="programs-section" id="programs">
+            <h2 class="section-title">Professional Certification Programs</h2>
+            
+            <div class="programs-grid">
+                <!-- 309A Electrician Program -->
+                <div class="program-card">
+                    <span class="badge-premium">Red Seal Certified</span>
+                    <h3 class="program-title">309A Construction & Maintenance Electrician</h3>
+                    <p class="program-description">
+                        Comprehensive preparation for Ontario's 309A Red Seal certification. 
+                        Professional-grade training with industry expertise and proven success rates.
+                    </p>
+                    <ul class="program-features">
+                        <li>450+ Expert-Curated Practice Questions</li>
+                        <li>3 Full-Length Timed Practice Exams (4 hours each)</li>
+                        <li>CEC 2024 Code References & Cross-References</li>
+                        <li>Instant Scoring with Detailed Explanations</li>
+                        <li>Mobile-Optimized for On-Site Study</li>
+                        <li>Free 10-Question Demo Available</li>
+                    </ul>
+                    <a href="/demo" class="button-secondary">Try Free Demo</a>
+                    <a href="https://309aprep.gumroad.com/l/cfqbuddy-complete" class="button-primary">Start Training - $79 CAD</a>
+                </div>
+                
+                <!-- 306A Plumber Program -->
+                <div class="program-card">
+                    <span class="badge-premium">Red Seal Certified</span>
+                    <h3 class="program-title">306A Plumbing</h3>
+                    <p class="program-description">
+                        Professional plumbing certification preparation for Ontario's 306A Red Seal exam. 
+                        Expert content developed by certified plumbers for comprehensive success.
+                    </p>
+                    <ul class="program-features">
+                        <li>450+ Professional Practice Questions</li>
+                        <li>3 Full-Length Certification Practice Exams</li>
+                        <li>OBC & National Plumbing Code References</li>
+                        <li>Professional Scoring & Progress Tracking</li>
+                        <li>Industry-Standard Exam Simulation</li>
+                        <li>Free 10-Question Demo Available</li>
+                    </ul>
+                    <a href="/plumber-demo" class="button-secondary">Try Free Demo</a>
+                    <a href="https://306aplumber.gumroad.com/l/plumber-complete" class="button-primary">Start Training - $79 CAD</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Institutional Footer -->
+    <footer class="footer-institutional">
+        <div class="footer-content">
+            <h3 class="footer-title">THE RED SEAL ACADEMY</h3>
+            <p class="footer-tagline">Standards for the Future</p>
+            <p class="footer-description">
+                Dedicated to excellence in Canadian trades education. Professional certification 
+                preparation with institutional authority, serving skilled tradespeople across Canada 
+                with the highest standards of training and support.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/exam.js"></script>
+</body>
+</html>
