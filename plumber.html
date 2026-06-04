@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="zXohTC1H0hTayVL3PZdbdzhDBYiF30jpDC1HfEs0M5U" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE RED SEAL ACADEMY | 306A Plumber Certification Training</title>
+    <title>CFQ Buddy | 7-Day FREE Trial - 306A Plumber Exam Prep</title>
 
     <!-- PWA Meta Tags -->
-    <meta name="description" content="Pass your Ontario 306A Construction & Maintenance Plumber exam. Practice questions, 4-hour timed exams, OBC & NPC code references, instant scoring. Built by plumbers for the Red Seal Certificate of Qualification.">
+    <meta name="description" content="FREE 7-Day Trial! Master your 306A Red Seal Plumber exam with 450+ practice questions, 4-hour timed exams, and detailed explanations. No credit card required. Ontario Construction & Maintenance Plumber prep.">
     <meta name="keywords" content="306A exam prep, Ontario plumber exam, Red Seal plumber practice test, Certificate of Qualification, OBC plumbing code, 306A practice exam, plumber exam questions, construction maintenance plumber, Skilled Trades Ontario, trades exam prep, plumbing exam, NPC">
     
     <!-- Open Graph / Social Sharing -->
@@ -570,8 +570,13 @@
         <a href="index.html" style="color:#aab;text-decoration:none;padding:6px 16px;border-radius:6px;transition:all 0.2s;">⚡ 309A Electrician</a>
         <a href="plumber.html" style="color:white;text-decoration:none;padding:6px 16px;border-radius:6px;background:rgba(255,255,255,0.15);">🔧 306A Plumber</a>
     </div>
+    <!-- Trial Banner (shown when trial is active) -->
+    <div id="trial-banner" style="display: none;"></div>
+    
     <!-- Landing / Code Entry -->
     <div id="screen-landing" class="screen active">
+        <!-- Trial Status Display -->
+        <div id="trial-status"></div>
         <div class="container">
             <div class="logo">🔧 CFQ Buddy</div>
             <h1>Pass Your Ontario 306A<br>Plumber Exam</h1>
@@ -579,8 +584,8 @@
             
             <!-- Primary CTA: Free Demo -->
             <div class="hero-cta">
-                <button id="btn-try-demo" class="btn-demo" onclick="startDemo()">🔓 Try 10 Free Questions</button>
-                <p class="hero-hint">No signup. No credit card. Start now.</p>
+                <button id="btn-try-demo" class="btn-demo" onclick="startTrialOrDemo()">🚀 Start FREE 7-Day Trial</button>
+                <p class="hero-hint">✅ No credit card required • ✅ Instant access • ✅ Full 450+ questions for 7 days</p>
             </div>
 
             <!-- Features -->
@@ -849,12 +854,35 @@
         <button style="background:#00897B;color:white;border:none;padding:6px 14px;border-radius:6px;font-weight:600;cursor:pointer;" id="pwa-btn-update">Refresh</button>
     </div>
 
-    <script src="js/exam.js"></script>
+    <script src="js/exam-trial.js"></script>
 
     <script>
-    // Override demo function for plumber trade
-    async function startDemo() {
+    // Override trial function for plumber trade - use plumber exam data
+    async function startTrialOrDemo() {
+        const trialActive = initializeTrial();
+        
+        if (trialActive) {
+            // Full trial access - load complete plumber exam
+            isTrialMode = true;
+            isDemo = false;
+            try {
+                const res = await fetch('data/plumber-exam1.json');
+                examData = await res.json();
+                startExam();
+            } catch (e) {
+                alert('Failed to load plumber exam. Please try again.');
+                console.error(e);
+            }
+        } else {
+            // Trial expired - show upgrade screen
+            showTrialExpiredScreen();
+        }
+    }
+
+    // Override demo function for plumber trade (limited version)
+    async function startLimitedDemo() {
         isDemo = true;
+        isTrialMode = false;
         try {
             const res = await fetch('data/plumber-demo.json');
             examData = await res.json();
