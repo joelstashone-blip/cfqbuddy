@@ -1,0 +1,187 @@
+/* Embedded Native Checkout Styles */
+.native-checkout-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #e9ecef;
+    border-radius: 16px;
+    margin: 30px auto;
+    max-width: 900px;
+    padding: 0;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+.checkout-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-header h3 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.close-checkout {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 28px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.close-checkout:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.product-summary {
+    padding: 35px 30px;
+    background: white;
+    border-bottom: 1px solid #e9ecef;
+    text-align: center;
+}
+
+.product-info h4 {
+    font-size: 32px;
+    color: #1d3557;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+}
+
+.product-info p {
+    font-size: 20px;
+    color: #6c757d;
+    margin: 0 0 25px 0;
+    line-height: 1.6;
+}
+
+.price {
+    font-size: 42px;
+    color: #667eea;
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+.checkout-benefits {
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #495057;
+}
+
+.benefit-item:last-child {
+    margin-bottom: 0;
+}
+
+.benefit-item strong {
+    color: #1d3557;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.gumroad-embed-container {
+    background: white;
+    padding: 0;
+    min-height: 600px;
+}
+
+.gumroad-embed-container iframe {
+    width: 100%;
+    min-height: 600px;
+    border: none;
+    display: block;
+}
+
+.security-info {
+    padding: 25px 30px;
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.security-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.security-item:last-child {
+    margin-bottom: 0;
+}
+
+.security-item strong {
+    color: #495057;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .native-checkout-container {
+        margin: 15px;
+        border-radius: 12px;
+    }
+    
+    .checkout-header {
+        padding: 20px;
+    }
+    
+    .checkout-header h3 {
+        font-size: 24px;
+    }
+    
+    .product-summary {
+        padding: 25px 20px;
+    }
+    
+    .product-info h4 {
+        font-size: 26px;
+    }
+    
+    .product-info p {
+        font-size: 18px;
+    }
+    
+    .price {
+        font-size: 32px;
+    }
+    
+    .checkout-benefits {
+        padding: 20px;
+    }
+    
+    .benefit-item {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .security-info {
+        padding: 20px;
+    }
+    
+    .gumroad-embed-container iframe {
+        min-height: 500px;
+    }
+}
