@@ -810,7 +810,7 @@
                             <li>✅ Full explanations</li>
                             <li>✅ NPC 2025 code references</li>
                         </ul>
-                        <button onclick="openGumroadOverlay('plumber1')" class="btn-buy">Get Started</button>
+                        <button data-product-id="plumber1" class="purchase-button">Get Started</button>
                     </div>
                     <div class="price-card popular">
                         <div class="popular-badge">MOST POPULAR</div>
@@ -825,7 +825,7 @@
                             <li>✅ Full explanations</li>
                             <li>✅ NPC 2025 code references</li>
                         </ul>
-                        <button onclick="openGumroadOverlay('plumber3')" class="btn-buy">Get 3-Exam Pack</button>
+                        <button data-product-id="plumber3" class="purchase-button">Get 3-Pack</button>
                     </div>
                     <div class="price-card">
                         <div class="price-tier">Complete</div>
@@ -841,7 +841,7 @@
                             <li>✅ NPC 2025 code references</li>
                             <li>🔥 Save 34% vs separately</li>
                         </ul>
-                        <button onclick="openGumroadOverlay('plumber-bundle')" class="btn-buy">Get Full Bundle</button>
+                        <button data-product-id="plumber-bundle" class="purchase-button">Get Bundle</button>
                     </div>
                 </div>
             </div>
@@ -1043,7 +1043,8 @@
     </div>
 
     <script src="js/exam-trial.js"></script>
-    <script src="js/gumroad-overlay.js"></script>
+    <link rel="stylesheet" href="css/native-checkout.css">
+    <script src="js/native-checkout.js"></script>
 
     <script>
     // Override trial function for plumber trade - use plumber exam data

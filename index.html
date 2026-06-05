@@ -810,7 +810,7 @@
                             <li>✅ Full explanations</li>
                             <li>✅ CEC code references</li>
                         </ul>
-                        <button onclick="openGumroadOverlay('rxcya')" class="btn-buy">Get Started</button>
+                        <button data-product-id="rxcya" class="purchase-button">Get Started</button>
                     </div>
                     <div class="price-card popular">
                         <div class="popular-badge">MOST POPULAR</div>
@@ -823,9 +823,9 @@
                             <li>✅ 4-hour timed mode</li>
                             <li>✅ Instant scoring</li>
                             <li>✅ Full explanations</li>
-                            <li>✅ CEC code references</li>
+                            <li>✅ Save $10 vs individual</li>
                         </ul>
-                        <button onclick="openGumroadOverlay('urslua')" class="btn-buy">Get 3-Pack</button>
+                        <button data-product-id="urslua" class="purchase-button">Get 3-Pack</button>
                     </div>
                     <div class="price-card">
                         <div class="price-tier">Complete</div>
@@ -841,7 +841,7 @@
                             <li>✅ CEC code references</li>
                             <li>🔥 Save 34% vs separately</li>
                         </ul>
-                        <button onclick="openGumroadOverlay('cntarz')" class="btn-buy">Get Bundle</button>
+                        <button data-product-id="cntarz" class="purchase-button">Get Bundle</button>
                     </div>
                 </div>
             </div>
@@ -1043,7 +1043,8 @@
     </div>
 
     <script src="js/exam-trial.js"></script>
-    <script src="js/gumroad-overlay.js"></script>
+    <link rel="stylesheet" href="css/native-checkout.css">
+    <script src="js/native-checkout.js"></script>
     <script>
         // Check for saved access code on load
         document.addEventListener('DOMContentLoaded', function() {
