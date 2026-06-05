@@ -1,4 +1,4 @@
-// 309A Practice Exam Platform - 7-DAY FREE TRIAL VERSION
+// 309A Practice Exam Platform - SIGNUP-BASED TRIAL VERSION
 // State
 let examData = null;
 let currentQuestion = 0;
@@ -12,97 +12,161 @@ let isDemo = false;
 let isTrialMode = false;
 
 // Trial Management System
-const TRIAL_STORAGE_KEY = 'redSealAcademyTrial';
+const TRIAL_STORAGE_KEY = 'cfqBuddyTrial';
 const TRIAL_DURATION_DAYS = 7;
 
-// Trial Management Functions
-function initializeTrial() {
-    const trialData = getTrialData();
+// New Trial Signup Functions
+function startTrial(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('user-name').value.trim();
+    const email = document.getElementById('user-email').value.trim();
+    
+    if (!name || !email) {
+        alert('Please enter your name and email to start your free trial.');
+        return;
+    }
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+    
+    // Create trial data
+    const trialData = {
+        name: name,
+        email: email,
+        startDate: Date.now(),
+        expiryDate: Date.now() + (TRIAL_DURATION_DAYS * 24 * 60 * 60 * 1000), // 7 days from now
+        tradeType: getTradeType(), // '309a' or '306a'
+        isActive: true
+    };
+    
+    // Store trial data
+    localStorage.setItem(TRIAL_STORAGE_KEY, JSON.stringify(trialData));
+    
+    // Show trial active section
+    showTrialActiveSection();
+    
+    // Optional: Send email signup to tracking system
+    console.log('Trial started:', { name, email, tradeType: trialData.tradeType });
+}
+
+function getTradeType() {
+    // Detect which page we're on
+    return window.location.pathname.includes('plumber') ? '306a' : '309a';
+}
+
+function checkTrialStatus() {
+    const trialData = JSON.parse(localStorage.getItem(TRIAL_STORAGE_KEY));
     
     if (!trialData) {
-        // First visit - start new trial
-        const trialStart = new Date().toISOString();
-        const trialEnd = new Date(Date.now() + (TRIAL_DURATION_DAYS * 24 * 60 * 60 * 1000)).toISOString();
-        
-        const newTrial = {
-            startDate: trialStart,
-            endDate: trialEnd,
-            isActive: true
-        };
-        
-        localStorage.setItem(TRIAL_STORAGE_KEY, JSON.stringify(newTrial));
-        updateTrialUI(TRIAL_DURATION_DAYS);
-        return true; // Trial is active
+        // No trial - show signup
+        showSignupSection();
+        return 'no_trial';
     }
     
-    // Check if existing trial is still valid
-    const now = new Date();
-    const trialEndDate = new Date(trialData.endDate);
+    const now = Date.now();
+    const timeLeft = trialData.expiryDate - now;
     
-    if (now <= trialEndDate && trialData.isActive) {
-        // Trial still active
-        const daysRemaining = Math.ceil((trialEndDate - now) / (24 * 60 * 60 * 1000));
-        updateTrialUI(daysRemaining);
-        return true;
-    } else {
+    if (timeLeft <= 0) {
         // Trial expired
-        updateTrialUI(0);
-        return false;
+        showTrialExpiredSection();
+        return 'expired';
+    }
+    
+    // Trial active
+    const daysLeft = Math.ceil(timeLeft / (24 * 60 * 60 * 1000));
+    updateTrialCountdown(daysLeft);
+    showTrialActiveSection();
+    return 'active';
+}
+
+function showSignupSection() {
+    hideAllSections();
+    const section = document.getElementById('trial-signup-section');
+    if (section) section.style.display = 'block';
+}
+
+function showTrialActiveSection() {
+    hideAllSections();
+    const section = document.getElementById('trial-active-section');
+    if (section) section.style.display = 'block';
+}
+
+function showTrialExpiredSection() {
+    hideAllSections();
+    const section = document.getElementById('trial-expired-section');
+    if (section) section.style.display = 'block';
+}
+
+function hideAllSections() {
+    const sections = ['trial-signup-section', 'trial-active-section', 'trial-expired-section'];
+    sections.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) section.style.display = 'none';
+    });
+}
+
+function updateTrialCountdown(daysLeft) {
+    const countdown = document.getElementById('trial-countdown');
+    if (countdown) {
+        if (daysLeft === 1) {
+            countdown.textContent = `${daysLeft} day remaining`;
+        } else {
+            countdown.textContent = `${daysLeft} days remaining`;
+        }
     }
 }
 
-function getTrialData() {
+function continueToExam() {
+    const status = checkTrialStatus();
+    if (status === 'active') {
+        // User can access exam - load exam interface
+        loadExamInterface();
+    } else {
+        // Redirect to appropriate screen
+        checkTrialStatus();
+    }
+}
+
+function loadExamInterface() {
+    // Hide landing sections and show exam interface
+    hideAllSections();
+    
+    // Show the main exam interface
+    const examScreen = document.getElementById('screen-exam');
+    const landingScreen = document.getElementById('screen-landing');
+    
+    if (landingScreen) landingScreen.style.display = 'none';
+    if (examScreen) examScreen.style.display = 'block';
+    
+    // Start with default exam
+    startTrialExam();
+}
+
+// Modified exam starter for trial users
+async function startTrialExam(examType = 'exam1') {
+    const status = checkTrialStatus();
+    
+    if (status !== 'active') {
+        checkTrialStatus(); // This will show appropriate screen
+        return;
+    }
+    
+    // Load exam data for trial users
+    isTrialMode = true;
+    isDemo = false;
+    
     try {
-        const data = localStorage.getItem(TRIAL_STORAGE_KEY);
-        return data ? JSON.parse(data) : null;
+        const res = await fetch(`data/${examType}.json`);
+        examData = await res.json();
+        startExam();
     } catch (e) {
-        console.error('Error reading trial data:', e);
-        return null;
-    }
-}
-
-function updateTrialUI(daysRemaining) {
-    const trialBanner = document.getElementById('trial-banner');
-    const trialStatus = document.getElementById('trial-status');
-    
-    if (daysRemaining > 0) {
-        // Active trial
-        if (trialBanner) {
-            trialBanner.style.display = 'block';
-            trialBanner.innerHTML = `
-                <div class="trial-banner-content">
-                    🎯 <strong>FREE TRIAL ACTIVE</strong> • ${daysRemaining} day${daysRemaining === 1 ? '' : 's'} remaining
-                    <span class="trial-features">Full Access • All 450 Questions • Complete Exam Simulations</span>
-                </div>
-            `;
-        }
-        
-        if (trialStatus) {
-            trialStatus.innerHTML = `
-                <div class="trial-status-active">
-                    ✅ <strong>Trial Active:</strong> ${daysRemaining} day${daysRemaining === 1 ? '' : 's'} of full access remaining
-                </div>
-            `;
-        }
-    } else {
-        // Trial expired
-        if (trialBanner) {
-            trialBanner.style.display = 'block';
-            trialBanner.innerHTML = `
-                <div class="trial-banner-expired">
-                    ⏰ <strong>FREE TRIAL ENDED</strong> • Continue with full access for $79 CAD
-                    <a href="#upgrade" class="trial-upgrade-btn">Continue Full Access →</a>
-                </div>
-            `;
-        }
-        
-        if (trialStatus) {
-            trialStatus.innerHTML = `
-                <div class="trial-status-expired">
-                    🔒 <strong>Trial Expired:</strong> Purchase full access to continue your Red Seal preparation
-                </div>
-            `;
-        }
+        alert('Failed to load exam. Please try again.');
+        console.error(e);
     }
 }
 
@@ -122,28 +186,6 @@ const TIER_ACCESS = {
 
 let activeTier = null;
 
-// Modified demo mode — now handles trial access
-async function startTrialOrDemo(examType = 'exam1') {
-    const trialActive = initializeTrial();
-    
-    if (trialActive) {
-        // Full trial access - load complete exam
-        isTrialMode = true;
-        isDemo = false;
-        try {
-            const res = await fetch(`data/${examType}.json`);
-            examData = await res.json();
-            startExam();
-        } catch (e) {
-            alert('Failed to load exam. Please try again.');
-            console.error(e);
-        }
-    } else {
-        // Trial expired - show upgrade screen
-        showTrialExpiredScreen();
-    }
-}
-
 // Original demo mode for comparison (10 questions only)
 async function startLimitedDemo() {
     isDemo = true;
@@ -158,196 +200,225 @@ async function startLimitedDemo() {
     }
 }
 
-function showTrialExpiredScreen() {
-    // Hide all screens
-    const screens = ['screen-landing', 'screen-exam', 'screen-results', 'screen-review'];
-    screens.forEach(screenId => {
-        const screen = document.getElementById(screenId);
-        if (screen) {
-            screen.style.display = 'none';
-            screen.classList.remove('active');
-        }
-    });
+// Utility function to check if user has specific tier access
+function hasAccess(examType) {
+    if (isTrialMode) {
+        return checkTrialStatus() === 'active';
+    }
     
-    // Show paywall screen
-    const paywallScreen = document.getElementById('screen-paywall');
-    if (paywallScreen) {
-        paywallScreen.style.display = 'block';
-        paywallScreen.classList.add('active');
+    if (isDemo) return true; // Demo always has access to its limited set
+    
+    if (!activeTier) return false;
+    
+    return TIER_ACCESS[activeTier]?.includes(examType) || false;
+}
+
+// Verify Gumroad license key
+async function verifyLicense(licenseKey) {
+    try {
+        const response = await fetch('https://api.gumroad.com/v2/licenses/verify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                'product_permalink': 'FErU7', // This should match your Gumroad product permalink
+                'license_key': licenseKey,
+                'increment_uses_count': 'false'
+            })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success && data.purchase) {
+            const permalink = data.purchase.product_permalink;
+            const tier = PRODUCT_TIERS[permalink];
+            
+            if (tier) {
+                activeTier = tier;
+                localStorage.setItem('activeTier', tier);
+                localStorage.setItem('licenseKey', licenseKey);
+                return { success: true, tier };
+            }
+        }
+        
+        return { success: false, message: 'Invalid license key' };
+        
+    } catch (error) {
+        console.error('License verification failed:', error);
+        return { success: false, message: 'Verification failed. Please try again.' };
     }
 }
 
-// Validate license key via Gumroad License Verify API
-async function validateCode() {
-    const licenseKey = document.getElementById('access-code').value.trim();
-    const btn = document.getElementById('btn-start');
-    const statusEl = document.getElementById('license-status');
+// Initialize the app
+document.addEventListener('DOMContentLoaded', function() {
+    // Check for existing trial or license on page load
+    const savedTier = localStorage.getItem('activeTier');
+    if (savedTier) {
+        activeTier = savedTier;
+    }
+    
+    // Initialize trial status display
+    checkTrialStatus();
+});
 
-    if (!licenseKey) {
-        showLicenseStatus('Please enter your license key from your Gumroad receipt.', 'error');
+// Exam Functions (Core Logic)
+function startExam() {
+    if (!examData || !examData.questions) {
+        alert('Exam data not loaded. Please try again.');
         return;
     }
 
-    // Show loading state
-    btn.disabled = true;
-    btn.textContent = '🔄 Verifying...';
-    showLicenseStatus('Verifying your license key with Gumroad...', 'info');
-
-    // Try each product permalink until we find a match
-    let verified = false;
-    let tier = null;
-    let productName = '';
-
-    for (const [permalink, productTier] of Object.entries(PRODUCT_TIERS)) {
-        try {
-            const response = await fetch('https://api.gumroad.com/v2/licenses/verify', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `product_id=${permalink}&license_key=${encodeURIComponent(licenseKey)}`
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                verified = true;
-                tier = productTier;
-                productName = data.purchase?.product_name || permalink;
-
-                // Check if license is disabled
-                if (data.purchase?.license_disabled) {
-                    showLicenseStatus('This license key has been disabled. Please contact support.', 'error');
-                    btn.disabled = false;
-                    btn.textContent = 'Unlock & Start Exam';
-                    return;
-                }
-
-                // Check if refunded
-                if (data.purchase?.refunded) {
-                    showLicenseStatus('This purchase has been refunded. The license is no longer valid.', 'error');
-                    btn.disabled = false;
-                    btn.textContent = 'Unlock & Start Exam';
-                    return;
-                }
-
-                break;
-            }
-        } catch (e) {
-            console.error(`License check failed for ${permalink}:`, e);
-        }
-    }
-
-    if (verified) {
-        // Valid license - upgrade from trial to full access
-        activeTier = tier;
-        
-        // Mark trial as completed (user now has permanent access)
-        const trialData = getTrialData();
-        if (trialData) {
-            trialData.isActive = false;
-            trialData.upgradeDate = new Date().toISOString();
-            localStorage.setItem(TRIAL_STORAGE_KEY, JSON.stringify(trialData));
-        }
-        
-        showLicenseStatus(`✅ License verified! Welcome to ${productName}. Starting your exam...`, 'success');
-        
-        setTimeout(() => {
-            // Hide all other screens
-            const screens = ['screen-landing', 'screen-paywall', 'screen-results', 'screen-review'];
-            screens.forEach(screenId => {
-                const screen = document.getElementById(screenId);
-                if (screen) {
-                    screen.style.display = 'none';
-                    screen.classList.remove('active');
-                }
-            });
-            
-            // Show exam screen directly for licensed users
-            const examScreen = document.getElementById('screen-exam');
-            if (examScreen) {
-                examScreen.style.display = 'block';
-                examScreen.classList.add('active');
-            }
-        }, 1500);
-    } else {
-        showLicenseStatus('❌ License key not found. Please check your Gumroad receipt and try again.', 'error');
-        btn.disabled = false;
-        btn.textContent = 'Unlock & Start Exam';
-    }
-}
-
-function showLicenseStatus(message, type) {
-    const statusEl = document.getElementById('license-status');
-    if (statusEl) {
-        statusEl.textContent = message;
-        statusEl.className = `license-status ${type}`;
-        statusEl.style.display = 'block';
-    }
-}
-
-// Modified exam selection to respect trial/license status
-async function selectExam(examNum) {
-    const trialActive = initializeTrial();
-    
-    if (trialActive || activeTier) {
-        // Trial active or valid license - proceed
-        await loadExam(examNum);
-    } else {
-        // Need to purchase
-        showTrialExpiredScreen();
-    }
-}
-
-// Load exam data
-async function loadExam(examNum) {
-    try {
-        const response = await fetch(`data/exam${examNum}.json`);
-        examData = await response.json();
-        startExam();
-    } catch (error) {
-        console.error('Error loading exam:', error);
-        alert('Failed to load exam. Please try again.');
-    }
-}
-
-// Start exam
-function startExam() {
-    // Hide all screens first
-    const screens = ['screen-landing', 'screen-paywall', 'screen-results', 'screen-review'];
-    screens.forEach(screenId => {
-        const screen = document.getElementById(screenId);
-        if (screen) screen.style.display = 'none';
-    });
-    
-    // Show exam screen
-    const examScreen = document.getElementById('screen-exam');
-    if (examScreen) {
-        examScreen.style.display = 'block';
-        examScreen.classList.add('active');
-    }
-    
-    // Initialize exam state
+    // Reset exam state
     currentQuestion = 0;
     answers = {};
     flagged = new Set();
-    examStarted = true;
+    examStarted = false;
+
+    // Show exam screen
+    document.getElementById('screen-landing').style.display = 'none';
+    document.getElementById('screen-exam').style.display = 'block';
+
+    // Initialize exam interface
+    updateQuestionCounter();
+    showQuestion(0);
     
-    // Set timer based on mode
-    if (isDemo) {
-        timeRemaining = 10 * 60; // 10 minutes for demo
-    } else if (isTrialMode) {
-        timeRemaining = 4 * 60 * 60; // 4 hours for trial (full exam)
-    } else {
-        timeRemaining = 4 * 60 * 60; // 4 hours for licensed version
+    // Start timer if it's a full exam
+    if (!isDemo && examData.timeLimit) {
+        startTimer(examData.timeLimit);
+    } else if (isDemo) {
+        // Demo mode - hide timer
+        const timerElement = document.getElementById('timer');
+        if (timerElement) timerElement.style.display = 'none';
     }
     
-    startTimer();
-    displayQuestion();
-    updateProgress();
+    examStarted = true;
 }
 
-// Timer functions
-function startTimer() {
-    if (timerInterval) clearInterval(timerInterval);
+function showQuestion(questionIndex) {
+    if (!examData || !examData.questions || questionIndex >= examData.questions.length) {
+        return;
+    }
+
+    const question = examData.questions[questionIndex];
+    currentQuestion = questionIndex;
+    
+    // Update question display
+    document.getElementById('question-number').textContent = questionIndex + 1;
+    document.getElementById('total-questions').textContent = examData.questions.length;
+    document.getElementById('question-text').innerHTML = question.question;
+    
+    // Clear previous answers
+    const answersContainer = document.getElementById('answers-container');
+    answersContainer.innerHTML = '';
+    
+    // Display answer options
+    question.options.forEach((option, index) => {
+        const optionLetter = String.fromCharCode(65 + index); // A, B, C, D
+        const isSelected = answers[questionIndex] === optionLetter;
+        
+        const answerDiv = document.createElement('div');
+        answerDiv.className = `answer-option ${isSelected ? 'selected' : ''}`;
+        answerDiv.onclick = () => selectAnswer(optionLetter);
+        
+        answerDiv.innerHTML = `
+            <span class="option-letter">${optionLetter}</span>
+            <span class="option-text">${option}</span>
+        `;
+        
+        answersContainer.appendChild(answerDiv);
+    });
+    
+    // Update flag button
+    const flagButton = document.getElementById('flag-question');
+    if (flagButton) {
+        flagButton.className = flagged.has(questionIndex) ? 'flagged' : '';
+        flagButton.textContent = flagged.has(questionIndex) ? '🚩 Flagged' : '🏳️ Flag';
+    }
+    
+    // Update navigation buttons
+    updateNavigationButtons();
+}
+
+function selectAnswer(optionLetter) {
+    answers[currentQuestion] = optionLetter;
+    
+    // Update UI
+    const answerOptions = document.querySelectorAll('.answer-option');
+    answerOptions.forEach((option, index) => {
+        const letter = String.fromCharCode(65 + index);
+        option.classList.toggle('selected', letter === optionLetter);
+    });
+    
+    updateQuestionCounter();
+}
+
+function updateQuestionCounter() {
+    const answered = Object.keys(answers).length;
+    const total = examData.questions.length;
+    const flaggedCount = flagged.size;
+    
+    document.getElementById('answered-count').textContent = answered;
+    document.getElementById('total-count').textContent = total;
+    
+    if (flaggedCount > 0) {
+        document.getElementById('flagged-count').textContent = ` (${flaggedCount} flagged)`;
+    } else {
+        document.getElementById('flagged-count').textContent = '';
+    }
+}
+
+function updateNavigationButtons() {
+    const prevButton = document.getElementById('prev-question');
+    const nextButton = document.getElementById('next-question');
+    
+    if (prevButton) {
+        prevButton.disabled = currentQuestion === 0;
+    }
+    
+    if (nextButton) {
+        nextButton.disabled = currentQuestion === examData.questions.length - 1;
+    }
+}
+
+function previousQuestion() {
+    if (currentQuestion > 0) {
+        showQuestion(currentQuestion - 1);
+    }
+}
+
+function nextQuestion() {
+    if (currentQuestion < examData.questions.length - 1) {
+        showQuestion(currentQuestion + 1);
+    }
+}
+
+function toggleFlag() {
+    if (flagged.has(currentQuestion)) {
+        flagged.delete(currentQuestion);
+    } else {
+        flagged.add(currentQuestion);
+    }
+    
+    const flagButton = document.getElementById('flag-question');
+    if (flagButton) {
+        flagButton.className = flagged.has(currentQuestion) ? 'flagged' : '';
+        flagButton.textContent = flagged.has(currentQuestion) ? '🚩 Flagged' : '🏳️ Flag';
+    }
+    
+    updateQuestionCounter();
+}
+
+function jumpToQuestion(questionIndex) {
+    if (questionIndex >= 0 && questionIndex < examData.questions.length) {
+        showQuestion(questionIndex);
+    }
+}
+
+// Timer Functions
+function startTimer(minutes) {
+    timeRemaining = minutes * 60;
+    updateTimerDisplay();
     
     timerInterval = setInterval(() => {
         timeRemaining--;
@@ -355,12 +426,9 @@ function startTimer() {
         
         if (timeRemaining <= 0) {
             clearInterval(timerInterval);
-            alert('Time is up! Your exam will now be submitted.');
-            submitExam();
+            autoSubmitExam();
         }
     }, 1000);
-    
-    updateTimerDisplay();
 }
 
 function updateTimerDisplay() {
@@ -371,244 +439,117 @@ function updateTimerDisplay() {
     const display = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     document.getElementById('timer').textContent = display;
     
-    // Warning colors
-    if (timeRemaining <= 300) { // 5 minutes
-        document.getElementById('timer').style.color = '#ef4444';
-    } else if (timeRemaining <= 1800) { // 30 minutes
-        document.getElementById('timer').style.color = '#f59e0b';
+    // Change color when time is running low
+    const timerElement = document.getElementById('timer');
+    if (timeRemaining < 300) { // Last 5 minutes
+        timerElement.style.color = '#ff4444';
+    } else if (timeRemaining < 1800) { // Last 30 minutes
+        timerElement.style.color = '#ff8800';
     }
 }
 
-// Display current question
-function displayQuestion() {
-    const question = examData.questions[currentQuestion];
-    
-    document.getElementById('question-number').textContent = currentQuestion + 1;
-    document.getElementById('total-questions').textContent = examData.questions.length;
-    document.getElementById('question-text').textContent = question.question;
-    
-    const optionsContainer = document.getElementById('options-container');
-    optionsContainer.innerHTML = '';
-    
-    question.options.forEach((option, index) => {
-        const div = document.createElement('div');
-        div.className = 'option';
-        
-        const radio = document.createElement('input');
-        radio.type = 'radio';
-        radio.name = 'answer';
-        radio.value = index;
-        radio.id = `option-${index}`;
-        
-        const savedAnswer = answers[currentQuestion];
-        if (savedAnswer !== undefined && savedAnswer === index) {
-            radio.checked = true;
-        }
-        
-        radio.addEventListener('change', () => {
-            answers[currentQuestion] = index;
-            updateProgress();
-        });
-        
-        const label = document.createElement('label');
-        label.htmlFor = `option-${index}`;
-        label.textContent = option;
-        
-        div.appendChild(radio);
-        div.appendChild(label);
-        optionsContainer.appendChild(div);
-    });
-    
-    // Update flag button
-    const flagBtn = document.getElementById('flag-question');
-    if (flagged.has(currentQuestion)) {
-        flagBtn.textContent = '🏳️ Unflag';
-        flagBtn.classList.add('flagged');
-    } else {
-        flagBtn.textContent = '🏁 Flag for Review';
-        flagBtn.classList.remove('flagged');
-    }
-    
-    // Update navigation buttons
-    document.getElementById('prev-question').disabled = currentQuestion === 0;
-    document.getElementById('next-question').disabled = currentQuestion === examData.questions.length - 1;
+function autoSubmitExam() {
+    alert('Time\'s up! Your exam will be automatically submitted.');
+    submitExam();
 }
 
-// Navigation functions
-function previousQuestion() {
-    if (currentQuestion > 0) {
-        currentQuestion--;
-        displayQuestion();
-        updateProgress();
-    }
-}
-
-function nextQuestion() {
-    if (currentQuestion < examData.questions.length - 1) {
-        currentQuestion++;
-        displayQuestion();
-        updateProgress();
-    }
-}
-
-function jumpToQuestion(questionNum) {
-    currentQuestion = questionNum - 1;
-    displayQuestion();
-    updateProgress();
-    
-    // Close modal
-    document.getElementById('progress-modal').style.display = 'none';
-}
-
-// Flag question for review
-function flagQuestion() {
-    if (flagged.has(currentQuestion)) {
-        flagged.delete(currentQuestion);
-    } else {
-        flagged.add(currentQuestion);
-    }
-    displayQuestion();
-    updateProgress();
-}
-
-// Update progress display
-function updateProgress() {
-    const answered = Object.keys(answers).length;
-    const total = examData.questions.length;
-    const percentage = Math.round((answered / total) * 100);
-    
-    document.getElementById('progress-bar').style.width = `${percentage}%`;
-    document.getElementById('progress-text').textContent = `${answered}/${total} answered (${percentage}%)`;
-    
-    // Update question grid in modal
-    updateQuestionGrid();
-}
-
-function updateQuestionGrid() {
-    const grid = document.getElementById('question-grid');
-    if (!grid) return;
-    
-    grid.innerHTML = '';
-    
-    for (let i = 0; i < examData.questions.length; i++) {
-        const button = document.createElement('button');
-        button.textContent = i + 1;
-        button.className = 'question-nav-btn';
-        
-        if (answers[i] !== undefined) {
-            button.classList.add('answered');
-        }
-        
-        if (flagged.has(i)) {
-            button.classList.add('flagged');
-        }
-        
-        if (i === currentQuestion) {
-            button.classList.add('current');
-        }
-        
-        button.onclick = () => jumpToQuestion(i + 1);
-        grid.appendChild(button);
-    }
-}
-
-// Show/hide progress modal
-function showProgress() {
-    document.getElementById('progress-modal').style.display = 'block';
-    updateQuestionGrid();
-}
-
-function hideProgress() {
-    document.getElementById('progress-modal').style.display = 'none';
-}
-
-// Submit exam
+// Exam Submission and Results
 function submitExam() {
-    clearInterval(timerInterval);
+    if (Object.keys(answers).length === 0) {
+        alert('Please answer at least one question before submitting.');
+        return;
+    }
     
-    const answered = Object.keys(answers).length;
-    const total = examData.questions.length;
-    
-    if (answered < total) {
-        const unanswered = total - answered;
-        if (!confirm(`You have ${unanswered} unanswered questions. Submit anyway?`)) {
-            startTimer(); // Resume timer
-            return;
-        }
+    // Stop timer
+    if (timerInterval) {
+        clearInterval(timerInterval);
     }
     
     // Calculate results
-    let correct = 0;
-    for (let i = 0; i < examData.questions.length; i++) {
-        const userAnswer = answers[i];
-        if (userAnswer !== undefined && userAnswer === examData.questions[i].correct) {
-            correct++;
-        }
-    }
+    const results = calculateResults();
     
-    const score = Math.round((correct / total) * 100);
-    
-    // Show results
-    showResults(correct, total, score);
+    // Show results screen
+    displayResults(results);
 }
 
-function showResults(correct, total, score) {
-    document.getElementById('exam-container').style.display = 'none';
-    document.getElementById('results-screen').style.display = 'block';
+function calculateResults() {
+    let correct = 0;
+    let incorrect = 0;
+    const details = [];
     
-    document.getElementById('final-score').textContent = `${score}%`;
-    document.getElementById('score-details').textContent = `${correct} out of ${total} questions correct`;
-    
-    const passThreshold = 70;
-    const statusEl = document.getElementById('pass-status');
-    
-    if (score >= passThreshold) {
-        statusEl.textContent = '🎉 PASS! You\'re ready for the Red Seal exam.';
-        statusEl.className = 'pass-status pass';
-    } else {
-        statusEl.textContent = `❌ More study needed. Passing score is ${passThreshold}%.`;
-        statusEl.className = 'pass-status fail';
-    }
-    
-    // Show mode-specific messaging
-    const modeMessage = document.getElementById('mode-message');
-    if (isDemo) {
-        modeMessage.innerHTML = `
-            <p><strong>This was a limited demo.</strong></p>
-            <p>Ready for the complete preparation? Unlock all 450+ questions and full-length practice exams.</p>
-            <div style="margin-top: 20px;">
-                <a href="#upgrade" class="upgrade-btn">Unlock Complete Program - $79 CAD</a>
-            </div>
-        `;
-    } else if (isTrialMode) {
-        const trialData = getTrialData();
-        const trialEndDate = new Date(trialData.endDate);
-        const now = new Date();
-        const daysRemaining = Math.ceil((trialEndDate - now) / (24 * 60 * 60 * 1000));
+    examData.questions.forEach((question, index) => {
+        const userAnswer = answers[index];
+        const correctAnswer = question.correct;
+        const isCorrect = userAnswer === correctAnswer;
         
-        if (daysRemaining > 0) {
-            modeMessage.innerHTML = `
-                <p><strong>Trial Mode:</strong> ${daysRemaining} day${daysRemaining === 1 ? '' : 's'} remaining</p>
-                <p>Continue practicing with full access, or secure permanent access now!</p>
-                <div style="margin-top: 20px;">
-                    <a href="#upgrade" class="upgrade-btn">Get Permanent Access - $79 CAD</a>
-                </div>
-            `;
-        } else {
-            modeMessage.innerHTML = `
-                <p><strong>Free Trial Complete!</strong></p>
-                <p>Continue your Red Seal preparation with permanent access.</p>
-                <div style="margin-top: 20px;">
-                    <a href="#upgrade" class="upgrade-btn">Continue Full Access - $79 CAD</a>
-                </div>
-            `;
+        if (userAnswer) {
+            if (isCorrect) {
+                correct++;
+            } else {
+                incorrect++;
+            }
         }
-    } else {
-        modeMessage.innerHTML = `
-            <p><strong>Licensed Version:</strong> Full access to all features</p>
-            <p>Keep practicing until you consistently score 80%+ on all exams!</p>
+        
+        details.push({
+            questionNumber: index + 1,
+            userAnswer: userAnswer || 'Not answered',
+            correctAnswer: correctAnswer,
+            isCorrect: isCorrect,
+            explanation: question.explanation,
+            reference: question.reference
+        });
+    });
+    
+    const total = examData.questions.length;
+    const percentage = Math.round((correct / total) * 100);
+    const passed = percentage >= 70; // Red Seal passing grade
+    
+    return {
+        correct,
+        incorrect,
+        total,
+        percentage,
+        passed,
+        details
+    };
+}
+
+function displayResults(results) {
+    // Hide exam screen, show results screen
+    document.getElementById('screen-exam').style.display = 'none';
+    document.getElementById('screen-results').style.display = 'block';
+    
+    // Update results summary
+    document.getElementById('score-percentage').textContent = `${results.percentage}%`;
+    document.getElementById('score-fraction').textContent = `${results.correct}/${results.total}`;
+    document.getElementById('pass-status').textContent = results.passed ? 'PASS' : 'FAIL';
+    document.getElementById('pass-status').className = results.passed ? 'pass' : 'fail';
+    
+    // Generate detailed breakdown
+    const breakdown = document.getElementById('results-breakdown');
+    breakdown.innerHTML = '';
+    
+    results.details.forEach(detail => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = `result-question ${detail.isCorrect ? 'correct' : 'incorrect'}`;
+        
+        questionDiv.innerHTML = `
+            <div class="question-header">
+                <strong>Question ${detail.questionNumber}</strong>
+                <span class="result-badge ${detail.isCorrect ? 'correct' : 'incorrect'}">
+                    ${detail.isCorrect ? '✓' : '✗'}
+                </span>
+            </div>
+            <div class="answer-comparison">
+                <div>Your answer: <strong>${detail.userAnswer}</strong></div>
+                <div>Correct answer: <strong>${detail.correctAnswer}</strong></div>
+            </div>
+            ${detail.explanation ? `<div class="explanation">${detail.explanation}</div>` : ''}
+            ${detail.reference ? `<div class="reference">Reference: ${detail.reference}</div>` : ''}
         `;
-    }
+        
+        breakdown.appendChild(questionDiv);
+    });
 }
 
 // Reset for new attempt
@@ -618,128 +559,53 @@ function resetExam() {
     flagged = new Set();
     examStarted = false;
     
+    // Hide all screens except landing
+    const screens = ['screen-results', 'screen-exam'];
+    screens.forEach(screenId => {
+        const screen = document.getElementById(screenId);
+        if (screen) screen.style.display = 'none';
+    });
+    
+    // Show landing screen and check trial status
+    const landingScreen = document.getElementById('screen-landing');
+    if (landingScreen) landingScreen.style.display = 'block';
+    
+    // Reset timer
     if (timerInterval) {
         clearInterval(timerInterval);
         timerInterval = null;
     }
     
-    document.getElementById('results-screen').style.display = 'none';
-    document.getElementById('exam-container').style.display = 'none';
-    document.getElementById('exam-menu-screen').style.display = 'block';
+    // Re-check trial status
+    checkTrialStatus();
 }
 
-// Return to main menu
-function returnToMenu() {
-    currentQuestion = 0;
-    answers = {};
-    flagged = new Set();
-    examStarted = false;
+// Trial expired screen handler
+function showTrialExpiredScreen() {
+    // Hide all other screens
+    const screens = ['screen-landing', 'screen-exam', 'screen-results'];
+    screens.forEach(screenId => {
+        const screen = document.getElementById(screenId);
+        if (screen) screen.style.display = 'none';
+    });
     
-    if (timerInterval) {
-        clearInterval(timerInterval);
-        timerInterval = null;
+    // Show the expired section
+    showTrialExpiredSection();
+}
+
+// License entry functions (for users who purchase)
+function showLicenseEntry() {
+    const licenseKey = prompt('Enter your license key from your Gumroad purchase confirmation:');
+    
+    if (licenseKey) {
+        verifyLicense(licenseKey).then(result => {
+            if (result.success) {
+                alert(`License verified! You now have access to the ${result.tier} tier.`);
+                // Reload to show new access
+                location.reload();
+            } else {
+                alert(result.message);
+            }
+        });
     }
-    
-    document.getElementById('exam-container').style.display = 'none';
-    document.getElementById('results-screen').style.display = 'none';
-    document.getElementById('welcome-screen').style.display = 'block';
-    
-    // Refresh trial status
-    initializeTrial();
 }
-
-// Initialize app when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize trial system on page load
-    const trialActive = initializeTrial();
-    
-    // Update UI based on trial status
-    const startTrialBtn = document.getElementById('start-trial-btn');
-    const startDemoBtn = document.getElementById('start-demo-btn');
-    
-    if (trialActive) {
-        if (startTrialBtn) {
-            startTrialBtn.textContent = '🚀 Continue Your Trial';
-        }
-    } else {
-        if (startTrialBtn) {
-            startTrialBtn.textContent = '💳 Get Full Access - $79 CAD';
-            startTrialBtn.onclick = () => showTrialExpiredScreen();
-        }
-    }
-});
-
-// Add trial-specific CSS classes and styling
-const trialCSS = `
-.trial-banner-content {
-    background: linear-gradient(135deg, #10b981, #059669);
-    color: white;
-    padding: 12px 20px;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.trial-features {
-    font-size: 0.9em;
-    opacity: 0.9;
-    margin-left: 10px;
-}
-
-.trial-banner-expired {
-    background: linear-gradient(135deg, #dc2626, #b91c1c);
-    color: white;
-    padding: 12px 20px;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.trial-upgrade-btn {
-    background: white;
-    color: #dc2626;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-left: 15px;
-}
-
-.trial-status-active {
-    background: #ecfdf5;
-    border: 1px solid #10b981;
-    color: #047857;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.trial-status-expired {
-    background: #fef2f2;
-    border: 1px solid #dc2626;
-    color: #b91c1c;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.upgrade-btn {
-    background: linear-gradient(135deg, #dc2626, #b91c1c);
-    color: white;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    transition: transform 0.2s;
-}
-
-.upgrade-btn:hover {
-    transform: translateY(-2px);
-}
-`;
-
-// Inject trial CSS
-const styleSheet = document.createElement('style');
-styleSheet.textContent = trialCSS;
-document.head.appendChild(styleSheet);

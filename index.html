@@ -561,6 +561,149 @@
             from { transform: translateY(100%); }
             to { transform: translateY(0); }
         }
+        
+        /* Mobile-First Trial Signup Styling */
+        .signup-form {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .form-input {
+            width: 100%;
+            max-width: 320px;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 0 auto;
+            display: block;
+            box-sizing: border-box;
+            background: white;
+            color: #333;
+        }
+        
+        .form-input:focus {
+            border-color: #ffd700;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+        }
+        
+        .trial-status-banner {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .trial-timer {
+            font-size: 18px;
+            font-weight: bold;
+            color: #28a745;
+            margin: 10px 0;
+        }
+        
+        .expired-message {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .purchase-options {
+            margin: 20px 0;
+        }
+        
+        .purchase-btn {
+            display: inline-block;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        
+        /* Mobile Content Centering */
+        @media (max-width: 768px) {
+            body {
+                text-align: center;
+            }
+            
+            .container {
+                margin: 0 auto;
+                padding: 10px 15px;
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-cta {
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+                text-align: center;
+                padding: 20px 15px;
+            }
+            
+            .form-input {
+                width: 100%;
+                max-width: 300px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+            
+            .btn-demo,
+            .continue-button,
+            .purchase-btn {
+                width: 100%;
+                max-width: 300px;
+                padding: 18px;
+                font-size: 18px;
+                font-weight: bold;
+                cursor: pointer;
+                margin: 10px auto;
+                display: block;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            
+            h1, h2, h3 {
+                text-align: center;
+                margin: 15px auto;
+            }
+            
+            .hero-hint {
+                text-align: center;
+                margin: 10px auto;
+                max-width: 320px;
+            }
+            
+            .features {
+                text-align: center;
+                margin: 20px auto;
+            }
+            
+            .landing-section {
+                text-align: center;
+                padding: 20px 15px;
+            }
+        }
+        
+        /* Desktop responsive adjustments */
+        @media (min-width: 769px) {
+            .signup-form {
+                max-width: 450px;
+                margin: 30px auto;
+            }
+            
+            .hero-cta {
+                text-align: center;
+                padding: 40px 20px;
+            }
+            
+            .form-input {
+                max-width: 350px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -582,10 +725,47 @@
             <h1>Pass Your Ontario 309A<br>Electrician Exam</h1>
             <p class="subtitle">450 practice questions · 4-hour timed exams · CEC 2024 references · Instant scoring</p>
             
-            <!-- Primary CTA: Free Demo -->
-            <div class="hero-cta">
-                <button id="btn-try-demo" class="btn-demo" onclick="startTrialOrDemo()">🚀 Start FREE 7-Day Trial</button>
-                <p class="hero-hint">✅ No credit card required • ✅ Instant access • ✅ Full 450+ questions for 7 days</p>
+            <!-- Trial Signup Form -->
+            <div id="trial-signup-section" class="hero-cta">
+                <form id="trial-signup-form" class="signup-form" onsubmit="startTrial(event)">
+                    <div class="form-group">
+                        <input type="text" id="user-name" placeholder="Your Name" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="user-email" placeholder="Your Email Address" required class="form-input">
+                    </div>
+                    <button type="submit" class="btn-demo">🚀 Start My FREE 7-Day Trial</button>
+                </form>
+                <p class="hero-hint">✅ No credit card required • ✅ Full access for 7 days • ✅ Cancel anytime</p>
+            </div>
+
+            <!-- Trial Active Section -->
+            <div id="trial-active-section" class="hero-cta" style="display: none;">
+                <div class="trial-status-banner">
+                    <h2>🎯 FREE Trial Active</h2>
+                    <p id="trial-countdown" class="trial-timer">X days remaining</p>
+                </div>
+                <button onclick="continueToExam()" class="btn-demo continue-button">
+                    ⚡ Continue to Exam
+                </button>
+                <p class="hero-hint">✅ Full access to all 450+ questions • ✅ Timed exams • ✅ Detailed explanations</p>
+            </div>
+
+            <!-- Trial Expired Section -->
+            <div id="trial-expired-section" class="hero-cta" style="display: none;">
+                <div class="expired-message">
+                    <h2>⏰ Your FREE Trial Has Ended</h2>
+                    <p>You've experienced the full CFQ Buddy system!</p>
+                    <p>Continue your exam prep with lifetime access:</p>
+                </div>
+                
+                <div class="purchase-options">
+                    <a href="https://cfqbuddy.gumroad.com/l/309a-single" class="btn-demo purchase-btn">
+                        🚀 Get 309A Full Access - $79 CAD
+                    </a>
+                </div>
+                
+                <p class="hero-hint">✅ Lifetime Access • ✅ All Updates • ✅ Mobile App</p>
             </div>
 
             <!-- Features -->
