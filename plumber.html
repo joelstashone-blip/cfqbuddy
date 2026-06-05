@@ -762,9 +762,9 @@
                 </div>
                 
                 <div class="purchase-options">
-                    <a href="https://cfqbuddy.gumroad.com/l/306a-single" class="btn-demo purchase-btn">
+                    <button onclick="openGumroadOverlay('306a-single')" class="btn-demo purchase-btn">
                         🚀 Get 306A Full Access - $79 CAD
-                    </a>
+                    </button>
                 </div>
                 
                 <p class="hero-hint">✅ Lifetime Access • ✅ All Updates • ✅ Mobile App</p>
@@ -810,7 +810,7 @@
                             <li>✅ Full explanations</li>
                             <li>✅ NPC 2025 code references</li>
                         </ul>
-                        <a href="https://309aprep.gumroad.com/l/plumber1" target="_blank" class="btn-buy">Get Started</a>
+                        <button onclick="openGumroadOverlay('plumber1')" class="btn-buy">Get Started</button>
                     </div>
                     <div class="price-card popular">
                         <div class="popular-badge">MOST POPULAR</div>
@@ -825,7 +825,7 @@
                             <li>✅ Full explanations</li>
                             <li>✅ NPC 2025 code references</li>
                         </ul>
-                        <a href="https://309aprep.gumroad.com/l/plumber3" target="_blank" class="btn-buy">Get 3-Exam Pack</a>
+                        <button onclick="openGumroadOverlay('plumber3')" class="btn-buy">Get 3-Exam Pack</button>
                     </div>
                     <div class="price-card">
                         <div class="price-tier">Complete</div>
@@ -841,7 +841,7 @@
                             <li>✅ NPC 2025 code references</li>
                             <li>🔥 Save 34% vs separately</li>
                         </ul>
-                        <a href="https://309aprep.gumroad.com/l/plumber-bundle" target="_blank" class="btn-buy">Get Full Bundle</a>
+                        <button onclick="openGumroadOverlay('plumber-bundle')" class="btn-buy">Get Full Bundle</button>
                     </div>
                 </div>
             </div>
@@ -957,9 +957,9 @@
                 <p><strong>You just answered 10 questions.</strong> The full exams have 150 each.</p>
                 <p>Ready to practice with the real thing?</p>
                 <div class="paywall-actions">
-                    <a href="https://309aprep.gumroad.com/l/plumber1" target="_blank" class="btn-buy">🔥 Get Single Plumber Exam — $15 CAD</a>
-                    <a href="https://309aprep.gumroad.com/l/plumber3" target="_blank" class="btn-buy" style="background:linear-gradient(135deg,#e0e0e0,#ccc);color:#333;">🔥 3-Exam Pack — $35 CAD</a>
-                    <a href="https://309aprep.gumroad.com/l/plumber-bundle" target="_blank" class="btn-buy" style="background:linear-gradient(135deg,#FFD54F,#FFC107);color:#1d3557;">🏆 Complete Bundle — $59 CAD</a>
+                    <button onclick="openGumroadOverlay('plumber1')" class="btn-buy">🔥 Get Single Plumber Exam — $15 CAD</button>
+                    <button onclick="openGumroadOverlay('plumber3')" class="btn-buy" style="background:linear-gradient(135deg,#e0e0e0,#ccc);color:#333;">🔥 3-Exam Pack — $35 CAD</button>
+                    <button onclick="openGumroadOverlay('plumber-bundle')" class="btn-buy" style="background:linear-gradient(135deg,#FFD54F,#FFC107);color:#1d3557;">🏆 Complete Bundle — $59 CAD</button>
                     <button class="btn-secondary" onclick="showScreen('screen-landing')">← Back to Home</button>
                 </div>
             </div>
@@ -1043,6 +1043,7 @@
     </div>
 
     <script src="js/exam-trial.js"></script>
+    <script src="js/gumroad-overlay.js"></script>
 
     <script>
     // Override trial function for plumber trade - use plumber exam data
