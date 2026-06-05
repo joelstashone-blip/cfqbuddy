@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Account | CFQ Buddy - Red Seal Exam Prep</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .registration-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .account-type-selector {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .account-type {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .account-type.active {
+            border-color: #ffd700;
+            background: #fffbf0;
+        }
+
+        .account-type:hover {
+            border-color: #ffd700;
+        }
+
+        .account-type-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e1e5e9;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+        }
+
+        .same-as-home {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .business-section {
+            display: none;
+        }
+
+        .business-section.active {
+            display: block;
+        }
+
+        .tax-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .tax-rate {
+            font-weight: 600;
+            color: #1976d2;
+        }
+
+        .submit-section {
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .btn-register {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-register:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .login-link {
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .login-link a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .registration-card {
+                padding: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .account-type-selector {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .account-type {
+                padding: 15px;
+            }
+        }
+
+        /* Province/Territory specific styling */
+        .province-info {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            color: #27ae60;
+            background: #d5f4e6;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">⚡ CFQ Buddy</div>
+            <h1>Create Your Account</h1>
+            <p>Start your journey to Red Seal certification</p>
+        </div>
+
+        <div class="registration-card">
+            <div class="success-message" id="success-message"></div>
+
+            <form id="registration-form">
+                <!-- Account Type Selection -->
+                <div class="section">
+                    <div class="section-title">
+                        👤 Account Type
+                    </div>
+                    <div class="account-type-selector">
+                        <div class="account-type active" data-type="personal">
+                            <div class="account-type-icon">🏠</div>
+                            <strong>Personal Account</strong>
+                            <p>Individual purchases and study</p>
+                        </div>
+                        <div class="account-type" data-type="business">
+                            <div class="account-type-icon">🏢</div>
+                            <strong>Business Account</strong>
+                            <p>Company training and bulk purchases</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="section">
+                    <div class="section-title">
+                        📝 Personal Information
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(xxx) xxx-xxxx">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Home Address -->
+                <div class="section">
+                    <div class="section-title">
+                        🏠 Home Address
+                    </div>
+                    <div class="form-group">
+                        <label for="homeStreet">Street Address <span class="required">*</span></label>
+                        <input type="text" id="homeStreet" name="homeStreet" required placeholder="123 Main St">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="homeCity">City <span class="required">*</span></label>
+                            <input type="text" id="homeCity" name="homeCity" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="homeProvince">Province/Territory <span class="required">*</span></label>
+                            <select id="homeProvince" name="homeProvince" required onchange="updateTaxInfo()">
+                                <option value="">Select Province/Territory</option>
+                                <option value="AB">Alberta</option>
+                                <option value="BC">British Columbia</option>
+                                <option value="MB">Manitoba</option>
+                                <option value="NB">New Brunswick</option>
+                                <option value="NL">Newfoundland and Labrador</option>
+                                <option value="NT">Northwest Territories</option>
+                                <option value="NS">Nova Scotia</option>
+                                <option value="NU">Nunavut</option>
+                                <option value="ON">Ontario</option>
+                                <option value="PE">Prince Edward Island</option>
+                                <option value="QC">Quebec</option>
+                                <option value="SK">Saskatchewan</option>
+                                <option value="YT">Yukon</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="homePostal">Postal Code <span class="required">*</span></label>
+                            <input type="text" id="homePostal" name="homePostal" required placeholder="A1A 1A1" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
+                        </div>
+                        <div class="form-group">
+                            <!-- Tax info will be displayed here -->
+                            <div id="tax-display" class="tax-info" style="display: none;">
+                                <strong>Tax Rate:</strong> <span class="tax-rate" id="tax-rate"></span><br>
+                                <small id="tax-breakdown"></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Address -->
+                <div class="section">
+                    <div class="section-title">
+                        📦 Shipping Address
+                    </div>
+                    <div class="same-as-home">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="sameAsHome" name="sameAsHome" checked onchange="toggleShippingAddress()">
+                            <label for="sameAsHome">Same as home address</label>
+                        </div>
+                    </div>
+                    
+                    <div id="shipping-fields" style="display: none;">
+                        <div class="form-group">
+                            <label for="shippingStreet">Street Address</label>
+                            <input type="text" id="shippingStreet" name="shippingStreet" placeholder="123 Main St">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="shippingCity">City</label>
+                                <input type="text" id="shippingCity" name="shippingCity">
+                            </div>
+                            <div class="form-group">
+                                <label for="shippingProvince">Province/Territory</label>
+                                <select id="shippingProvince" name="shippingProvince">
+                                    <option value="">Select Province/Territory</option>
+                                    <option value="AB">Alberta</option>
+                                    <option value="BC">British Columbia</option>
+                                    <option value="MB">Manitoba</option>
+                                    <option value="NB">New Brunswick</option>
+                                    <option value="NL">Newfoundland and Labrador</option>
+                                    <option value="NT">Northwest Territories</option>
+                                    <option value="NS">Nova Scotia</option>
+                                    <option value="NU">Nunavut</option>
+                                    <option value="ON">Ontario</option>
+                                    <option value="PE">Prince Edward Island</option>
+                                    <option value="QC">Quebec</option>
+                                    <option value="SK">Saskatchewan</option>
+                                    <option value="YT">Yukon</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="shippingPostal">Postal Code</label>
+                            <input type="text" id="shippingPostal" name="shippingPostal" placeholder="A1A 1A1" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Information (Hidden by default) -->
+                <div class="section business-section" id="business-section">
+                    <div class="section-title">
+                        🏢 Business Information
+                    </div>
+                    <div class="form-group">
+                        <label for="companyName">Company Name <span class="required">*</span></label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Your Company Ltd.">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="businessNumber">Business Number</label>
+                            <input type="text" id="businessNumber" name="businessNumber" placeholder="123456789RT0001">
+                            <small>9-digit business number + RT program identifier</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="gstHst">GST/HST Number</label>
+                            <input type="text" id="gstHst" name="gstHst" placeholder="123456789RT0001">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="industry">Industry/Trade</label>
+                        <select id="industry" name="industry">
+                            <option value="">Select Industry</option>
+                            <option value="electrical">Electrical Contracting</option>
+                            <option value="plumbing">Plumbing/HVAC</option>
+                            <option value="construction">General Construction</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="education">Education/Training</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Trade Interests -->
+                <div class="section">
+                    <div class="section-title">
+                        🔧 Trade Interests
+                    </div>
+                    <div class="form-group">
+                        <label>Which Red Seal trades are you interested in? (Check all that apply)</label>
+                        <div style="margin-top: 10px;">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="trade309a" name="trades" value="309A">
+                                <label for="trade309a">309A - Construction Electrician</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="trade306a" name="trades" value="306A">
+                                <label for="trade306a">306A - Plumber</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="tradeother" name="trades" value="other">
+                                <label for="tradeother">Other trades (notify me when available)</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="section">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">
+                            I agree to the <a href="#" target="_blank">Terms of Service</a> and 
+                            <a href="#" target="_blank">Privacy Policy</a> <span class="required">*</span>
+                        </label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="marketing" name="marketing">
+                        <label for="marketing">
+                            I would like to receive updates about new exam prep materials and Red Seal training resources
+                        </label>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button type="submit" class="btn-register" id="register-btn">
+                        🚀 Create Account & Start Trial
+                    </button>
+                    <div class="error-message" id="form-error"></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="login-link">
+            Already have an account? <a href="login.html">Sign In</a>
+        </div>
+    </div>
+
+    <script src="js/registration.js"></script>
+</body>
+</html>

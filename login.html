@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | CFQ Buddy - Red Seal Exam Prep</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 450px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .login-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        }
+
+        .btn-login {
+            width: 100%;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-login:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .forgot-password a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e1e5e9;
+            color: #666;
+        }
+
+        .register-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            background: #ffe6e6;
+            color: #d63031;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message {
+            background: #d5f4e6;
+            color: #27ae60;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .login-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">⚡ CFQ Buddy</div>
+            <h1>Welcome Back</h1>
+            <p>Sign in to continue your Red Seal preparation</p>
+        </div>
+
+        <div class="login-card">
+            <div class="error-message" id="error-message"></div>
+            <div class="success-message" id="success-message"></div>
+
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+
+                <button type="submit" class="btn-login" id="login-btn">
+                    🚀 Sign In
+                </button>
+            </form>
+
+            <div class="forgot-password">
+                <a href="#" onclick="showForgotPassword()">Forgot your password?</a>
+            </div>
+
+            <div class="register-link">
+                Don't have an account yet?<br>
+                <a href="register.html">Create Your Free Account</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is already logged in
+            const userData = localStorage.getItem('cfqBuddyUser');
+            if (userData) {
+                showMessage('You are already signed in. Redirecting...', 'success');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+                return;
+            }
+
+            // Setup form submission
+            document.getElementById('login-form').addEventListener('submit', handleLogin);
+        });
+
+        async function handleLogin(event) {
+            event.preventDefault();
+            
+            const loginBtn = document.getElementById('login-btn');
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            // Reset messages
+            hideMessages();
+            
+            // Basic validation
+            if (!email || !password) {
+                showMessage('Please enter both email and password', 'error');
+                return;
+            }
+            
+            // Disable button
+            loginBtn.disabled = true;
+            loginBtn.textContent = '⏳ Signing In...';
+            
+            try {
+                // Simulate login process (replace with real authentication)
+                const result = await authenticateUser(email, password);
+                
+                if (result.success) {
+                    showMessage('Login successful! Redirecting...', 'success');
+                    
+                    // Store user session
+                    localStorage.setItem('cfqBuddyUser', JSON.stringify(result.userData));
+                    
+                    // Create/restore trial data
+                    createTrialFromUser(result.userData);
+                    
+                    // Redirect to appropriate page
+                    setTimeout(() => {
+                        const redirectUrl = result.userData.trades?.includes('309A') ? 'index.html' : 'plumber.html';
+                        window.location.href = redirectUrl;
+                    }, 1500);
+                    
+                } else {
+                    showMessage(result.message || 'Invalid email or password', 'error');
+                }
+                
+            } catch (error) {
+                console.error('Login error:', error);
+                showMessage('Login failed. Please try again.', 'error');
+            } finally {
+                // Re-enable button
+                loginBtn.disabled = false;
+                loginBtn.textContent = '🚀 Sign In';
+            }
+        }
+
+        async function authenticateUser(email, password) {
+            // Simulate authentication (replace with real backend call)
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    // For demo purposes, accept any email with password "demo"
+                    if (password === 'demo') {
+                        resolve({
+                            success: true,
+                            userData: {
+                                id: 'user_demo',
+                                name: 'Demo User',
+                                email: email,
+                                accountType: 'personal',
+                                trades: ['309A'],
+                                trialStarted: Date.now(),
+                                trialExpiry: Date.now() + (7 * 24 * 60 * 60 * 1000)
+                            }
+                        });
+                    } else {
+                        resolve({
+                            success: false,
+                            message: 'Invalid email or password'
+                        });
+                    }
+                }, 1000);
+            });
+            
+            // Real implementation would look like:
+            /*
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email, password })
+            });
+            
+            return await response.json();
+            */
+        }
+
+        function createTrialFromUser(userData) {
+            // Create trial data compatible with existing system
+            const trialData = {
+                name: userData.name,
+                email: userData.email,
+                startDate: userData.trialStarted,
+                expiryDate: userData.trialExpiry,
+                tradeType: userData.trades?.includes('309A') ? '309a' : '306a',
+                isActive: true,
+                userId: userData.id
+            };
+            
+            localStorage.setItem('cfqBuddyTrial', JSON.stringify(trialData));
+        }
+
+        function showMessage(message, type) {
+            hideMessages();
+            const element = document.getElementById(type === 'error' ? 'error-message' : 'success-message');
+            element.textContent = message;
+            element.style.display = 'block';
+        }
+
+        function hideMessages() {
+            document.getElementById('error-message').style.display = 'none';
+            document.getElementById('success-message').style.display = 'none';
+        }
+
+        function showForgotPassword() {
+            const email = document.getElementById('email').value;
+            if (!email) {
+                showMessage('Please enter your email address first', 'error');
+                return;
+            }
+            
+            showMessage('Password reset instructions have been sent to your email', 'success');
+            
+            // In real implementation, call password reset API
+            // resetPassword(email);
+        }
+    </script>
+</body>
+</html>
