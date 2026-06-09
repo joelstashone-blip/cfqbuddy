@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Red Seal Academy - Real Content Demo</title>
+    <link rel="stylesheet" href="css/mobile-gamification.css">
+</head>
+<body>
+    <div class="mobile-container">
+        <header>
+            <h1>🎯 The Red Seal Academy</h1>
+            <div class="trade-selector">
+                <select id="trade-select" onchange="switchTrade()">
+                    <option value="309A">⚡ 309A Electrician</option>
+                    <option value="306A">🔧 306A Plumber</option>
+                    <option value="307A">❄️ 307A HVAC Mechanic</option>
+                </select>
+            </div>
+        </header>
+
+        <div class="progress-dashboard">
+            <div class="stat-card">
+                <span class="stat-value" id="level-display">1</span>
+                <div class="stat-label">Level</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="points-display">0</span>
+                <div class="stat-label">Points</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="streak-display">0</span>
+                <div class="stat-label">Streak</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value" id="questions-display">0</span>
+                <div class="stat-label">Questions</div>
+            </div>
+        </div>
+
+        <div class="content-stats">
+            <div class="stat-item">
+                📚 <span id="total-questions">Loading...</span> questions available
+            </div>
+            <div class="stat-item">
+                📖 <span id="total-sections">0</span> exam sections covered
+            </div>
+        </div>
+
+        <div class="daily-section">
+            <div class="section-header">
+                <div class="section-title">📅 Daily Challenge</div>
+                <div class="status-badge" id="daily-status">Available</div>
+            </div>
+            <p>5 questions • Monday to Friday • Mixed difficulty</p>
+            <button class="play-button" id="daily-button" onclick="startDaily()">
+                Start Daily Challenge
+            </button>
+        </div>
+
+        <div class="weekly-section">
+            <div class="section-header">
+                <div class="section-title">🏆 Weekly Challenge</div>
+                <div class="status-badge" id="weekly-status">Saturday Only</div>
+            </div>
+            <p>20 questions • Every Saturday • All difficulty levels</p>
+            <button class="play-button" id="weekly-button" onclick="startWeekly()">
+                Start Weekly Challenge
+            </button>
+        </div>
+
+        <!-- Question Interface -->
+        <div class="question-interface" id="question-interface" style="display: none;">
+            <div class="question-header">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="question-meta">
+                    <span class="question-count" id="question-count">1/5</span>
+                    <span class="difficulty-badge" id="difficulty-badge">Medium</span>
+                </div>
+            </div>
+            
+            <div class="question-content">
+                <div class="section-tag" id="section-tag">Motor Controls</div>
+                <div class="question-text" id="question-text"></div>
+                <div id="answer-options"></div>
+                
+                <div class="question-explanation" id="explanation-section" style="display: none;">
+                    <div class="explanation-header">💡 Explanation</div>
+                    <div class="explanation-text" id="explanation-text"></div>
+                    <div class="reference-text" id="reference-text"></div>
+                </div>
+            </div>
+            
+            <button class="play-button" id="next-button" onclick="nextQuestion()" style="display: none;">
+                Next Question
+            </button>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="results-summary" id="results-screen" style="display: none;">
+            <h2 id="results-title">🎉 Challenge Complete!</h2>
+            <div class="score-display" id="final-score">0/0</div>
+            <div class="accuracy-display" id="accuracy-display">0% Accuracy</div>
+            
+            <div id="points-breakdown"></div>
+            
+            <div class="section-breakdown" id="section-breakdown"></div>
+            
+            <button class="play-button" onclick="backToHome()">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="js/gamification.js"></script>
+    <script src="js/question-engine.js"></script>
+    <script>
+        let gamification, questionEngine;
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let userAnswers = [];
+        let challengeType = '';
+
+        async function initializeApp() {
+            gamification = new EnhancedGamification();
+            
+            // Wait for questions to load
+            await new Promise(resolve => {
+                const checkLoaded = () => {
+                    if (gamification.questionEngine.questionPools) {
+                        resolve();
+                    } else {
+                        setTimeout(checkLoaded, 100);
+                    }
+                };
+                checkLoaded();
+            });
+            
+            updateUI();
+            updateContentStats();
+        }
+
+        function updateUI() {
+            const stats = gamification.getStats();
+            
+            document.getElementById('level-display').textContent = stats.level;
+            document.getElementById('points-display').textContent = stats.points;
+            document.getElementById('streak-display').textContent = stats.streak;
+            document.getElementById('questions-display').textContent = stats.questionsAnswered;
+            
+            // Update daily/weekly button states
+            const dailyButton = document.getElementById('daily-button');
+            const dailyStatus = document.getElementById('daily-status');
+            
+            if (stats.dailyDone) {
+                dailyButton.disabled = true;
+                dailyButton.textContent = 'Completed Today!';
+                dailyStatus.textContent = 'Completed';
+                dailyStatus.className = 'status-badge status-completed';
+            } else if (stats.canDaily) {
+                dailyButton.disabled = false;
+                dailyStatus.textContent = 'Available';
+                dailyStatus.className = 'status-badge status-available';
+            } else {
+                dailyButton.disabled = true;
+                dailyButton.textContent = 'Monday-Friday Only';
+                dailyStatus.textContent = 'Weekend';
+                dailyStatus.className = 'status-badge status-locked';
+            }
+        }
+
+        function updateContentStats() {
+            const stats = gamification.questionEngine.getStats();
+            document.getElementById('total-questions').textContent = stats.currentTradeTotal;
+            document.getElementById('total-sections').textContent = stats.sections;
+        }
+
+        function switchTrade() {
+            const trade = document.getElementById('trade-select').value;
+            gamification.setTrade(trade);
+            updateContentStats();
+        }
+
+        async function startDaily() {
+            challengeType = 'daily';
+            currentQuestions = gamification.getDailyQuestions();
+            startQuiz();
+        }
+
+        async function startWeekly() {
+            challengeType = 'weekly'; 
+            currentQuestions = gamification.getWeeklyQuestions();
+            startQuiz();
+        }
+
+        function startQuiz() {
+            if (!currentQuestions || currentQuestions.length === 0) {
+                alert('Questions still loading, please try again in a moment.');
+                return;
+            }
+            
+            currentIndex = 0;
+            userAnswers = [];
+            
+            // Hide home screen, show question interface
+            document.querySelector('.progress-dashboard').style.display = 'none';
+            document.querySelector('.content-stats').style.display = 'none';
+            document.querySelector('.daily-section').style.display = 'none';
+            document.querySelector('.weekly-section').style.display = 'none';
+            document.getElementById('question-interface').style.display = 'block';
+            
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = currentQuestions[currentIndex];
+            const progress = ((currentIndex + 1) / currentQuestions.length) * 100;
+            
+            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('question-count').textContent = `${currentIndex + 1}/${currentQuestions.length}`;
+            document.getElementById('difficulty-badge').textContent = question.difficulty.charAt(0).toUpperCase() + question.difficulty.slice(1);
+            document.getElementById('section-tag').textContent = question.section;
+            document.getElementById('question-text').textContent = question.text;
+            
+            // Hide explanation
+            document.getElementById('explanation-section').style.display = 'none';
+            
+            const optionsContainer = document.getElementById('answer-options');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const div = document.createElement('div');
+                div.className = 'answer-option';
+                div.textContent = option;
+                div.onclick = () => selectAnswer(index);
+                div.dataset.index = index;
+                optionsContainer.appendChild(div);
+            });
+            
+            document.getElementById('next-button').style.display = 'none';
+        }
+
+        function selectAnswer(selectedIndex) {
+            const question = currentQuestions[currentIndex];
+            userAnswers[currentIndex] = selectedIndex;
+            
+            // Show correct/incorrect styling
+            const options = document.querySelectorAll('.answer-option');
+            options.forEach((option, index) => {
+                option.onclick = null;
+                if (index === question.correct) {
+                    option.classList.add('correct');
+                } else if (index === selectedIndex && index !== question.correct) {
+                    option.classList.add('incorrect');
+                }
+            });
+            
+            // Show explanation
+            document.getElementById('explanation-text').textContent = question.explanation;
+            document.getElementById('reference-text').textContent = question.reference;
+            document.getElementById('explanation-section').style.display = 'block';
+            
+            document.getElementById('next-button').style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentIndex++;
+            if (currentIndex < currentQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            let correct = 0;
+            const sectionBreakdown = {};
+            
+            currentQuestions.forEach((question, index) => {
+                const section = question.section;
+                if (!sectionBreakdown[section]) {
+                    sectionBreakdown[section] = { correct: 0, total: 0 };
+                }
+                sectionBreakdown[section].total++;
+                
+                if (userAnswers[index] === question.correct) {
+                    correct++;
+                    sectionBreakdown[section].correct++;
+                }
+            });
+            
+            const accuracy = Math.round((correct / currentQuestions.length) * 100);
+            
+            // Update gamification
+            let result;
+            if (challengeType === 'daily') {
+                result = gamification.completeDaily(correct, currentQuestions.length);
+            } else {
+                result = gamification.completeWeekly(correct, currentQuestions.length);
+            }
+            
+            // Show results
+            document.getElementById('question-interface').style.display = 'none';
+            document.getElementById('results-screen').style.display = 'block';
+            
+            document.getElementById('results-title').textContent = accuracy >= 70 ? '🎉 Well Done!' : '📚 Keep Studying!';
+            document.getElementById('final-score').textContent = `${correct}/${currentQuestions.length}`;
+            document.getElementById('accuracy-display').textContent = `${accuracy}% Accuracy`;
+            
+            const breakdown = document.getElementById('points-breakdown');
+            breakdown.innerHTML = `
+                <div class="points-earned">+${result.points} Points</div>
+                ${result.streakBonus ? `<div class="points-earned">+${result.streakBonus} Streak Bonus</div>` : ''}
+                ${result.tradeBonus ? `<div class="points-earned">+${result.tradeBonus} Accuracy Bonus</div>` : ''}
+            `;
+            
+            // Section breakdown
+            const sectionBreakdownEl = document.getElementById('section-breakdown');
+            sectionBreakdownEl.innerHTML = '<div class="breakdown-title">By Section:</div>';
+            Object.entries(sectionBreakdown).forEach(([section, stats]) => {
+                const percent = Math.round((stats.correct / stats.total) * 100);
+                sectionBreakdownEl.innerHTML += `
+                    <div class="section-result">
+                        <span>${section}</span>
+                        <span>${stats.correct}/${stats.total} (${percent}%)</span>
+                    </div>
+                `;
+            });
+        }
+
+        function backToHome() {
+            document.getElementById('results-screen').style.display = 'none';
+            document.querySelector('.progress-dashboard').style.display = 'grid';
+            document.querySelector('.content-stats').style.display = 'block';
+            document.querySelector('.daily-section').style.display = 'block';
+            document.querySelector('.weekly-section').style.display = 'block';
+            
+            updateUI();
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', initializeApp);
+    </script>
+</body>
+</html>
