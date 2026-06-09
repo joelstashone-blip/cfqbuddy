@@ -203,6 +203,7 @@
         </div>
     </div>
 
+    <script src=\"js/auth-system.js\"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Check if user is already logged in
@@ -273,32 +274,22 @@
         }
 
         async function authenticateUser(email, password) {
-            // Simulate authentication (replace with real backend call)
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    // For demo purposes, accept any email with password "demo"
-                    if (password === 'demo') {
-                        resolve({
-                            success: true,
-                            userData: {
-                                id: 'user_demo',
-                                name: 'Demo User',
-                                email: email,
-                                accountType: 'personal',
-                                trades: ['309A'],
-                                trialStarted: Date.now(),
-                                trialExpiry: Date.now() + (7 * 24 * 60 * 60 * 1000)
-                            }
-                        });
-                    } else {
-                        resolve({
-                            success: false,
-                            message: 'Invalid email or password'
-                        });
-                    }
-                }, 1000);
-            });
-            
+            try {
+                // Use the new authentication system
+                const user = await window.authSystem.login(email, password);
+                
+                return {
+                    success: true,
+                    userData: user
+                };
+                
+            } catch (error) {
+                return {
+                    success: false,
+                    message: error.message
+                };
+            }
+        }
             // Real implementation would look like:
             /*
             const response = await fetch('/api/login', {

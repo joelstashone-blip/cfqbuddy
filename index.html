@@ -800,6 +800,16 @@
             <p style="margin-bottom: 20px; font-size: 16px;">Daily challenges • Streak tracking • 3 trades • 1,350 questions</p>
             <a href="gamified.html" style="background: white; color: #28a745; padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Try Gamified Mode</a>
         </div>
+        
+        <!-- User Auth Status -->
+        <div class="auth-status" style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 20px 0; text-align: center;">
+            <div class="show-when-logged-out">
+                <p>🔒 <strong>Account required:</strong> <a href="register.html" style="color: #667eea;">Create Account</a> or <a href="login.html" style="color: #667eea;">Sign In</a> to access content</p>
+            </div>
+            <div class="show-when-logged-in" style="display: none;">
+                <p>👋 Welcome back, <span class="user-name">User</span>! <button class="logout-btn" style="background: none; border: 1px solid #dc3545; color: #dc3545; padding: 5px 15px; border-radius: 4px; cursor: pointer;">Logout</button></p>
+            </div>
+        </div>
             <div class="landing-section" id="pricing">
                 <h2>Choose Your Plan</h2>
                 <div class="pricing-grid">
@@ -1048,6 +1058,7 @@
 
     <script src="js/exam-trial.js"></script>
     <link rel="stylesheet" href="css/embedded-checkout.css">
+    <script src="js/auth-system.js"></script>
     <script src="js/embedded-checkout.js"></script>
     <script>
         // Check for saved access code on load
