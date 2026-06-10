@@ -3,97 +3,743 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Your Trade | CFQ Buddy</title>
+    <title>Select Your Trade & Package | The Red Seal Academy</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
             padding: 20px;
         }
-        .container {
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+
+        .header-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Progress Steps */
+        .steps {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background: #e9ecef;
+            color: #6c757d;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .step.active {
+            background: #1a365d;
+            color: white;
+        }
+
+        .step.completed {
+            background: #27ae60;
+            color: white;
+        }
+
+        /* Main Content Card */
+        .selection-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 500px;
-            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #1a365d;
             text-align: center;
         }
-        h1 { color: #1d3557; margin-bottom: 10px; }
-        p { color: #666; margin-bottom: 30px; font-size: 16px; }
-        .trade-dropdown {
-            width: 100%;
-            padding: 15px;
-            font-size: 18px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
+
+        /* Trade Selection */
+        .trade-selector {
+            margin-bottom: 40px;
+        }
+
+        .trade-options {
+            display: grid;
+            gap: 20px;
             margin-bottom: 30px;
+        }
+
+        .trade-option {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .trade-option:hover {
+            border-color: #ffd700;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .trade-option.selected {
+            border-color: #1a365d;
+            background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 100%);
+        }
+
+        .trade-option input[type="radio"] {
+            display: none;
+        }
+
+        .trade-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .trade-icon {
+            font-size: 32px;
+        }
+
+        .trade-info h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 5px;
+        }
+
+        .trade-status {
+            background: #27ae60;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .trade-description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .trade-stats {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .coming-soon {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .coming-soon-badge {
+            background: #f39c12;
+        }
+
+        /* Package Selection */
+        .package-selector {
+            margin-bottom: 40px;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .package-card {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
             background: white;
         }
-        .continue-btn {
-            width: 100%;
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
-            color: #333;
-            font-weight: bold;
+
+        .package-card:hover {
+            border-color: #ffd700;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .package-card.selected {
+            border-color: #1a365d;
+            background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 100%);
+        }
+
+        .package-card.recommended::before {
+            content: '⭐ MOST POPULAR';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e74c3c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .package-card input[type="radio"] {
+            display: none;
+        }
+
+        .package-name {
             font-size: 18px;
-            padding: 15px;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 10px;
+        }
+
+        .package-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 5px;
+        }
+
+        .package-currency {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .package-features li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .package-features .check {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        .package-value {
+            background: #27ae60;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Registration Form */
+        .registration-form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #1a365d;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1a365d;
+        }
+
+        .required {
+            color: #e74c3c;
+        }
+
+        /* Trial Information */
+        .trial-info {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            border: 2px solid #27ae60;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .trial-info h3 {
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+
+        .trial-info p {
+            color: #155724;
+            font-size: 14px;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 30px;
             border: none;
             border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
-        .continue-btn:hover { transform: translateY(-2px); }
-        .continue-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #666;
+            border: 2px solid #e9ecef;
+        }
+
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+
+        /* Sign In Link */
+        .sign-in-prompt {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .sign-in-prompt a {
+            color: #1a365d;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sign-in-prompt a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .steps {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .selection-card {
+                padding: 25px 20px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">🎯 The Red Seal Academy</div>
+        <div class="header-subtitle">Choose your trade and start your free trial</div>
+    </header>
+
     <div class="container">
-        <h1>🎯 Select Your Trade</h1>
-        <p>Choose which Red Seal trade you're preparing for:</p>
-        
-        <select id="trade-select" class="trade-dropdown">
-            <option value="">-- Select a Trade --</option>
-            <option value="309A">⚡ 309A Construction Electrician (450 questions)</option>
-            <option value="306A">🔧 306A Plumber (450 questions)</option>
-            <option value="307A">❄️ 307A HVAC Mechanic (450 questions)</option>
-        </select>
-        
-        <button class="continue-btn" id="continue-btn" disabled onclick="continueTo()">
-            Continue to Content
-        </button>
+        <div class="steps">
+            <div class="step completed">
+                <span>1</span>
+                <span>Welcome</span>
+            </div>
+            <div class="step active">
+                <span>2</span>
+                <span>Select Trade & Package</span>
+            </div>
+            <div class="step">
+                <span>3</span>
+                <span>Study Dashboard</span>
+            </div>
+        </div>
+
+        <div class="selection-card">
+            <form id="selectionForm">
+                <!-- Trade Selection -->
+                <div class="trade-selector">
+                    <h2 class="section-title">Select Your Trade</h2>
+                    <div class="trade-options">
+                        <label class="trade-option" for="trade-309a">
+                            <input type="radio" name="trade" id="trade-309a" value="309A" required>
+                            <div class="trade-header">
+                                <div class="trade-icon">⚡</div>
+                                <div class="trade-info">
+                                    <h3>309A Construction & Maintenance Electrician</h3>
+                                    <div class="trade-status">LIVE NOW</div>
+                                </div>
+                            </div>
+                            <div class="trade-description">
+                                Complete exam prep for Ontario's most popular electrical trade certification.
+                            </div>
+                            <div class="trade-stats">
+                                <span>📚 450+ practice questions</span>
+                                <span>⏱️ 3 full timed exams</span>
+                                <span>📖 CEC 2024 references</span>
+                            </div>
+                        </label>
+
+                        <label class="trade-option" for="trade-306a">
+                            <input type="radio" name="trade" id="trade-306a" value="306A" required>
+                            <div class="trade-header">
+                                <div class="trade-icon">🔧</div>
+                                <div class="trade-info">
+                                    <h3>306A Plumber</h3>
+                                    <div class="trade-status">LIVE NOW</div>
+                                </div>
+                            </div>
+                            <div class="trade-description">
+                                Comprehensive plumbing certification prep covering all 7 NOA knowledge blocks.
+                            </div>
+                            <div class="trade-stats">
+                                <span>📚 450+ practice questions</span>
+                                <span>⏱️ 3 full timed exams</span>
+                                <span>📖 NPC code updates</span>
+                            </div>
+                        </label>
+
+                        <div class="trade-option coming-soon">
+                            <div class="trade-header">
+                                <div class="trade-icon">❄️</div>
+                                <div class="trade-info">
+                                    <h3>307A HVAC Mechanic</h3>
+                                    <div class="trade-status coming-soon-badge">COMING Q3 2026</div>
+                                </div>
+                            </div>
+                            <div class="trade-description">
+                                Refrigeration and Air Conditioning Mechanic certification prep.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package Selection -->
+                <div class="package-selector">
+                    <h2 class="section-title">Choose Your Package</h2>
+                    
+                    <div class="packages-grid">
+                        <label class="package-card" for="package-single">
+                            <input type="radio" name="package" id="package-single" value="single" required>
+                            <div class="package-name">Single Exam</div>
+                            <div class="package-price">$19</div>
+                            <div class="package-currency">CAD one-time</div>
+                            <ul class="package-features">
+                                <li><span class="check">✓</span> 1 practice exam (150 questions)</li>
+                                <li><span class="check">✓</span> Detailed explanations</li>
+                                <li><span class="check">✓</span> Performance tracking</li>
+                                <li><span class="check">✓</span> Mobile optimized</li>
+                            </ul>
+                        </label>
+
+                        <label class="package-card recommended" for="package-pack">
+                            <input type="radio" name="package" id="package-pack" value="pack" required>
+                            <div class="package-name">Complete 3-Pack</div>
+                            <div class="package-price">$39</div>
+                            <div class="package-currency">CAD one-time</div>
+                            <ul class="package-features">
+                                <li><span class="check">✓</span> All 3 practice exams</li>
+                                <li><span class="check">✓</span> 450+ total questions</li>
+                                <li><span class="check">✓</span> Detailed explanations</li>
+                                <li><span class="check">✓</span> Progress tracking</li>
+                                <li><span class="check">✓</span> Gamified dashboard</li>
+                            </ul>
+                            <div class="package-value">Save $18</div>
+                        </label>
+
+                        <label class="package-card" for="package-bundle">
+                            <input type="radio" name="package" id="package-bundle" value="bundle" required>
+                            <div class="package-name">Ultimate Bundle</div>
+                            <div class="package-price">$59</div>
+                            <div class="package-currency">CAD one-time</div>
+                            <ul class="package-features">
+                                <li><span class="check">✓</span> All 3 practice exams</li>
+                                <li><span class="check">✓</span> Study guide PDF</li>
+                                <li><span class="check">✓</span> Code reference sheets</li>
+                                <li><span class="check">✓</span> Priority support</li>
+                                <li><span class="check">✓</span> Future updates</li>
+                            </ul>
+                            <div class="package-value">Best Value</div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Trial Information -->
+                <div class="trial-info">
+                    <h3>🎯 7-Day FREE Trial Included</h3>
+                    <p><strong>No credit card required!</strong> Start your full trial immediately. If you continue after 7 days, billing begins automatically. Cancel anytime during trial - no charge.</p>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="registration-form">
+                    <h3 style="color: #1a365d; margin-bottom: 20px; text-align: center;">Your Information</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(xxx) xxx-xxxx">
+                    </div>
+
+                    <h3 style="color: #1a365d; margin: 30px 0 20px; text-align: center;">Billing Address</h3>
+                    
+                    <div class="form-group">
+                        <label for="address">Street Address <span class="required">*</span></label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City <span class="required">*</span></label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="province">Province <span class="required">*</span></label>
+                            <select id="province" name="province" required>
+                                <option value="">Select Province</option>
+                                <option value="ON">Ontario</option>
+                                <option value="BC">British Columbia</option>
+                                <option value="AB">Alberta</option>
+                                <option value="MB">Manitoba</option>
+                                <option value="SK">Saskatchewan</option>
+                                <option value="QC">Quebec</option>
+                                <option value="NB">New Brunswick</option>
+                                <option value="NS">Nova Scotia</option>
+                                <option value="PE">Prince Edward Island</option>
+                                <option value="NL">Newfoundland and Labrador</option>
+                                <option value="YT">Yukon</option>
+                                <option value="NT">Northwest Territories</option>
+                                <option value="NU">Nunavut</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="postalCode">Postal Code <span class="required">*</span></label>
+                            <input type="text" id="postalCode" name="postalCode" required placeholder="A1A 1A1">
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country">
+                                <option value="CA" selected>Canada</option>
+                                <option value="US">United States</option>
+                                <option value="OTHER">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="window.history.back()">← Back</button>
+                    <button type="submit" class="btn btn-primary">Start Free Trial →</button>
+                </div>
+            </form>
+
+            <!-- Sign In Prompt -->
+            <div class="sign-in-prompt">
+                <p>Already have an account? <a href="login.html">Sign in here</a></p>
+            </div>
+        </div>
     </div>
-    
-    <script src="js/auth-system.js"></script>
+
     <script>
-        document.getElementById('trade-select').addEventListener('change', function() {
-            const btn = document.getElementById('continue-btn');
-            btn.disabled = !this.value;
-        });
-        
-        function continueTo() {
-            const trade = document.getElementById('trade-select').value;
-            const pages = {
-                '309A': 'index.html',
-                '306A': 'plumber.html', 
-                '307A': 'gamified.html'
-            };
+        // Handle trade and package selection
+        document.addEventListener('DOMContentLoaded', function() {
+            // Trade selection
+            const tradeOptions = document.querySelectorAll('.trade-option:not(.coming-soon)');
+            const packageOptions = document.querySelectorAll('.package-card');
             
-            // Save trade preference
-            if (window.authSystem?.currentUser) {
-                window.authSystem.currentUser.selectedTrade = trade;
-                localStorage.setItem('cfqBuddyUser', JSON.stringify(window.authSystem.currentUser));
-            }
+            // Add click handlers for trade selection
+            tradeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    tradeOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    this.querySelector('input[type="radio"]').checked = true;
+                });
+            });
             
-            window.location.href = pages[trade];
-        }
-        
-        // Require authentication
-        document.addEventListener('DOMContentLoaded', () => {
-            window.authSystem?.requireAuth();
+            // Add click handlers for package selection  
+            packageOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    packageOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    this.querySelector('input[type="radio"]').checked = true;
+                });
+            });
+
+            // Format postal code
+            const postalCodeInput = document.getElementById('postalCode');
+            postalCodeInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\s+/g, '').toUpperCase();
+                if (value.length > 3) {
+                    value = value.slice(0, 3) + ' ' + value.slice(3, 6);
+                }
+                e.target.value = value;
+            });
+
+            // Form submission
+            const form = document.getElementById('selectionForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(form);
+                const userData = {
+                    trade: formData.get('trade'),
+                    package: formData.get('package'),
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    address: formData.get('address'),
+                    city: formData.get('city'),
+                    province: formData.get('province'),
+                    postalCode: formData.get('postalCode'),
+                    country: formData.get('country')
+                };
+
+                // Validate required fields
+                const requiredFields = ['trade', 'package', 'firstName', 'lastName', 'email', 'address', 'city', 'province', 'postalCode'];
+                const missingFields = requiredFields.filter(field => !userData[field]);
+                
+                if (missingFields.length > 0) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+
+                // Save user data and start trial
+                localStorage.setItem('redSealUserData', JSON.stringify(userData));
+                localStorage.setItem('redSealTrialStart', new Date().toISOString());
+                localStorage.setItem('redSealTrialActive', 'true');
+                
+                // Calculate trial end date (7 days from now)
+                const trialEnd = new Date();
+                trialEnd.setDate(trialEnd.getDate() + 7);
+                localStorage.setItem('redSealTrialEnd', trialEnd.toISOString());
+
+                // Track registration
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'trial_start', {
+                        trade: userData.trade,
+                        package: userData.package,
+                        location: userData.province
+                    });
+                }
+
+                // Redirect to dashboard
+                window.location.href = 'dashboard.html';
+            });
         });
     </script>
 </body>

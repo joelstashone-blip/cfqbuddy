@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="google-site-verification" content="zXohTC1H0hTayVL3PZdbdzhDBYiF30jpDC1HfEs0M5U" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CFQ Buddy | 7-Day FREE Trial - 309A Electrician Exam Prep</title>
+    <title>The Red Seal Academy | 7-Day FREE Trial - Pass Your Red Seal Exam First Try</title>
 
     <!-- PWA Meta Tags -->
     <meta name="description" content="FREE 7-Day Trial! Master your 309A Red Seal Electrician exam with 450+ practice questions, 4-hour timed exams, and detailed explanations. No credit card required.">
@@ -1211,6 +1211,20 @@
         window.addEventListener('offline', updateOnlineStatus);
         updateOnlineStatus();
     })();
+
+    // Redirect to new 3-page flow structure 
+    // Check if user has an existing session/trial
+    const existingUser = localStorage.getItem('redSealUserData');
+    const trialActive = localStorage.getItem('redSealTrialActive') === 'true';
+    const paidAccount = localStorage.getItem('redSealPaidAccount') === 'true';
+    
+    if (existingUser && (trialActive || paidAccount)) {
+        // Existing user with active trial or paid account - go to dashboard
+        window.location.href = 'dashboard.html';
+    } else {
+        // New user - go to landing page
+        window.location.href = 'landing.html';
+    }
     </script>
 </body>
 </html>

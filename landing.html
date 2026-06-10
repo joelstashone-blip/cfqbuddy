@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Red Seal Academy | 7-Day FREE Trial - Pass Your Red Seal Exam First Try</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="FREE 7-Day Trial! Master any Red Seal trade exam with practice questions, timed exams, and detailed explanations. 309A Electrician, 306A Plumber, and more. No credit card required.">
+    <meta name="keywords" content="Red Seal exam prep, 309A electrician, 306A plumber, Certificate of Qualification, trade exam practice, apprentice exam prep, CofQ test prep">
+    
+    <!-- Social Sharing -->
+    <meta property="og:title" content="The Red Seal Academy - 7-Day FREE Trial">
+    <meta property="og:description" content="Pass your Red Seal exam the first time with our comprehensive practice platform. Try all features free for 7 days.">
+    <meta property="og:url" content="https://cfqbuddy.ca/">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .sign-in-btn {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
+        }
+
+        .sign-in-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #1a365d;
+            line-height: 1.2;
+        }
+
+        .hero .subheading {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .authority-line {
+            background: #ffd700;
+            color: #1a365d;
+            padding: 8px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .trial-badge {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1a365d;
+            padding: 18px 40px;
+            border: 2px solid #1a365d;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: #1a365d;
+            color: white;
+        }
+
+        .trust-signals {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .trust-signal {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Value Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #1a365d;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1a365d;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Problems Section */
+        .problems {
+            background: #f8f9fa;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .problem-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .problem-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #e74c3c;
+        }
+
+        /* Trades We Support */
+        .trades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .trade-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trade-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #ffd700 0%, #f39c12 100%);
+        }
+
+        .trade-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .trade-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1a365d;
+        }
+
+        .trade-status {
+            background: #27ae60;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .trade-status.coming-soon {
+            background: #f39c12;
+        }
+
+        /* Features List */
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-check {
+            color: #27ae60;
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .feature-content h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #1a365d;
+        }
+
+        .feature-content p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero .subheading {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                text-align: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .trust-signals {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .section {
+                padding: 40px 0;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🎯 The Red Seal Academy</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#trades">Trades</a>
+                <a href="#features">Features</a>
+                <a href="#" class="sign-in-btn">Sign In</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="trial-badge">🎯 7-DAY FREE TRIAL</div>
+            <h1>Pass Your Red Seal Exam<br><span style="color: #e74c3c;">First Try</span></h1>
+            <p class="subheading">Complete practice exams, detailed explanations, and gamified learning for Canada's top trades. Start your journey to Red Seal certification.</p>
+            
+            <div class="authority-line">⚡ Built BY licensed tradespeople FOR apprentices</div>
+            
+            <div class="cta-buttons">
+                <a href="trade-selection.html" class="btn-primary">🚀 Start 7-Day FREE Trial</a>
+                <a href="trade-selection.html" class="btn-secondary">View Pricing</a>
+            </div>
+            
+            <div class="trust-signals">
+                <div class="trust-signal">
+                    <span>✅</span>
+                    <span><strong>No credit card required</strong></span>
+                </div>
+                <div class="trust-signal">
+                    <span>✅</span>
+                    <span><strong>Full access to all features</strong></span>
+                </div>
+                <div class="trust-signal">
+                    <span>✅</span>
+                    <span><strong>Cancel anytime</strong></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Why Red Seal Academy?</h2>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>Real Exam Experience</h3>
+                    <p>4-hour timed practice exams that mirror the actual Red Seal certification test format.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📚</div>
+                    <h3>Comprehensive Content</h3>
+                    <p>450+ questions per trade with detailed explanations and current code references.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎮</div>
+                    <h3>Gamified Learning</h3>
+                    <p>Track progress, earn achievements, and build study streaks that keep you motivated.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <h3>Performance Analytics</h3>
+                    <p>Identify weak areas and track improvement across all exam topics and sections.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section problems">
+        <div class="container">
+            <h2 class="section-title">Problems We Solve for CofQ Candidates</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3 class="problem-title">❌ Expensive Re-Takes</h3>
+                    <p>Red Seal exam fees add up. Our students pass the first time because they're properly prepared.</p>
+                </div>
+                <div class="problem-card">
+                    <h3 class="problem-title">❌ Generic Study Materials</h3>
+                    <p>Most books aren't trade-specific. Our content is built around actual NOA requirements for each trade.</p>
+                </div>
+                <div class="problem-card">
+                    <h3 class="problem-title">❌ No Practice Under Pressure</h3>
+                    <p>The real exam is 4 hours under pressure. Practice the same way with our timed exam mode.</p>
+                </div>
+                <div class="problem-card">
+                    <h3 class="problem-title">❌ Studying Alone</h3>
+                    <p>Get instant feedback, detailed explanations, and a clear path to improvement with every question.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="trades">
+        <div class="container">
+            <h2 class="section-title">Supported Trades</h2>
+            <div class="trades-grid">
+                <div class="trade-card">
+                    <div class="trade-icon">⚡</div>
+                    <h3>309A Electrician</h3>
+                    <div class="trade-status">LIVE NOW</div>
+                    <p>Construction & Maintenance Electrician - Complete exam prep with CEC 2024 code references.</p>
+                </div>
+                <div class="trade-card">
+                    <div class="trade-icon">🔧</div>
+                    <h3>306A Plumber</h3>
+                    <div class="trade-status">LIVE NOW</div>
+                    <p>Plumbing certification prep covering all 7 NOA blocks with NPC code updates.</p>
+                </div>
+                <div class="trade-card">
+                    <div class="trade-icon">❄️</div>
+                    <h3>307A HVAC Mechanic</h3>
+                    <div class="trade-status coming-soon">COMING SOON</div>
+                    <p>Refrigeration and Air Conditioning Mechanic prep launching Q3 2026.</p>
+                </div>
+                <div class="trade-card">
+                    <div class="trade-icon">🚗</div>
+                    <h3>310S Automotive</h3>
+                    <div class="trade-status coming-soon">COMING Q4</div>
+                    <p>Automotive Service Technician - Canada's largest trade by apprentice count.</p>
+                </div>
+                <div class="trade-card">
+                    <div class="trade-icon">🏗️</div>
+                    <h3>403A Carpenter</h3>
+                    <div class="trade-status coming-soon">2027</div>
+                    <p>Construction Carpenter certification prep with building code focus.</p>
+                </div>
+                <div class="trade-card">
+                    <div class="trade-icon">🔥</div>
+                    <h3>More Trades</h3>
+                    <div class="trade-status coming-soon">EXPANDING</div>
+                    <p>We're building prep for all 56 Red Seal trades. Request your trade!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">What's Included in Your Trial</h2>
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-check">✅</div>
+                    <div class="feature-content">
+                        <h4>Complete Practice Exams</h4>
+                        <p>Full 150-question exams with 4-hour timer matching real test conditions</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✅</div>
+                    <div class="feature-content">
+                        <h4>Instant Scoring & Analysis</h4>
+                        <p>See results immediately with breakdown by topic and difficulty level</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✅</div>
+                    <div class="feature-content">
+                        <h4>Detailed Explanations</h4>
+                        <p>Every question includes why the right answer is correct and others are wrong</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✅</div>
+                    <div class="feature-content">
+                        <h4>Current Code References</h4>
+                        <p>CEC 2024, NPC updates, and provincial variations where applicable</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✅</div>
+                    <div class="feature-content">
+                        <h4>Progress Tracking</h4>
+                        <p>Gamified dashboard with streaks, achievements, and performance analytics</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">✅</div>
+                    <div class="feature-content">
+                        <h4>Mobile Optimized</h4>
+                        <p>Study anywhere - responsive design works perfectly on phone and tablet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section final-cta">
+        <div class="container">
+            <h2>Ready to Pass Your Red Seal Exam?</h2>
+            <p>Join hundreds of apprentices who've passed their certification on the first try</p>
+            <a href="trade-selection.html" class="btn-primary" style="font-size: 20px; padding: 20px 50px;">🚀 Start Your Free Trial Now</a>
+            
+            <div style="margin-top: 30px; font-size: 14px; opacity: 0.8;">
+                <p>7-day free trial • No credit card required • Cancel anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track landing page visits
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                page_title: 'Landing Page',
+                page_location: window.location.href
+            });
+        }
+    </script>
+</body>
+</html>
