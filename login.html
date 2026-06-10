@@ -253,10 +253,9 @@
                     // Create/restore trial data
                     createTrialFromUser(result.userData);
                     
-                    // Redirect to appropriate page
+                    // Redirect to trade selection after login
                     setTimeout(() => {
-                        const redirectUrl = result.userData.trades?.includes('309A') ? 'index.html' : 'plumber.html';
-                        window.location.href = redirectUrl;
+                        window.location.href = 'trade-selection.html';
                     }, 1500);
                     
                 } else {
