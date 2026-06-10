@@ -7,4 +7,94 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            fon...[truncated]
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 { color: #1d3557; margin-bottom: 10px; }
+        p { color: #666; margin-bottom: 30px; font-size: 16px; }
+        .trade-dropdown {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background: white;
+        }
+        .continue-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .continue-btn:hover { transform: translateY(-2px); }
+        .continue-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Select Your Trade</h1>
+        <p>Choose which Red Seal trade you're preparing for:</p>
+        
+        <select id="trade-select" class="trade-dropdown">
+            <option value="">-- Select a Trade --</option>
+            <option value="309A">⚡ 309A Construction Electrician (450 questions)</option>
+            <option value="306A">🔧 306A Plumber (450 questions)</option>
+            <option value="307A">❄️ 307A HVAC Mechanic (450 questions)</option>
+        </select>
+        
+        <button class="continue-btn" id="continue-btn" disabled onclick="continueTo()">
+            Continue to Content
+        </button>
+    </div>
+    
+    <script src="js/auth-system.js"></script>
+    <script>
+        document.getElementById('trade-select').addEventListener('change', function() {
+            const btn = document.getElementById('continue-btn');
+            btn.disabled = !this.value;
+        });
+        
+        function continueTo() {
+            const trade = document.getElementById('trade-select').value;
+            const pages = {
+                '309A': 'index.html',
+                '306A': 'plumber.html', 
+                '307A': 'gamified.html'
+            };
+            
+            // Save trade preference
+            if (window.authSystem?.currentUser) {
+                window.authSystem.currentUser.selectedTrade = trade;
+                localStorage.setItem('cfqBuddyUser', JSON.stringify(window.authSystem.currentUser));
+            }
+            
+            window.location.href = pages[trade];
+        }
+        
+        // Require authentication
+        document.addEventListener('DOMContentLoaded', () => {
+            window.authSystem?.requireAuth();
+        });
+    </script>
+</body>
+</html>
