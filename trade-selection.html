@@ -586,6 +586,12 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="password">Create Password <span class="required">*</span></label>
+                        <input type="password" id="password" name="password" required minlength="6">
+                        <small style="color: #666; font-size: 12px; margin-top: 5px; display: block;">Minimum 6 characters</small>
+                    </div>
+
+                    <div class="form-group">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phone" name="phone" placeholder="(xxx) xxx-xxxx">
                     </div>
@@ -696,27 +702,56 @@
                 // Get form data
                 const formData = new FormData(form);
                 const userData = {
+                    id: 'user_' + Date.now(),
                     trade: formData.get('trade'),
                     package: formData.get('package'),
                     firstName: formData.get('firstName'),
                     lastName: formData.get('lastName'),
                     email: formData.get('email'),
+                    password: formData.get('password'),
                     phone: formData.get('phone'),
                     address: formData.get('address'),
                     city: formData.get('city'),
                     province: formData.get('province'),
                     postalCode: formData.get('postalCode'),
-                    country: formData.get('country')
+                    country: formData.get('country'),
+                    createdAt: new Date().toISOString()
                 };
 
                 // Validate required fields
-                const requiredFields = ['trade', 'package', 'firstName', 'lastName', 'email', 'address', 'city', 'province', 'postalCode'];
+                const requiredFields = ['trade', 'package', 'firstName', 'lastName', 'email', 'password', 'address', 'city', 'province', 'postalCode'];
                 const missingFields = requiredFields.filter(field => !userData[field]);
                 
                 if (missingFields.length > 0) {
                     alert('Please fill in all required fields');
                     return;
                 }
+
+                // Validate password strength
+                if (userData.password.length < 6) {
+                    alert('Password must be at least 6 characters long');
+                    return;
+                }
+
+                // Check if email already exists
+                const existingUsers = JSON.parse(localStorage.getItem('redSealUsers') || '[]');
+                if (existingUsers.find(user => user.email.toLowerCase() === userData.email.toLowerCase())) {
+                    alert('An account with this email already exists. Please sign in instead.');
+                    return;
+                }
+
+                // Save user to users list (for future login)
+                existingUsers.push({
+                    id: userData.id,
+                    email: userData.email,
+                    password: userData.password, // In real app, this would be hashed
+                    firstName: userData.firstName,
+                    lastName: userData.lastName,
+                    trade: userData.trade,
+                    package: userData.package,
+                    createdAt: userData.createdAt
+                });
+                localStorage.setItem('redSealUsers', JSON.stringify(existingUsers));
 
                 // Save user data and start trial
                 localStorage.setItem('redSealUserData', JSON.stringify(userData));
