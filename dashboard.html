@@ -868,30 +868,33 @@
         }
 
         function startPracticeExam() {
-            // Navigate to practice exams based on user's trade and package
-            const examUrls = {
-                '309A': {
-                    single: 'exam-309a-single.html',
-                    pack: 'exam-309a-pack.html',
-                    bundle: 'exam-309a-bundle.html'
-                },
-                '306A': {
-                    single: 'exam-306a-single.html', 
-                    pack: 'exam-306a-pack.html',
-                    bundle: 'exam-306a-bundle.html'
-                }
-            };
+            // For now, redirect to daily challenge with practice mode
+            // Until we create dedicated practice exam pages
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'start_practice_exam', {
+                    trade: userProfile.trade,
+                    package: userProfile.package
+                });
+            }
             
-            const trade = userProfile.trade || '309A';
-            const package = userProfile.package || 'pack';
-            const examUrl = examUrls[trade]?.[package] || 'exam-309a-pack.html';
-            
-            window.location.href = examUrl;
+            // Redirect to daily challenge in practice mode
+            window.location.href = 'daily-challenge.html?mode=practice';
         }
 
         function studyWeakAreas() {
-            // Navigate to targeted study based on weak areas
-            window.location.href = `study-areas.html?trade=${userProfile.trade}&areas=${performanceData.weakAreas.join(',')}`;
+            // Navigate to daily challenge with weak areas focus
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'study_weak_areas_click', {
+                    trade: userProfile.trade
+                });
+            }
+            
+            // Get user's weakest area for focused study
+            const weakestArea = performanceData.weakAreas && performanceData.weakAreas.length > 0 
+                ? performanceData.weakAreas[0].topic 
+                : 'Motor Controls';
+            
+            window.location.href = `daily-challenge.html?focus=${encodeURIComponent(weakestArea)}`;
         }
 
         function studyTopic(topic) {

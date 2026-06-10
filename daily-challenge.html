@@ -616,22 +616,35 @@
                 return;
             }
 
-            // Check for focus area from URL parameter
+            // Check for focus area and mode from URL parameters
             const urlParams = new URLSearchParams(window.location.search);
             const focusArea = urlParams.get('focus');
+            const mode = urlParams.get('mode');
             
             let allQuestions = [];
             
-            if (focusArea) {
+            if (mode === 'practice') {
+                // Practice mode: More questions, different mix
+                document.getElementById('challenge-type').textContent = '📝 Practice Session';
+                document.getElementById('challenge-type').style.background = 'linear-gradient(135deg, #3182ce, #2c5aa0)';
+                document.getElementById('challenge-subtitle').textContent = '10 Questions • No Time Limit • Mixed Topics';
+                
+                // Generate more questions for practice mode
+                const weakAreaQuestions = selectQuestionsFromAreas(performanceData.weakAreas.map(area => area.topic), 7);
+                const reviewQuestions = selectQuestionsFromAreas(getOtherAreas(trade), 3);
+                allQuestions = [...weakAreaQuestions, ...reviewQuestions];
+                
+            } else if (focusArea) {
                 // Focused challenge: 80% from focus area, 20% review
                 document.getElementById('challenge-type').textContent = `🎯 ${focusArea} Focus`;
                 document.getElementById('challenge-type').style.background = 'linear-gradient(135deg, #e53e3e, #c53030)';
+                document.getElementById('challenge-subtitle').textContent = '5 Questions • 10 Minutes • Focused Study';
                 
                 const focusQuestions = selectQuestionsFromAreas([focusArea], 4);
-                const reviewQuestions = selectQuestionsFromAreas([getRandomOtherArea(focusArea)], 1);
+                const reviewQuestions = selectQuestionsFromAreas(getOtherAreas(trade, [focusArea]), 1);
                 allQuestions = [...focusQuestions, ...reviewQuestions];
+                
             } else {
-                // Regular challenge: 70% from weak areas, 30% from other areas
                 const weakAreaQuestions = selectQuestionsFromAreas(currentUser.weakAreas, 3);
                 const otherAreas = getOtherAreas(currentUser.trade, currentUser.weakAreas);
                 const reviewQuestions = selectQuestionsFromAreas(otherAreas, 2);
