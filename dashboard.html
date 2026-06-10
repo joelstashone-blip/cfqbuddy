@@ -675,7 +675,10 @@
             };
             
             // Load or generate performance data
-            performanceData = JSON.parse(localStorage.getItem('userPerformanceData') || generateDefaultPerformance());
+            performanceData = JSON.parse(localStorage.getItem('userPerformanceData') || '{}');
+            if (Object.keys(performanceData).length === 0) {
+                performanceData = generateDefaultPerformance();
+            }
         }
 
         function generateDefaultPerformance() {
