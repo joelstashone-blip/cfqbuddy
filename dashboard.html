@@ -586,8 +586,7 @@
 
         <div class="quick-actions">
             <a href="#" class="quick-action" onclick="startPracticeExam()">📝 Practice Exam</a>
-            <a href="daily-challenge.html" class="quick-action">🎯 Continue Daily Challenge</a>
-            <a href="#" class="quick-action" onclick="studyWeakAreas()">🎯 Study Weak Areas</a>
+            <a href="#" class="quick-action" onclick="startDailyChallenge()">🎯 Continue Daily Challenge</a>
         </div>
     </div>
 
@@ -880,20 +879,14 @@
             window.location.href = 'exam-selection.html';
         }
 
-        function studyWeakAreas() {
-            // Navigate to daily challenge with weak areas focus
+        function startDailyChallenge() {
+            // Navigate to daily challenge
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'study_weak_areas_click', {
+                gtag('event', 'daily_challenge_continue', {
                     trade: userProfile.trade
                 });
             }
-            
-            // Get user's weakest area for focused study
-            const weakestArea = performanceData.weakAreas && performanceData.weakAreas.length > 0 
-                ? performanceData.weakAreas[0].topic 
-                : 'Motor Controls';
-            
-            window.location.href = `daily-challenge.html?focus=${encodeURIComponent(weakestArea)}`;
+            window.location.href = 'daily-challenge.html';
         }
 
         function studyTopic(topic) {
