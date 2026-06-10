@@ -15,967 +15,894 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            min-height: 100vh;
             color: #333;
-            background: #f8f9fa;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
         }
 
         /* Header */
-        header {
-            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
             color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: relative;
         }
 
-        .header-content {
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            margin-bottom: 15px;
         }
 
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            color: #ffd700;
+        .academy-logo {
+            font-size: 18px;
+            font-weight: 700;
         }
 
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        .sign-out-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .sign-out-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .welcome-section {
+            margin-bottom: 10px;
         }
 
         .welcome-text {
             font-size: 16px;
-        }
-
-        .user-trade {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .logout-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 8px 15px;
-            border-radius: 6px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .logout-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Trial Status Bar */
-        .trial-status {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white;
-            padding: 15px 0;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .trial-status.paid {
-            background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
-        }
-
-        .trial-countdown {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .trial-details {
-            font-size: 14px;
             opacity: 0.9;
-        }
-
-        .upgrade-btn {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 10px;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .upgrade-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Stats Dashboard */
-        .stats-dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .stat-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-left: 4px solid #1a365d;
-        }
-
-        .stat-value {
-            font-size: 28px;
-            font-weight: bold;
-            color: #1a365d;
             margin-bottom: 5px;
         }
 
-        .stat-label {
-            font-size: 14px;
-            color: #666;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .stat-change {
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .stat-change.positive {
-            color: #27ae60;
-        }
-
-        .stat-change.negative {
-            color: #e74c3c;
-        }
-
-        /* Main Content Grid */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .main-content {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .content-header {
-            padding: 25px 25px 0;
-            border-bottom: 1px solid #f0f0f0;
-            margin-bottom: 25px;
-        }
-
-        .content-title {
-            font-size: 24px;
+        .trade-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
             font-weight: 600;
-            color: #1a365d;
-            margin-bottom: 10px;
         }
 
-        .content-subtitle {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Exam Cards Grid */
-        .exams-grid {
-            display: grid;
-            gap: 20px;
-            padding: 0 25px 25px;
-        }
-
-        .exam-card {
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
+        /* Package Section - TOP PRIORITY */
+        .package-section {
+            background: white;
+            margin: -10px 20px 20px;
+            border-radius: 15px;
             padding: 20px;
-            transition: all 0.3s;
-            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             position: relative;
+            overflow: hidden;
         }
 
-        .exam-card:hover {
-            border-color: #1a365d;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .package-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700 0%, #ffb347 100%);
         }
 
-        .exam-card.locked {
-            opacity: 0.6;
-            cursor: not-allowed;
-            border-color: #ddd;
-        }
-
-        .exam-card.locked:hover {
-            border-color: #ddd;
-            box-shadow: none;
-        }
-
-        .exam-header {
+        .package-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 15px;
         }
 
-        .exam-info h3 {
-            font-size: 18px;
+        .package-title {
+            font-size: 20px;
+            font-weight: 700;
             color: #1a365d;
             margin-bottom: 5px;
         }
 
-        .exam-meta {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 10px;
+        .package-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2d3748;
         }
 
-        .exam-status {
-            padding: 4px 10px;
-            border-radius: 12px;
+        .package-badge {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+            color: #1a365d;
+            padding: 6px 12px;
+            border-radius: 20px;
             font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .package-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .package-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .feature-icon {
+            color: #38a169;
             font-weight: 600;
         }
 
-        .exam-status.available {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .exam-status.locked {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .exam-status.completed {
-            background: #cce5ff;
-            color: #004085;
-        }
-
-        .exam-progress {
-            background: #f8f9fa;
-            height: 6px;
-            border-radius: 3px;
-            margin: 10px 0;
-            overflow: hidden;
-        }
-
-        .exam-progress-fill {
-            height: 100%;
-            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
-            transition: width 0.3s;
-        }
-
-        .exam-stats {
+        .trial-status {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 20px;
+            margin: 0 20px 20px;
+            border-radius: 12px;
             display: flex;
             justify-content: space-between;
-            font-size: 13px;
-            color: #666;
+            align-items: center;
         }
 
-        .package-upgrade {
-            margin-top: 15px;
-            padding: 15px;
-            background: linear-gradient(135deg, #fff3cd 0%, #fff8e7 100%);
-            border: 1px solid #ffeaa7;
+        .trial-info {
+            flex: 1;
+        }
+
+        .trial-countdown {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .trial-details {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .trial-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .upgrade-btn, .feedback-btn {
+            padding: 8px 16px;
             border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .upgrade-btn {
+            background: #ffd700;
+            color: #1a365d;
+        }
+
+        .feedback-btn {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .upgrade-btn:hover, .feedback-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Gamified Section - SECOND PRIORITY */
+        .gamified-section {
+            background: white;
+            margin: 0 20px 20px;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .gamified-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .gamified-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 8px;
+        }
+
+        .level-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .level-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .xp-info {
             text-align: center;
         }
 
-        .package-upgrade h4 {
-            color: #856404;
-            margin-bottom: 8px;
-            font-size: 14px;
+        .xp-current {
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d3748;
         }
 
-        .package-upgrade p {
-            color: #856404;
-            font-size: 13px;
-            margin-bottom: 10px;
+        .xp-label {
+            font-size: 12px;
+            color: #666;
         }
 
-        .upgrade-package-btn {
-            background: #f39c12;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 15px 0;
         }
 
-        .upgrade-package-btn:hover {
-            background: #e67e22;
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700 0%, #ffb347 100%);
+            border-radius: 5px;
+            transition: width 0.8s ease;
         }
 
-        .lock-icon {
-            font-size: 20px;
-            color: #ddd;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .sidebar-card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .sidebar-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #1a365d;
-            margin-bottom: 15px;
-        }
-
-        /* Achievement Cards */
-        .achievements {
+        .achievements-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 15px;
+            margin-top: 20px;
         }
 
         .achievement {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            transition: all 0.3s;
+            text-align: center;
+            padding: 15px 10px;
+            background: #f7fafc;
+            border-radius: 12px;
+            transition: transform 0.2s;
         }
 
-        .achievement.unlocked {
-            border-color: #ffd700;
-            background: #fffbf0;
+        .achievement:hover {
+            transform: translateY(-2px);
         }
 
         .achievement-icon {
             font-size: 24px;
+            margin-bottom: 8px;
         }
 
-        .achievement-info h4 {
+        .achievement-title {
             font-size: 14px;
+            font-weight: 600;
             color: #1a365d;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
 
-        .achievement-info p {
-            font-size: 12px;
+        .achievement-desc {
+            font-size: 11px;
             color: #666;
         }
 
-        /* Progress Rings */
-        .progress-ring {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 15px;
-            position: relative;
-        }
-
-        .progress-ring svg {
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
-        }
-
-        .progress-ring circle {
-            fill: transparent;
-            stroke: #e9ecef;
-            stroke-width: 8;
-        }
-
-        .progress-ring .progress {
-            stroke: #1a365d;
-            stroke-linecap: round;
-            transition: stroke-dasharray 0.3s;
-        }
-
-        .progress-percentage {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 14px;
-            font-weight: bold;
-            color: #1a365d;
-        }
-
-        /* Quick Actions */
         .quick-actions {
             display: grid;
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .quick-action {
-            padding: 12px 15px;
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
             text-decoration: none;
-            color: #1a365d;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.2s;
         }
 
         .quick-action:hover {
-            background: #e9ecef;
-            border-color: #1a365d;
+            transform: translateY(-2px);
         }
 
-        /* Action Buttons */
-        .btn {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
+        /* Analytics Section - THIRD PRIORITY */
+        .analytics-section {
+            background: white;
+            margin: 0 20px 20px;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .analytics-header {
+            margin-bottom: 20px;
+        }
+
+        .analytics-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 5px;
+        }
+
+        .analytics-subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border-left: 4px solid #ffd700;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1a365d;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .stat-change {
             font-size: 14px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
+        }
+
+        .stat-change.positive {
+            color: #38a169;
+        }
+
+        .stat-change.negative {
+            color: #e53e3e;
+        }
+
+        /* Improvement Areas */
+        .improvement-section {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .improvement-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+
+        .improvement-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .improvement-item {
+            background: #fff5f5;
+            border: 1px solid #fed7d7;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .improvement-info {
+            flex: 1;
+        }
+
+        .improvement-topic {
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 4px;
+        }
+
+        .improvement-score {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .improvement-action {
+            background: #e53e3e;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
             text-decoration: none;
-            display: inline-block;
-            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #1a365d 0%, #2d5a87 100%);
-            color: white;
+        .improvement-action:hover {
+            background: #c53030;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(26, 54, 93, 0.3);
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #27ae60 0%, #219a52 100%);
-            color: white;
-        }
-
-        .btn-success:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
-        }
-
-        .btn-warning {
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
-            color: white;
-        }
-
-        .btn-warning:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
-        }
-
-        /* Mobile Responsiveness */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .user-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .main-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .stats-dashboard {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .container {
+            .header {
                 padding: 15px;
             }
+
+            .package-section, .gamified-section, .analytics-section, .trial-status {
+                margin: 0 15px 15px;
+                padding: 20px;
+            }
+
+            .package-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .trial-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .achievements-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class=\"header-content\">
-            <div class=\"logo\">🎯 The Red Seal Academy</div>
-            <div class=\"user-info\">
-                <div class=\"welcome-text\">Welcome back, <span id=\"user-name\">Student</span></div>
-                <div class=\"user-trade\" id=\"user-trade\">⚡ 309A Electrician</div>
-                <button class=\"logout-btn\" onclick=\"logout()\">Sign Out</button>
-            </div>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-top">
+            <div class="academy-logo">🎓 The Red Seal Academy</div>
+            <a href="#" onclick="signOut()" class="sign-out-btn">Sign Out</a>
         </div>
-    </header>
-
-    <div class=\"trial-status\" id=\"trial-status\">
-        <div class=\"container\">
-            <div class=\"trial-countdown\" id=\"trial-countdown\">🎯 Free Trial: 7 days remaining</div>
-            <div class=\"trial-details\">Full access to all features • Billing starts after trial ends</div>
-            <a href="#" class="upgrade-btn" onclick="upgradeToPaid()">Upgrade to Paid Account</a>
-            <a href="feedback.html" class="feedback-btn" style="margin-left: 15px; background: #4CAF50; text-decoration: none; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600;">💬 Give Feedback</a>
+        <div class="welcome-section">
+            <div class="welcome-text" id="welcome-text">Welcome back, Student</div>
+            <div class="trade-info">
+                <span id="trade-icon">⚡</span>
+                <span id="trade-name">309A Electrician</span>
+            </div>
         </div>
     </div>
 
-    <div class=\"container\">
-        <!-- Stats Dashboard -->
-        <div class=\"stats-dashboard\">
-            <div class=\"stat-card\">
-                <div class=\"stat-value\" id=\"level-stat\">3</div>
-                <div class=\"stat-label\">Current Level</div>
-                <div class=\"stat-change positive\">+1 this week</div>
+    <!-- 1. PACKAGE INFO - TOP PRIORITY -->
+    <div class="package-section fade-in" id="package-section">
+        <div class="package-header">
+            <div>
+                <div class="package-title" id="package-title">Complete 3-Pack</div>
+                <div class="package-value" id="package-value">$39 CAD</div>
             </div>
-            <div class=\"stat-card\">
-                <div class=\"stat-value\" id=\"points-stat\">1,247</div>
-                <div class=\"stat-label\">Total Points</div>
-                <div class=\"stat-change positive\">+85 today</div>
+            <div class="package-badge" id="package-badge">MOST POPULAR</div>
+        </div>
+        <div class="package-features" id="package-features">
+            <!-- Features will be loaded by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Trial Status -->
+    <div class="trial-status" id="trial-status">
+        <div class="trial-info">
+            <div class="trial-countdown" id="trial-countdown">🎯 Free Trial: 7 days remaining</div>
+            <div class="trial-details">Full access to all features • Billing starts after trial ends</div>
+        </div>
+        <div class="trial-actions">
+            <a href="#" class="upgrade-btn" onclick="upgradeToPaid()">Upgrade Account</a>
+            <a href="feedback.html" class="feedback-btn">💬 Give Feedback</a>
+        </div>
+    </div>
+
+    <!-- 2. GAMIFIED INTERFACE - SECOND PRIORITY -->
+    <div class="gamified-section fade-in" id="gamified-section">
+        <div class="gamified-header">
+            <div class="gamified-title">🎮 Your Learning Journey</div>
+            <div class="level-info">
+                <div class="level-badge" id="level-badge">Level 3</div>
+                <div class="xp-info">
+                    <div class="xp-current" id="xp-current">1,247</div>
+                    <div class="xp-label">Total XP</div>
+                </div>
             </div>
-            <div class=\"stat-card\">
-                <div class=\"stat-value\" id=\"streak-stat\">12</div>
-                <div class=\"stat-label\">Day Streak</div>
-                <div class=\"stat-change positive\">Personal best!</div>
-            </div>
-            <div class=\"stat-card\">
-                <div class=\"stat-value\" id=\"questions-stat\">324</div>
-                <div class=\"stat-label\">Questions Completed</div>
-                <div class=\"stat-change positive\">+15 today</div>
-            </div>
-            <div class=\"stat-card\">
-                <div class=\"stat-value\" id=\"accuracy-stat\">87%</div>
-                <div class=\"stat-label\">Overall Accuracy</div>
-                <div class=\"stat-change positive\">+3% this week</div>
-            </div>
-            <div class=\"stat-card\">
-                <div class=\"stat-value\" id=\"study-time-stat\">23h</div>
-                <div class=\"stat-label\">Study Time</div>
-                <div class=\"stat-change positive\">2h 15m today</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="level-progress" style="width: 68%"></div>
             </div>
         </div>
 
-        <!-- Main Content Grid -->
-        <div class=\"main-grid\">
-            <!-- Main Content: Practice Exams -->
-            <div class=\"main-content\">
-                <div class=\"content-header\">
-                    <div class=\"content-title\">Practice Exams</div>
-                    <div class=\"content-subtitle\">Complete timed practice exams to prepare for your Red Seal certification</div>
-                </div>
-                
-                <div class=\"exams-grid\" id=\"exams-grid\">
-                    <!-- Exams will be populated by JavaScript based on user's package -->
-                </div>
+        <div class="achievements-grid">
+            <div class="achievement">
+                <div class="achievement-icon">🔥</div>
+                <div class="achievement-title" id="streak-title">12-Day Streak</div>
+                <div class="achievement-desc">Personal best!</div>
             </div>
+            <div class="achievement">
+                <div class="achievement-icon">🎯</div>
+                <div class="achievement-title">Knowledge Seeker</div>
+                <div class="achievement-desc">324 questions</div>
+            </div>
+            <div class="achievement">
+                <div class="achievement-icon">⚡</div>
+                <div class="achievement-title">Speed Demon</div>
+                <div class="achievement-desc">Fast learner</div>
+            </div>
+            <div class="achievement">
+                <div class="achievement-icon">📈</div>
+                <div class="achievement-title">Improving!</div>
+                <div class="achievement-desc">+3% this week</div>
+            </div>
+        </div>
 
-            <!-- Sidebar -->
-            <div class=\"sidebar\">
-                <!-- Progress Overview -->
-                <div class=\"sidebar-card\">
-                    <div class=\"sidebar-title\">Progress Overview</div>
-                    <div class=\"progress-ring\">
-                        <svg>
-                            <circle cx=\"40\" cy=\"40\" r=\"30\"></circle>
-                            <circle cx=\"40\" cy=\"40\" r=\"30\" class=\"progress\" id=\"progress-circle\"></circle>
-                        </svg>
-                        <div class=\"progress-percentage\" id=\"progress-percentage\">72%</div>
-                    </div>
-                    <div style=\"text-align: center; margin-bottom: 15px;\">
-                        <div style=\"font-size: 14px; color: #666;\">Exam Readiness Score</div>
-                    </div>
-                    <div class=\"quick-actions\">
-                        <a href=\"#\" class=\"quick-action\">📊 View Detailed Analytics</a>
-                        <a href=\"#\" class=\"quick-action\">📚 Study Weak Areas</a>
-                        <a href=\"#\" class=\"quick-action\">🎯 Take Mock Exam</a>
-                    </div>
-                </div>
+        <div class="quick-actions">
+            <a href="#" class="quick-action">📝 Continue Practice Exam</a>
+            <a href="#" class="quick-action">📊 View Progress Analytics</a>
+            <a href="#" class="quick-action">🎯 Study Weak Areas</a>
+        </div>
+    </div>
 
-                <!-- Recent Achievements -->
-                <div class=\"sidebar-card\">
-                    <div class=\"sidebar-title\">Recent Achievements</div>
-                    <div class=\"achievements\">
-                        <div class=\"achievement unlocked\">
-                            <div class=\"achievement-icon\">🔥</div>
-                            <div class=\"achievement-info\">
-                                <h4>12-Day Streak</h4>
-                                <p>Study every day for 12 days straight</p>
-                            </div>
-                        </div>
-                        <div class=\"achievement unlocked\">
-                            <div class=\"achievement-icon\">📚</div>
-                            <div class=\"achievement-info\">
-                                <h4>Knowledge Seeker</h4>
-                                <p>Complete 300+ practice questions</p>
-                            </div>
-                        </div>
-                        <div class=\"achievement\">
-                            <div class=\"achievement-icon\">🏆</div>
-                            <div class=\"achievement-info\">
-                                <h4>Perfectionist</h4>
-                                <p>Score 100% on a full exam</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- 3. ANALYTICS & IMPROVEMENT - THIRD PRIORITY -->
+    <div class="analytics-section fade-in" id="analytics-section">
+        <div class="analytics-header">
+            <div class="analytics-title">📊 Your Performance Metrics</div>
+            <div class="analytics-subtitle">Personalized insights based on your study patterns</div>
+        </div>
 
-                <!-- Study Recommendations -->
-                <div class=\"sidebar-card\">
-                    <div class=\"sidebar-title\">Study Recommendations</div>
-                    <div style=\"font-size: 14px; color: #666; margin-bottom: 15px;\">
-                        Based on your performance, focus on these areas:
-                    </div>
-                    <div class=\"quick-actions\">
-                        <a href=\"#\" class=\"quick-action\">⚡ Motor Controls (67%)</a>
-                        <a href=\"#\" class=\"quick-action\">🔧 Installation Methods (73%)</a>
-                        <a href=\"#\" class=\"quick-action\">📋 Code Requirements (81%)</a>
-                    </div>
-                </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="accuracy-stat">87%</div>
+                <div class="stat-label">Overall Accuracy</div>
+                <div class="stat-change positive" id="accuracy-change">+3% this week</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="questions-stat">324</div>
+                <div class="stat-label">Questions Completed</div>
+                <div class="stat-change positive" id="questions-change">+15 today</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="time-stat">23h</div>
+                <div class="stat-label">Total Study Time</div>
+                <div class="stat-change positive" id="time-change">2h 15m today</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="rank-stat">#47</div>
+                <div class="stat-label">Global Rank</div>
+                <div class="stat-change positive" id="rank-change">↑ 12 positions</div>
+            </div>
+        </div>
+
+        <!-- Personalized Improvement Areas -->
+        <div class="improvement-section">
+            <div class="improvement-title">🎯 Areas for Improvement</div>
+            <div class="improvement-grid" id="improvement-areas">
+                <!-- Will be populated by JavaScript based on user performance -->
             </div>
         </div>
     </div>
 
     <script>
-        // Initialize dashboard when page loads
+        // User data and configuration
+        let userProfile = {};
+        let trialData = {};
+        let performanceData = {};
+
+        // Initialize dashboard
         document.addEventListener('DOMContentLoaded', function() {
-            initializeDashboard();
-            setupTrialTimer();
-            loadUserProgress();
-            populateExams();
+            loadUserData();
+            updatePackageSection();
+            updateTrialStatus();
+            updateGamifiedSection();
+            updateAnalyticsSection();
+            updateImprovementAreas();
+            
+            // Add loading animations
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in').forEach(el => {
+                    el.style.opacity = '1';
+                });
+            }, 100);
         });
 
-        function initializeDashboard() {
-            // Load user data from registration
+        function loadUserData() {
+            // Load user profile
             const userData = JSON.parse(localStorage.getItem('redSealUserData') || '{}');
-            
-            if (userData.firstName) {
-                document.getElementById('user-name').textContent = userData.firstName;
-            }
-            
-            if (userData.trade) {
-                const tradeIcons = {
-                    '309A': '⚡ 309A Electrician',
-                    '306A': '🔧 306A Plumber'
-                };
-                document.getElementById('user-trade').textContent = tradeIcons[userData.trade] || userData.trade;
-            }
-        }
-
-        function setupTrialTimer() {
+            const trialStart = localStorage.getItem('redSealTrialStart');
             const trialEnd = localStorage.getItem('redSealTrialEnd');
-            const isPaid = localStorage.getItem('redSealPaidAccount') === 'true';
             
-            if (isPaid) {
-                document.getElementById('trial-status').innerHTML = `
-                    <div class=\"container\">
-                        <div class=\"trial-countdown\">✅ Full Access Unlocked</div>
-                        <div class=\"trial-details\">Thank you for your purchase! Enjoy unlimited access to all features.</div>
-                    </div>
-                `;
-                document.getElementById('trial-status').classList.add('paid');
-                return;
-            }
+            userProfile = {
+                firstName: userData.firstName || 'Student',
+                lastName: userData.lastName || '',
+                trade: userData.trade || '309A',
+                package: userData.package || 'pack',
+                email: userData.email || '',
+                createdAt: userData.createdAt || new Date().toISOString()
+            };
             
-            if (!trialEnd) {
-                // Start new trial
-                const newTrialEnd = new Date();
-                newTrialEnd.setDate(newTrialEnd.getDate() + 7);
-                localStorage.setItem('redSealTrialEnd', newTrialEnd.toISOString());
-                updateTrialDisplay(newTrialEnd);
-            } else {
-                const trialEndDate = new Date(trialEnd);
-                updateTrialDisplay(trialEndDate);
-                
-                // Update every minute
-                setInterval(() => updateTrialDisplay(trialEndDate), 60000);
-            }
+            trialData = {
+                startDate: trialStart ? new Date(trialStart) : new Date(),
+                endDate: trialEnd ? new Date(trialEnd) : new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+                active: localStorage.getItem('redSealTrialActive') === 'true'
+            };
+            
+            // Load or generate performance data
+            performanceData = JSON.parse(localStorage.getItem('userPerformanceData') || generateDefaultPerformance());
         }
 
-        function updateTrialDisplay(trialEndDate) {
-            const now = new Date();
-            const timeRemaining = trialEndDate - now;
-            
-            if (timeRemaining <= 0) {
-                document.getElementById('trial-status').innerHTML = `
-                    <div class=\"container\">
-                        <div class=\"trial-countdown\">⏰ Free Trial Expired</div>
-                        <div class=\"trial-details\">Upgrade now to continue accessing all features</div>
-                        <a href="#" class="upgrade-btn" onclick="upgradeToPaid()">Upgrade to Paid Account</a>
-                        <a href="feedback.html" class="feedback-btn" style="margin-left: 15px; background: #4CAF50; text-decoration: none; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600;">💬 Give Feedback</a>
-                    </div>
-                `;
-                return;
-            }
-            
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            
-            let timeText;
-            if (days > 0) {
-                timeText = `${days} day${days === 1 ? '' : 's'} remaining`;
-            } else {
-                timeText = `${hours} hour${hours === 1 ? '' : 's'} remaining`;
-            }
-            
-            document.getElementById('trial-countdown').textContent = `🎯 Free Trial: ${timeText}`;
-        }
-
-        function loadUserProgress() {
-            // Simulate user progress data
-            const progress = {
+        function generateDefaultPerformance() {
+            const baseData = {
                 level: 3,
-                points: 1247,
+                totalXP: 1247,
+                questionsCompleted: 324,
+                questionsToday: 15,
+                overallAccuracy: 87,
+                accuracyChange: 3,
+                studyTimeTotal: 23,
+                studyTimeToday: 2.25,
                 streak: 12,
-                questions: 324,
-                accuracy: 87,
-                studyTime: '23h'
+                weakAreas: [
+                    { topic: 'Motor Controls', score: 67, category: 'electrical' },
+                    { topic: 'Safety Regulations', score: 72, category: 'safety' },
+                    { topic: 'Code Requirements', score: 81, category: 'regulations' }
+                ],
+                globalRank: 47,
+                rankChange: 12
             };
-            
-            // Update stats
-            document.getElementById('level-stat').textContent = progress.level;
-            document.getElementById('points-stat').textContent = progress.points.toLocaleString();
-            document.getElementById('streak-stat').textContent = progress.streak;
-            document.getElementById('questions-stat').textContent = progress.questions;
-            document.getElementById('accuracy-stat').textContent = progress.accuracy + '%';
-            document.getElementById('study-time-stat').textContent = progress.studyTime;
-            
-            // Update progress ring
-            const progressPercentage = 72; // Overall exam readiness
-            const circle = document.getElementById('progress-circle');
-            const circumference = 2 * Math.PI * 30; // radius is 30
-            const strokeDasharray = circumference;
-            const strokeDashoffset = circumference - (progressPercentage / 100) * circumference;
-            
-            circle.style.strokeDasharray = strokeDasharray;
-            circle.style.strokeDashoffset = strokeDashoffset;
-            
-            document.getElementById('progress-percentage').textContent = progressPercentage + '%';
+            localStorage.setItem('userPerformanceData', JSON.stringify(baseData));
+            return baseData;
         }
 
-        function populateExams() {
-            const userData = JSON.parse(localStorage.getItem('redSealUserData') || '{}');
-            const userPackage = userData.package || 'single';
-            const userTrade = userData.trade || '309A';
-            const isPaid = localStorage.getItem('redSealPaidAccount') === 'true';
-            const trialActive = localStorage.getItem('redSealTrialActive') === 'true';
-            
-            const examAccess = {
-                single: 1,
-                pack: 3,
-                bundle: 3
+        function updatePackageSection() {
+            const packages = {
+                single: {
+                    title: 'Single Exam',
+                    value: '$19 CAD',
+                    badge: 'STARTER',
+                    features: [
+                        { icon: '✓', text: '1 practice exam (150 questions)' },
+                        { icon: '✓', text: 'Detailed explanations' },
+                        { icon: '✓', text: 'Performance tracking' },
+                        { icon: '✓', text: 'Mobile optimized' }
+                    ]
+                },
+                pack: {
+                    title: 'Complete 3-Pack',
+                    value: '$39 CAD',
+                    badge: 'MOST POPULAR',
+                    features: [
+                        { icon: '✓', text: 'All 3 practice exams' },
+                        { icon: '✓', text: '450+ total questions' },
+                        { icon: '✓', text: 'Detailed explanations' },
+                        { icon: '✓', text: 'Progress analytics' },
+                        { icon: '✓', text: 'Gamified dashboard' },
+                        { icon: '✓', text: 'Study recommendations' }
+                    ]
+                },
+                bundle: {
+                    title: 'Ultimate Bundle',
+                    value: '$59 CAD',
+                    badge: 'BEST VALUE',
+                    features: [
+                        { icon: '✓', text: 'All practice exams' },
+                        { icon: '✓', text: '450+ questions + bonus content' },
+                        { icon: '✓', text: 'Video explanations' },
+                        { icon: '✓', text: 'Advanced analytics' },
+                        { icon: '✓', text: 'Personal study plan' },
+                        { icon: '✓', text: 'Priority support' }
+                    ]
+                }
             };
+
+            const selectedPackage = packages[userProfile.package] || packages.pack;
             
-            const maxExams = examAccess[userPackage] || 1;
-            const examsContainer = document.getElementById('exams-grid');
+            document.getElementById('package-title').textContent = selectedPackage.title;
+            document.getElementById('package-value').textContent = selectedPackage.value;
+            document.getElementById('package-badge').textContent = selectedPackage.badge;
             
-            const exams = [
-                {
-                    number: 1,
-                    title: `${userTrade} Practice Exam 1`,
-                    description: 'Foundation concepts and basic applications',
-                    questions: 150,
-                    timeLimit: '4 hours',
-                    difficulty: 'Beginner',
-                    progress: 45,
-                    attempts: 3,
-                    bestScore: 78
-                },
-                {
-                    number: 2,
-                    title: `${userTrade} Practice Exam 2`,
-                    description: 'Intermediate concepts and problem solving',
-                    questions: 150,
-                    timeLimit: '4 hours',
-                    difficulty: 'Intermediate',
-                    progress: 23,
-                    attempts: 1,
-                    bestScore: 85
-                },
-                {
-                    number: 3,
-                    title: `${userTrade} Practice Exam 3`,
-                    description: 'Advanced applications and real-world scenarios',
-                    questions: 150,
-                    timeLimit: '4 hours',
-                    difficulty: 'Advanced',
-                    progress: 0,
-                    attempts: 0,
-                    bestScore: null
-                }
-            ];
+            const featuresHtml = selectedPackage.features.map(feature => 
+                `<div class="package-feature">
+                    <span class="feature-icon">${feature.icon}</span>
+                    <span>${feature.text}</span>
+                </div>`
+            ).join('');
             
-            examsContainer.innerHTML = '';
-            
-            exams.forEach((exam, index) => {
-                const examNumber = index + 1;
-                const hasAccess = (trialActive || isPaid) && examNumber <= maxExams;
-                const isLocked = !hasAccess;
-                
-                let statusClass, statusText, actionButton;
-                
-                if (isLocked) {
-                    statusClass = 'locked';
-                    statusText = '🔒 Upgrade Required';
-                    actionButton = `<button class=\"btn btn-warning\" onclick=\"showUpgradeModal()\">Upgrade Package</button>`;
-                } else if (exam.progress > 0) {
-                    statusClass = 'available';
-                    statusText = 'In Progress';
-                    actionButton = `<button class=\"btn btn-primary\" onclick=\"startExam(${examNumber})\">Continue Exam</button>`;
-                } else {
-                    statusClass = 'available';
-                    statusText = 'Available';
-                    actionButton = `<button class=\"btn btn-success\" onclick=\"startExam(${examNumber})\">Start Exam</button>`;
-                }
-                
-                const examCard = `
-                    <div class=\"exam-card ${isLocked ? 'locked' : ''}\" ${!isLocked ? `onclick=\"startExam(${examNumber})\"` : ''}>
-                        <div class=\"exam-header\">
-                            <div class=\"exam-info\">
-                                <h3>${exam.title}</h3>
-                                <div class=\"exam-meta\">${exam.questions} questions • ${exam.timeLimit} • ${exam.difficulty}</div>
-                                <p style=\"color: #666; font-size: 14px; margin: 8px 0;\">${exam.description}</p>
-                            </div>
-                            <div>
-                                ${isLocked ? '<div class=\"lock-icon\">🔒</div>' : ''}
-                                <div class=\"exam-status ${statusClass}\">${statusText}</div>
-                            </div>
-                        </div>
-                        
-                        ${!isLocked ? `
-                            <div class=\"exam-progress\">
-                                <div class=\"exam-progress-fill\" style=\"width: ${exam.progress}%\"></div>
-                            </div>
-                            <div class=\"exam-stats\">
-                                <span>Progress: ${exam.progress}%</span>
-                                <span>Attempts: ${exam.attempts}</span>
-                                <span>Best Score: ${exam.bestScore ? exam.bestScore + '%' : 'Not taken'}</span>
-                            </div>
-                            <div style=\"margin-top: 15px;\">
-                                ${actionButton}
-                            </div>
-                        ` : `
-                            <div class=\"package-upgrade\">
-                                <h4>🔓 Unlock this exam</h4>
-                                <p>Upgrade to the 3-Exam Pack or Ultimate Bundle to access all practice exams.</p>
-                                <button class=\"upgrade-package-btn\" onclick=\"showUpgradeModal()\">View Packages</button>
-                            </div>
-                        `}
+            document.getElementById('package-features').innerHTML = featuresHtml;
+        }
+
+        function updateTrialStatus() {
+            if (!trialData.active) {
+                document.getElementById('trial-status').innerHTML = `
+                    <div class="trial-info">
+                        <div class="trial-countdown">⏰ Free Trial Expired</div>
+                        <div class="trial-details">Upgrade now to continue accessing all features</div>
+                    </div>
+                    <div class="trial-actions">
+                        <a href="#" class="upgrade-btn" onclick="upgradeToPaid()">Upgrade Now</a>
+                        <a href="feedback.html" class="feedback-btn">💬 Give Feedback</a>
                     </div>
                 `;
-                
-                examsContainer.innerHTML += examCard;
-            });
-        }
-
-        function startExam(examNumber) {
-            const userData = JSON.parse(localStorage.getItem('redSealUserData') || '{}');
-            const userTrade = userData.trade || '309A';
-            
-            // Track exam start
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'exam_start', {
-                    trade: userTrade,
-                    exam_number: examNumber
-                });
+                return;
             }
+
+            const daysRemaining = getTrialDaysRemaining();
+            document.getElementById('trial-countdown').textContent = `🎯 Free Trial: ${daysRemaining} days remaining`;
             
-            // Navigate to exam interface (you would implement this)
-            window.location.href = `exam.html?trade=${userTrade}&exam=${examNumber}`;
+            // Update welcome message
+            document.getElementById('welcome-text').textContent = `Welcome back, ${userProfile.firstName}`;
+            
+            // Update trade info
+            const tradeNames = {
+                '309A': { icon: '⚡', name: '309A Electrician' },
+                '306A': { icon: '🔧', name: '306A Plumber' },
+                '307A': { icon: '❄️', name: '307A HVAC Mechanic' }
+            };
+            
+            const trade = tradeNames[userProfile.trade] || tradeNames['309A'];
+            document.getElementById('trade-icon').textContent = trade.icon;
+            document.getElementById('trade-name').textContent = trade.name;
         }
 
-        function showUpgradeModal() {
-            alert('Upgrade modal would open here - redirect to pricing/Gumroad');
-            // You would implement a proper modal or redirect to pricing page
+        function updateGamifiedSection() {
+            document.getElementById('level-badge').textContent = `Level ${performanceData.level}`;
+            document.getElementById('xp-current').textContent = performanceData.totalXP.toLocaleString();
+            document.getElementById('streak-title').textContent = `${performanceData.streak}-Day Streak`;
+            
+            // Update progress bar (simulate progress to next level)
+            const progressPercent = ((performanceData.totalXP % 500) / 500) * 100;
+            document.getElementById('level-progress').style.width = `${progressPercent}%`;
         }
 
-        function upgradeToPaid() {
-            const userData = JSON.parse(localStorage.getItem('redSealUserData') || '{}');
-            const userTrade = userData.trade || '309A';
-            const userPackage = userData.package || 'pack';
+        function updateAnalyticsSection() {
+            document.getElementById('accuracy-stat').textContent = `${performanceData.overallAccuracy}%`;
+            document.getElementById('accuracy-change').textContent = `+${performanceData.accuracyChange}% this week`;
             
-            // Track upgrade click
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'upgrade_click', {
-                    trade: userTrade,
-                    package: userPackage,
-                    trial_remaining: getTrialRemaining()
-                });
-            }
+            document.getElementById('questions-stat').textContent = performanceData.questionsCompleted.toLocaleString();
+            document.getElementById('questions-change').textContent = `+${performanceData.questionsToday} today`;
             
-            // Redirect to Gumroad or pricing page
-            let gumroadUrl;
-            switch (userPackage) {
-                case 'single':
-                    gumroadUrl = 'https://309aprep.gumroad.com/l/single-exam';
-                    break;
-                case 'pack':
-                    gumroadUrl = 'https://309aprep.gumroad.com/l/3-exam-pack';
-                    break;
-                case 'bundle':
-                    gumroadUrl = 'https://309aprep.gumroad.com/l/complete-bundle';
-                    break;
-                default:
-                    gumroadUrl = 'https://309aprep.gumroad.com/l/3-exam-pack';
-            }
+            document.getElementById('time-stat').textContent = `${performanceData.studyTimeTotal}h`;
+            document.getElementById('time-change').textContent = `${performanceData.studyTimeToday}h today`;
             
-            window.open(gumroadUrl, '_blank');
+            document.getElementById('rank-stat').textContent = `#${performanceData.globalRank}`;
+            document.getElementById('rank-change').textContent = `↑ ${performanceData.rankChange} positions`;
         }
 
-        function logout() {
+        function updateImprovementAreas() {
+            const improvementHtml = performanceData.weakAreas.map(area => `
+                <div class="improvement-item">
+                    <div class="improvement-info">
+                        <div class="improvement-topic">${area.topic}</div>
+                        <div class="improvement-score">Current accuracy: ${area.score}%</div>
+                    </div>
+                    <a href="#" class="improvement-action" onclick="studyTopic('${area.topic}')">Study Now</a>
+                </div>
+            `).join('');
+            
+            document.getElementById('improvement-areas').innerHTML = improvementHtml;
+        }
+
+        function getTrialDaysRemaining() {
+            if (!trialData.active) return 0;
+            const now = new Date();
+            const diffTime = trialData.endDate - now;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return Math.max(0, diffDays);
+        }
+
+        function signOut() {
             if (confirm('Are you sure you want to sign out?')) {
-                // Clear user data but keep trial information for return visits
                 localStorage.removeItem('redSealUserData');
-                
-                // Track logout
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'logout');
-                }
-                
-                // Redirect to landing page
+                localStorage.removeItem('redSealTrialActive');
                 window.location.href = 'landing.html';
             }
         }
 
-        function getTrialRemaining() {
-            const trialEnd = localStorage.getItem('redSealTrialEnd');
-            if (!trialEnd) return 0;
+        function upgradeToPaid() {
+            // Analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'upgrade_click', {
+                    trade: userProfile.trade,
+                    package: userProfile.package,
+                    trial_remaining: getTrialDaysRemaining()
+                });
+            }
             
-            const now = new Date();
-            const trialEndDate = new Date(trialEnd);
-            const timeRemaining = trialEndDate - now;
+            // Redirect to Gumroad upgrade flow
+            const packageUrls = {
+                single: 'https://cfqbuddy.gumroad.com/l/single-exam',
+                pack: 'https://cfqbuddy.gumroad.com/l/complete-pack', 
+                bundle: 'https://cfqbuddy.gumroad.com/l/ultimate-bundle'
+            };
             
-            return Math.max(0, Math.floor(timeRemaining / (1000 * 60 * 60 * 24)));
+            const upgradeUrl = packageUrls[userProfile.package] || packageUrls.pack;
+            window.open(upgradeUrl, '_blank');
+        }
+
+        function studyTopic(topic) {
+            // Analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'study_weak_area', {
+                    topic: topic,
+                    trade: userProfile.trade
+                });
+            }
+            
+            // Navigate to study interface for specific topic
+            alert(`Starting focused study session for: ${topic}`);
+            // In real implementation, this would navigate to the study interface
+        }
+
+        // Simulate real-time updates (for demo purposes)
+        setInterval(() => {
+            // Simulate small performance updates
+            if (Math.random() > 0.9) {
+                performanceData.questionsToday += 1;
+                performanceData.questionsCompleted += 1;
+                performanceData.totalXP += Math.floor(Math.random() * 10) + 5;
+                updateAnalyticsSection();
+                updateGamifiedSection();
+                
+                // Save updated performance
+                localStorage.setItem('userPerformanceData', JSON.stringify(performanceData));
+            }
+        }, 10000); // Update every 10 seconds
+
+        // Google Analytics tracking
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'dashboard_view', {
+                trade: userProfile.trade,
+                package: userProfile.package,
+                trial_active: trialData.active,
+                user_level: performanceData.level
+            });
         }
     </script>
 </body>
