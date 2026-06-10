@@ -585,7 +585,7 @@
         </div>
 
         <div class="quick-actions">
-            <a href="#" class="quick-action" onclick="startPracticeExam()">📝 Continue Practice Exam</a>
+            <a href="#" class="quick-action" onclick="startPracticeExam()">📝 Practice Exam</a>
             <a href="daily-challenge.html" class="quick-action">🎯 Continue Daily Challenge</a>
             <a href="#" class="quick-action" onclick="studyWeakAreas()">🎯 Study Weak Areas</a>
         </div>
@@ -868,17 +868,16 @@
         }
 
         function startPracticeExam() {
-            // For now, redirect to daily challenge with practice mode
-            // Until we create dedicated practice exam pages
+            // Navigate to exam selection page where user can choose from 3 exams or continue
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'start_practice_exam', {
+                gtag('event', 'practice_exam_click', {
                     trade: userProfile.trade,
                     package: userProfile.package
                 });
             }
             
-            // Redirect to daily challenge in practice mode
-            window.location.href = 'daily-challenge.html?mode=practice';
+            // Redirect to exam selection page
+            window.location.href = 'exam-selection.html';
         }
 
         function studyWeakAreas() {

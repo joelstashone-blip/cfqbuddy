@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exam | The Red Seal Academy</title>
+    <link rel="stylesheet" href="css/mobile-gamification.css">
+    <style>
+        .exam-interface {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .exam-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .exam-progress {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            height: 100%;
+            transition: width 0.5s ease;
+            border-radius: 6px;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .timer {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .question-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .question-number {
+            background: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .question-text {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .options-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .option-item {
+            background: #f8f9fa;
+            margin: 10px 0;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .option-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .option-item.selected {
+            background: #D1ECF1;
+            border-color: #007bff;
+            transform: translateX(10px);
+        }
+
+        .option-letter {
+            background: #6c757d;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .option-item.selected .option-letter {
+            background: #007bff;
+        }
+
+        .exam-controls {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .control-button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .btn-previous {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-previous:hover {
+            background: #5a6268;
+        }
+
+        .btn-next {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn-next:hover {
+            background: #0056b3;
+        }
+
+        .btn-submit {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background: #1e7e34;
+        }
+
+        .btn-finish {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-finish:hover {
+            background: #c82333;
+        }
+
+        .question-navigation {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .nav-question {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #dee2e6;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .nav-question:hover {
+            border-color: #007bff;
+        }
+
+        .nav-question.answered {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+
+        .nav-question.current {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        .exam-info {
+            background: #e7f3ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #007bff;
+        }
+
+        @media (max-width: 768px) {
+            .exam-interface {
+                padding: 10px;
+            }
+            
+            .exam-controls {
+                flex-direction: column;
+            }
+            
+            .control-button {
+                max-width: none;
+                width: 100%;
+            }
+            
+            .progress-info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+            }
+            
+            .timer {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-interface">
+        <!-- Exam Header -->
+        <div class="exam-header">
+            <h1 id="examTitle">Practice Exam</h1>
+            <div id="examSubtitle">Loading exam...</div>
+        </div>
+
+        <!-- Progress Section -->
+        <div class="exam-progress">
+            <div class="progress-info">
+                <div>
+                    <strong>Progress:</strong> <span id="progressText">0 of 0</span> questions completed
+                </div>
+                <div class="timer" id="timer">
+                    ⏰ Loading...
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <!-- Current Question -->
+        <div class="question-card" id="questionCard">
+            <div class="question-number" id="questionNumber">Question 1</div>
+            <div class="question-text" id="questionText">Loading question...</div>
+            <ul class="options-list" id="optionsList">
+                <!-- Options will be populated by JavaScript -->
+            </ul>
+        </div>
+
+        <!-- Exam Controls -->
+        <div class="exam-controls">
+            <button class="control-button btn-previous" id="prevBtn" onclick="previousQuestion()" disabled>
+                ← Previous
+            </button>
+            <button class="control-button btn-next" id="nextBtn" onclick="nextQuestion()">
+                Next →
+            </button>
+            <button class="control-button btn-submit" id="submitBtn" onclick="submitExam()" style="display: none;">
+                Submit Exam
+            </button>
+        </div>
+
+        <!-- Question Navigation -->
+        <div class="question-navigation">
+            <h4>📍 Question Navigation</h4>
+            <p style="color: #666; font-size: 0.9em;">Click any question number to jump directly to it</p>
+            <div class="nav-grid" id="navGrid">
+                <!-- Navigation will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Exam state management
+        let currentExam = {};
+        let examQuestions = [];
+        let userAnswers = {};
+        let currentQuestionIndex = 0;
+        let examStartTime = null;
+        let timerInterval = null;
+        let examParams = {};
+
+        // Initialize exam
+        document.addEventListener('DOMContentLoaded', function() {
+            parseExamParameters();
+            loadExamData();
+            initializeExam();
+        });
+
+        function parseExamParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            examParams = {
+                examId: urlParams.get('exam'),
+                trade: urlParams.get('trade'),
+                number: urlParams.get('number'),
+                resume: urlParams.get('resume') === 'true',
+                startQuestion: parseInt(urlParams.get('question')) || 1
+            };
+        }
+
+        function loadExamData() {
+            // Load user data
+            const userData = localStorage.getItem('redSealUserData');
+            if (!userData) {
+                window.location.href = 'login.html';
+                return;
+            }
+            currentUser = JSON.parse(userData);
+
+            // Generate exam questions based on trade and exam ID
+            examQuestions = generateExamQuestions(examParams.trade, examParams.examId);
+            
+            // Load previous answers if resuming
+            if (examParams.resume) {
+                loadPreviousProgress();
+            }
+        }
+
+        function generateExamQuestions(trade, examId) {
+            // This would typically load from a question database
+            // For now, generating example questions based on trade
+            const tradeQuestions = {
+                '309A': [
+                    {
+                        id: 1,
+                        text: "What is the maximum voltage allowed for a Class 1 circuit according to the Canadian Electrical Code?",
+                        options: ["30V", "60V", "150V", "300V"],
+                        correct: 2
+                    },
+                    {
+                        id: 2,
+                        text: "Which wire gauge would be appropriate for a 20-amp circuit in residential wiring?",
+                        options: ["14 AWG", "12 AWG", "10 AWG", "8 AWG"],
+                        correct: 1
+                    },
+                    {
+                        id: 3,
+                        text: "What type of motor starter would you use for a 5 HP three-phase motor?",
+                        options: ["Direct Online Starter", "Star-Delta Starter", "Soft Starter", "Variable Frequency Drive"],
+                        correct: 1
+                    }
+                ],
+                '306A': [
+                    {
+                        id: 1,
+                        text: "What is the minimum pipe diameter for a main drain in a residential building?",
+                        options: ["2 inches", "3 inches", "4 inches", "6 inches"],
+                        correct: 2
+                    },
+                    {
+                        id: 2,
+                        text: "Which fitting should be used when connecting copper to galvanized steel pipe?",
+                        options: ["Direct coupling", "Dielectric union", "Threaded adapter", "Compression fitting"],
+                        correct: 1
+                    }
+                ]
+            };
+
+            // Return questions for the specified trade (first 150 for full exam)
+            const questions = tradeQuestions[trade] || tradeQuestions['309A'];
+            
+            // Repeat and shuffle questions to create 150 question exam
+            const examQuestionSet = [];
+            for (let i = 0; i < 150; i++) {
+                const baseQuestion = questions[i % questions.length];
+                examQuestionSet.push({
+                    ...baseQuestion,
+                    id: i + 1,
+                    // Vary the question text slightly to avoid repetition
+                    text: baseQuestion.text + (i >= questions.length ? ` (Variant ${Math.floor(i / questions.length) + 1})` : '')
+                });
+            }
+            
+            return examQuestionSet;
+        }
+
+        function loadPreviousProgress() {
+            const progressKey = `examProgress_${currentUser.id}`;
+            const allProgress = localStorage.getItem(progressKey);
+            if (allProgress) {
+                const progress = JSON.parse(allProgress);
+                const examProgress = progress[examParams.examId];
+                if (examProgress && examProgress.answers) {
+                    userAnswers = examProgress.answers;
+                    currentQuestionIndex = examParams.startQuestion - 1;
+                }
+            }
+        }
+
+        function initializeExam() {
+            if (!examStartTime) {
+                examStartTime = Date.now();
+            }
+
+            updateExamHeader();
+            renderQuestionNavigation();
+            displayQuestion();
+            startTimer();
+        }
+
+        function updateExamHeader() {
+            const examInfo = getExamInfo();
+            document.getElementById('examTitle').textContent = `${examInfo.title} - Exam ${examParams.number}`;
+            document.getElementById('examSubtitle').textContent = `${examInfo.tradeName} • ${examQuestions.length} Questions • ${examInfo.timeLimit} minutes`;
+        }
+
+        function getExamInfo() {
+            const examConfigs = {
+                '309A': {
+                    tradeName: '309A Electrician',
+                    timeLimit: 180,
+                    exams: {
+                        'exam1': { title: 'Fundamentals & Safety' },
+                        'exam2': { title: 'Installation & Maintenance' },
+                        'exam3': { title: 'Advanced Applications' }
+                    }
+                },
+                '306A': {
+                    tradeName: '306A Plumber',
+                    timeLimit: 180,
+                    exams: {
+                        'exam1': { title: 'Fundamentals & Safety' },
+                        'exam2': { title: 'Installation & Repair' },
+                        'exam3': { title: 'Advanced Systems' }
+                    }
+                }
+            };
+
+            const tradeConfig = examConfigs[examParams.trade];
+            const examConfig = tradeConfig.exams[examParams.examId];
+            
+            return {
+                tradeName: tradeConfig.tradeName,
+                title: examConfig.title,
+                timeLimit: tradeConfig.timeLimit
+            };
+        }
+
+        function renderQuestionNavigation() {
+            const navGrid = document.getElementById('navGrid');
+            navGrid.innerHTML = '';
+
+            for (let i = 0; i < examQuestions.length; i++) {
+                const navBtn = document.createElement('div');
+                navBtn.className = 'nav-question';
+                navBtn.textContent = i + 1;
+                navBtn.onclick = () => goToQuestion(i);
+
+                if (i === currentQuestionIndex) {
+                    navBtn.classList.add('current');
+                } else if (userAnswers[i + 1] !== undefined) {
+                    navBtn.classList.add('answered');
+                }
+
+                navGrid.appendChild(navBtn);
+            }
+        }
+
+        function displayQuestion() {
+            const question = examQuestions[currentQuestionIndex];
+            if (!question) return;
+
+            document.getElementById('questionNumber').textContent = `Question ${currentQuestionIndex + 1}`;
+            document.getElementById('questionText').textContent = question.text;
+
+            const optionsList = document.getElementById('optionsList');
+            optionsList.innerHTML = '';
+
+            const letters = ['A', 'B', 'C', 'D'];
+            question.options.forEach((option, index) => {
+                const li = document.createElement('li');
+                li.className = 'option-item';
+                if (userAnswers[currentQuestionIndex + 1] === index) {
+                    li.classList.add('selected');
+                }
+                
+                li.onclick = () => selectOption(index);
+                li.innerHTML = `
+                    <div class="option-letter">${letters[index]}</div>
+                    <div>${option}</div>
+                `;
+                
+                optionsList.appendChild(li);
+            });
+
+            updateProgress();
+            updateControls();
+        }
+
+        function selectOption(optionIndex) {
+            // Remove previous selection
+            document.querySelectorAll('.option-item').forEach(item => {
+                item.classList.remove('selected');
+            });
+
+            // Add selection to clicked option
+            document.querySelectorAll('.option-item')[optionIndex].classList.add('selected');
+
+            // Save answer
+            userAnswers[currentQuestionIndex + 1] = optionIndex;
+            saveProgress();
+            renderQuestionNavigation();
+        }
+
+        function updateProgress() {
+            const answeredQuestions = Object.keys(userAnswers).length;
+            const totalQuestions = examQuestions.length;
+            
+            document.getElementById('progressText').textContent = `${answeredQuestions} of ${totalQuestions}`;
+            
+            const progressPercent = (answeredQuestions / totalQuestions) * 100;
+            document.getElementById('progressFill').style.width = `${progressPercent}%`;
+        }
+
+        function updateControls() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+
+            prevBtn.disabled = currentQuestionIndex === 0;
+            
+            if (currentQuestionIndex === examQuestions.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'block';
+            } else {
+                nextBtn.style.display = 'block';
+                submitBtn.style.display = 'none';
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion();
+                renderQuestionNavigation();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < examQuestions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+                renderQuestionNavigation();
+            }
+        }
+
+        function goToQuestion(questionIndex) {
+            currentQuestionIndex = questionIndex;
+            displayQuestion();
+            renderQuestionNavigation();
+        }
+
+        function saveProgress() {
+            const progressKey = `examProgress_${currentUser.id}`;
+            const allProgress = JSON.parse(localStorage.getItem(progressKey) || '{}');
+            
+            if (!allProgress[examParams.examId]) {
+                allProgress[examParams.examId] = {};
+            }
+            
+            allProgress[examParams.examId] = {
+                answers: userAnswers,
+                currentQuestion: currentQuestionIndex + 1,
+                lastSaved: Date.now(),
+                startTime: examStartTime
+            };
+
+            localStorage.setItem(progressKey, JSON.stringify(allProgress));
+        }
+
+        function startTimer() {
+            const timeLimit = getExamInfo().timeLimit * 60 * 1000; // Convert to milliseconds
+            
+            timerInterval = setInterval(() => {
+                const elapsed = Date.now() - examStartTime;
+                const remaining = timeLimit - elapsed;
+                
+                if (remaining <= 0) {
+                    submitExam();
+                    return;
+                }
+                
+                const hours = Math.floor(remaining / (60 * 60 * 1000));
+                const minutes = Math.floor((remaining % (60 * 60 * 1000)) / (60 * 1000));
+                const seconds = Math.floor((remaining % (60 * 1000)) / 1000);
+                
+                document.getElementById('timer').textContent = 
+                    `⏰ ${hours}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    
+                // Warning when less than 10 minutes remaining
+                if (remaining < 10 * 60 * 1000) {
+                    document.getElementById('timer').style.background = 
+                        'linear-gradient(135deg, #dc3545, #c82333)';
+                }
+            }, 1000);
+        }
+
+        function submitExam() {
+            clearInterval(timerInterval);
+            
+            // Calculate score
+            let correctAnswers = 0;
+            examQuestions.forEach((question, index) => {
+                if (userAnswers[index + 1] === question.correct) {
+                    correctAnswers++;
+                }
+            });
+            
+            const score = Math.round((correctAnswers / examQuestions.length) * 100);
+            const timeSpent = Date.now() - examStartTime;
+            
+            // Save exam results
+            saveExamResults(score, correctAnswers, timeSpent);
+            
+            // Navigate to results page
+            window.location.href = `exam-results.html?exam=${examParams.examId}&trade=${examParams.trade}&score=${score}&correct=${correctAnswers}&total=${examQuestions.length}&time=${Math.round(timeSpent / 60000)}`;
+        }
+
+        function saveExamResults(score, correct, timeSpent) {
+            const progressKey = `examProgress_${currentUser.id}`;
+            const allProgress = JSON.parse(localStorage.getItem(progressKey) || '{}');
+            
+            if (!allProgress[examParams.examId]) {
+                allProgress[examParams.examId] = {};
+            }
+            
+            if (!allProgress[examParams.examId].attempts) {
+                allProgress[examParams.examId].attempts = [];
+            }
+            
+            allProgress[examParams.examId].attempts.push({
+                score: score,
+                correct: correct,
+                total: examQuestions.length,
+                timeSpent: Math.round(timeSpent / 60000), // Convert to minutes
+                completedAt: new Date().toISOString(),
+                answers: userAnswers
+            });
+            
+            allProgress[examParams.examId].completed = true;
+            allProgress[examParams.examId].currentQuestion = 0;
+            
+            localStorage.setItem(progressKey, JSON.stringify(allProgress));
+            
+            // Analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'exam_completed', {
+                    exam_id: examParams.examId,
+                    trade: examParams.trade,
+                    score: score,
+                    time_spent: Math.round(timeSpent / 60000)
+                });
+            }
+        }
+
+        // Prevent accidental page exit
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
+</body>
+</html>

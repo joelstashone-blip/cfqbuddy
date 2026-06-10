@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Exams | The Red Seal Academy</title>
+    <link rel="stylesheet" href="css/mobile-gamification.css">
+    <style>
+        .exam-selection {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .user-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .continue-exam {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+
+        .continue-exam:hover {
+            transform: translateY(-2px);
+        }
+
+        .continue-exam:disabled {
+            background: #888;
+            cursor: not-allowed;
+        }
+
+        .exams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .exam-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 2px solid transparent;
+        }
+
+        .exam-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .exam-card.completed {
+            border-color: #28a745;
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+        }
+
+        .exam-card.in-progress {
+            border-color: #ffc107;
+            background: linear-gradient(135deg, #fff3cd, #fde2a7);
+        }
+
+        .exam-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .exam-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 15px;
+        }
+
+        .exam-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .exam-button {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background 0.2s ease;
+        }
+
+        .exam-button:hover {
+            background: linear-gradient(135deg, #0056b3, #003d82);
+        }
+
+        .exam-button.continue {
+            background: linear-gradient(135deg, #28a745, #1e7e34);
+        }
+
+        .exam-button.retake {
+            background: linear-gradient(135deg, #6f42c1, #562d9a);
+        }
+
+        .exam-stats-summary {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 1px solid #dee2e6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #007bff;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .back-button {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: background 0.2s ease;
+        }
+
+        .back-button:hover {
+            background: linear-gradient(135deg, #495057, #343a40);
+        }
+
+        .package-requirement {
+            background: linear-gradient(135deg, #fff3cd, #fde2a7);
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            text-align: center;
+            color: #856404;
+        }
+
+        .package-requirement a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .trade-info {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #007bff;
+        }
+
+        @media (max-width: 768px) {
+            .exam-selection {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .exams-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-selection">
+        <a href="dashboard.html" class="back-button">
+            ← Back to Dashboard
+        </a>
+
+        <div class="user-info">
+            <h1>📝 Practice Exams</h1>
+            <div class="trade-info" id="tradeInfo">
+                <!-- Trade-specific info will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Continue Previous Exam Section -->
+        <button id="continueExam" class="continue-exam" onclick="continueLastExam()" style="display: none;">
+            🔄 Continue Exam <span id="continueExamDetails"></span>
+        </button>
+
+        <!-- Exam Statistics Summary -->
+        <div class="exam-stats-summary">
+            <h3>📊 Your Exam Progress</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value" id="totalAttempts">0</span>
+                    <div class="stat-label">Total Attempts</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="bestScore">0%</span>
+                    <div class="stat-label">Best Score</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="avgScore">0%</span>
+                    <div class="stat-label">Average Score</div>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="timeSpent">0h</span>
+                    <div class="stat-label">Time Spent</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Available Exams Grid -->
+        <div class="exams-grid" id="examsGrid">
+            <!-- Exams will be populated by JavaScript based on user's trade and package -->
+        </div>
+
+        <!-- Package Upgrade Prompt for Limited Users -->
+        <div id="packagePrompt" class="package-requirement" style="display: none;">
+            <h4>🔓 Unlock All Practice Exams</h4>
+            <p>Upgrade to access all 3 practice exams with detailed explanations and progress tracking.</p>
+            <a href="trade-selection.html">View Packages →</a>
+        </div>
+    </div>
+
+    <script>
+        // User data and exam progress management
+        let currentUser = {};
+        let examProgress = {};
+
+        // Trade-specific exam configurations
+        const examConfigs = {
+            '309A': {
+                tradeName: '309A Electrician',
+                exams: [
+                    {
+                        id: 'exam1',
+                        title: 'Fundamentals & Safety',
+                        description: 'Basic electrical principles, safety regulations, and code requirements',
+                        questions: 150,
+                        timeLimit: 180, // 3 hours
+                        topics: ['Motor Controls', 'Safety Regulations', 'Code Requirements', 'Basic Circuits']
+                    },
+                    {
+                        id: 'exam2', 
+                        title: 'Installation & Maintenance',
+                        description: 'Electrical installations, troubleshooting, and maintenance procedures',
+                        questions: 150,
+                        timeLimit: 180,
+                        topics: ['Installation Methods', 'Troubleshooting', 'Maintenance', 'Systems Integration']
+                    },
+                    {
+                        id: 'exam3',
+                        title: 'Advanced Applications',
+                        description: 'Complex systems, industrial applications, and advanced troubleshooting',
+                        questions: 150,
+                        timeLimit: 180,
+                        topics: ['Industrial Systems', 'Advanced Controls', 'Power Systems', 'Specialized Applications']
+                    }
+                ]
+            },
+            '306A': {
+                tradeName: '306A Plumber',
+                exams: [
+                    {
+                        id: 'exam1',
+                        title: 'Fundamentals & Safety',
+                        description: 'Basic plumbing principles, safety regulations, and code requirements',
+                        questions: 150,
+                        timeLimit: 180,
+                        topics: ['Plumbing Systems', 'Safety Regulations', 'Code Requirements', 'Basic Installation']
+                    },
+                    {
+                        id: 'exam2',
+                        title: 'Installation & Repair',
+                        description: 'Plumbing installations, repairs, and maintenance procedures',
+                        questions: 150,
+                        timeLimit: 180,
+                        topics: ['Installation Methods', 'Repair Techniques', 'Maintenance', 'System Design']
+                    },
+                    {
+                        id: 'exam3',
+                        title: 'Advanced Systems',
+                        description: 'Complex plumbing systems, commercial applications, and specialized work',
+                        questions: 150,
+                        timeLimit: 180,
+                        topics: ['Commercial Systems', 'Advanced Repairs', 'Specialized Equipment', 'System Integration']
+                    }
+                ]
+            },
+            '307A': {
+                tradeName: '307A HVAC Mechanic',
+                exams: [
+                    {
+                        id: 'exam1',
+                        title: 'Fundamentals & Safety',
+                        description: 'HVAC principles, safety regulations, and code requirements',
+                        questions: 150,
+                        timeLimit: 180,
+                        topics: ['HVAC Systems', 'Safety Regulations', 'Code Requirements', 'Basic Operations']
+                    },
+                    {
+                        id: 'exam2',
+                        title: 'Installation & Service',
+                        description: 'HVAC installation, service, and maintenance procedures',
+                        questions: 150,
+                        timeLimit: 180,
+                        topics: ['Installation Methods', 'Service Procedures', 'Maintenance', 'System Diagnostics']
+                    },
+                    {
+                        id: 'exam3',
+                        title: 'Advanced Controls',
+                        description: 'Advanced HVAC controls, commercial systems, and specialized applications',
+                        questions: 150,
+                        timeLimit: 180,
+                        topics: ['Advanced Controls', 'Commercial Systems', 'Specialized Applications', 'System Integration']
+                    }
+                ]
+            }
+        };
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserData();
+            loadExamProgress();
+            updateTradeInfo();
+            updateExamStats();
+            renderExams();
+            checkForResumeExam();
+        });
+
+        function loadUserData() {
+            const userData = localStorage.getItem('redSealUserData');
+            if (userData) {
+                currentUser = JSON.parse(userData);
+            } else {
+                // Redirect to login if no user data
+                window.location.href = 'login.html';
+                return;
+            }
+        }
+
+        function loadExamProgress() {
+            const progressData = localStorage.getItem(`examProgress_${currentUser.id}`);
+            if (progressData) {
+                examProgress = JSON.parse(progressData);
+            } else {
+                examProgress = {};
+            }
+        }
+
+        function saveExamProgress() {
+            localStorage.setItem(`examProgress_${currentUser.id}`, JSON.stringify(examProgress));
+        }
+
+        function updateTradeInfo() {
+            const tradeInfo = document.getElementById('tradeInfo');
+            const config = examConfigs[currentUser.trade];
+            if (config) {
+                tradeInfo.innerHTML = `
+                    <h2>${config.tradeName}</h2>
+                    <p>Complete practice exams designed specifically for your trade certification</p>
+                    <p><strong>Package:</strong> ${currentUser.package || 'Not selected'} • <strong>Access:</strong> ${getPackageAccess()} exams</p>
+                `;
+            }
+        }
+
+        function getPackageAccess() {
+            switch(currentUser.package) {
+                case 'single': return '1';
+                case 'pack': return '3';
+                case 'bundle': return '3';
+                default: return '1';
+            }
+        }
+
+        function updateExamStats() {
+            let totalAttempts = 0;
+            let totalScores = [];
+            let totalTime = 0;
+
+            Object.values(examProgress).forEach(exam => {
+                if (exam.attempts) {
+                    totalAttempts += exam.attempts.length;
+                    exam.attempts.forEach(attempt => {
+                        if (attempt.score !== undefined) {
+                            totalScores.push(attempt.score);
+                        }
+                        if (attempt.timeSpent) {
+                            totalTime += attempt.timeSpent;
+                        }
+                    });
+                }
+            });
+
+            document.getElementById('totalAttempts').textContent = totalAttempts;
+            document.getElementById('bestScore').textContent = totalScores.length > 0 ? Math.max(...totalScores) + '%' : '0%';
+            document.getElementById('avgScore').textContent = totalScores.length > 0 ? Math.round(totalScores.reduce((a, b) => a + b, 0) / totalScores.length) + '%' : '0%';
+            document.getElementById('timeSpent').textContent = Math.round(totalTime / 60) + 'h';
+        }
+
+        function renderExams() {
+            const examsGrid = document.getElementById('examsGrid');
+            const config = examConfigs[currentUser.trade];
+            const packageAccess = getPackageAccess();
+            
+            if (!config) {
+                examsGrid.innerHTML = '<div class="exam-card"><h3>Trade not recognized</h3><p>Please update your profile.</p></div>';
+                return;
+            }
+
+            examsGrid.innerHTML = '';
+
+            config.exams.forEach((exam, index) => {
+                const examData = examProgress[exam.id] || {};
+                const hasAccess = index < parseInt(packageAccess);
+                const isCompleted = examData.completed || false;
+                const isInProgress = examData.currentQuestion > 0 && !isCompleted;
+                const bestScore = examData.attempts ? Math.max(...examData.attempts.map(a => a.score || 0)) : 0;
+
+                let statusClass = '';
+                let statusText = 'Not Started';
+                let buttonText = 'Start Exam';
+                let buttonClass = '';
+
+                if (isCompleted) {
+                    statusClass = 'completed';
+                    statusText = `Completed (${bestScore}%)`;
+                    buttonText = 'Retake Exam';
+                    buttonClass = 'retake';
+                } else if (isInProgress) {
+                    statusClass = 'in-progress';
+                    statusText = `In Progress (${examData.currentQuestion || 0}/${exam.questions})`;
+                    buttonText = 'Continue Exam';
+                    buttonClass = 'continue';
+                }
+
+                const examCard = document.createElement('div');
+                examCard.className = `exam-card ${statusClass}`;
+                examCard.innerHTML = `
+                    <div class="exam-number">${index + 1}</div>
+                    <div class="exam-title">${exam.title}</div>
+                    <p style="color: #666; font-size: 0.9em; margin: 10px 0;">${exam.description}</p>
+                    <div class="exam-stats">
+                        <span>📝 ${exam.questions} Questions</span>
+                        <span>⏱️ ${exam.timeLimit} min</span>
+                    </div>
+                    <div class="exam-stats">
+                        <span>📊 ${statusText}</span>
+                        <span>🎯 ${examData.attempts ? examData.attempts.length : 0} Attempts</span>
+                    </div>
+                    ${hasAccess ? 
+                        `<button class="exam-button ${buttonClass}" onclick="startExam('${exam.id}', ${index + 1})">${buttonText}</button>` :
+                        `<button class="exam-button" disabled>🔒 Upgrade Required</button>`
+                    }
+                `;
+
+                examsGrid.appendChild(examCard);
+            });
+
+            // Show package upgrade prompt for limited access
+            if (parseInt(packageAccess) < 3) {
+                document.getElementById('packagePrompt').style.display = 'block';
+            }
+        }
+
+        function checkForResumeExam() {
+            let hasInProgress = false;
+            let resumeExamId = '';
+            let resumeDetails = '';
+
+            Object.keys(examProgress).forEach(examId => {
+                const exam = examProgress[examId];
+                if (exam.currentQuestion > 0 && !exam.completed) {
+                    hasInProgress = true;
+                    resumeExamId = examId;
+                    const config = examConfigs[currentUser.trade];
+                    const examInfo = config.exams.find(e => e.id === examId);
+                    resumeDetails = `${examInfo.title} (Question ${exam.currentQuestion}/${examInfo.questions})`;
+                }
+            });
+
+            if (hasInProgress) {
+                document.getElementById('continueExam').style.display = 'block';
+                document.getElementById('continueExamDetails').textContent = resumeDetails;
+                document.getElementById('continueExam').onclick = () => continueExam(resumeExamId);
+            }
+        }
+
+        function startExam(examId, examNumber) {
+            // Analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'exam_start', {
+                    exam_id: examId,
+                    exam_number: examNumber,
+                    trade: currentUser.trade,
+                    package: currentUser.package
+                });
+            }
+
+            // Navigate to the exam interface with parameters
+            window.location.href = `practice-exam.html?exam=${examId}&trade=${currentUser.trade}&number=${examNumber}`;
+        }
+
+        function continueExam(examId) {
+            // Analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'exam_continue', {
+                    exam_id: examId,
+                    trade: currentUser.trade
+                });
+            }
+
+            const examData = examProgress[examId];
+            const config = examConfigs[currentUser.trade];
+            const examInfo = config.exams.find(e => e.id === examId);
+            const examNumber = config.exams.indexOf(examInfo) + 1;
+
+            // Navigate to exam with resume parameters
+            window.location.href = `practice-exam.html?exam=${examId}&trade=${currentUser.trade}&number=${examNumber}&resume=true&question=${examData.currentQuestion}`;
+        }
+
+        function continueLastExam() {
+            Object.keys(examProgress).forEach(examId => {
+                const exam = examProgress[examId];
+                if (exam.currentQuestion > 0 && !exam.completed) {
+                    continueExam(examId);
+                    return;
+                }
+            });
+        }
+
+        // Google Analytics tracking
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'exam_selection_view', {
+                trade: currentUser.trade,
+                package: currentUser.package
+            });
+        }
+    </script>
+</body>
+</html>
