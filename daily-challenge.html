@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Challenge | The Red Seal Academy</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4a5568;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .challenge-header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .challenge-title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .challenge-subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .challenge-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        .challenge-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .challenge-type {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .challenge-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .challenge-meta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .meta-value {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .meta-label {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .question-container {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 30px;
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .question-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #fff;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #f7fafc;
+            transform: translateY(-1px);
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: #ebf4ff;
+        }
+
+        .option.correct {
+            border-color: #48bb78;
+            background: #f0fff4;
+        }
+
+        .option.incorrect {
+            border-color: #f56565;
+            background: #fff5f5;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 12px;
+            min-width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e2e8f0;
+            color: #666;
+        }
+
+        .option.selected .option-label {
+            background: #667eea;
+            color: white;
+        }
+
+        .option.correct .option-label {
+            background: #48bb78;
+            color: white;
+        }
+
+        .option.incorrect .option-label {
+            background: #f56565;
+            color: white;
+        }
+
+        .challenge-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f7fafc;
+            color: #4a5568;
+            border: 2px solid #e2e8f0;
+        }
+
+        .btn-secondary:hover {
+            background: #edf2f7;
+            border-color: #cbd5e0;
+        }
+
+        .explanation {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .explanation.show {
+            display: block;
+        }
+
+        .explanation-title {
+            font-weight: bold;
+            color: #2d5016;
+            margin-bottom: 10px;
+        }
+
+        .explanation-text {
+            color: #22543d;
+            line-height: 1.6;
+        }
+
+        .progress-bar {
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100%;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .weakness-badge {
+            background: #fff5f5;
+            color: #e53e3e;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .strength-badge {
+            background: #f0fff4;
+            color: #38a169;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .challenge-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .stat-item {
+                margin: 0;
+            }
+
+            .challenge-meta {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .challenge-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .challenge-card {
+                padding: 20px;
+            }
+
+            .question-container {
+                padding: 20px;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <nav class="nav">
+            <div class="logo">🏆 The Red Seal Academy</div>
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link">← Back to Dashboard</a>
+                <a href="feedback.html" class="nav-link">💬 Feedback</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="challenge-header fade-in">
+            <h1 class="challenge-title">🎯 Daily Challenge</h1>
+            <p class="challenge-subtitle" id="challenge-subtitle">Personalized questions based on your weak areas</p>
+            
+            <div class="challenge-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="streak-count">12</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="today-score">-</div>
+                    <div class="stat-label">Today's Score</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="week-avg">87%</div>
+                    <div class="stat-label">Weekly Avg</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="challenge-card fade-in" id="challenge-card">
+            <div class="challenge-type" id="challenge-type">🎯 Weakness Focus</div>
+            
+            <div class="challenge-info">
+                <div class="challenge-meta">
+                    <div class="meta-item">
+                        <div class="meta-value" id="question-count">5</div>
+                        <div class="meta-label">Questions</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-value" id="time-limit">10</div>
+                        <div class="meta-label">Minutes</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-value" id="trade-focus">309A</div>
+                        <div class="meta-label">Trade</div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+
+            <div id="question-container">
+                <!-- Questions will be loaded here -->
+            </div>
+
+            <div class="challenge-actions">
+                <button class="btn btn-secondary" onclick="skipQuestion()">⏭️ Skip</button>
+                <button class="btn btn-primary" onclick="submitAnswer()" id="submit-btn">Submit Answer</button>
+                <button class="btn btn-primary" onclick="nextQuestion()" id="next-btn" style="display: none;">Next Question →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Challenge state management
+        let currentUser = null;
+        let challengeData = null;
+        let currentQuestionIndex = 0;
+        let questionsAnswered = 0;
+        let correctAnswers = 0;
+        let selectedOption = null;
+        let challengeStartTime = null;
+        let challengeCompleted = false;
+
+        // Question banks organized by trade and topic
+        const questionBanks = {
+            '309A': {
+                'Motor Controls': [
+                    {
+                        question: "What is the primary function of a motor starter?",
+                        options: [
+                            "To provide overload protection only",
+                            "To start and stop the motor with overload protection", 
+                            "To vary motor speed continuously",
+                            "To reverse motor direction automatically"
+                        ],
+                        correct: 1,
+                        explanation: "A motor starter provides both motor control (start/stop) and overload protection, making it essential for safe motor operation."
+                    },
+                    {
+                        question: "According to the CEC, what is the maximum locked rotor current for a 5 HP, 3-phase motor at 240V?",
+                        options: [
+                            "64 A",
+                            "92 A", 
+                            "128 A",
+                            "154 A"
+                        ],
+                        correct: 3,
+                        explanation: "Table 44 in the CEC specifies locked rotor currents. For a 5 HP motor at 240V 3-phase, the locked rotor current is 154 A."
+                    }
+                ],
+                'Safety Regulations': [
+                    {
+                        question: "What is the minimum working space required in front of electrical equipment rated 600V or less?",
+                        options: [
+                            "0.8 meters (2.5 feet)",
+                            "1.0 meters (3 feet)",
+                            "1.2 meters (4 feet)", 
+                            "1.5 meters (5 feet)"
+                        ],
+                        correct: 1,
+                        explanation: "CEC Rule 2-308 requires a minimum of 1.0 meter (3 feet) working space in front of electrical equipment rated 600V or less."
+                    },
+                    {
+                        question: "When must a lockout/tagout procedure be implemented?",
+                        options: [
+                            "Only during major maintenance",
+                            "When working on energized equipment over 30V",
+                            "Before any maintenance on electrical equipment",
+                            "Only when multiple trades are involved"
+                        ],
+                        correct: 2,
+                        explanation: "Lockout/tagout procedures are required before any maintenance or service work on electrical equipment to ensure worker safety."
+                    }
+                ],
+                'Code Requirements': [
+                    {
+                        question: "What is the maximum number of conductors allowed in a 4 11/16\" octagonal box?",
+                        options: [
+                            "12 conductors #14 AWG",
+                            "16 conductors #14 AWG",
+                            "18 conductors #14 AWG",
+                            "21 conductors #14 AWG"
+                        ],
+                        correct: 2,
+                        explanation: "According to CEC Table 12-3, a 4 11/16\" octagonal box (depth 1 1/2\") allows 18 conductors #14 AWG maximum."
+                    }
+                ]
+            },
+            '306A': {
+                'Plumbing Systems': [
+                    {
+                        question: "What is the minimum diameter for a building drain serving 20 fixture units?",
+                        options: [
+                            "75mm (3 inches)",
+                            "100mm (4 inches)",  
+                            "125mm (5 inches)",
+                            "150mm (6 inches)"
+                        ],
+                        correct: 1,
+                        explanation: "According to the National Plumbing Code, a 100mm (4 inch) building drain can handle up to 180 fixture units."
+                    }
+                ]
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserData();
+            initializeDailyChallenge();
+        });
+
+        function loadUserData() {
+            const userData = JSON.parse(localStorage.getItem('redSealUserData') || '{}');
+            const performanceData = JSON.parse(localStorage.getItem('userPerformanceData') || '{}');
+
+            currentUser = {
+                name: userData.firstName || 'Student',
+                trade: userData.trade || '309A',
+                package: userData.package || 'pack',
+                weakAreas: performanceData.weakAreas || ['Motor Controls', 'Safety Regulations'],
+                dailyStats: JSON.parse(localStorage.getItem('dailyChallengeStats') || '{}')
+            };
+        }
+
+        function initializeDailyChallenge() {
+            updateChallengeHeader();
+            generateTodaysChallenge();
+            displayCurrentQuestion();
+        }
+
+        function updateChallengeHeader() {
+            document.getElementById('challenge-subtitle').textContent = 
+                `Personalized ${currentUser.trade} questions focusing on your weak areas`;
+            document.getElementById('trade-focus').textContent = currentUser.trade;
+            
+            // Update streak and stats
+            const today = new Date().toDateString();
+            const stats = currentUser.dailyStats;
+            
+            document.getElementById('streak-count').textContent = stats.currentStreak || 0;
+            document.getElementById('today-score').textContent = 
+                stats[today]?.score ? `${stats[today].score}%` : '-';
+            
+            // Calculate weekly average
+            const weekAgo = new Date();
+            weekAgo.setDate(weekAgo.getDate() - 7);
+            let weeklyScores = [];
+            
+            for (let d = new Date(weekAgo); d <= new Date(); d.setDate(d.getDate() + 1)) {
+                const dayStr = d.toDateString();
+                if (stats[dayStr]?.score) {
+                    weeklyScores.push(stats[dayStr].score);
+                }
+            }
+            
+            const weekAvg = weeklyScores.length > 0 ? 
+                Math.round(weeklyScores.reduce((a, b) => a + b, 0) / weeklyScores.length) : 0;
+            document.getElementById('week-avg').textContent = `${weekAvg}%`;
+        }
+
+        function generateTodaysChallenge() {
+            const today = new Date().toDateString();
+            
+            // Check if challenge already exists for today
+            if (currentUser.dailyStats[today]?.completed) {
+                showCompletedChallenge();
+                return;
+            }
+
+            // Check for focus area from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const focusArea = urlParams.get('focus');
+            
+            let allQuestions = [];
+            
+            if (focusArea) {
+                // Focused challenge: 80% from focus area, 20% review
+                document.getElementById('challenge-type').textContent = `🎯 ${focusArea} Focus`;
+                document.getElementById('challenge-type').style.background = 'linear-gradient(135deg, #e53e3e, #c53030)';
+                
+                const focusQuestions = selectQuestionsFromAreas([focusArea], 4);
+                const reviewQuestions = selectQuestionsFromAreas([getRandomOtherArea(focusArea)], 1);
+                allQuestions = [...focusQuestions, ...reviewQuestions];
+            } else {
+                // Regular challenge: 70% from weak areas, 30% from other areas
+                const weakAreaQuestions = selectQuestionsFromAreas(currentUser.weakAreas, 3);
+                const otherAreas = getOtherAreas(currentUser.trade, currentUser.weakAreas);
+                const reviewQuestions = selectQuestionsFromAreas(otherAreas, 2);
+                allQuestions = [...weakAreaQuestions, ...reviewQuestions];
+            }
+            
+            // Shuffle questions
+            challengeData = {
+                questions: shuffleArray(allQuestions),
+                startTime: new Date(),
+                completed: false,
+                focusArea: focusArea
+            };
+            
+            challengeStartTime = new Date();
+        }
+
+        function getRandomOtherArea(excludeArea) {
+            const allAreas = Object.keys(questionBanks[currentUser.trade] || {});
+            const otherAreas = allAreas.filter(area => area !== excludeArea);
+            return otherAreas[Math.floor(Math.random() * otherAreas.length)];
+        }
+
+        function selectQuestionsFromAreas(areas, count) {
+            let questions = [];
+            const tradeQuestions = questionBanks[currentUser.trade] || {};
+            
+            for (let area of areas) {
+                const areaQuestions = tradeQuestions[area] || [];
+                // Randomly select questions from this area
+                const selected = areaQuestions.sort(() => 0.5 - Math.random()).slice(0, Math.ceil(count / areas.length));
+                questions = questions.concat(selected.map(q => ({...q, area})));
+            }
+            
+            return questions.slice(0, count);
+        }
+
+        function getOtherAreas(trade, excludeAreas) {
+            const allAreas = Object.keys(questionBanks[trade] || {});
+            return allAreas.filter(area => !excludeAreas.includes(area));
+        }
+
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function displayCurrentQuestion() {
+            if (!challengeData || currentQuestionIndex >= challengeData.questions.length) {
+                completeChallenge();
+                return;
+            }
+
+            const question = challengeData.questions[currentQuestionIndex];
+            const isWeakArea = currentUser.weakAreas.includes(question.area);
+            
+            const questionHtml = `
+                <div class="question-container">
+                    <div class="question-number">
+                        Question ${currentQuestionIndex + 1} of ${challengeData.questions.length}
+                        ${isWeakArea ? '<span class="weakness-badge">Weak Area</span>' : '<span class="strength-badge">Review</span>'}
+                    </div>
+                    <div class="question-text">${question.question}</div>
+                    <div class="options">
+                        ${question.options.map((option, index) => `
+                            <div class="option" onclick="selectOption(${index})">
+                                <div class="option-label">${String.fromCharCode(65 + index)}</div>
+                                <div>${option}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="explanation" id="explanation">
+                        <div class="explanation-title">Explanation</div>
+                        <div class="explanation-text">${question.explanation}</div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('question-container').innerHTML = questionHtml;
+            updateProgress();
+            
+            // Reset UI state
+            selectedOption = null;
+            document.getElementById('submit-btn').style.display = 'inline-flex';
+            document.getElementById('next-btn').style.display = 'none';
+        }
+
+        function selectOption(optionIndex) {
+            // Remove previous selection
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            
+            // Select new option
+            document.querySelectorAll('.option')[optionIndex].classList.add('selected');
+            selectedOption = optionIndex;
+        }
+
+        function submitAnswer() {
+            if (selectedOption === null) {
+                alert('Please select an answer first.');
+                return;
+            }
+
+            const question = challengeData.questions[currentQuestionIndex];
+            const isCorrect = selectedOption === question.correct;
+            
+            if (isCorrect) {
+                correctAnswers++;
+            }
+            
+            questionsAnswered++;
+            
+            // Show correct/incorrect styling
+            document.querySelectorAll('.option').forEach((opt, index) => {
+                if (index === question.correct) {
+                    opt.classList.add('correct');
+                } else if (index === selectedOption && !isCorrect) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            
+            // Show explanation
+            document.getElementById('explanation').classList.add('show');
+            
+            // Update UI
+            document.getElementById('submit-btn').style.display = 'none';
+            document.getElementById('next-btn').style.display = 'inline-flex';
+            
+            // Track performance by area for future challenges
+            updateAreaPerformance(question.area, isCorrect);
+        }
+
+        function updateAreaPerformance(area, isCorrect) {
+            let areaStats = JSON.parse(localStorage.getItem('areaPerformanceStats') || '{}');
+            
+            if (!areaStats[area]) {
+                areaStats[area] = { correct: 0, total: 0 };
+            }
+            
+            areaStats[area].total++;
+            if (isCorrect) {
+                areaStats[area].correct++;
+            }
+            
+            localStorage.setItem('areaPerformanceStats', JSON.stringify(areaStats));
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            displayCurrentQuestion();
+        }
+
+        function skipQuestion() {
+            if (confirm('Are you sure you want to skip this question? It will count as incorrect.')) {
+                questionsAnswered++;
+                currentQuestionIndex++;
+                displayCurrentQuestion();
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestionIndex + 1) / challengeData.questions.length) * 100;
+            document.getElementById('progress-fill').style.width = `${progress}%`;
+        }
+
+        function completeChallenge() {
+            const score = Math.round((correctAnswers / challengeData.questions.length) * 100);
+            const today = new Date().toDateString();
+            
+            // Update daily stats
+            let dailyStats = currentUser.dailyStats;
+            dailyStats[today] = {
+                score: score,
+                completed: true,
+                correctAnswers: correctAnswers,
+                totalQuestions: challengeData.questions.length,
+                timeSpent: Math.round((new Date() - challengeStartTime) / 1000 / 60) // minutes
+            };
+            
+            // Update streak
+            updateStreak(dailyStats, today);
+            
+            localStorage.setItem('dailyChallengeStats', JSON.stringify(dailyStats));
+            
+            showCompletedChallenge(score);
+        }
+
+        function updateStreak(dailyStats, today) {
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            const yesterdayStr = yesterday.toDateString();
+            
+            if (dailyStats[yesterdayStr]?.completed) {
+                dailyStats.currentStreak = (dailyStats.currentStreak || 0) + 1;
+            } else {
+                dailyStats.currentStreak = 1;
+            }
+            
+            // Update max streak
+            dailyStats.maxStreak = Math.max(dailyStats.maxStreak || 0, dailyStats.currentStreak);
+        }
+
+        function showCompletedChallenge(score) {
+            const completedHtml = `
+                <div class="question-container" style="text-align: center;">
+                    <div style="font-size: 4em; margin-bottom: 20px;">🎉</div>
+                    <h2 style="color: #48bb78; margin-bottom: 15px;">Challenge Complete!</h2>
+                    ${score !== undefined ? `
+                        <div style="font-size: 2em; margin: 20px 0; color: #667eea;">${score}%</div>
+                        <div style="margin-bottom: 30px;">
+                            You got ${correctAnswers} out of ${challengeData?.questions.length || 5} questions correct!
+                        </div>
+                    ` : `
+                        <div style="margin-bottom: 30px;">
+                            You've already completed today's challenge. Come back tomorrow for a new one!
+                        </div>
+                    `}
+                    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                        <a href="dashboard.html" class="btn btn-primary">📊 View Dashboard</a>
+                        <a href="#" onclick="startPracticeExam()" class="btn btn-secondary">📝 Practice More</a>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('question-container').innerHTML = completedHtml;
+            document.querySelector('.challenge-actions').style.display = 'none';
+        }
+
+        function startPracticeExam() {
+            // Redirect to appropriate practice exam based on user's package
+            const examUrls = {
+                '309A': { single: 'exam-309a-single.html', pack: 'exam-309a-pack.html', bundle: 'exam-309a-bundle.html' },
+                '306A': { single: 'exam-306a-single.html', pack: 'exam-306a-pack.html', bundle: 'exam-306a-bundle.html' }
+            };
+            
+            const examUrl = examUrls[currentUser.trade]?.[currentUser.package] || 'exam-309a-pack.html';
+            window.location.href = examUrl;
+        }
+    </script>
+</body>
+</html>

@@ -585,9 +585,9 @@
         </div>
 
         <div class="quick-actions">
-            <a href="#" class="quick-action">📝 Continue Practice Exam</a>
-            <a href="#" class="quick-action">📊 View Progress Analytics</a>
-            <a href="#" class="quick-action">🎯 Study Weak Areas</a>
+            <a href="#" class="quick-action" onclick="startPracticeExam()">📝 Continue Practice Exam</a>
+            <a href="daily-challenge.html" class="quick-action">🎯 Continue Daily Challenge</a>
+            <a href="#" class="quick-action" onclick="studyWeakAreas()">🎯 Study Weak Areas</a>
         </div>
     </div>
 
@@ -849,7 +849,6 @@
         }
 
         function upgradeToPaid() {
-            // Analytics tracking
             if (typeof gtag !== 'undefined') {
                 gtag('event', 'upgrade_click', {
                     trade: userProfile.trade,
@@ -865,8 +864,34 @@
                 bundle: 'https://cfqbuddy.gumroad.com/l/ultimate-bundle'
             };
             
-            const upgradeUrl = packageUrls[userProfile.package] || packageUrls.pack;
-            window.open(upgradeUrl, '_blank');
+            window.open(packageUrls[userProfile.package] || packageUrls.pack, '_blank');
+        }
+
+        function startPracticeExam() {
+            // Navigate to practice exams based on user's trade and package
+            const examUrls = {
+                '309A': {
+                    single: 'exam-309a-single.html',
+                    pack: 'exam-309a-pack.html',
+                    bundle: 'exam-309a-bundle.html'
+                },
+                '306A': {
+                    single: 'exam-306a-single.html', 
+                    pack: 'exam-306a-pack.html',
+                    bundle: 'exam-306a-bundle.html'
+                }
+            };
+            
+            const trade = userProfile.trade || '309A';
+            const package = userProfile.package || 'pack';
+            const examUrl = examUrls[trade]?.[package] || 'exam-309a-pack.html';
+            
+            window.location.href = examUrl;
+        }
+
+        function studyWeakAreas() {
+            // Navigate to targeted study based on weak areas
+            window.location.href = `study-areas.html?trade=${userProfile.trade}&areas=${performanceData.weakAreas.join(',')}`;
         }
 
         function studyTopic(topic) {
@@ -878,9 +903,40 @@
                 });
             }
             
-            // Navigate to study interface for specific topic
-            alert(`Starting focused study session for: ${topic}`);
-            // In real implementation, this would navigate to the study interface
+            // Create topic-specific study session with mixed practice types
+            const studyOptions = [
+                { type: 'daily-challenge', url: `daily-challenge.html?focus=${encodeURIComponent(topic)}`, label: '🎯 Focused Daily Challenge' },
+                { type: 'practice-exam', url: getPracticeExamUrl(topic), label: '📝 Topic Practice Exam' },
+                { type: 'quick-drill', url: `quick-drill.html?topic=${encodeURIComponent(topic)}`, label: '⚡ Quick Drill (10 questions)' }
+            ];
+            
+            // Show study options or directly navigate based on preference
+            const choice = confirm(`Study ${topic}?\n\nOK = Start Focused Daily Challenge\nCancel = Browse All Options`);
+            
+            if (choice) {
+                // Direct to daily challenge with topic focus
+                window.location.href = `daily-challenge.html?focus=${encodeURIComponent(topic)}`;
+            } else {
+                // Show practice exam for this topic
+                window.location.href = getPracticeExamUrl(topic);
+            }
+        }
+        
+        function getPracticeExamUrl(topic) {
+            // Map topics to specific practice exam sections
+            const topicExamMap = {
+                'Motor Controls': 'motor-controls',
+                'Safety Regulations': 'safety-regs', 
+                'Code Requirements': 'code-requirements',
+                'Plumbing Systems': 'plumbing-systems',
+                'HVAC Systems': 'hvac-systems'
+            };
+            
+            const topicSlug = topicExamMap[topic] || 'general';
+            const trade = userProfile.trade || '309A';
+            const package = userProfile.package || 'pack';
+            
+            return `exam-${trade.toLowerCase()}-${package}.html?section=${topicSlug}`;
         }
 
         // Simulate real-time updates (for demo purposes)
