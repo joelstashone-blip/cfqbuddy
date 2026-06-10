@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Support | The Red Seal Academy</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .feedback-form {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #1a365d;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .rating-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .rating-option {
+            flex: 1;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .rating-option input[type="radio"] {
+            width: auto;
+            margin-bottom: 5px;
+        }
+
+        .rating-label {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb347 100%);
+            color: #1a365d;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .feedback-list {
+            margin-top: 30px;
+        }
+
+        .feedback-item {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .feedback-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .feedback-meta {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .feedback-rating {
+            background: #ffd700;
+            color: #1a365d;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .feedback-text {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .feedback-type {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .type-bug { background: #ffe6e6; color: #c53030; }
+        .type-feature { background: #e6f7ff; color: #1890ff; }
+        .type-improvement { background: #f0f9ff; color: #0369a1; }
+        .type-general { background: #f0f4f8; color: #4a5568; }
+
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #1a365d;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .nav-back:hover {
+            color: #2a4a6b;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .feedback-form {
+                padding: 20px;
+            }
+            
+            .rating-option {
+                min-width: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💬 Feedback & Support</h1>
+            <p>Help us improve The Red Seal Academy for future candidates</p>
+        </div>
+
+        <div class="content">
+            <a href="dashboard.html" class="nav-back">← Back to Dashboard</a>
+
+            <div id="success-message" class="success-message">
+                Thank you for your feedback! Your input helps us improve the platform.
+            </div>
+
+            <div id="error-message" class="error-message">
+                There was an error submitting your feedback. Please try again.
+            </div>
+
+            <div class="feedback-form">
+                <h2 style="margin-bottom: 20px; color: #1a365d;">Share Your Experience</h2>
+                
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="name">Your Name (Optional)</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email (Optional - for follow-up)</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trade">Trade Program</label>
+                        <select id="trade" name="trade" required>
+                            <option value="">Select your trade</option>
+                            <option value="309A-Electrician">309A - Construction & Maintenance Electrician</option>
+                            <option value="306A-Plumber">306A - Plumber</option>
+                            <option value="307A-HVAC">307A - HVAC Mechanic</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Feedback Type</label>
+                        <select id="type" name="type" required>
+                            <option value="">Select feedback type</option>
+                            <option value="bug">🐛 Bug Report</option>
+                            <option value="feature">✨ Feature Request</option>
+                            <option value="improvement">🔧 Improvement Suggestion</option>
+                            <option value="general">💭 General Feedback</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Overall Experience Rating</label>
+                        <div class="rating-group">
+                            <div class="rating-option">
+                                <input type="radio" name="rating" value="1" id="rating-1">
+                                <label for="rating-1" class="rating-label">1<br>Poor</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" name="rating" value="2" id="rating-2">
+                                <label for="rating-2" class="rating-label">2<br>Fair</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" name="rating" value="3" id="rating-3">
+                                <label for="rating-3" class="rating-label">3<br>Good</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" name="rating" value="4" id="rating-4">
+                                <label for="rating-4" class="rating-label">4<br>Great</label>
+                            </div>
+                            <div class="rating-option">
+                                <input type="radio" name="rating" value="5" id="rating-5">
+                                <label for="rating-5" class="rating-label">5<br>Excellent</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Feedback</label>
+                        <textarea id="message" name="message" placeholder="Please share your thoughts, report bugs, or suggest improvements..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                </form>
+            </div>
+
+            <div class="feedback-list">
+                <h3 style="margin-bottom: 15px; color: #1a365d;">Recent Feedback</h3>
+                <div id="feedbackDisplay">
+                    <!-- Feedback items will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Feedback storage key
+        const FEEDBACK_STORAGE_KEY = 'redSealFeedback';
+
+        // Load existing feedback on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFeedback();
+        });
+
+        // Form submission handler
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            // Create feedback object
+            const feedback = {
+                id: Date.now(),
+                timestamp: new Date().toISOString(),
+                name: formData.get('name') || 'Anonymous',
+                email: formData.get('email') || '',
+                trade: formData.get('trade'),
+                type: formData.get('type'),
+                rating: formData.get('rating'),
+                message: formData.get('message')
+            };
+
+            // Save to localStorage
+            saveFeedback(feedback);
+            
+            // Submit to Google Sheets (existing endpoint)
+            submitToGoogleSheets(feedback);
+            
+            // Clear form and show success message
+            this.reset();
+            showMessage('success');
+            
+            // Reload feedback display
+            loadFeedback();
+        });
+
+        function saveFeedback(feedback) {
+            try {
+                const existingFeedback = JSON.parse(localStorage.getItem(FEEDBACK_STORAGE_KEY) || '[]');
+                existingFeedback.unshift(feedback); // Add to beginning
+                
+                // Keep only last 50 feedback items
+                if (existingFeedback.length > 50) {
+                    existingFeedback.splice(50);
+                }
+                
+                localStorage.setItem(FEEDBACK_STORAGE_KEY, JSON.stringify(existingFeedback));
+            } catch (error) {
+                console.error('Error saving feedback:', error);
+            }
+        }
+
+        function loadFeedback() {
+            try {
+                const feedback = JSON.parse(localStorage.getItem(FEEDBACK_STORAGE_KEY) || '[]');
+                const display = document.getElementById('feedbackDisplay');
+                
+                if (feedback.length === 0) {
+                    display.innerHTML = '<p style="text-align: center; color: #666; padding: 20px;">No feedback yet. Be the first to share your thoughts!</p>';
+                    return;
+                }
+
+                display.innerHTML = feedback.map(item => `
+                    <div class="feedback-item">
+                        <div class="feedback-header">
+                            <div>
+                                <strong>${item.name}</strong> - ${item.trade || 'Unknown Trade'}
+                                <div class="feedback-meta">
+                                    ${new Date(item.timestamp).toLocaleDateString()} at ${new Date(item.timestamp).toLocaleTimeString()}
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <span class="feedback-type type-${item.type}">${item.type}</span>
+                                ${item.rating ? `<span class="feedback-rating">${item.rating}/5 ⭐</span>` : ''}
+                            </div>
+                        </div>
+                        <div class="feedback-text">${item.message}</div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading feedback:', error);
+                document.getElementById('feedbackDisplay').innerHTML = '<p style="color: #666;">Error loading feedback.</p>';
+            }
+        }
+
+        function submitToGoogleSheets(feedback) {
+            // Use existing Google Sheets endpoint
+            const webhookUrl = 'https://script.google.com/macros/s/AKfycby-X1cKflCfgxuBLJTiASDqCqN58Xj3Djni2vyUgcZP4irIiIG02NJpuLzkPK0h831P/exec';
+            
+            const formData = new FormData();
+            formData.append('type', 'feedback');
+            formData.append('name', feedback.name);
+            formData.append('email', feedback.email);
+            formData.append('trade', feedback.trade);
+            formData.append('feedbackType', feedback.type);
+            formData.append('rating', feedback.rating || '');
+            formData.append('message', feedback.message);
+            formData.append('timestamp', feedback.timestamp);
+            
+            fetch(webhookUrl, {
+                method: 'POST',
+                body: formData
+            }).catch(error => {
+                console.log('Feedback saved locally, but could not sync to server:', error);
+            });
+        }
+
+        function showMessage(type) {
+            const successMsg = document.getElementById('success-message');
+            const errorMsg = document.getElementById('error-message');
+            
+            if (type === 'success') {
+                successMsg.style.display = 'block';
+                errorMsg.style.display = 'none';
+                setTimeout(() => successMsg.style.display = 'none', 5000);
+            } else {
+                errorMsg.style.display = 'block';
+                successMsg.style.display = 'none';
+                setTimeout(() => errorMsg.style.display = 'none', 5000);
+            }
+        }
+
+        // Analytics tracking for feedback submissions
+        function trackFeedbackSubmission(type, rating) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'feedback_submission', {
+                    feedback_type: type,
+                    rating: rating || 'no_rating',
+                    timestamp: new Date().toISOString()
+                });
+            }
+        }
+    </script>
+</body>
+</html>
