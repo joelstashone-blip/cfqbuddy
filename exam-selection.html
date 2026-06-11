@@ -377,6 +377,14 @@
             updateExamStats();
             renderExams();
             checkForResumeExam();
+
+            // Event delegation for dynamically generated exam buttons
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('exam-button') && e.target.dataset.examId) {
+                    e.preventDefault();
+                    startExam(e.target.dataset.examId, parseInt(e.target.dataset.examNum));
+                }
+            });
         });
 
         function loadUserData() {
@@ -500,7 +508,7 @@
                         <span>🎯 ${examData.attempts ? examData.attempts.length : 0} Attempts</span>
                     </div>
                     ${hasAccess ? 
-                        `<button class="exam-button ${buttonClass}" onclick="startExam('${exam.id}', ${index + 1})">${buttonText}</button>` :
+                        `<button class="exam-button ${buttonClass}" data-exam-id="${exam.id}" data-exam-num="${index + 1}">${buttonText}</button>` :
                         `<button class="exam-button" disabled>🔒 Upgrade Required</button>`
                     }
                 `;
