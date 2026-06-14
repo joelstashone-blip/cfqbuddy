@@ -585,8 +585,8 @@
         </div>
 
         <div class="quick-actions">
-            <a href="#" class="quick-action" id="practice-exam-btn">📝 Practice Exam</a>
-            <a href="#" class="quick-action" id="daily-challenge-btn">🎯 Continue Daily Challenge</a>
+            <a href="exam-selection.html" class="quick-action">📝 Practice Exam</a>
+            <a href="daily-challenge.html" class="quick-action">🎯 Continue Daily Challenge</a>
         </div>
     </div>
 
@@ -888,27 +888,6 @@
             }
             window.location.href = 'daily-challenge.html';
         }
-
-        // Event listeners for buttons (fixing onclick issues)
-        document.addEventListener('DOMContentLoaded', function() {
-            // Practice Exam button
-            const practiceBtn = document.getElementById('practice-exam-btn');
-            if (practiceBtn) {
-                practiceBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    startPracticeExam();
-                });
-            }
-
-            // Daily Challenge button  
-            const challengeBtn = document.getElementById('daily-challenge-btn');
-            if (challengeBtn) {
-                challengeBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    startDailyChallenge();
-                });
-            }
-        });
 
         function studyTopic(topic) {
             // Analytics tracking
