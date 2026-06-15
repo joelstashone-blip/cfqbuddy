@@ -505,70 +505,253 @@
                     },
                     {
                         question: "According to the CEC, what is the maximum locked rotor current for a 5 HP, 3-phase motor at 240V?",
-                        options: [
-                            "64 A",
-                            "92 A", 
-                            "128 A",
-                            "154 A"
-                        ],
+                        options: ["64 A", "92 A", "128 A", "154 A"],
                         correct: 3,
                         explanation: "Table 44 in the CEC specifies locked rotor currents. For a 5 HP motor at 240V 3-phase, the locked rotor current is 154 A."
-                    }
-                ],
-                'Safety Regulations': [
-                    {
-                        question: "What is the minimum working space required in front of electrical equipment rated 600V or less?",
-                        options: [
-                            "0.8 meters (2.5 feet)",
-                            "1.0 meters (3 feet)",
-                            "1.2 meters (4 feet)", 
-                            "1.5 meters (5 feet)"
-                        ],
-                        correct: 1,
-                        explanation: "CEC Rule 2-308 requires a minimum of 1.0 meter (3 feet) working space in front of electrical equipment rated 600V or less."
                     },
                     {
-                        question: "When must a lockout/tagout procedure be implemented?",
-                        options: [
-                            "Only during major maintenance",
-                            "When working on energized equipment over 30V",
-                            "Before any maintenance on electrical equipment",
-                            "Only when multiple trades are involved"
-                        ],
+                        question: "What type of overload relay should be used with a motor in a dusty environment?",
+                        options: ["Thermal", "Magnetic", "Electronic", "Hydraulic"],
+                        correct: 1,
+                        explanation: "Magnetic overload relays are preferred in dusty environments as they are not affected by ambient temperature variations like thermal relays."
+                    },
+                    {
+                        question: "The minimum wire size for motor control circuit conductors is:",
+                        options: ["18 AWG", "16 AWG", "14 AWG", "12 AWG"],
                         correct: 2,
-                        explanation: "Lockout/tagout procedures are required before any maintenance or service work on electrical equipment to ensure worker safety."
+                        explanation: "CEC Rule 28-200 specifies that motor control circuit conductors must be minimum 14 AWG copper."
+                    },
+                    {
+                        question: "A reversing motor starter requires:",
+                        options: ["One contactor", "Two contactors", "Three contactors", "Four contactors"],
+                        correct: 1,
+                        explanation: "A reversing starter uses two contactors wired to reverse two phases, with mechanical and electrical interlocks to prevent simultaneous operation."
+                    },
+                    {
+                        question: "What is the maximum time delay for instantaneous trip circuit breakers used for motor protection?",
+                        options: ["0.1 seconds", "0.5 seconds", "2 seconds", "5 seconds"],
+                        correct: 0,
+                        explanation: "Instantaneous trip breakers must operate within 0.1 seconds to provide proper motor short circuit protection."
+                    },
+                    {
+                        question: "The FLA rating of a motor refers to:",
+                        options: ["Full Load Amperage", "Fault Level Analysis", "Fixed Load Application", "Final Load Assessment"],
+                        correct: 0,
+                        explanation: "FLA stands for Full Load Amperage - the current drawn by the motor when operating at rated load."
+                    },
+                    {
+                        question: "Motor feeder conductor sizing is based on:",
+                        options: ["FLA × 1.0", "FLA × 1.25", "FLA × 1.5", "FLA × 2.0"],
+                        correct: 1,
+                        explanation: "CEC Rule 28-106 requires motor feeder conductors to be sized at 125% of the motor's full load current."
                     }
                 ],
-                'Code Requirements': [
+                'Code and Regulations': [
                     {
-                        question: "What is the maximum number of conductors allowed in a 4 11/16\" octagonal box?",
-                        options: [
-                            "12 conductors #14 AWG",
-                            "16 conductors #14 AWG",
-                            "18 conductors #14 AWG",
-                            "21 conductors #14 AWG"
-                        ],
-                        correct: 2,
-                        explanation: "According to CEC Table 12-3, a 4 11/16\" octagonal box (depth 1 1/2\") allows 18 conductors #14 AWG maximum."
-                    }
-                ]
-            },
-            '306A': {
-                'Plumbing Systems': [
+                        question: "What is the minimum height for electrical outlets in a residential bathroom?",
+                        options: ["900 mm", "1000 mm", "1200 mm", "1500 mm"],
+                        correct: 0,
+                        explanation: "CEC Rule 26-700(5) requires bathroom receptacles to be at least 900mm above the floor."
+                    },
                     {
-                        question: "What is the minimum diameter for a building drain serving 20 fixture units?",
-                        options: [
-                            "75mm (3 inches)",
-                            "100mm (4 inches)",  
-                            "125mm (5 inches)",
-                            "150mm (6 inches)"
-                        ],
+                        question: "The maximum number of 14 AWG conductors allowed in a 4 × 4 × 1.5 inch box is:",
+                        options: ["8", "10", "12", "14"],
                         correct: 1,
-                        explanation: "According to the National Plumbing Code, a 100mm (4 inch) building drain can handle up to 180 fixture units."
+                        explanation: "Using box fill calculations, a 4×4×1.5 inch box (30.3 cubic inches) allows 10 fourteen AWG conductors."
+                    },
+                    {
+                        question: "GFCI protection is required for all 15A and 20A receptacles in:",
+                        options: ["Kitchens only", "Bathrooms only", "Kitchens and bathrooms", "All wet locations"],
+                        correct: 3,
+                        explanation: "CEC Rule 26-700 requires GFCI protection for receptacles in all wet locations including bathrooms, kitchens, laundry rooms, etc."
+                    },
+                    {
+                        question: "The maximum voltage drop allowed for branch circuits is:",
+                        options: ["3%", "5%", "8%", "10%"],
+                        correct: 1,
+                        explanation: "CEC Rule 8-102 limits voltage drop to 5% for branch circuits and 3% for feeders."
+                    },
+                    {
+                        question: "Bonding jumpers around water meters must be:",
+                        options: ["6 AWG minimum", "4 AWG minimum", "Same size as service conductor", "Same size as grounding conductor"],
+                        correct: 3,
+                        explanation: "CEC Rule 10-406 requires bonding jumpers to be the same size as the grounding conductor."
+                    },
+                    {
+                        question: "The minimum working space in front of a 240V panel is:",
+                        options: ["800 mm", "900 mm", "1000 mm", "1200 mm"],
+                        correct: 1,
+                        explanation: "CEC Rule 2-308 requires minimum 900mm working space in front of equipment operating at 240V."
+                    },
+                    {
+                        question: "Kitchen counter receptacles must be spaced no more than:",
+                        options: ["1.2 m", "1.5 m", "1.8 m", "2.4 m"],
+                        correct: 1,
+                        explanation: "CEC Rule 26-720(a) requires kitchen counter receptacles to be spaced maximum 1.5 meters apart."
+                    },
+                    {
+                        question: "The minimum burial depth for direct burial cable rated 300V is:",
+                        options: ["450 mm", "600 mm", "750 mm", "900 mm"],
+                        correct: 1,
+                        explanation: "CEC Table 12 specifies 600mm minimum burial depth for 300V direct burial cables."
+                    }
+                ],
+                'Electrical Theory': [
+                    {
+                        question: "In a parallel circuit with three equal 60-ohm resistors, the total resistance is:",
+                        options: ["20 ohms", "30 ohms", "60 ohms", "180 ohms"],
+                        correct: 0,
+                        explanation: "In parallel: 1/Rt = 1/R1 + 1/R2 + 1/R3 = 1/60 + 1/60 + 1/60 = 3/60 = 1/20, so Rt = 20 ohms."
+                    },
+                    {
+                        question: "The power factor of a purely resistive load is:",
+                        options: ["0", "0.5", "0.866", "1.0"],
+                        correct: 3,
+                        explanation: "Pure resistive loads have voltage and current in phase, resulting in a power factor of 1.0 (100%)."
+                    },
+                    {
+                        question: "In a series RLC circuit at resonance:",
+                        options: ["XL > XC", "XL < XC", "XL = XC", "XC = 0"],
+                        correct: 2,
+                        explanation: "At resonance in an RLC circuit, inductive reactance equals capacitive reactance (XL = XC)."
+                    },
+                    {
+                        question: "The impedance of a circuit with R = 30Ω and XL = 40Ω is:",
+                        options: ["70Ω", "50Ω", "35Ω", "25Ω"],
+                        correct: 1,
+                        explanation: "Z = √(R² + X²) = √(30² + 40²) = √(900 + 1600) = √2500 = 50Ω"
+                    },
+                    {
+                        question: "Three-phase power can be calculated using:",
+                        options: ["P = VI", "P = V²/R", "P = √3 × VL × IL × cos φ", "P = I²R"],
+                        correct: 2,
+                        explanation: "Three-phase power formula: P = √3 × VL × IL × cos φ, where VL is line voltage, IL is line current."
+                    },
+                    {
+                        question: "The frequency of AC power in Canada is:",
+                        options: ["50 Hz", "60 Hz", "100 Hz", "120 Hz"],
+                        correct: 1,
+                        explanation: "Canadian electrical systems operate at 60 Hz frequency."
+                    },
+                    {
+                        question: "In a transformer, the primary has 100 turns and secondary has 400 turns. If primary voltage is 120V, secondary voltage is:",
+                        options: ["30V", "120V", "240V", "480V"],
+                        correct: 3,
+                        explanation: "Vs/Vp = Ns/Np, so Vs = Vp × (Ns/Np) = 120 × (400/100) = 480V"
+                    },
+                    {
+                        question: "The unit of electrical energy is:",
+                        options: ["Watt", "Volt-ampere", "Kilowatt-hour", "Ampere-hour"],
+                        correct: 2,
+                        explanation: "Electrical energy is measured in kilowatt-hours (kWh), which represents power consumed over time."
+                    }
+                ],
+                'Wiring Methods': [
+                    {
+                        question: "Which conduit type is suitable for underground installation in concrete?",
+                        options: ["EMT", "PVC", "Rigid steel", "Flexible conduit"],
+                        correct: 2,
+                        explanation: "Rigid steel conduit provides the best protection for underground concrete installations and meets CEC requirements."
+                    },
+                    {
+                        question: "The maximum number of 90° bends allowed in a conduit run is:",
+                        options: ["2", "3", "4", "5"],
+                        correct: 2,
+                        explanation: "CEC Rule 12-1008 limits conduit runs to a maximum of four 90° bends between pull points."
+                    },
+                    {
+                        question: "Cable tray systems must be bonded when:",
+                        options: ["Always required", "Only in wet locations", "Only for metal trays", "Never required"],
+                        correct: 2,
+                        explanation: "Metal cable trays must be bonded to ensure electrical continuity and safety, while non-metallic trays do not require bonding."
+                    },
+                    {
+                        question: "The minimum radius for bending 1-inch rigid conduit is:",
+                        options: ["4 inches", "5 inches", "6 inches", "8 inches"],
+                        correct: 2,
+                        explanation: "CEC Table 8 specifies minimum bending radius for 1-inch rigid conduit as 6 times the conduit diameter."
+                    },
+                    {
+                        question: "Armored cable (AC) jacket must be continuous except at:",
+                        options: ["Bends", "Terminations", "Support points", "Junction boxes"],
+                        correct: 1,
+                        explanation: "Armored cable jacket must remain continuous throughout the run except at termination points where proper fittings are used."
+                    },
+                    {
+                        question: "The maximum distance between conduit supports for 1/2 EMT is:",
+                        options: ["1.5 m", "2.0 m", "2.5 m", "3.0 m"],
+                        correct: 2,
+                        explanation: "CEC Table 12 requires EMT conduit supports every 2.5 meters for 1/2 inch diameter."
+                    },
+                    {
+                        question: "Surface raceways must be installed:",
+                        options: ["Only vertically", "Only horizontally", "In straight lines only", "Following building surface"],
+                        correct: 3,
+                        explanation: "Surface raceways should follow the building surface contours while maintaining proper support and protection."
+                    },
+                    {
+                        question: "When installing cable in thermal insulation, the ampacity must be:",
+                        options: ["Increased by 25%", "Decreased by 20%", "Derated per Table 5C", "Calculated using Table 1"],
+                        correct: 2,
+                        explanation: "CEC Rule 4-004(7) requires derating cable ampacity when installed in thermal insulation using Table 5C factors."
+                    }
+                ],
+                'Safety and Protection': [
+                    {
+                        question: "What is the minimum approach distance for 25kV overhead lines?",
+                        options: ["1 meter", "3 meters", "5 meters", "10 meters"],
+                        correct: 1,
+                        explanation: "CSA Z462 workplace electrical safety standard requires minimum 3-meter approach distance for 25kV lines."
+                    },
+                    {
+                        question: "Arc flash hazard analysis must be updated:",
+                        options: ["Annually", "Every 3 years", "Every 5 years", "When system changes occur"],
+                        correct: 3,
+                        explanation: "Arc flash studies must be updated whenever significant electrical system changes occur that could affect fault current levels."
+                    },
+                    {
+                        question: "Personal protective equipment (PPE) category 2 requires:",
+                        options: ["Safety glasses only", "Hard hat and safety glasses", "Arc-rated clothing 8 cal/cm²", "Full face shield"],
+                        correct: 2,
+                        explanation: "PPE Category 2 requires arc-rated clothing with minimum 8 cal/cm² rating along with other protective equipment."
+                    },
+                    {
+                        question: "Ground fault circuit interrupters must trip within:",
+                        options: ["4-6 mA, 25 ms", "4-6 mA, 100 ms", "20-30 mA, 25 ms", "30 mA, 40 ms"],
+                        correct: 0,
+                        explanation: "Class A GFCIs must trip between 4-6 mA within 25 milliseconds to provide effective protection."
+                    },
+                    {
+                        question: "Lockout/tagout procedures must be followed:",
+                        options: ["Only for high voltage work", "For all electrical work", "Only when required by supervisor", "Only for maintenance work"],
+                        correct: 1,
+                        explanation: "LOTO procedures are mandatory for all electrical work to ensure worker safety and prevent accidental energization."
+                    },
+                    {
+                        question: "The shocked person should never be touched:",
+                        options: ["Until power is turned off", "Until emergency services arrive", "For 5 minutes", "If they are unconscious"],
+                        correct: 0,
+                        explanation: "Never touch a shock victim until you are certain the electrical source has been disconnected and it's safe to approach."
+                    },
+                    {
+                        question: "Electrical rooms must have emergency lighting that operates for:",
+                        options: ["30 minutes", "60 minutes", "90 minutes", "120 minutes"],
+                        correct: 2,
+                        explanation: "Emergency lighting in electrical rooms must provide illumination for a minimum of 90 minutes during power outages."
+                    },
+                    {
+                        question: "The minimum distance from electrical equipment for storage of combustible materials is:",
+                        options: ["600 mm", "900 mm", "1000 mm", "1200 mm"],
+                        correct: 1,
+                        explanation: "CEC Rule 2-314 requires minimum 900mm clearance around electrical equipment for combustible material storage."
                     }
                 ]
             }
         };
+
+        let currentUser = null;
+        let challengeData = null;
+        let currentQuestionIndex = 0;
 
         document.addEventListener('DOMContentLoaded', function() {
             loadUserData();
@@ -662,10 +845,41 @@
                 allQuestions = [...focusQuestions, ...reviewQuestions];
                 
             } else {
-                const weakAreaQuestions = selectQuestionsFromAreas(currentUser.weakAreas, 3);
-                const otherAreas = getOtherAreas(currentUser.trade, currentUser.weakAreas);
-                const reviewQuestions = selectQuestionsFromAreas(otherAreas, 2);
-                allQuestions = [...weakAreaQuestions, ...reviewQuestions];
+                // Normal daily challenge: 5 randomized questions, no repeats
+                document.getElementById('challenge-type').textContent = '🎯 Daily Challenge';
+                document.getElementById('challenge-type').style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                document.getElementById('challenge-subtitle').textContent = '5 Questions • 10 Minutes • 309A Trade';
+                
+                // Get all available questions for the trade
+                const allTradeQuestions = [];
+                const tradeQuestionBank = questionBanks[currentUser.trade] || {};
+                
+                // Collect all questions from all areas
+                Object.keys(tradeQuestionBank).forEach(area => {
+                    const areaQuestions = tradeQuestionBank[area] || [];
+                    areaQuestions.forEach(q => allTradeQuestions.push({...q, area}));
+                });
+                
+                // Track questions used today to prevent repeats
+                const today = new Date().toDateString();
+                const usedToday = currentUser.usedQuestions?.[today] || [];
+                
+                // Filter out questions used today
+                const availableQuestions = allTradeQuestions.filter((q, index) => 
+                    !usedToday.includes(index)
+                );
+                
+                // If less than 5 questions available, reset used questions for today
+                if (availableQuestions.length < 5) {
+                    if (!currentUser.usedQuestions) currentUser.usedQuestions = {};
+                    currentUser.usedQuestions[today] = [];
+                    availableQuestions.length = 0;
+                    allTradeQuestions.forEach(q => availableQuestions.push(q));
+                }
+                
+                // Select 5 random questions
+                const shuffled = shuffleArray(availableQuestions);
+                allQuestions = shuffled.slice(0, 5);
             }
             
             // Shuffle questions
