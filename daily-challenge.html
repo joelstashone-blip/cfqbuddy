@@ -411,6 +411,8 @@
     </style>
 </head>
 <body>
+    <!-- Include the massive question bank -->
+    <script src="massive-question-bank.js"></script>
     <div class="header">
         <nav class="nav">
             <div class="logo">🏆 The Red Seal Academy</div>
@@ -676,7 +678,7 @@
             
             // Get all 450+ questions from the massive bank
             const allTradeQuestions = [];
-            const tradeQuestionBank = questionBanks[currentUser.trade] || {};
+            const tradeQuestionBank = massiveQuestionBank?.[currentUser.trade] || {};
             
             // Collect all questions from all areas with area labels
             Object.keys(tradeQuestionBank).forEach(area => {
